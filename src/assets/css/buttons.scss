@@ -1,0 +1,143 @@
+
+.btn {
+    text-decoration:none;
+    padding: 7px 15px;
+    border-radius: 20px;
+    outline: none;
+    &:focus{
+        box-shadow: none;
+        outline: none;        
+    }
+    &.btn-lg{
+        font-size: 1rem;
+        padding: .5rem 1rem;
+    }
+}
+
+    
+.btn-primary{
+    color:white;
+    background-color: $lightblue;
+    border-color: $lightblue;
+}
+.btn-outline-primary{
+    border-color: $lightblue;
+    color: $lightblue;
+}
+
+.btn-orange {
+    @include button-bg($orange);
+    color:white;
+}
+
+.btn-outline-orange{
+    border-color: $orange;
+    color: $orange;
+}
+
+.time-btn-group{
+    border: 1px solid $lightblue;
+    border-radius: 25px;
+    padding: 3px 7px;
+    .btn-group:not(:last-child)>.btn, 
+    .btn:not(:last-child):not(.dropdown-toggle),
+    .btn-group:not(:first-child)>.btn, 
+    .btn:nth-child(n+3), 
+    .btn-group>:not(.btn-check)+.btn{
+        border-radius: 20px;
+        padding: 7px 8px;
+    }   
+    .btn-outline-primary{
+        border-color: transparent;
+    }
+}
+
+.day-btn-group{
+    .btn-group:not(:last-child)>.btn, 
+    .btn:not(:last-child):not(.dropdown-toggle),
+    .btn-group:not(:first-child)>.btn, 
+    .btn:nth-child(n+3), &:not(.btn-check)+.btn{
+        border-radius: 25px;
+        margin-right: 20px;
+        width: 50px;
+        text-align: center;
+        padding: 11px 5px;
+        height: 50px;
+    }
+    .btn-check{
+        &:hover{
+            +.btn-outline-primary{
+                background-color: rgba($sidebarbg, 0.7);
+                color: $white;
+            }
+        }
+        &:checked{
+            +.btn-outline-primary{
+                background-color: $sidebarbg;
+                border-color: $sidebarbg;
+            }
+        }
+    }
+}
+
+.circle-group{
+    position: relative;
+}
+
+.circle{
+    padding: 12px;
+    float: left;
+    margin-right: 0.8em;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    i{
+        color: $white;
+        display: none;
+        position:absolute
+    }
+    &.active{
+        transform: scale(1.2);
+        i{
+            display: block;
+            left: 0px;
+            font-size: 1.5em;
+            top: -8px;
+        }  
+    }
+    
+}
+
+
+
+
+.circle-lightblue{
+    @include circle-color($lightblue);
+}
+.circle-dmiltri{
+    @include circle-color($dmiltri);
+}
+.circle-miltri{
+    @include circle-color($miltri);
+}
+.circle-parrot{
+    @include circle-color($parrot);
+}
+.circle-dparrot{
+    @include circle-color($dparrot);
+}
+.circle-myellow{
+    @include circle-color($myellow);
+}
+.circle-lightorange{
+    @include circle-color($lightorange);
+}
+.circle-vilot{
+    @include circle-color($vilot);
+}
+.circle-brangle{
+    @include circle-color($brangle);
+}
+.circle-dgrey{
+    @include circle-color($dgrey);
+}

@@ -1,0 +1,316 @@
+@import "./shared.scss";
+
+a{
+    color: $lightblue;
+    &:hover{
+        color: $lightblue;
+    }
+}
+
+.wrapper {
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+    .sidebar {
+        min-width: 260px;
+        max-width: 260px;
+        transition: margin-left .35s ease-in-out,left .35s ease-in-out,margin-right .35s ease-in-out,right .35s ease-in-out;
+        direction: ltr;
+        background: $sidebarbg;
+        .sidebar-wrapper{
+            height: 100vh;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            ul{
+                list-style: none;
+            }
+            .sb-menu{
+                padding: 0 25px 0 0;
+                margin: 0;
+                li{
+                    display: block;
+                    position: relative;
+                    >a{
+                        color: $white;
+                        border-top-right-radius: 26px;
+                        border-bottom-right-radius: 26px;
+                        display: block;
+                        line-height: 0.5;
+                        padding: 20px 15px 20px 50px;
+                        text-decoration: none;
+                        i{
+                            margin-right: 10px;
+                        }
+                        &.collapsed{    
+                            &::after{
+                                content: " ";
+                                border: solid;
+                                border-color: $white;
+                                border-width: 0 .1rem .1rem 0;
+                                display: inline-block;
+                                padding: 2px;
+                                transform: rotate(-45deg);
+                                position: absolute;
+                                top: 1.5rem;
+                                right: 1.7rem;
+                                transition: all .2s ease-out;
+                            }
+                        }
+                    }
+                    ul{
+                        display: none;
+                    }
+                    &.active{
+                        &::before{
+                            content: " ";
+                            border: solid;
+                            border-color: $lightblue;
+                            border-width: 10px 0px 10px 10px;
+                            border-radius: 10px;
+                            display: inline-block;
+                            position: absolute;
+                            top: 18px;
+                            left: -5px;
+                            transition: all 0.2s ease-out;
+                        }
+                        .collapsed{    
+                            &::after{
+                                border-color: $lightblue;
+                                transform: rotate(45deg);
+                            }
+                        }
+                        >a{
+                            background-color: $white;
+                            color: $lightblue;
+                        }
+                        ul{
+                            display: block;
+                            li{
+                                &.active{
+                                    &::before{
+                                        display: none;
+                                    }
+                                    a{
+                                        background-color: transparent;
+                                        color: $white;
+                                        text-decoration: underline;
+                                    }
+                                }
+                                a{
+                                    padding: 20px 15px 20px 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .sb-menu-footer{
+                color: #fff;
+                display: block;
+                position: absolute;
+                bottom: 0;  
+                width: 100%;
+                a{
+                    color: #fff;
+                    display: block;
+                    line-height: 0.5;
+                    padding: 20px 15px 20px 50px;
+                    text-decoration: none;
+                    i{
+                        margin-right: 10px;
+                    }
+                }
+                p{
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .main {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+        min-width: 0;
+        transition: margin-left .35s ease-in-out,left .35s ease-in-out,margin-right .35s ease-in-out,right .35s ease-in-out;
+        flex-direction: column;
+        .content-wrapper{
+            padding: 1.2rem 1rem 0;
+            .main-heading{
+                border-bottom: 1px solid $lightblue;
+                margin-bottom: 1rem;
+                h1{
+                    padding-bottom: 0.5rem;
+                    margin-bottom: 0;
+                }
+            }
+            
+            // .button-action{
+            //     .btn{
+            //         border-radius: 20px;
+            //     }
+            //     .btn-primary{
+            //         background-color: $lightblue;
+            //         border-color: $lightblue;
+            //     }
+            //     .btn-outline-primary{
+            //         border-color: $lightblue;
+            //     }
+            // }
+
+            .accordion-custom{
+                .accordion-item{
+                    margin-bottom: 1rem;
+                    .accordion-header{
+                        border-bottom: 1px solid $lightblue;
+                        position: relative;
+                        .accordion-button{
+                            border: none;
+                            font-size: inherit;
+                            padding: 16px 0px;
+                            width: 95%;
+                            &:not(.collapsed){
+                                color: $offblack;
+                                background: none;
+                            }
+                            &::after{
+                                width: 2.25rem;
+                                height: 2.25rem;
+                                right: 0;
+                                background-color: $lightblue;
+                                background-position: center;
+                                position: absolute;
+                                border-radius: 50%;
+                                text-align: center;
+                            }
+                            &:focus{
+                                -webkit-box-shadow: none;
+                                -moz-box-shadow: none;
+                                -o-box-shadow: none;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                    .accordion-collapse{
+                        border: none;
+                        .accordion-body{
+                            padding: 16px 0px;
+                        }
+                    }
+                    .dropdown{
+                        top: 0;
+                        position: absolute;
+                        right: 0;
+                        .dropdown-menu{
+                            padding: 0;
+                            .dropdown-item{
+                                padding: 0.9rem 1rem;
+                                text-align: center;
+                                &:hover{
+                                    background-color: $lightblue;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                    .accordion-body{
+                        .card-body{
+                            padding: 1rem 1rem 1rem 4rem;
+                            position: relative;
+                            .dot{
+                                background: $lightgrey;
+                                height: 29px;
+                                width: 29px;
+                                border-radius: 50%;
+                                position: absolute;
+                                left: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .accordion-additional{
+                .accordion-item{  
+                    .accordion-button{
+                        position: relative;
+                        border-left: none;
+                        border-right: none;
+                        a{
+                            display: none;
+                        }
+                        &::after,&::before{
+                            background-image: none;
+                            background-color: $black;
+                            height: 2px;
+                            width: 20px;
+                            content: '';           
+                            position: absolute;
+                            right: 10px;
+                        }
+                        &:not(.collapsed){
+                            &::after{
+                                transform: rotate(50deg);
+                            }
+                            &::before{
+                                transform: rotate(135deg);
+                            }
+                            background-color: transparent;
+                            border-bottom: none;
+                            color: $black;
+                            font-size: 2rem;
+                            a{
+                                color: $black;
+                                display: block;
+                                position: absolute;
+                                right: 60px;
+                                font-size: 1.5rem;
+                            }
+                        }
+                        &:focus{
+                            border-color: rgba($black, 0.15);
+                            box-shadow: none;
+                        }
+                    }
+                    .accordion-collapse{
+                        border: none;
+                    }
+                }
+            }
+
+        }
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        color: $offblack;
+    }
+
+}
+
+
+
+.list-group{
+    .list-group-item{
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        &.active{
+            background-color: $orange;
+            border-color: $orange;
+        }
+        &+.list-group-item{
+            border-top-width: 1px;
+            background-color: $greybg;
+            border-color: $greybg;
+            color: $lightgrey;
+        }
+            h5{
+                font-size: 1.125rem;
+                font-weight: 400;
+            }
+        
+        
+    }
+}

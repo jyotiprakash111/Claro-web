@@ -1,0 +1,20 @@
+
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    color: $white;
+    background:darken($bg,8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  } 
+  &:focus{
+    box-shadow: none;
+  }
+}
+
+@mixin circle-color($circle-color){
+  background: $circle-color;
+  transition: all 0.3s ease;
+}

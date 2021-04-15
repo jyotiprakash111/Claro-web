@@ -1,0 +1,13 @@
+.breadcrumb-item{
+    a{
+        color: $offblack;
+        text-decoration: none;
+    }
+    +.breadcrumb-item{        
+        &::before {
+            color: $offblack;
+            content: var(--bs-breadcrumb-divider, ">");
+        }
+        
+    }
+}

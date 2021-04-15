@@ -1,0 +1,35 @@
+table {
+    border: 1px solid var(--bs-table-bg);
+    >:not(caption)>*>*{
+        border-left-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 0px !important;
+    }
+    tr{
+        // &:first-child{
+        //     th{
+        //         border-top-left-radius: 5px;                
+        //         &:last-child{
+        //             border-top-right-radius: 5px;
+        //         }
+        //     }
+        // }
+        
+        th{
+            background: $greybg !important;
+            color: $lightblue;
+            border-bottom: 1px solid $greybg;
+            font-weight: normal;
+        }
+        
+    }
+    &.table-orange{
+        tr{
+            th{
+                color: $orange;
+            }
+        }
+    }
+    
+}
+

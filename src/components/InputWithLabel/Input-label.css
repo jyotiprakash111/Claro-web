@@ -1,0 +1,51 @@
+
+.form-input{
+    background-color: transparent;
+    border: 1px solid #e8e9ea;
+    width: 100%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 15pt;
+    font-family: poppinsMedium;
+}
+
+.input-label-container{
+    box-shadow: -6px 1px 38px -2px rgba(147,162,174,0.34);
+    -webkit-box-shadow: -6px 1px 38px -2px rgba(147,162,174,0.34);
+    -moz-box-shadow: -6px 1px 38px -2px rgba(147,162,174,0.34);
+padding-left: 20px;
+padding-right: 20px;
+width: 100%;
+/* margin: 10px; */
+padding-top: 20px;
+padding-bottom: 20px;
+margin-left: 20px;
+}
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .form-input{
+        font-size: 10pt;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .form-input{
+        font-size: 7pt;
+    }
+}
+
+
+@media only screen and (max-width: 300px) {
+    .form-input{
+        font-size: 5pt;
+    }
+}
+

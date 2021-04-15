@@ -1,0 +1,118 @@
+.form-control{
+    border: 1px solid $lightblue;
+    border-radius: 25px;
+    padding: .7rem 2rem;
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+.form-select{
+    border: 1px solid $lightblue;
+    border-radius: 25px;
+    padding: .7rem 2rem;
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+.input-group{
+	.form-control{
+		border-right: none;
+		padding-right: 10px;
+	}
+	.input-group-text{
+		background: none;
+		border: 1px solid $lightblue;
+		padding: .375rem 1.5rem .375rem 1rem;
+		border-radius: 25px;
+	}
+}
+
+.dropdown-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+	.dropdown {
+		display: flex;
+		width: 40%;
+		.btn{
+			border-top-right-radius: 0;
+		    border-bottom-right-radius: 0;
+		}
+	}
+	.form-group-text{
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-left: 0;
+		display: flex;
+    	align-items: center;
+		position: relative;
+		width: 40%;
+    	padding: 0.7rem 2rem 0.7rem 1rem;
+	}
+}
+
+.container-checkbox {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+		&:checked {
+			& ~ .checkmark {
+				border: 1px sollid $lightblue;
+				&:after {
+					display: block;
+				}
+			}
+		}
+	}
+	&:hover {
+		input {
+			& ~ .checkmark {
+				background-color: $white;
+			}
+		}
+	}
+	.checkmark {
+		&:after {
+			left: 13px;
+			top: -5px;
+			width: 8px;
+			height: 20px;
+			border: solid $lightblue;
+			border-width: 0 5px 5px 0;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+    }
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 24px;
+        width: 24px;
+        background-color: $white;
+        border: 2px solid $lightblue;
+        border-radius: 5px;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+}
+
