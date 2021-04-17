@@ -50,23 +50,40 @@ function footer() {
         <Grid lg={4} item>
           <h5>Contact us</h5>
           <ul className="footer_ul_right">
-            <li>
-              {" "}
+            <li
+              className="footer_ul_right_li"
+              style={{ display: "flex", alignItems: "center" }}
+            >
               <img src={Map} alt="contact_icon" />
-              87 Science Park Drive The Oasis, #03-02, Singapore, 118260
+              <p>87 Science Park Drive The Oasis, #03-02, Singapore, 118260</p>
             </li>
-            <li>
+            <li
+              className="footer_ul_right_li"
+              style={{ display: "flex", alignItems: "center" }}
+            >
               {" "}
-              <img src={Call} alt="contact_icon" /> (+91) - 556-536-8512
+              <img src={Call} alt="contact_icon" /> <p>(+91) - 556-536-8512</p>
             </li>
-            <li>
+            <li
+              className="footer_ul_right_li"
+              style={{ display: "flex", alignItems: "center" }}
+            >
               {" "}
               <img src={Mail} alt="contact_icon" />
-              customer.service@claroo.com
+              <p>customer.service@claroo.com</p>
             </li>
-            <li>
+            <li
+              className="footer_ul_right_li"
+              style={{ display: "flex", alignItems: "flex-start" }}
+            >
               {" "}
-              <img src={Clock} alt="contact_icon" /> Mon 10:00 am - 6:00 pm
+              <img style={{ marginTop: 20 }} src={Clock} alt="contact_icon" />
+              <div>
+                <p>Mon-Fri </p>
+                <p>10:00 AM - 6:00 PM</p>
+                <p>Sat-Sun </p>
+                <p>01:00 PM - 6:00 PM</p>
+              </div>
             </li>
           </ul>
         </Grid>

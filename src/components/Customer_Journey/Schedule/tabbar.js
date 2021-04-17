@@ -52,15 +52,15 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     color: "rgba(50, 50, 50, 0.5)",
-    border: "0.5px solid rgba(50, 50, 50, 0.5)",
-    marginLeft: 30,
-    borderRadius: 25,
-    width: "207px",
+    width: "170px",
     height: "42px",
+    textTransform: "none",
     "&:hover, &:focus": {
-      background: "#FF8021",
-      color: "#fff",
-      border: "none",
+      fontSize: 25,
+      transition: "ease-in 0.2s",
+      // background: "#FF8021",
+      // color: "#fff",
+      // borderBottom: "1px solid #FF8021",
     },
   },
 }));
@@ -80,20 +80,17 @@ export default function SimpleTabs() {
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"
-          indicatorColor="transparent"
+          TabIndicatorProps={{ style: { background: "#FF8021" } }}
         >
-          <Tab className={classes.link} label="All classes" {...a11yProps(0)} />
+          <Tab className={classes.link} label="Schedule" {...a11yProps(0)} />
+          <Tab className={classes.link} label="Bookings" {...a11yProps(1)} />
           <Tab
             className={classes.link}
-            label="All categories"
-            {...a11yProps(1)}
-          />
-          <Tab
-            className={classes.link}
-            label="All locations"
+            label="Notifications"
             {...a11yProps(2)}
           />
-          <Tab className={classes.link} label="Any age" {...a11yProps(3)} />
+          <Tab className={classes.link} label="Saved" {...a11yProps(3)} />
+          <Tab className={classes.link} label="Profile" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -106,7 +103,10 @@ export default function SimpleTabs() {
         Item Three
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Three
+        Item 4
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        Item 5
       </TabPanel>
     </div>
   );
