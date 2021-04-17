@@ -9,11 +9,10 @@ import Footer from "./footer";
 class index extends Component {
   render() {
     return (
-      <div id="main">
+      <div id='main'>
         <Appbar />
-        <div className="landing">
+        <div className='landing'>
           <BreadCrumbs />
-          <h1>Schedule</h1>
           <Tabbar />
         </div>
         <Footer />

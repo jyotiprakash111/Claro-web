@@ -13,7 +13,7 @@ function TabPanel(props) {
 
   return (
     <div
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
@@ -57,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "none",
     "&:hover, &:focus": {
       fontSize: 25,
-      transition: "ease-in 0.2s",
+      color: "#000",
+      // transition: "ease-in 0.2s",
       // background: "#FF8021",
       // color: "#fff",
       // borderBottom: "1px solid #FF8021",
@@ -75,22 +76,22 @@ export default function SimpleTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appbar} position="static">
+      <AppBar className={classes.appbar} position='static'>
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label="simple tabs example"
+          aria-label='simple tabs example'
           TabIndicatorProps={{ style: { background: "#FF8021" } }}
         >
-          <Tab className={classes.link} label="Schedule" {...a11yProps(0)} />
-          <Tab className={classes.link} label="Bookings" {...a11yProps(1)} />
+          <Tab className={classes.link} label='Schedule' {...a11yProps(0)} />
+          <Tab className={classes.link} label='Bookings' {...a11yProps(1)} />
           <Tab
             className={classes.link}
-            label="Notifications"
+            label='Notifications'
             {...a11yProps(2)}
           />
-          <Tab className={classes.link} label="Saved" {...a11yProps(3)} />
-          <Tab className={classes.link} label="Profile" {...a11yProps(4)} />
+          <Tab className={classes.link} label='Saved' {...a11yProps(3)} />
+          <Tab className={classes.link} label='Profile' {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
