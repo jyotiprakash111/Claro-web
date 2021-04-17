@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("../../../assets/fonts/Gilroy-Black.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-BlackItalic.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-Bold.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-BoldItalic.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-ExtraBold.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-ExtraBoldItalic.ttf")
+    format("truetype");
+  src: url("../../../assets/fonts/Gilroy-Heavy.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-HeavyItalic.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-Light.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-LightItalic.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-Medium.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-MediumItalic.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-Regular.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-RegularItalic.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-SemiBold.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-SemiBoldItalic.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-Thin.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-ThinItalic.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-UltraLight.ttf") format("truetype");
+  src: url("../../../assets/fonts/Gilroy-UltraLightItalic.ttf")
+    format("truetype");
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Gilroy", sans-serif;
+}
+
+#main .landing {
+  padding: 30px 10%;
+}
+#main .landing h1 {
+  font-style: normal;
+  font-size: 56px;
+  color: #323232;
+}
+#footer {
+  background: #f8f8f8;
+  padding: 20px 10%;
+}
+#footer .footer_ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+#footer .footer_ul2 {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+#footer .footer_ul li {
+  display: flex;
+  list-style: none;
+  margin-right: 15px;
+  color: #323232;
+  font-weight: 400;
+}
+#footer .footer_ul2 li {
+  display: flex;
+  list-style: none;
+  margin-right: 20px;
+  color: #323232;
+  font-weight: 400;
+}
+#footer .footer_down {
+  margin-top: 40px;
+  margin-top: 20px;
+}
+#footer .footer_down li {
+  display: flex;
+  list-style: none;
+  margin-right: 20px;
+  color: #323232;
+  font-weight: 400;
+}
+#footer .footer_ul_right {
+  list-style: none;
+}
+#footer .footer_ul_right li {
+  margin-bottom: 10px;
+}
+#footer .footer_ul_right li img {
+  width: 20px;
+  margin-right: 20px;
+}
+#footer .footer_down2 {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#footer .footer_down2 img {
+  width: 70px;
+  margin-left: 5px;
+}
