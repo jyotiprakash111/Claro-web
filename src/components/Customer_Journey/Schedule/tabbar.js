@@ -56,8 +56,6 @@ const useStyles = makeStyles((theme) => ({
     height: "42px",
     textTransform: "none",
     "&:hover, &:focus": {
-      fontSize: 25,
-      transition: "ease-in 0.2s",
       // background: "#FF8021",
       // color: "#fff",
       // borderBottom: "1px solid #FF8021",

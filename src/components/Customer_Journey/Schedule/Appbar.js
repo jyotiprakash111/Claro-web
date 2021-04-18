@@ -68,6 +68,9 @@ export default function ButtonAppBar() {
           <Button className={classes.link} color="inherit">
             Packages
           </Button>
+          <Button className={classes.link} color="inherit">
+            Contact us
+          </Button>
           <Button className={[classes.link, classes.left]} color="inherit">
             Cart
           </Button>
