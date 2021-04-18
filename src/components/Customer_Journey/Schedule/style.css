@@ -104,3 +104,7 @@ body {
   width: 70px;
   margin-left: 5px;
 }
+
+.borderLess td {
+  border-bottom: none;
+}

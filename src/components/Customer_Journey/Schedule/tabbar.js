@@ -55,11 +55,14 @@ const useStyles = makeStyles((theme) => ({
     width: "170px",
     height: "42px",
     textTransform: "none",
+    fontSize: "25px",
+
     "&:hover, &:focus": {
       // background: "#FF8021",
       // color: "#fff",
       // borderBottom: "1px solid #FF8021",
     },
+    active: {},
   },
 }));
 
@@ -80,7 +83,12 @@ export default function SimpleTabs() {
           aria-label="simple tabs example"
           TabIndicatorProps={{ style: { background: "#FF8021" } }}
         >
-          <Tab className={classes.link} label="Schedule" {...a11yProps(0)} />
+          <Tab
+            className={[classes.link, classes.active]}
+            style={{ fontWeight: "500", color: "#323232", fontSize: "32px" }}
+            label="Schedule"
+            {...a11yProps(0)}
+          />
           <Tab className={classes.link} label="Bookings" {...a11yProps(1)} />
           <Tab
             className={classes.link}

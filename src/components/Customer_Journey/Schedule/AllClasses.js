@@ -9,6 +9,9 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 
+import Clock from "../../../assets/img/footer_icon/clock.png";
+import Calender from "../../../assets/img/calender.png";
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -20,16 +23,38 @@ export default function BasicTable() {
 
   return (
     <div>
-      <TableContainer component={Paper}>
+      <p style={{ color: "#323232", fontSize: 13 }}>Starting from</p>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: 10,
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img
+            src={Calender}
+            style={{ width: 17, height: 17, marginRight: 10 }}
+          />
+          <span>7 February 2021</span>
+        </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img src={Clock} style={{ width: 17, height: 17, marginRight: 5 }} />{" "}
+          Indian Standard Time
+        </div>
+      </div>
+      <TableContainer>
         <Table className={classes.table} aria-label="simple table">
           <TableBody>
             <TableRow>
-              <TableCell style={{ color: "#FF8021" }}>8 Feb, Monday</TableCell>
+              <TableCell colSpan="4" style={{ color: "#FF8021" }}>
+                8 Feb, Monday
+              </TableCell>
             </TableRow>
             <TableRow>
               <TableCell component="th">
-                <p>Class start time</p>
-                <p>Class end time</p>
+                <h4>Class start time</h4>
+                <h4>Class end time</h4>
               </TableCell>
               <TableCell>
                 <p>Class title</p>
@@ -40,9 +65,9 @@ export default function BasicTable() {
                 <Button variant="outlined">Join Class</Button>
               </TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell component="th">
-                <p>5:00 pm - 6:00 pm</p>
+            <TableRow className="borderLess">
+              <TableCell>
+                <h4>5:00 pm - 6:00 pm</h4>
               </TableCell>
               <TableCell>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -53,13 +78,13 @@ export default function BasicTable() {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell style={{ color: "#FF8021" }}>
+              <TableCell colSpan="4" style={{ color: "#FF8021" }}>
                 10 Feb, Wednesday
               </TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell component="th">
-                <p>5:00 pm - 6:00 pm</p>
+            <TableRow className="borderLess">
+              <TableCell>
+                <h4>5:00 pm - 6:00 pm</h4>
               </TableCell>
               <TableCell>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
