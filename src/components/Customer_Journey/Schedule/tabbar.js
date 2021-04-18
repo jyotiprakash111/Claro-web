@@ -81,7 +81,7 @@ export default function SimpleTabs() {
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"
-          TabIndicatorProps={{ style: { background: "#FF8021" } }}
+          TabIndicatorProps={{ style: { background: "#FF8021", height: 5 } }}
         >
           <Tab
             className={[classes.link, classes.active]}
