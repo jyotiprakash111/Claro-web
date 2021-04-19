@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Appbar from "./Appbar";
 import BreadCrumbs from "./breadcrumbs";
 import Tabbar from "./tabbar";
+
 import "./style.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Footer from "./footer";
@@ -12,7 +13,9 @@ class index extends Component {
       <div id='main'>
         <Appbar />
         <div className='landing'>
-          <BreadCrumbs />
+          {/* <BreadCrumbs />
+         <h1>Schedule</h1> */}
+
           <Tabbar />
         </div>
         <Footer />

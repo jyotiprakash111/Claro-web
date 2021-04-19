@@ -52,6 +52,7 @@ body {
   display: flex;
   list-style: none;
   padding: 0;
+  margin: 30px 0 50px 0;
 }
 #footer .footer_ul li {
   display: flex;
@@ -103,4 +104,8 @@ body {
 #footer .footer_down2 img {
   width: 70px;
   margin-left: 5px;
+}
+
+.borderLess td {
+  border-bottom: none;
 }

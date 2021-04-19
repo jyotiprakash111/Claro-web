@@ -18,8 +18,8 @@ function footer() {
     <div id="footer">
       <Grid container spacing={3}>
         <Grid lg={8} item>
-          <h3>Business Name</h3>
-          <p>one line about business</p>
+          <p style={{ fontSize: "1.2rem" }}>Business Name</p>
+          <p style={{ fontWeight: "300" }}>one line about business</p>
           <Divider style={{ width: "10%" }} />
           <ul className="footer_ul">
             <li>Home</li>
