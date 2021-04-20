@@ -12,6 +12,8 @@ import Button from "@material-ui/core/Button";
 import Clock from "../../../assets/img/footer_icon/clock.png";
 import Calender from "../../../assets/img/calender.png";
 
+import DatePicker from "./DatePicker";
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -32,11 +34,13 @@ export default function BasicTable() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
-          <img
+          {/* <img
             src={Calender}
             style={{ width: 17, height: 17, marginRight: 10 }}
           />
-          <span>7 February 2021</span>
+          <span>7 February 2021</span> */}
+
+          <DatePicker />
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           <img src={Clock} style={{ width: 17, height: 17, marginRight: 5 }} />{" "}

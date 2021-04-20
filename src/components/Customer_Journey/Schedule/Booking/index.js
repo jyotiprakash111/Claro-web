@@ -6,8 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import AllClasses from "./AllClasses";
-import Booking from "./Booking/index";
+import Current from "./Current";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,23 +46,17 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
-  appbar: {
-    background: "transparent",
-    boxShadow: "none",
-  },
   link: {
-    color: "rgba(50, 50, 50, 0.5)",
-    width: "170px",
-    height: "42px",
-    textTransform: "none",
-    fontSize: "25px",
-
-    "&:hover, &:focus": {
-      // background: "#FF8021",
-      // color: "#fff",
-      // borderBottom: "1px solid #FF8021",
-    },
-    active: {},
+    textTransform: "capitalize",
+    border: "1px solid #323232",
+    marginRight: 20,
+    borderRadius: 10,
+  },
+  active_link: {
+    background: "#FF8021",
+    borderRadius: 10,
+    color: "#fff",
+    border: "none",
   },
 }));
 
@@ -77,43 +70,42 @@ export default function SimpleTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appbar} position="static">
+      <AppBar
+        style={{
+          background: "transparent",
+          boxShadow: "none",
+          color: "#323232",
+          textTransform: "Capitalize",
+        }}
+        position="static"
+      >
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"
-          TabIndicatorProps={{ style: { background: "#FF8021", height: 5 } }}
+          TabIndicatorProps={{ style: { background: "transparent" } }}
         >
           <Tab
-            className={[classes.link, classes.active]}
-            style={{ fontWeight: "500", color: "#323232", fontSize: "32px" }}
-            label="Schedule"
+            className={[classes.link, classes.active_link]}
+            label="Current"
             {...a11yProps(0)}
           />
-          <Tab className={classes.link} label="Bookings" {...a11yProps(1)} />
-          <Tab
-            className={classes.link}
-            label="Notifications"
-            {...a11yProps(2)}
-          />
-          <Tab className={classes.link} label="Saved" {...a11yProps(3)} />
-          <Tab className={classes.link} label="Profile" {...a11yProps(4)} />
+          <Tab className={classes.link} label="Post" {...a11yProps(1)} />
+          <Tab className={classes.link} label="Cancelled" {...a11yProps(2)} />
+          <Tab className={classes.link} label="Pending" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <AllClasses />
+        <Current />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Booking />
+        Item Two
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item 4
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item 5
+        Item Four
       </TabPanel>
     </div>
   );
