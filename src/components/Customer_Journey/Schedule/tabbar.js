@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import AllClasses from "./AllClasses";
 import Booking from "./Booking/index";
+import Profile from "./Profile/index";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -113,7 +114,7 @@ export default function SimpleTabs() {
         Item 4
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item 5
+        <Profile />
       </TabPanel>
     </div>
   );
