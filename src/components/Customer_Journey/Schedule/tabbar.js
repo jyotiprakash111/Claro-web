@@ -9,6 +9,8 @@ import Box from "@material-ui/core/Box";
 import AllClasses from "./AllClasses";
 import Booking from "./Booking/index";
 import Profile from "./Profile/index";
+import Saved from "../../../components/Customer_Journey/Schedule/services";
+import Notification from "./notifications";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -108,10 +110,10 @@ export default function SimpleTabs() {
         <Booking />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <Notification />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item 4
+        <Saved />
       </TabPanel>
       <TabPanel value={value} index={4}>
         <Profile />
