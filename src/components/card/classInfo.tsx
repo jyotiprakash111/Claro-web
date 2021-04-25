@@ -10,11 +10,12 @@ import {
 	makeStyles,
 	Typography,
 } from "@material-ui/core";
+import ClassImage from '../../assets/img/class.png'
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
 	cardMedia: {
-		height: 200,
+		height: 250,
 	},
 	location: {
 		marginTop: theme.spacing(1),
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	avatar: {
 		color: theme.palette.common.white,
-		backgroundColor: theme.palette.primary.main,
+		backgroundColor: '#FF8021',
 		width: theme.spacing(5),
 		height: theme.spacing(5),
 		fontSize: "0.9375rem",
@@ -58,7 +59,7 @@ const ClassInfo = (props: any) => {
 		switch (type) {
 			case "Appointment":
 				return (
-					<Typography variant="h6" color="primary">
+					<Typography style={{color:'#FF8021'}} variant="h6" color="primary">
 						${price}
 					</Typography>
 				);
@@ -68,7 +69,7 @@ const ClassInfo = (props: any) => {
 						<Typography variant="body2" color="textSecondary">
 							From&nbsp;
 						</Typography>
-						<Typography variant="h6" color="primary">
+						<Typography style={{color:'#FF8021'}} variant="h6" color="primary">
 							${price}
 						</Typography>{" "}
 						<Typography variant="body2" color="textSecondary">
@@ -86,24 +87,23 @@ const ClassInfo = (props: any) => {
 				<CardActionArea component={Link} to="/courseDetails">
 					<CardMedia
 						className={classes.cardMedia}
-						image="https://images.unsplash.com/photo-1592064064956-30807b590c08"
-						title="Contemplative Reptile"
+						image={ClassImage}
 					/>
 					<CardContent className={classes.cardContent}>
 						<Box>
 							<Box display="flex" justifyContent="space-between" width="100%">
-								<Typography variant="body2">{type}</Typography>
-								{online && (
-									<Typography variant="body2" color="textSecondary">
+								<Typography style={{fontSize:15}} variant="body2">{type}</Typography>
+							
+									<Typography style={{fontSize:15}} variant="body2" color="textSecondary">
 										Online
 									</Typography>
-								)}
+							
 							</Box>
-							<Typography variant="h6" className={classes.title} title={title}>
+							<Typography style={{fontSize:24}} variant="h6" className={classes.title} title={title}>
 								{title}
 							</Typography>
 						</Box>
-						<Box>
+						<Box style={{marginTop:-20}}>
 							<Typography variant="body2" color="textSecondary">
 								{ageRange}
 							</Typography>
