@@ -9,7 +9,7 @@ import Box from "@material-ui/core/Box";
 import AllClasses from "./AllClasses";
 import Booking from "./Booking/index";
 import Profile from "./Profile/index";
-import Saved from "./services";
+import Saved from "../Services/index2";
 import Notification from "./notifications";
 
 function TabPanel(props) {
@@ -17,7 +17,7 @@ function TabPanel(props) {
 
   return (
     <div
-      role='tabpanel'
+      role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
@@ -80,27 +80,27 @@ export default function SimpleTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appbar} position='static'>
+      <AppBar className={classes.appbar} position="static">
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label='simple tabs example'
+          aria-label="simple tabs example"
           TabIndicatorProps={{ style: { background: "#FF8021", height: 5 } }}
         >
           <Tab
             className={[classes.link, classes.active]}
             style={{ fontWeight: "500", color: "#323232", fontSize: "32px" }}
-            label='Schedule'
+            label="Schedule"
             {...a11yProps(0)}
           />
-          <Tab className={classes.link} label='Bookings' {...a11yProps(1)} />
+          <Tab className={classes.link} label="Bookings" {...a11yProps(1)} />
           <Tab
             className={classes.link}
-            label='Notifications'
+            label="Notifications"
             {...a11yProps(2)}
           />
-          <Tab className={classes.link} label='Saved' {...a11yProps(3)} />
-          <Tab className={classes.link} label='Profile' {...a11yProps(4)} />
+          <Tab className={classes.link} label="Saved" {...a11yProps(3)} />
+          <Tab className={classes.link} label="Profile" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
