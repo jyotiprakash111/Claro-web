@@ -9,7 +9,7 @@ import Box from "@material-ui/core/Box";
 import AllClasses from "./AllClasses";
 import Booking from "./Booking/index";
 import Profile from "./Profile/index";
-import Saved from "../../../components/Customer_Journey/Schedule/services";
+import Saved from "./services";
 import Notification from "./notifications";
 
 function TabPanel(props) {

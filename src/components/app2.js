@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import routes from "../routes";
 import Main from "./Customer_Journey/Schedule/index";
+import Services from './Customer_Journey'
 import Contact from "./contact/contact";
 
 class App extends Component {
