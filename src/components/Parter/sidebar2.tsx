@@ -15,13 +15,19 @@ import TodayIcon from "@material-ui/icons/Today";
 import PeopleIcon from "@material-ui/icons/People";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
-
-const drawerWidth = 240;
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import SortIcon from '@material-ui/icons/Sort';
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
+import SettingsIcon from '@material-ui/icons/Settings';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+const drawerWidth = 250;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: "flex",
+
     },
     appBar: {
       width: `calc(100% - ${drawerWidth}px)`,
@@ -35,6 +41,7 @@ const useStyles = makeStyles((theme: Theme) =>
     drawerPaper: {
       width: drawerWidth,
       backgroundColor: "#262E4A",
+      overflow:'hidden'
     },
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
@@ -63,6 +70,11 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
         }}
         anchor='left'
       >
+        <div style={{display:'flex',margin:20,justifyContent:'space-around'}}>
+          <span style={{color:'#fff'}}>Business Name</span>
+          <span style={{color:'#fff',marginLeft:20}}><ArrowDropDownIcon  /></span>
+        </div>
+
         <List>
           {[
             "Home",
@@ -73,18 +85,31 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
             "Online Booking",
             "Settings",
           ].map((text, index) => (
-            <ListItem button key={text} style={{ color: "white" }}>
-              <ListItemIcon style={{ color: "white" }}>
-                {index === 0 && <HomeIcon />}
-                {index === 1 && <PeopleIcon />}
+            <ListItem button key={text} style={{ color: "white",margin:'10px 5px' }}>
+              <ListItemIcon style={{ color: "#fff"  }}>
+                {index === 0 && <HomeIcon  />}
+                {index === 1 && <SortIcon />}
                 {index === 2 && <TodayIcon />}
+                {index === 3 && <MonetizationOnIcon />}
+                {index === 4 && <PeopleIcon />}
+                {index === 5 && <LoyaltyIcon />}
+                {index === 6 && <SettingsIcon />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText  primary={text} />
             </ListItem>
           ))}
         </List>
+               <ListItem button  style={{ color: "white",margin:'20px 5px',marginTop:'auto' }}>
+              <ListItemIcon style={{ color: "white" }}>
+                <HelpOutlineIcon />
+              
+              </ListItemIcon>
+              <ListItemText primary="Help" />
+        </ListItem>
+         <p style={{textAlign:'center',color:'#fff',fontWeight:300}}>Powered by Claroo</p>
+      
       </Drawer>
-
+      
     </div>
   );
 }

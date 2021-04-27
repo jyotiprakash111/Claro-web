@@ -5,6 +5,8 @@ import routes from "../routes";
 import Main from "./Customer_Journey/Schedule/index";
 import Services from "./Customer_Journey/Services/index";
 import Contact from "./contact/contact";
+import Partner from "./Parter/index";
+import PartnerHome from "./Parter/index2";
 
 class App extends Component {
   render() {
@@ -14,6 +16,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/services" component={Services} />
+            <Route exact path="/partner" component={Partner} />
+            <Route exact path="/partner_home" component={PartnerHome} />
             <Route exact path={routes.CONTACT} component={Contact} />
           </Switch>
         </div>
