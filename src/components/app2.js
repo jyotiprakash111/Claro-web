@@ -7,6 +7,7 @@ import Services from "./Customer_Journey/Services/index";
 import Contact from "./contact/contact";
 import Partner from "./Parter/index";
 import PartnerHome from "./Parter/index2";
+import Sales from "./Sales/index";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route exact path="/services" component={Services} />
             <Route exact path="/partner" component={Partner} />
             <Route exact path="/partner_home" component={PartnerHome} />
+            <Route exact path="/sales" component={Sales} />
             <Route exact path={routes.CONTACT} component={Contact} />
           </Switch>
         </div>
