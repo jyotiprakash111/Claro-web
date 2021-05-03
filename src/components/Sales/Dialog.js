@@ -101,7 +101,7 @@ export default function CustomizedDialogs(props) {
             </tr>
             <tr>
               <td>Duration</td>
-              <td>Start date - End date (dd mmm yyyyy)</td>
+              <td>Start date - End date</td>
             </tr>
             <tr>
               <td>Batch schedule</td>

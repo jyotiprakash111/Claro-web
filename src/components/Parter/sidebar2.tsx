@@ -61,6 +61,22 @@ interface LeftSideBarProps {
 export default function LeftSidebar({ children }: LeftSideBarProps) {
   const classes = useStyles();
 
+    const makerRouter = (type) => {
+    console.log(type)
+    switch (type) {
+      case "Services":
+        return "/services";
+      case "Customers":
+        return "/partner";
+      case "Home":
+        return "/partner_home";
+      case "Sales":
+        return "/sales";
+      default:
+        return "/404";
+    }
+  };
+
   return (
     <div className={classes.root}>
       <Drawer
@@ -86,7 +102,7 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
             "Online Booking",
             "Settings",
           ].map((text, index) => (
-            <Link style={{textDecoration:'none'}} to={index==0?'partner_home':index==4?'partner':''}>
+            <Link style={{textDecoration:'none'}} to={makerRouter(text)}>
             <ListItem button key={text} style={{ color: "white",margin:'10px 5px', }}>
               <ListItemIcon style={{ color: "#fff"  }}>
                 {index === 0 && <HomeIcon  />}
