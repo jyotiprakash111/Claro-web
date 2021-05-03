@@ -1,6 +1,7 @@
 .MuiDialog-container .MuiDialogContent-root {
   overflow-y: unset;
 }
+
 .MuiDialog-container table td {
   width: 200px;
   height: 25px;
