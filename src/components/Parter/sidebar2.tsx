@@ -21,6 +21,7 @@ import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import {Link} from 'react-router-dom'
 const drawerWidth = 250;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -85,7 +86,8 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
             "Online Booking",
             "Settings",
           ].map((text, index) => (
-            <ListItem button key={text} style={{ color: "white",margin:'10px 5px' }}>
+            <Link style={{textDecoration:'none'}} to={index==0?'partner_home':index==4?'partner':''}>
+            <ListItem button key={text} style={{ color: "white",margin:'10px 5px', }}>
               <ListItemIcon style={{ color: "#fff"  }}>
                 {index === 0 && <HomeIcon  />}
                 {index === 1 && <SortIcon />}
@@ -97,15 +99,17 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
               </ListItemIcon>
               <ListItemText  primary={text} />
             </ListItem>
+            </Link>
           ))}
         </List>
+ 
                <ListItem button  style={{ color: "white",margin:'20px 5px',marginTop:'auto' }}>
               <ListItemIcon style={{ color: "white" }}>
                 <HelpOutlineIcon />
-              
               </ListItemIcon>
               <ListItemText primary="Help" />
         </ListItem>
+   
          <p style={{textAlign:'center',color:'#fff',fontWeight:300}}>Powered by Claroo</p>
       
       </Drawer>
