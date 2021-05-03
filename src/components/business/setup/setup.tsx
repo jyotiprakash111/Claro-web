@@ -1,6 +1,6 @@
 import React from "react";
 import FlexLayout from "../../FlexLayout/FlexLayout";
-import Button from "../../Button/Button";
+import Button from "../../button/Button";
 import "../../../assets/css/setup.scss";
 import SetupForm from "./setup-form";
 

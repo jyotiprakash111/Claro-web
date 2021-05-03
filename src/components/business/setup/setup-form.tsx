@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Button from "../../Button/Button";
+import Button from "../../button/Button";
 import FLexLayout from "../../FlexLayout/FlexLayout";
 import InputDescriptionCard from "../../InputDescriptionCard/InputDescriptionCard";
 import InputWithLabel from "../../InputWithLabel/inputWithLabel";

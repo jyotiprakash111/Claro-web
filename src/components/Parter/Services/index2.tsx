@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import Card from "../../card";
 import { services } from "../../../pages/home/mockData";
 import { filters } from "./filters";
-import Button from "../../Button";
+import Button from "../../button/Button";
 
 const useStyles = makeStyles(theme => ({
 	filters: {

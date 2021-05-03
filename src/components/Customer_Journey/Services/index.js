@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import Card from "../../card";
 import { services } from "../../../pages/home/mockData";
 import { filters } from "./filters";
-import Button from "../../Button";
+import Button from "../../button/Button";
 import Header from "./Header";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
@@ -41,31 +41,31 @@ export default function ServicesPage() {
     <div>
       <Header />
       <Container>
-        <Box marginTop="2em">
-          <Breadcrumbs separator=">" aria-label="breadcrumb">
-            <Link style={{ textDecoration: "none" }} color="inherit" href="/">
+        <Box marginTop='2em'>
+          <Breadcrumbs separator='>' aria-label='breadcrumb'>
+            <Link style={{ textDecoration: "none" }} color='inherit' href='/'>
               Home
             </Link>
-            <Typography color="textPrimary"> Services</Typography>
+            <Typography color='textPrimary'> Services</Typography>
           </Breadcrumbs>
         </Box>
-        <Box marginTop="2em">
+        <Box marginTop='2em'>
           <Typography
             style={{ fontSize: "56px", color: "#323232" }}
-            variant="h3"
+            variant='h3'
           >
             Services
           </Typography>
         </Box>
-        <Box marginTop="1em">
+        <Box marginTop='1em'>
           <Typography
             style={{ fontSize: "18px ", color: "#323232" }}
-            variant="body1"
+            variant='body1'
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           </Typography>
         </Box>
-        <Box marginTop="2em">
+        <Box marginTop='2em'>
           <SearchBar
             onChange={() => console.log("onChange")}
             onRequestSearch={() => console.log("onRequestSearch")}
@@ -74,7 +74,7 @@ export default function ServicesPage() {
             }}
           />
         </Box>
-        <Box marginTop="2em" className={classes.filters}>
+        <Box marginTop='2em' className={classes.filters}>
           {filters.map((category, i) => (
             <Button
               style={{
@@ -85,17 +85,17 @@ export default function ServicesPage() {
                 color: i == 0 ? "#fff" : "rgba(50, 50, 50, 0.5)",
                 background: i == 0 ? "#FF8021" : "",
               }}
-              variant="outlined"
+              variant='outlined'
             >
               {category.type}
             </Button>
           ))}
         </Box>
-        <Box style={{ color: "#323232" }} marginTop="1em" component={"hr"} />
-        <Box marginTop="3em">
-          <Grid container spacing={2} justify="space-between">
+        <Box style={{ color: "#323232" }} marginTop='1em' component={"hr"} />
+        <Box marginTop='3em'>
+          <Grid container spacing={2} justify='space-between'>
             {servicesOffered.map((service) => (
-              <Card type="classInfo" data={service} />
+              <Card type='classInfo' data={service} />
             ))}
           </Grid>
         </Box>
