@@ -14,7 +14,7 @@ const styles = (theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
-    width: "550px",
+    width: "520px",
   },
   closeButton: {
     position: "absolute",
@@ -101,7 +101,7 @@ export default function CustomizedDialogs(props) {
             </tr>
             <tr>
               <td>Duration</td>
-              <td>Start date - End date (dd mmm yyyyy)</td>
+              <td>Start date - End date</td>
             </tr>
             <tr>
               <td>Batch schedule</td>

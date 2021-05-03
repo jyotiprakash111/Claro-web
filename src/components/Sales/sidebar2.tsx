@@ -21,6 +21,7 @@ import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import { Link } from 'react-router-dom'
 const drawerWidth = 250;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -59,7 +60,21 @@ interface LeftSideBarProps {
 
 export default function LeftSidebar({ children }: LeftSideBarProps) {
   const classes = useStyles();
-
+  const makerRouter = (type) => {
+    console.log(type)
+    switch (type) {
+      case "Services":
+        return "/services";
+      case "Customers":
+        return "/partner";
+      case "Home":
+        return "/partner_home";
+      case "Sales":
+        return "/sales";
+      default:
+        return "/404";
+    }
+  };
   return (
     <div className={classes.root}>
       <Drawer
@@ -85,6 +100,7 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
             "Online Booking",
             "Settings",
           ].map((text, index) => (
+                <Link style={{textDecoration:'none'}} to={makerRouter(text)}>
             <ListItem button key={text} style={{ color: "white",margin:'10px 5px' }}>
               <ListItemIcon style={{ color: "#fff"  }}>
                 {index === 0 && <HomeIcon  />}
@@ -97,6 +113,7 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
               </ListItemIcon>
               <ListItemText  primary={text} />
             </ListItem>
+              </Link>
           ))}
         </List>
                <ListItem button  style={{ color: "white",margin:'20px 5px',marginTop:'auto' }}>
