@@ -73,6 +73,10 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
         return "/sales";
       case "Schedule":
         return "/schedule";
+      case "Online Booking":
+        return "/404/online booking";
+      case "Settings":
+        return "/404/setting";
       default:
         return "/404";
     }
@@ -126,7 +130,6 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
               <ListItemText primary="Help" />
         </ListItem>
          <p style={{textAlign:'center',color:'#fff',fontWeight:300}}>Powered by Claroo</p>
-      
       </Drawer>
       
     </div>
