@@ -6,7 +6,7 @@
   width: 200px;
   height: 25px;
 }
-.MuiDialog-container table tr td:first-child {
+#sales_dialog .MuiDialog-container table tr td:first-child {
   color: rgba(50, 50, 50, 0.5);
 }
 .MuiDialog-container .payment_table table tr td:nth-child(2) {
