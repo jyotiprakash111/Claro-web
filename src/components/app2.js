@@ -10,6 +10,7 @@ import PartnerHome from "./Parter/index2";
 import Sales from "./Sales/index";
 import Schedule from "./Schedule/index";
 import Construction from "./construction";
+import General from "../components/General/index";
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path="/partner_home" component={PartnerHome} />
             <Route exact path="/sales" component={Sales} />
             <Route exact path="/schedule" component={Schedule} />
+            <Route exact path="/general" component={General} />
             <Route exact path="/404" component={Construction} />
             <Route exact path="/404/:id" component={Construction} />
             <Route exact path={routes.CONTACT} component={Contact} />
