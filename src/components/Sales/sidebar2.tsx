@@ -71,8 +71,10 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
         return "/partner_home";
       case "Sales":
         return "/sales";
-      case "Schedule":
-        return "/schedule";
+      case "Online Booking":
+        return "/404/online booking";
+      case "Settings":
+        return "/404/setting";
       default:
         return "/404";
     }
