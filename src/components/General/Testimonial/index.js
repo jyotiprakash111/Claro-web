@@ -1,49 +1,17 @@
 import React, { Component } from "react";
-import Grid from "@material-ui/core/Grid";
-import LanguageIcon from "@material-ui/icons/Language";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import Button from "@material-ui/core/Button";
-import Accordion from "./Accordion";
+import Sidebar from "../../common/SideBar";
+import Header from "../../common/HeaderMain";
+import Main from "./Main";
 
-export default class Index extends Component {
+export default class index extends Component {
   render() {
     return (
       <div>
-        <Grid container>
-          <Grid item lg={2}>
-            <div
-              style={{
-                width: "100%",
-                minHeight: "100vh",
-                height: "100%",
-                background: "#262C4C",
-              }}
-            ></div>
-          </Grid>
-          <Grid item lg={10}>
-            <div
-              style={{
-                margin: "10px 50px",
-              }}
-            >
-              <h1
-                style={{
-                  borderBottom: "4px solid #65B1EC",
-                  paddingBottom: 10,
-                  marginBottom: 10,
-                  fontWeight: 400,
-                  color: "#323223",
-                }}
-              >
-                Testimonial (fits in the biz setup with FAQ)
-              </h1>
-
-              <Accordion />
-            </div>
-          </Grid>
-        </Grid>
+        <Sidebar />
+        <div style={{ marginLeft: 300 }}>
+          <Header name="Notification" />
+          <Main />
+        </div>
       </div>
     );
   }
