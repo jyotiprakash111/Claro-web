@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SideBar from "./sidebar2";
-import Header from "./Header";
+import SideBar from "../common/SideBar";
+import Header from "../common/HeaderMain";
 import Main from "./Main";
 
 export default class index extends Component {
@@ -9,7 +9,7 @@ export default class index extends Component {
       <div>
         <SideBar />
         <div style={{ marginLeft: 300 }}>
-          <Header />
+          <Header name="Schedule" avatar={true} />
           <Main />
         </div>
       </div>

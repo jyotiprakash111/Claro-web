@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import SideBar from "./sidebar2";
-import Header from "./Header";
-import SearchBar from "./SearchBar";
-import Button from "@material-ui/core/Button";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import Table from "./Table";
+import SideBar from "../common/SideBar";
+import Header from "../common/HeaderMain";
 import PartnerHome from "./Schedule/index";
 
 export default class index extends Component {
@@ -13,7 +9,7 @@ export default class index extends Component {
       <div>
         <SideBar />
         <div style={{ marginLeft: 300 }}>
-          <Header />
+          <Header name="Customers" avatar={true} />
           <PartnerHome />
         </div>
       </div>

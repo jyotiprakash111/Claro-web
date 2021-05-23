@@ -33,6 +33,7 @@ body {
 
 #main .landing {
   padding: 30px 10%;
+  padding-left: 0px;
 }
 
 #main .landing h1 {

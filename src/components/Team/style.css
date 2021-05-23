@@ -1,0 +1,17 @@
+table td {
+  width: 150px;
+}
+table {
+  padding-left: 20px;
+}
+table th {
+  color: rgba(50, 50, 50, 0.5);
+  padding-bottom: 10px;
+}
+
+table td {
+  padding-bottom: 10px;
+}
+table td {
+  width: 150px;
+}

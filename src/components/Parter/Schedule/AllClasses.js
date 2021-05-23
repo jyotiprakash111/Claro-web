@@ -34,13 +34,13 @@ export default function BasicTable() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
-          {/* <img
+          <img
             src={Calender}
             style={{ width: 17, height: 17, marginRight: 10 }}
           />
-          <span>7 February 2021</span> */}
-
-          <DatePicker />
+          <span>7 February 2021</span>
+          {/* 
+          <DatePicker /> */}
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           <img src={Clock} style={{ width: 17, height: 17, marginRight: 5 }} />{" "}
@@ -51,7 +51,7 @@ export default function BasicTable() {
         <Table className={classes.table} aria-label="simple table">
           <TableBody>
             <TableRow>
-              <TableCell colSpan="4" style={{ color: "#FF8021" }}>
+              <TableCell colSpan="4" style={{ color: "#65B1EC", fontSize: 20 }}>
                 8 Feb, Monday
               </TableCell>
             </TableRow>
@@ -82,7 +82,7 @@ export default function BasicTable() {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell colSpan="4" style={{ color: "#FF8021" }}>
+              <TableCell colSpan="4" style={{ color: "#65B1EC", fontSize: 20 }}>
                 10 Feb, Wednesday
               </TableCell>
             </TableRow>

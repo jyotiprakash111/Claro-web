@@ -38,51 +38,55 @@ export default function SimpleSelect() {
   return (
     <div id="schedules">
       <Dialog open={open} handleClose={() => setOpen(false)} />
-      <div>
-        <FormControl variant="outlined" className={classes.formControl}>
-          <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
-            value={10}
-            onChange={handleChange}
-            size="small"
-          >
-            <MenuItem value={10}>All location </MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl>
 
-        <FormControl variant="outlined" className={classes.formControl}>
-          <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
-            value={10}
-            onChange={handleChange}
-            size="small"
-          >
-            <MenuItem value={10}>All Instructors</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl>
-      </div>
       <div>
         <p>Starting from</p>
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
+            alignItems: "center",
             paddingRight: 50,
           }}
         >
-          <Button style={{ textTransform: "none", fontSize: 24 }}>
+          <Button style={{ textTransform: "none", fontSize: 20 }}>
             <CalendarTodayIcon style={{ color: "#FF8021" }} />
             <span style={{ marginLeft: 20 }}>7 February 2021</span>
           </Button>
-          <div style={{ display: "flex", alignItems: "center" }}>
+          {/* <div style={{ display: "flex", alignItems: "center" }}>
             <QueryBuilderIcon style={{ color: "#FF8021" }} />
             <p style={{ marginLeft: 10 }}>Indian Standard Time(IST)</p>
+          </div> */}
+          <div>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <Select
+                labelId="demo-simple-select-outlined-label"
+                id="demo-simple-select-outlined"
+                value={10}
+                onChange={handleChange}
+                size="small"
+                style={{ height: 40 }}
+              >
+                <MenuItem value={10}>All location </MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
+
+            <FormControl variant="outlined" className={classes.formControl}>
+              <Select
+                labelId="demo-simple-select-outlined-label"
+                id="demo-simple-select-outlined"
+                value={10}
+                onChange={handleChange}
+                size="small"
+                style={{ height: 40 }}
+              >
+                <MenuItem value={10}>All Instructors</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
           </div>
         </div>
       </div>
@@ -157,6 +161,7 @@ export default function SimpleSelect() {
                 border: "1px solid #323232",
                 padding: 30,
                 borderRadius: 10,
+                marginTop: 30,
               }}
             >
               <div
