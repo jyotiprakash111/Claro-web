@@ -31,12 +31,12 @@ const rows = [
   createData("John Doe", "9658884153", "aditi6847@gmail.com", "Owner Login"),
 ];
 
-export default function BasicTable() {
+export default function BasicTable(props) {
   const classes = useStyles();
 
   return (
     <TableContainer id="team" component={Paper}>
-      <Dialog open={false} />
+      <Dialog handleClose={() => props.onClose()} open={props.open} />
       <Table className={classes.table} aria-label="simple table">
         <TableHead style={{ background: "#F8F8F8" }}>
           <TableRow>

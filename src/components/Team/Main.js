@@ -31,6 +31,7 @@ export default function SimpleSelect() {
 
   const [age, setAge] = React.useState("");
   const [open, setOpen] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -70,12 +71,13 @@ export default function SimpleSelect() {
             width: 180,
             height: 40,
           }}
+          onClick={() => setOpen2(true)}
           variant="outlined"
         >
           Add new Member
         </Button>
       </div>
-      <Table />
+      <Table open={open2} onClose={() => setOpen2(false)} />
     </div>
   );
 }
