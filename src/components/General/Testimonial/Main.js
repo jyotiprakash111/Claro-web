@@ -105,7 +105,6 @@ export default function Main() {
               marginTop: 20,
             }}
             variant="outlined"
-            // onClick={handleClose}
             color="primary"
           >
             <AddIcon />

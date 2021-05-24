@@ -19,7 +19,7 @@ export default class Header extends Component {
           />
           <Avatar
             style={{ background: "#65B1EC", marginRight: 20 }}
-            alt="Remy Sharp"
+            alt="Remy Sharp"""
             src="/static/images/avatar/1.jpg"
           />
         </div> */}
