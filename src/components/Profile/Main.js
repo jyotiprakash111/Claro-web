@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
 import "./style.css";
 
 export default function Main() {
@@ -63,6 +64,18 @@ export default function Main() {
               <div style={{ display: "flex" }}>
                 <input type="text" id="name" name="user_name" value="+91 " />
               </div>
+              <Button
+                variant="outlined"
+                style={{
+                  color: "#65b1ec",
+                  border: "1px solid #65b1ec",
+                  width: 200,
+                  borderRadius: 20,
+                  marginTop: 10,
+                }}
+              >
+                Submit
+              </Button>
             </form>
             {/* <p
               style={{

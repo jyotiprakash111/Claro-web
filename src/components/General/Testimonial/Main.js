@@ -123,9 +123,17 @@ export default function Main() {
                 making.
               </p>
             </div>
-            <div style={{}}>
+            <div style={{ position: "relative" }}>
               <span>
-                <img style={{ width: 200 }} src={Upload_Image} />
+                <input
+                  type="file"
+                  style={{ position: "absolute", opacity: 0, height: 100 }}
+                />
+                <img
+                  style={{ width: 200 }}
+                  src={Upload_Image}
+                  alt="upload_img"
+                />
               </span>
             </div>
           </div>
