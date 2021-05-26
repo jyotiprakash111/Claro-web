@@ -5,6 +5,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import SideBar from "../../components/common/SideBar";
 import Header from "../../components/common/HeaderMain";
+import Button from "@material-ui/core/Button";
 import "./style.css";
 
 export default class Index extends Component {
@@ -350,35 +351,28 @@ export default class Index extends Component {
               </form>
             </Grid>
           </Grid>
-          {/* <div style={{ display: "flex", alignItems: "center" }}>
-                <p
-                  style={{
-                    color: "#FF2727",
-                    width: "78%",
-                    marginRight: 30,
-                    fontSize: 22,
-                    fontWeight: 300,
-                  }}
-                >
-                  Clicking on delete account - leads to a pop that states
-                  "Hello,we are sorry to see you go.Please write to us at
-                  hello@claroo.co raising your request to delete the account.We
-                  will check that there aren't any active bookings to be taken
-                  care of.Also we would really like to see if there is anything
-                  we can do to make you stay:)
-                </p>
-                <Button
-                  style={{
-                    background: "#262C4C",
-                    color: "#fff",
-                    textTransform: "none",
-                  }}
-                  variant="contained"
-                >
-                  Save
-                </Button>
-              </div>
-           */}
+          <div style={{ display: "flex", alignItems: "center", padding: 20 }}>
+            <p
+              style={{
+                color: "#FF2727",
+                width: "76%",
+                marginRight: 30,
+                fontSize: 22,
+                fontWeight: 300,
+              }}
+            ></p>
+            <Button
+              style={{
+                background: "#262C4C",
+                color: "#fff",
+                textTransform: "none",
+                width: 100,
+              }}
+              variant="contained"
+            >
+              Save
+            </Button>
+          </div>
         </div>
       </div>
     );

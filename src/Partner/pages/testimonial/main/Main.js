@@ -4,10 +4,21 @@ import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import AddIcon from "@material-ui/icons/Add";
 import Upload_Image from "../../../assets/img/upload.png";
+import { useDropzone } from "react-dropzone";
+import PublishIcon from "@material-ui/icons/Publish";
+import IconButton from "@material-ui/core/IconButton";
 import "./style3.css";
 
 export default function Main() {
   const [arr, setArr] = React.useState([]);
+  const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
+
+  const files = acceptedFiles.map((file) => (
+    <li key={file.path}>
+      {file.path} - {file.size} bytes
+    </li>
+  ));
+
   console.log(arr);
   return (
     <div>
@@ -129,11 +140,32 @@ export default function Main() {
                   type="file"
                   style={{ position: "absolute", opacity: 0, height: 100 }}
                 />
-                <img
-                  style={{ width: 200 }}
-                  src={Upload_Image}
-                  alt="upload_img"
-                />
+                <div>
+                  <p></p>
+                </div>
+
+                <section
+                  style={{
+                    width: 200,
+                    border: "1px dashed #ccc",
+                    textAlign: "center",
+                    padding: 20,
+                  }}
+                >
+                  <div {...getRootProps({ className: "dropzone" })}>
+                    <input {...getInputProps()} />
+                    <IconButton style={{ background: "#eceff7" }}>
+                      <PublishIcon />
+                    </IconButton>
+
+                    <p style={{ color: "rgb(190 185 211)", fontSize: 10 }}>
+                      Drag files here, or click to upload
+                    </p>
+                  </div>
+                  <aside>
+                    <ul>{files}</ul>
+                  </aside>
+                </section>
               </span>
             </div>
           </div>
