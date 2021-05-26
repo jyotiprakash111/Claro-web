@@ -10,11 +10,7 @@ export default function Current() {
         <Grid item lg={4}>
           <Card />
         </Grid>
-        <Grid item lg={8}>
-          <ClassDetails />
-          <ClassDetails />
-          <ClassDetails />
-        </Grid>
+        <Grid item lg={8}></Grid>
       </Grid>
     </div>
   );

@@ -3,8 +3,8 @@ import Grid from "@material-ui/core/Grid";
 import LanguageIcon from "@material-ui/icons/Language";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import Button from "@material-ui/core/Button";
+import Sidebar from "../common/SideBar";
+import Header from "../common/HeaderMain";
 import "./style.css";
 
 export default class Index extends Component {
@@ -13,14 +13,7 @@ export default class Index extends Component {
       <div id="general_page">
         <Grid container>
           <Grid item lg={2}>
-            <div
-              style={{
-                width: "100%",
-                minHeight: "100vh",
-                height: "100%",
-                background: "#262C4C",
-              }}
-            ></div>
+            <Sidebar />
           </Grid>
           <Grid item lg={10}>
             <div
@@ -28,19 +21,9 @@ export default class Index extends Component {
                 margin: "10px 30px",
               }}
             >
-              <h1
-                style={{
-                  borderBottom: "4px solid #006AFF",
-                  paddingBottom: 10,
-                  marginBottom: 10,
-                }}
-              >
-                Business Setup
-              </h1>
-              <a href="#" style={{ color: "#0E75FF", textDecoration: "none" }}>
-                Back to Setup
-              </a>
-              <Grid container>
+              <Header name="Business Setup" />
+
+              <Grid style={{ marginTop: 30 }} container>
                 <Grid lg={4} item>
                   <h3>Basic Info</h3>
                   <p
@@ -81,20 +64,13 @@ export default class Index extends Component {
                         name="user_email"
                         placeholder="Write a short bio"
                       />
-                      <div style={{ background: "#fff", padding: 10 }}>
-                        <label style={{ color: "#45525E" }}>
-                          Booking Page URL :{" "}
-                        </label>
-                        <p
-                          style={{
-                            background: "#F1FFFD",
-                            padding: 10,
-                            color: "#45525E",
-                          }}
-                        >
-                          https://webveda.ankurwarikoo.com/
-                        </p>
-                      </div>
+                      <label for="mail">Booking Page URL:</label>
+                      <input
+                        type="number"
+                        id="mail"
+                        name="user_email"
+                        placeholder="https://www.abc.com"
+                      />
                       <label style={{ marginTop: 10 }} for="business">
                         Type of business
                       </label>
@@ -109,9 +85,14 @@ export default class Index extends Component {
                           Radiation Oncologist
                         </option>
                       </select>
-                      <span style={{ fontSize: 20, color: "#323232" }}>
-                        Add About us (text)
-                      </span>
+                      <label for="mail">Add about us:</label>
+                      <textarea
+                        type="number"
+                        row="2"
+                        id="mail"
+                        name="user_email"
+                        placeholder="brief description about"
+                      />
                     </fieldset>
                   </form>
                 </Grid>
@@ -381,7 +362,7 @@ export default class Index extends Component {
                   </form>
                 </Grid>
               </Grid>
-              <div style={{ display: "flex", alignItems: "center" }}>
+              {/* <div style={{ display: "flex", alignItems: "center" }}>
                 <p
                   style={{
                     color: "#FF2727",
@@ -409,6 +390,7 @@ export default class Index extends Component {
                   Save
                 </Button>
               </div>
+           */}
             </div>
           </Grid>
         </Grid>

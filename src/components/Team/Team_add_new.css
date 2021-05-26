@@ -1,0 +1,67 @@
+#team_add_new form {
+  box-sizing: border-box;
+  width: 100%;
+}
+#team_add_new input[type="text"],
+#team_add_new input[type="password"],
+#team_add_new input[type="date"],
+#team_add_new input[type="datetime"],
+#team_add_new input[type="email"],
+#team_add_new input[type="number"],
+#team_add_new input[type="search"],
+#team_add_new input[type="file"],
+#team_add_new input[type="tel"],
+#team_add_new input[type="time"],
+#team_add_new input[type="url"],
+#team_add_new textarea,
+#team_add_new select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 15px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  color: #ccc;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #65b1ec;
+  border-radius: 20px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+#team_add_new input[type="radio"],
+#team_add_new input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+#team_add_new select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+#team_add_new fieldset {
+  margin-bottom: 0px;
+  border: none;
+}
+
+#team_add_new legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+#team_add_new label {
+  display: block;
+  margin-bottom: 8px;
+  color: #323232;
+}
+
+#team_add_new label.light {
+  font-weight: 300;
+  display: inline;
+}

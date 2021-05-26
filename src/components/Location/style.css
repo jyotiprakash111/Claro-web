@@ -2,9 +2,9 @@
   margin: 0px auto;
   box-sizing: border-box;
   padding: 10px;
-  background: #f6f6f6 !important;
+  background: transparent;
   text-align: left;
-  border: 1px solid #bbb;
+  border: none;
   width: 100%;
 }
 #general_page input[type="text"],

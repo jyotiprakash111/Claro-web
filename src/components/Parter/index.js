@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SideBar from "./sidebar2";
-import Header from "./Header";
+import SideBar from "../common/SideBar";
+import Header from "../common/HeaderMain";
 import SearchBar from "./SearchBar";
 import Button from "@material-ui/core/Button";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
@@ -12,7 +12,7 @@ export default class index extends Component {
       <div>
         <SideBar />
         <div style={{ marginLeft: 300 }}>
-          <Header />
+          <Header name="Customers" avatar={true} />
           <div
             style={{
               display: "flex",
