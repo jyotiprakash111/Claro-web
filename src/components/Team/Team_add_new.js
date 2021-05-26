@@ -4,7 +4,7 @@ import Upload_Image from "../../assets/img/upload.png";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import PublishIcon from "@material-ui/icons/Publish";
-
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 export default class index extends Component {
   render() {
     return (
@@ -14,19 +14,16 @@ export default class index extends Component {
             borderBottom: "1px solid #65B1EC",
             display: "flex",
             justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
           <h1 style={{ fontWeight: 400, marginLeft: 30 }}>Team > Add New</h1>
-          {/* <div style={{ display: "flex", alignItems: "center" }}>
-          <NotificationsNoneIcon
-            style={{ fontSize: 30, marginRight: 10, color: "#323232" }}
-          />
-          <Avatar
-            style={{ background: "#65B1EC", marginRight: 20 }}
-            alt="Remy Sharp"
-            src="/static/images/avatar/1.jpg"
-          />
-        </div> */}
+          <div>
+            <HighlightOffIcon
+              onClick={() => this.props.onClose()}
+              style={{ fontSize: 50, marginRight: 10, color: "#323232" }}
+            />
+          </div>
         </div>
         <Grid container>
           <Grid lg={6} item>
@@ -120,9 +117,14 @@ export default class index extends Component {
                     marginTop: 20,
                     fontSize: 17,
                     height: 45,
+                    position: "relative",
                   }}
                   variant="contained"
                 >
+                  <input
+                    type="file"
+                    style={{ opacity: 0, position: "absolute" }}
+                  />
                   <PublishIcon style={{ marginRight: 10 }} /> Customer image
                 </Button>
               </div>
@@ -138,6 +140,7 @@ export default class index extends Component {
               marginRight: 100,
               width: 100,
               textTransform: "none",
+              marginBottom: 30,
             }}
             variant="contained"
           >

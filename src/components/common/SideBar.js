@@ -62,8 +62,8 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
   const makerRouter = (type) => {
     console.log(type);
     switch (type) {
-      case "Services":
-        return "/services";
+      case "Testimonial":
+        return "/general_testimonial";
       case "Customers":
         return "/partner";
       case "Home":
@@ -106,7 +106,7 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
         <List>
           {[
             "Home",
-            "Services",
+            "Testimonial",
             "Schedule",
             "Sales",
             "Customers",

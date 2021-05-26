@@ -24,7 +24,7 @@ export default function Main() {
       <Grid container>
         <Grid lg={7} item>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <form style={{ maxWidth: 480, marginTop: 50 }}>
+            <form style={{ maxWidth: 480, marginTop: 10 }}>
               <div style={{ display: "flex" }}>
                 <div>
                   <label for="name">First name </label>
@@ -64,7 +64,7 @@ export default function Main() {
                 <input type="text" id="name" name="user_name" value="+91 " />
               </div>
             </form>
-            <p
+            {/* <p
               style={{
                 width: 260,
                 marginLeft: 50,
@@ -75,7 +75,7 @@ export default function Main() {
               Below box "Your email business email is set as 'example@mail.com'
               (business email which was used to sign up).To change,please
               contact us.
-            </p>
+            </p> */}
           </div>
         </Grid>
       </Grid>
