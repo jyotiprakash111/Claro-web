@@ -6,11 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import AllClasses from "./AllClasses";
-import Booking from "./Booking/Card";
-import Profile from "./Profile/index";
-import Saved from "../Services/index2";
-import Notification from "./notifications";
+import Member from "./Main";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -59,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     width: "170px",
     height: "42px",
     textTransform: "none",
-    fontSize: "25px",
+    fontSize: "20px",
     marginRight: 100,
     "&:hover, &:focus": {
       // background: "#FF8021",
@@ -87,33 +83,33 @@ export default function SimpleTabs() {
           aria-label="simple tabs example"
           TabIndicatorProps={{ style: { background: "#FF8021", height: 5 } }}
         >
-          <Tab className={classes.link} label="Profile" {...a11yProps(0)} />
+          <Tab
+            className={classes.link}
+            label="Working hours"
+            {...a11yProps(0)}
+          />
           <Tab
             className={[classes.link]}
             // style={{ fontWeight: "500", color: "#323232", fontSize: "32px" }}
-            label="Schedule"
+            label="Closed dates"
             {...a11yProps(0)}
           />
-          <Tab className={classes.link} label="Bookings" {...a11yProps(1)} />
-          <Tab
-            className={classes.link}
-            label="Transactions"
-            {...a11yProps(2)}
-          />
+          <Tab className={classes.link} label="Members" {...a11yProps(1)} />
+          <Tab className={classes.link} label="Permissions" {...a11yProps(2)} />
           {/* <Tab className={classes.link} label="Saved" {...a11yProps(3)} /> */}
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Profile />
+        <h1>Tab 1</h1>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <AllClasses />
+        <h1>Tab 2</h1>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Booking />
+        <Member />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Notification />
+        <h1>Tab 3</h1>
       </TabPanel>
     </div>
   );

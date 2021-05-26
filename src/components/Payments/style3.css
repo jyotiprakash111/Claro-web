@@ -1,0 +1,67 @@
+#payment3 form {
+  box-sizing: border-box;
+  width: 100%;
+}
+#payment3 input[type="text"],
+#payment3 input[type="password"],
+#payment3 input[type="date"],
+#payment3 input[type="datetime"],
+#payment3 input[type="email"],
+#payment3 input[type="number"],
+#payment3 input[type="search"],
+#payment3 input[type="file"],
+#payment3 input[type="tel"],
+#payment3 input[type="time"],
+#payment3 input[type="url"],
+#payment3 textarea,
+#payment3 select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 15px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  color: #ccc;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #65b1ec;
+  border-radius: 20px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+#payment3 input[type="radio"],
+#payment3 input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+#payment3 select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+#payment3 fieldset {
+  margin-bottom: 0px;
+  border: none;
+}
+
+#payment3 legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+#payment3 label {
+  display: block;
+  margin-bottom: 8px;
+  color: #323232;
+}
+
+#payment3 label.light {
+  font-weight: 300;
+  display: inline;
+}

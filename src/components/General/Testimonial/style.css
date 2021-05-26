@@ -1,0 +1,66 @@
+#general_page_testimonial form {
+  box-sizing: border-box;
+  width: 100%;
+}
+#general_page_testimonial input[type="text"],
+#general_page_testimonial input[type="password"],
+#general_page_testimonial input[type="date"],
+#general_page_testimonial input[type="datetime"],
+#general_page_testimonial input[type="email"],
+#general_page_testimonial input[type="number"],
+#general_page_testimonial input[type="search"],
+#general_page_testimonial input[type="file"],
+#general_page_testimonial input[type="tel"],
+#general_page_testimonial input[type="time"],
+#general_page_testimonial input[type="url"],
+#general_page_testimonial textarea,
+#general_page_testimonial select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 15px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  color: #323232;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #65b1ec;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+#general_page_testimonial input[type="radio"],
+#general_page_testimonial input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+#general_page_testimonial select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+#general_page_testimonial fieldset {
+  margin-bottom: 0px;
+  border: none;
+}
+
+#general_page_testimonial legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+#general_page_testimonial label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ccc;
+}
+
+#general_page_testimonial label.light {
+  font-weight: 300;
+  display: inline;
+}

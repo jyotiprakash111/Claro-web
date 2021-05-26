@@ -6,11 +6,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import AllClasses from "./AllClasses";
-import Booking from "./Booking/Card";
-import Profile from "./Profile/index";
-import Saved from "../Services/index2";
-import Notification from "./notifications";
+import Main from "./Main";
+import Main2 from "./Main2";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -53,13 +50,15 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     background: "transparent",
     boxShadow: "none",
+    display: "flex",
+    width: 450,
   },
   link: {
     color: "rgba(50, 50, 50, 0.5)",
     width: "170px",
     height: "42px",
     textTransform: "none",
-    fontSize: "25px",
+    fontSize: "20px",
     marginRight: 100,
     "&:hover, &:focus": {
       // background: "#FF8021",
@@ -80,40 +79,26 @@ export default function SimpleTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appbar} position="static">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="simple tabs example"
-          TabIndicatorProps={{ style: { background: "#FF8021", height: 5 } }}
-        >
-          <Tab className={classes.link} label="Profile" {...a11yProps(0)} />
-          <Tab
-            className={[classes.link]}
-            // style={{ fontWeight: "500", color: "#323232", fontSize: "32px" }}
-            label="Schedule"
-            {...a11yProps(0)}
-          />
-          <Tab className={classes.link} label="Bookings" {...a11yProps(1)} />
-          <Tab
-            className={classes.link}
-            label="Transactions"
-            {...a11yProps(2)}
-          />
-          {/* <Tab className={classes.link} label="Saved" {...a11yProps(3)} /> */}
-        </Tabs>
-      </AppBar>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <AppBar className={classes.appbar} position="static">
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="simple tabs example"
+            TabIndicatorProps={{
+              style: { background: "#FF8021", height: 5 },
+            }}
+          >
+            <Tab className={classes.link} label="Customers" {...a11yProps(0)} />
+            <Tab className={classes.link} label="Team" {...a11yProps(1)} />
+          </Tabs>
+        </AppBar>
+      </div>
       <TabPanel value={value} index={0}>
-        <Profile />
+        <Main />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <AllClasses />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <Booking />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <Notification />
+        <Main2 />
       </TabPanel>
     </div>
   );

@@ -1,0 +1,67 @@
+#payment2 form {
+  box-sizing: border-box;
+  width: 100%;
+}
+#payment2 input[type="text"],
+#payment2 input[type="password"],
+#payment2 input[type="date"],
+#payment2 input[type="datetime"],
+#payment2 input[type="email"],
+#payment2 input[type="number"],
+#payment2 input[type="search"],
+#payment2 input[type="file"],
+#payment2 input[type="tel"],
+#payment2 input[type="time"],
+#payment2 input[type="url"],
+#payment2 textarea,
+#payment2 select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 15px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  color: #ccc;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #65b1ec;
+  border-radius: 20px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+#payment2 input[type="radio"],
+#payment2 input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+#payment2 select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+#payment2 fieldset {
+  margin-bottom: 0px;
+  border: none;
+}
+
+#payment2 legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+#payment2 label {
+  display: block;
+  margin-bottom: 8px;
+  color: #323232;
+}
+
+#payment2 label.light {
+  font-weight: 300;
+  display: inline;
+}

@@ -1,0 +1,67 @@
+#user_profile form {
+  box-sizing: border-box;
+  width: 100%;
+}
+#user_profile input[type="text"],
+#user_profile input[type="password"],
+#user_profile input[type="date"],
+#user_profile input[type="datetime"],
+#user_profile input[type="email"],
+#user_profile input[type="number"],
+#user_profile input[type="search"],
+#user_profile input[type="file"],
+#user_profile input[type="tel"],
+#user_profile input[type="time"],
+#user_profile input[type="url"],
+#user_profile textarea,
+#user_profile select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 15px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  color: #ccc;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #65b1ec;
+  border-radius: 20px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+#user_profile input[type="radio"],
+#user_profile input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+#user_profile select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+#user_profile fieldset {
+  margin-bottom: 0px;
+  border: none;
+}
+
+#user_profile legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+#user_profile label {
+  display: block;
+  margin-bottom: 8px;
+  color: #323232;
+}
+
+#user_profile label.light {
+  font-weight: 300;
+  display: inline;
+}
