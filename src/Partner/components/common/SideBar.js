@@ -75,7 +75,7 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
       case "Online Booking":
         return "/404/online booking";
       case "Settings":
-        return "/general";
+        return "/settings";
       default:
         return "/404";
     }
