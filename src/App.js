@@ -11,6 +11,9 @@ import notification from "./Partner/pages/notification/index";
 import profile from "./Partner/pages/profile/index";
 import location from "./Partner/pages/location/index";
 import payment from "./Partner/pages/payment/index";
+import settings from "./Partner/pages/Setting/index";
+import batchSchedule from "./Partner/pages/Batch_Schedule/index";
+import "./style.css";
 
 class App extends Component {
   render() {
@@ -29,6 +32,8 @@ class App extends Component {
             <Route path="/profile" component={profile} />
             <Route path="/location" component={location} />
             <Route path="/payment" component={payment} />
+            <Route path="/settings" component={settings} />
+            <Route path="/batch_schedule" component={batchSchedule} />
           </Switch>
         </div>
       </Router>

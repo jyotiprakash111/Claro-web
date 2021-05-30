@@ -2,16 +2,8 @@ import React, { Component } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import PublishIcon from "@material-ui/icons/Publish";
-import FormLabel from "@material-ui/core/FormLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import Checkbox from "@material-ui/core/Checkbox";
-import Dialog from "../../../components/Payments/Popover";
-import Dialog2 from "../../../components/Payments/Popover2";
 import "./style.css";
+import Dialog from "./Dialog";
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -33,120 +25,56 @@ export default function SimpleSelect() {
   };
 
   return (
-    <div id="payment">
-      <p style={{ width: 800 }}>
-        Customers will be able to book a service and make pay using any of the
-        method you mention. Upon booking you will receive an email and the
-        booking will appear under ‘Pending review’ in your homepage. After your
-        payment verification and confirmation of booking, the customer will be
-        notified. Please refer to this article or video for further
-        clarification.
-      </p>
+    <div>
+      <Dialog open={open} handleClose={() => setOpen(false)} />
       <Grid container>
-        <Grid item lg={5}>
-          <form style={{}}>
-            <fieldset>
-              <label style={{ marginTop: 10 }} for="business">
-                Select payment method
-              </label>
-              <select
-                style={{ borderRadius: 20, height: 40, color: "#323232" }}
-                id="business"
-                name="user_job"
-              >
-                <option value="Surgical Oncologist">Bank Transfer</option>
-                <option value="Clinical Oncologist">Clinical Oncologist</option>
-                <option value="Healthcare Provider">
-                  Radiation Oncologist
-                </option>
-              </select>
-              <label style={{ marginTop: 100 }} for="mail">
-                Alternate number
-              </label>
-              <input
-                type="text"
-                style={{ width: 250 }}
-                placeholder="Eg CR27502891"
-                id="mail"
-                name="user_email"
-              />
-            </fieldset>
-          </form>
+        <Grid item lg={8}>
+          <p>
+            Customers will be able to book a service and make pay using any of
+            the method you mention. Upon booking you will receive an email and
+            the booking will appear under ‘Pending review’ in your homepage.
+            After your payment verification and confirmation of booking, the
+            customer will be notified. Please refer to this article or video for
+            further clarification.
+          </p>
         </Grid>
-        <Grid item lg={6}>
-          <Grid style={{ marginLeft: 40 }} container>
-            <Grid item lg={6}>
-              <Dialog open={false} />
-              <Dialog2 open={false} />
-              <Button
-                variant="contained"
-                style={{
-                  background: "#65B1EC",
-                  color: "#fff",
-                  textTransform: "none",
-                  borderRadius: 20,
-                  width: 150,
-                }}
-              >
-                Add text field
-              </Button>
-            </Grid>
-            <Grid item lg={6}>
-              <div>
-                <Button
-                  style={{
-                    background: "#65B1EC",
-                    color: "#fff",
-                    textTransform: "none",
-                    borderRadius: 20,
-                    width: 150,
-                    marginLeft: 50,
-                  }}
-                >
-                  Add image
-                </Button>
-                <label style={{ marginTop: 30 }} for="mail">
-                  Image title
-                </label>
-                <input
-                  type="text"
-                  style={{ width: 250 }}
-                  placeholder="Eg Bank account QR code"
-                  id="mail"
-                  name="user_email"
-                />
-                <label for="mail">Upload image</label>
-                <div>
-                  <Button
-                    style={{
-                      color: "rgba(101, 177, 236, 1)",
-                      border: "1px solid rgba(101, 177, 236, 1)",
-                      textTransform: "none",
-                      borderRadius: 40,
-                      width: 250,
-                      fontWeight: 400,
-                      marginTop: 20,
-                      fontSize: 12,
-                      height: 45,
-                    }}
-                    variant="outlined"
-                  >
-                    <PublishIcon style={{ marginRight: 10 }} /> Drag and drop /
-                    click to upload
-                  </Button>
-                </div>
-              </div>
-            </Grid>
-          </Grid>
+        <Grid item lg={2}>
+          <div style={{ margin: 20 }}>
+            <Button
+              variant="contained"
+              style={{
+                background: "#65B1EC",
+                color: "#fff",
+                textTransform: "none",
+                borderRadius: 20,
+                width: 150,
+              }}
+              onClick={() => setOpen(true)}
+            >
+              Add new
+            </Button>
+          </div>
+        </Grid>
+        <Grid item lg={12}>
+          <p
+            style={{
+              fontSize: 30,
+              paddingBottom: 10,
+              marginBottom: 30,
+              borderBottom: "1px solid #65B1EC",
+              width: "90%",
+            }}
+          >
+            Bank transfer
+          </p>
+          <h4>Account name</h4>
+          <p style={{ color: "#ccc", marginTop: -10 }}>Jone Doe</p>
+          <h4>Account number</h4>
+          <p style={{ color: "#ccc", marginTop: -10 }}>CR27592891</p>
+          <h4>Account name</h4>
+          <p style={{ color: "#ccc", marginTop: -10 }}>ICICIafakjfkurk</p>
         </Grid>
       </Grid>
-      <FormGroup>
-        <FormControlLabel
-          control={<Checkbox name="gilad" />}
-          label="I have legal access to this account and have verified all the info before submitting"
-          className={classes.select}
-        />
-      </FormGroup>
     </div>
   );
 }
