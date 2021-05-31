@@ -90,8 +90,87 @@ export default function SimpleSelect() {
               </fieldset>
             </form>
           </Grid>
+          <Grid style={{ marginTop: 100 }} lg={4} item>
+            <h3>Business address</h3>
+            <p
+              style={{
+                fontWeight: "light",
+                fontSize: 18,
+                color: "#757575",
+              }}
+            >
+              Lorel ipsum
+            </p>
+          </Grid>
+          <Grid style={{ marginTop: 100 }} lg={8} item>
+            <form style={{ maxWidth: 480 }}>
+              <fieldset>
+                <label for="name">Location Name</label>
+                <div style={{ display: "flex" }}>
+                  <input
+                    type="text"
+                    id="name"
+                    name="user_name"
+                    placeholder="KJKS BMT PADANG BESI"
+                  />
+                </div>
+                <label for="mail">Address line 1</label>
+                <input
+                  type="email"
+                  placeholder="Jl. Raya Indarung"
+                  id="mail"
+                  name="user_email"
+                />
+                <label for="mail">Address line 2</label>
+                <input
+                  type="number"
+                  id="mail"
+                  name="user_email"
+                  placeholder="Padang Besi,Kec,Lubuk Kllangan"
+                />
 
-          <Grid style={{ marginTop: 50 }} lg={4} item>
+                <label style={{ marginTop: 10 }} for="business">
+                  City/Locality
+                </label>
+                <input
+                  type="number"
+                  id="mail"
+                  name="user_email"
+                  placeholder="Kota Padang"
+                />
+
+                <label style={{ marginTop: 10 }} for="business">
+                  State/Region
+                </label>
+                <input
+                  type="number"
+                  id="mail"
+                  name="user_email"
+                  placeholder="Sumatera Barat"
+                />
+
+                <label style={{ marginTop: 10 }} for="business">
+                  Postal code
+                </label>
+                <input
+                  type="number"
+                  id="mail"
+                  name="user_email"
+                  placeholder="25157  "
+                />
+                <label style={{ marginTop: 10 }} for="business">
+                  Country
+                </label>
+                <input
+                  type="number"
+                  id="mail"
+                  name="user_email"
+                  placeholder="25157  "
+                />
+              </fieldset>
+            </form>
+          </Grid>
+          <Grid style={{ marginTop: 100 }} lg={4} item>
             <h3>Contact Details</h3>
             <p
               style={{
@@ -102,11 +181,8 @@ export default function SimpleSelect() {
             >
               Add your company email and phone number for sharing with clients.
             </p>
-            <p style={{ fontSize: 20, fontWeight: "300" }}>
-              This one is displayed in footer
-            </p>
           </Grid>
-          <Grid style={{ marginTop: 50 }} lg={8} item>
+          <Grid style={{ marginTop: 100 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
                 <label for="name">Phone no.</label>
@@ -141,6 +217,436 @@ export default function SimpleSelect() {
                 />
               </fieldset>
             </form>
+          </Grid>
+          <Grid lg={6} item>
+            <p
+              style={{
+                fontWeight: "light",
+                fontSize: 18,
+                color: "#757575",
+                marginTop: 100,
+              }}
+            >
+              Opening hours
+            </p>
+          </Grid>
+          <Grid lg={6} item>
+            <ul
+              style={{
+                padding: 0,
+                maxWidth: 480,
+                marginLeft: -30,
+                marginTop: 100,
+              }}
+            >
+              <li
+                style={{
+                  listStyle: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    id="vehicle1"
+                    name="vehicle1"
+                    value="Bike"
+                    style={{
+                      fontSize: 10,
+                      marginTop: 20,
+                      width: 20,
+                      height: 20,
+                    }}
+                  ></input>
+                </div>
+                <div>
+                  <label
+                    style={{
+                      fontSize: 17,
+                      marginTop: 20,
+                      marginLeft: 10,
+                      width: 70,
+                    }}
+                  >
+                    Sunday
+                  </label>
+                </div>
+
+                <div style={{ marginLeft: 100 }}>
+                  <label for="name">Open</label>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+                <div style={{ marginLeft: 10 }}>
+                  <label for="name">Close</label>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li
+                style={{
+                  listStyle: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    id="vehicle1"
+                    name="vehicle1"
+                    value="Bike"
+                    style={{
+                      fontSize: 10,
+                      width: 20,
+                      height: 20,
+                    }}
+                  ></input>
+                </div>
+                <div>
+                  <label
+                    style={{
+                      fontSize: 17,
+                      width: 70,
+                      marginLeft: 10,
+                    }}
+                  >
+                    Monday
+                  </label>
+                </div>
+
+                <div style={{ marginLeft: 100 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+                <div style={{ marginLeft: 10 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                style={{
+                  listStyle: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    id="vehicle1"
+                    name="vehicle1"
+                    value="Bike"
+                    style={{
+                      fontSize: 10,
+                      width: 20,
+                      height: 20,
+                    }}
+                  ></input>
+                </div>
+                <div>
+                  <label
+                    style={{
+                      fontSize: 17,
+                      width: 70,
+                      marginLeft: 10,
+                    }}
+                  >
+                    Tuesday
+                  </label>
+                </div>
+
+                <div style={{ marginLeft: 100 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+                <div style={{ marginLeft: 10 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                style={{
+                  listStyle: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    id="vehicle1"
+                    name="vehicle1"
+                    value="Bike"
+                    style={{
+                      fontSize: 10,
+                      width: 20,
+                      height: 20,
+                    }}
+                  ></input>
+                </div>
+                <div>
+                  <label
+                    style={{
+                      fontSize: 17,
+                      width: 70,
+                      marginLeft: 10,
+                    }}
+                  >
+                    Wednesday
+                  </label>
+                </div>
+
+                <div style={{ marginLeft: 100 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+                <div style={{ marginLeft: 10 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li
+                style={{
+                  listStyle: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    id="vehicle1"
+                    name="vehicle1"
+                    value="Bike"
+                    style={{
+                      fontSize: 10,
+                      width: 20,
+                      height: 20,
+                    }}
+                  ></input>
+                </div>
+                <div>
+                  <label
+                    style={{
+                      fontSize: 17,
+                      width: 70,
+                      marginLeft: 10,
+                    }}
+                  >
+                    Thursday
+                  </label>
+                </div>
+
+                <div style={{ marginLeft: 100 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+                <div style={{ marginLeft: 10 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                style={{
+                  listStyle: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    id="vehicle1"
+                    name="vehicle1"
+                    value="Bike"
+                    style={{
+                      fontSize: 10,
+                      width: 20,
+                      height: 20,
+                    }}
+                  ></input>
+                </div>
+                <div>
+                  <label
+                    style={{
+                      fontSize: 17,
+                      width: 70,
+                      marginLeft: 10,
+                    }}
+                  >
+                    Friday
+                  </label>
+                </div>
+
+                <div style={{ marginLeft: 100 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+                <div style={{ marginLeft: 10 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                style={{
+                  listStyle: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    id="vehicle1"
+                    name="vehicle1"
+                    value="Bike"
+                    style={{
+                      fontSize: 10,
+                      width: 20,
+                      height: 20,
+                    }}
+                  ></input>
+                </div>
+                <div>
+                  <label
+                    style={{
+                      fontSize: 17,
+                      width: 70,
+                      marginLeft: 10,
+                    }}
+                  >
+                    Saturday
+                  </label>
+                </div>
+
+                <div style={{ marginLeft: 100 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+                <div style={{ marginLeft: 10 }}>
+                  <div style={{ display: "flex" }}>
+                    <select
+                      id="business"
+                      style={{ width: 150, height: 30 }}
+                      name="user_job"
+                    >
+                      <option value="Surgical Oncologist">09:30</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </Grid>
           <Grid style={{ marginTop: 50 }} lg={4} item>
             <h3>Time and Currency Settings</h3>
