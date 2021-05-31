@@ -218,18 +218,7 @@ export default function SimpleSelect() {
               </fieldset>
             </form>
           </Grid>
-          <Grid lg={6} item>
-            <p
-              style={{
-                fontWeight: "light",
-                fontSize: 18,
-                color: "#757575",
-                marginTop: 100,
-              }}
-            >
-              Opening hours
-            </p>
-          </Grid>
+          <Grid lg={6} item></Grid>
           <Grid lg={6} item>
             <ul
               style={{
