@@ -40,7 +40,19 @@ export default class Index extends Component {
               </h1>
 
               <Grid container>
-                <Grid lg={6} item>
+                <Grid lg={4} item>
+                  <h3>Business address</h3>
+                  <p
+                    style={{
+                      fontWeight: "light",
+                      fontSize: 18,
+                      color: "#757575",
+                    }}
+                  >
+                    Lorel ipsum
+                  </p>
+                </Grid>
+                <Grid lg={8} item>
                   <form style={{ maxWidth: 480, marginLeft: 0 }}>
                     <fieldset>
                       <label for="name">Location Name</label>
@@ -108,23 +120,62 @@ export default class Index extends Component {
                     </fieldset>
                   </form>
                 </Grid>
-                <Grid lg={6} item>
-                  <p style={{ fontSize: 20 }}>Add a time section</p>
-                  <ol style={{ paddingLeft: 20 }}>
-                    <li style={{ fontSize: 20 }}>day of the week</li>
-                    <li style={{ fontSize: 20 }}>Opening time</li>
-                    <li style={{ fontSize: 20 }}>Closing time</li>
-                  </ol>
-                  <h4
+                <Grid style={{ marginTop: 50 }} lg={4} item>
+                  <h3>Contact Details</h3>
+                  <p
                     style={{
-                      textAlign: "center",
-                      borderBottom: "1px solid #ccc",
-                      paddingBottom: 20,
-                      fontSize: 20,
+                      fontWeight: "light",
+                      fontSize: 18,
+                      color: "#757575",
+                      width: 300,
                     }}
                   >
-                    Availability
-                  </h4>
+                    Add your company email and phone number for sharing with
+                    clients.
+                  </p>
+                </Grid>
+                <Grid style={{ marginTop: 50 }} lg={8} item>
+                  <form style={{ maxWidth: 480, marginLeft: 0 }}>
+                    <fieldset>
+                      <label for="name">Phone no.</label>
+                      <div style={{ display: "flex" }}>
+                        <select
+                          id="business"
+                          style={{ width: 120, height: 40 }}
+                          name="user_job"
+                        >
+                          <option value="Surgical Oncologist">
+                            Algeria (+21)
+                          </option>
+                          <option value="Clinical Oncologist">
+                            India (+91)
+                          </option>
+                          <option value="Healthcare Provider">
+                            Bangladesh (+101)
+                          </option>
+                        </select>
+                        <input
+                          type="text"
+                          id="name"
+                          style={{ marginLeft: 10 }}
+                          name="user_name"
+                          placeholder="Phone no."
+                        />
+                      </div>
+                      <label for="mail">Alternate Email address</label>
+                      <input
+                        type="email"
+                        placeholder="Alternate Email address"
+                        id="mail"
+                        name="user_email"
+                      />
+                    </fieldset>
+                  </form>
+                </Grid>
+                <Grid lg={4} item>
+                  <h3>Business address</h3>
+                </Grid>
+                <Grid lg={6} item>
                   <ul>
                     <li
                       style={{
