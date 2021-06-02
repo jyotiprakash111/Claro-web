@@ -2,7 +2,6 @@
   "name": "claroo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jyotiprakash111.github.io/Claro_Web",
   "dependencies": {
     "@date-io/date-fns": "^1.3.13",
     "@hookform/resolvers": "^1.3.5",
@@ -28,6 +27,7 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
+    "react-dropzone": "^11.3.2",
     "react-hook-form": "^6.14.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",

@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 // import "./assets/css/index.scss";
 // import "./assets/css/style.scss";
 // import "./assets/font/bootstrap-icons.css";
-import App from "./components/app2";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
