@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Current from "./Current";
 import Card from "./Card";
+import Pexels_Photo_by_Lukas from "../../../assets/img/Pexels_Photo_by_Lukas.png";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
