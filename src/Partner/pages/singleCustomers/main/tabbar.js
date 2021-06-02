@@ -6,7 +6,10 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import Current from "./Current";
+// import Schedule from "./schedule";
+// import Booking from "./Booking/Card";
+// import Profile from "./Profile/index";
+// import Transaction from "./transaction";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -46,17 +49,23 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
-  link: {
-    textTransform: "capitalize",
-    border: "1px solid #323232",
-    marginRight: 20,
-    borderRadius: 10,
+  appbar: {
+    background: "transparent",
+    boxShadow: "none",
   },
-  active_link: {
-    background: "#FF8021",
-    borderRadius: 10,
-    color: "#fff",
-    border: "none",
+  link: {
+    color: "rgba(50, 50, 50, 0.5)",
+    width: "200px",
+    height: "42px",
+    textTransform: "none",
+    fontSize: "25px",
+    marginRight: 50,
+    "&:hover, &:focus": {
+      // background: "#FF8021",
+      // color: "#fff",
+      // borderBottom: "1px solid #FF8021",
+    },
+    active: {},
   },
 }));
 
@@ -70,42 +79,44 @@ export default function SimpleTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar
-        style={{
-          background: "transparent",
-          boxShadow: "none",
-          color: "#323232",
-          textTransform: "Capitalize",
-        }}
-        position="static"
-      >
+      <AppBar className={classes.appbar} position="static">
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"
-          TabIndicatorProps={{ style: { background: "transparent" } }}
+          TabIndicatorProps={{ style: { background: "#FF8021", height: 5 } }}
         >
+          <Tab className={classes.link} label="Basic info" {...a11yProps(0)} />
           <Tab
-            className={[classes.link, classes.active_link]}
-            label="Current"
+            className={[classes.link]}
+            // style={{ fontWeight: "500", color: "#323232", fontSize: "32px" }}
+            label="Schedule"
             {...a11yProps(0)}
           />
-          <Tab className={classes.link} label="Post" {...a11yProps(1)} />
-          <Tab className={classes.link} label="Cancelled" {...a11yProps(2)} />
-          <Tab className={classes.link} label="Pending" {...a11yProps(3)} />
+          <Tab className={classes.link} label="Location" {...a11yProps(1)} />
+          <Tab className={classes.link} label="Pricing" {...a11yProps(2)} />
+          <Tab
+            className={classes.link}
+            label="More options"
+            {...a11yProps(3)}
+          />
+          {/* <Tab className={classes.link} label="Saved" {...a11yProps(3)} /> */}
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Current />
+        <h1>Basic Info</h1>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <h1>Schedule</h1>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <h1>Location</h1>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+        <h1>Pricing</h1>
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <h1>More options</h1>
       </TabPanel>
     </div>
   );

@@ -5,6 +5,10 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import PublishIcon from "@material-ui/icons/Publish";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import FormControl from "@material-ui/core/FormControl";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
 export default class index extends Component {
   render() {
     return (
@@ -91,6 +95,14 @@ export default class index extends Component {
                   value="+91 98978 90889"
                 />
               </div>
+              <FormControl>
+                <FormGroup>
+                  <FormControlLabel
+                    control={<Checkbox name="gilad" />}
+                    label="Enable online booking for assigned services"
+                  />
+                </FormGroup>
+              </FormControl>
             </form>
           </Grid>
           <Grid lg={6} item>
@@ -141,6 +153,7 @@ export default class index extends Component {
               width: 100,
               textTransform: "none",
               marginBottom: 30,
+              marginTop: -30,
             }}
             variant="contained"
           >

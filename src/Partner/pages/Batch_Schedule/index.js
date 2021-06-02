@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SideBar from "../../components/common/SideBar";
 import Header from "../../components/common/HeaderMain";
-import PartnerHome from "../../components/customerTabBar/index";
+import Main from "./main/tabBar";
 
 export default class index extends Component {
   render() {
@@ -9,11 +9,18 @@ export default class index extends Component {
       <div>
         <SideBar />
         <div style={{ marginLeft: 300 }}>
-          <Header name="Customers" avatar={true} />
-          <PartnerHome />
+          <p
+            style={{
+              fontSize: 30,
+              borderBottom: "1px solid #ccc",
+              paddingBottom: 20,
+            }}
+          >
+            Class title
+          </p>
+          <Main />
         </div>
       </div>
     );
   }
 }
-

@@ -50,7 +50,7 @@ export default function LongMenu() {
             selected={option === "Pyxis"}
             onClick={handleClose}
             style={{
-              background: i == 0 ? "#FF8021" : "",
+              background: i == 0 ? "#65B1EC" : "",
               color: i == 0 ? "#fff" : "",
             }}
           >

@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import AddIcon from "@material-ui/icons/Add";
+import CancelIcon from "@material-ui/icons/CancelOutlined";
 import Upload_Image from "../../../assets/img/upload.png";
 import { useDropzone } from "react-dropzone";
 import PublishIcon from "@material-ui/icons/Publish";
@@ -22,7 +23,7 @@ export default function Main() {
   console.log(arr);
   return (
     <div>
-      {arr.map((item) => {
+      {arr.map((item, i) => {
         return (
           <Paper
             style={{
@@ -42,11 +43,28 @@ export default function Main() {
                     decision making.
                   </p>
                 </div>
-                <div style={{}}>
-                  <span>
-                    <img style={{ width: 200 }} src={Upload_Image} />
-                  </span>
-                </div>
+                <section
+                  style={{
+                    width: 200,
+                    border: "1px dashed #ccc",
+                    textAlign: "center",
+                    padding: 20,
+                  }}
+                >
+                  <div {...getRootProps({ className: "dropzone" })}>
+                    <input {...getInputProps()} />
+                    <IconButton style={{ background: "#eceff7" }}>
+                      <PublishIcon />
+                    </IconButton>
+
+                    <p style={{ color: "rgb(190 185 211)", fontSize: 10 }}>
+                      Drag files here, or click to upload
+                    </p>
+                  </div>
+                  <aside>
+                    <ul>{files}</ul>
+                  </aside>
+                </section>
               </div>
             </div>
             <div>
@@ -113,6 +131,23 @@ export default function Main() {
                   }}
                 />
               </form>
+            </div>
+            <div>
+              <Button
+                style={{
+                  border: "1px solid #F14336",
+                  color: "#F14336",
+                  textTransform: "none",
+
+                  marginTop: 20,
+                }}
+                onClick={() => setArr(arr.filter((item) => item !== i))}
+                variant="outlined"
+                color="primary"
+              >
+                <CancelIcon style={{ marginRight: 10 }} />
+                Remove Testimonial
+              </Button>
             </div>
           </Paper>
         );
@@ -242,7 +277,7 @@ export default function Main() {
 
               marginTop: 20,
             }}
-            onClick={() => setArr([...arr, ...[1]])}
+            onClick={() => setArr([...arr, ...[arr.length]])}
             variant="outlined"
             color="primary"
           >
