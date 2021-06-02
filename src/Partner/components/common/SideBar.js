@@ -76,6 +76,8 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
         return "/404/online booking";
       case "Settings":
         return "/settings";
+      case "Schedule2":
+        return "/batch_schedule";
       default:
         return "/404";
     }
@@ -110,7 +112,8 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
             "Schedule",
             "Sales",
             "Customers",
-            "Online Booking",
+            // "Online Booking",
+            "Schedule2",
             "Settings",
           ].map((text, index) => (
             <Link style={{ textDecoration: "none" }} to={makerRouter(text)}>

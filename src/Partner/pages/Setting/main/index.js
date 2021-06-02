@@ -46,8 +46,21 @@ export default class index extends Component {
                 Location
               </Link>
               <p>Manage multiple outlets for your business</p>
+              <Divider style={{ background: "#ababab", marginBottom: 20 }} />
+              <Link
+                style={{
+                  color: "#65B1EC",
+                  fontWeight: "bold",
+                  paddingTop: 0,
+                  textDecoration: "none",
+                }}
+                to="/testimonial"
+              >
+                Testimonial
+              </Link>
+              <p>Manage updates for staff and consumers.</p>
             </div>
-            <div
+            {/* <div
               style={{
                 background: "#F8F8F8",
                 padding: 20,
@@ -69,7 +82,7 @@ export default class index extends Component {
                 Testimonial
               </Link>
               <p>Manage updates for staff and consumers.</p>
-            </div>
+            </div> */}
 
             <div
               style={{
