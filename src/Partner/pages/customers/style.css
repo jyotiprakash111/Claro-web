@@ -1,0 +1,12 @@
+#customer {
+}
+#customer th {
+  font-weight: bold;
+  padding: 10px;
+  background: #f8f8f8;
+  color: #323232;
+}
+#customer td {
+  color: #323232;
+  padding: 15px;
+}

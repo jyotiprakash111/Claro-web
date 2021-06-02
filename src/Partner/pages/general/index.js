@@ -55,16 +55,16 @@ export default function SimpleSelect() {
                 />
                 <label for="mail">Short bio:</label>
                 <input
-                  type="number"
+                  type="text"
                   id="mail"
                   name="user_email"
                   placeholder="Write a short bio"
                 />
                 <label for="mail">Booking Page URL:</label>
                 <input
-                  type="number"
-                  id="mail"
-                  name="user_email"
+                  type="text"
+                  id="url"
+                  name="user_url"
                   placeholder="https://www.abc.com"
                 />
                 <label style={{ marginTop: 10 }} for="business">
@@ -81,7 +81,7 @@ export default function SimpleSelect() {
                 </select>
                 <label for="mail">Add about us:</label>
                 <textarea
-                  type="number"
+                  type="text"
                   row="2"
                   id="mail"
                   name="user_email"
@@ -90,8 +90,8 @@ export default function SimpleSelect() {
               </fieldset>
             </form>
           </Grid>
-          <Grid style={{ marginTop: 100 }} lg={4} item>
-            <h3>Business address</h3>
+          <Grid style={{ marginTop: "9%" }} lg={4} item>
+            <h3>Opening Hours</h3>
             <p
               style={{
                 fontWeight: "light",
@@ -99,11 +99,11 @@ export default function SimpleSelect() {
                 color: "#757575",
               }}
             >
-              Lorel ipsum
+              Lorem ipsum
             </p>
           </Grid>
-          <Grid style={{ marginTop: 100 }} lg={8} item>
-            <form style={{ maxWidth: 480 }}>
+          <Grid style={{ marginTop: "9%" }} lg={8} item>
+            <form style={{ maxWidth: "70%" }}>
               <fieldset>
                 <label for="name">Location Name</label>
                 <div style={{ display: "flex" }}>
@@ -116,16 +116,16 @@ export default function SimpleSelect() {
                 </div>
                 <label for="mail">Address line 1</label>
                 <input
-                  type="email"
+                  type="text"
                   placeholder="Jl. Raya Indarung"
                   id="mail"
-                  name="user_email"
+                  name="address1"
                 />
                 <label for="mail">Address line 2</label>
                 <input
-                  type="number"
+                  type="text"
                   id="mail"
-                  name="user_email"
+                  name="address2"
                   placeholder="Padang Besi,Kec,Lubuk Kllangan"
                 />
 
@@ -133,9 +133,9 @@ export default function SimpleSelect() {
                   City/Locality
                 </label>
                 <input
-                  type="number"
-                  id="mail"
-                  name="user_email"
+                  type="text"
+                  id="city"
+                  name="locality"
                   placeholder="Kota Padang"
                 />
 
@@ -143,9 +143,9 @@ export default function SimpleSelect() {
                   State/Region
                 </label>
                 <input
-                  type="number"
-                  id="mail"
-                  name="user_email"
+                  type="text"
+                  id="state"
+                  name="state"
                   placeholder="Sumatera Barat"
                 />
 
@@ -154,18 +154,19 @@ export default function SimpleSelect() {
                 </label>
                 <input
                   type="number"
-                  id="mail"
-                  name="user_email"
-                  placeholder="25157  "
+                  id="postal"
+                  name="postal"
+                  placeholder="12345"
+                  maxLength={6}
                 />
                 <label style={{ marginTop: 10 }} for="business">
                   Country
                 </label>
                 <input
-                  type="number"
-                  id="mail"
-                  name="user_email"
-                  placeholder="25157  "
+                  type="text"
+                  id="country"
+                  name="user_country"
+                  placeholder="Ex: America"
                 />
               </fieldset>
             </form>

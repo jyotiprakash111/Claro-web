@@ -49,7 +49,8 @@ export default function DenseTable() {
   return (
     <TableContainer
       id="customer"
-      style={{ marginTop: 20, maxWidth: 1120 }}
+      style={{ marginTop: "3%", maxWidth: "90%" , display:'block',
+      overflowX:'auto'}}
       component={Paper}
     >
       <Link style={{ textDecoration: "none" }} to="partner_home">
