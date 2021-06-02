@@ -165,7 +165,7 @@ export default function SimpleSelect() {
                   type="number"
                   id="mail"
                   name="user_email"
-                  placeholder="25157  "
+                  placeholder="25157"
                 />
               </fieldset>
             </form>

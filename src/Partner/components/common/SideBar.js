@@ -65,7 +65,7 @@ export default function LeftSidebar({ children }: LeftSideBarProps) {
       case "Testimonial":
         return "/testimonial";
       case "Customers":
-        return "/";
+        return "/customer";
       case "Home":
         return "/partner_home";
       case "Sales":
