@@ -76,7 +76,7 @@ export default function CustomizedDialogs(props) {
           <DialogTitle
             style={{ borderBottom: "1px solid #65B1EC" }}
             id="customized-dialog-title"
-            onClose={handleClose}
+            onClose={() => props.handleClose()}
           >
             <h2 style={{ margin: 0 }}> Steps to Class Setup</h2>
           </DialogTitle>

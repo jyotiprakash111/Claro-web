@@ -17,7 +17,7 @@ export default function SimpleSelect() {
   const [open, setOpen] = useState(false);
   return (
     <div className={classes.container}>
-      <Dialog open={open} />
+      <Dialog handleClose={() => setOpen(false)} open={open} />
       <Grid spacing={3} container>
         <Grid item lg={4}>
           <Paper className={classes.paper}>
@@ -26,7 +26,12 @@ export default function SimpleSelect() {
             <p className={classes.p}>
               Welcome to Claroo. Let’s take -business name- online.
             </p>
-            <Button variant="contained" width={150} text="Book a free demo" />
+            <Button
+              onClick={() => setOpen(true)}
+              variant="contained"
+              width={150}
+              text="Book a free demo"
+            />
           </Paper>
         </Grid>
         <Grid item lg={8}>
@@ -40,7 +45,12 @@ export default function SimpleSelect() {
                   Setting up basic information about your class
                 </p>
                 <div style={{ display: "flex" }}>
-                  <Button width={150} variant="contained" text="Start step 1" />
+                  <Button
+                    onClick={() => setOpen(true)}
+                    width={150}
+                    variant="contained"
+                    text="Start step 1"
+                  />
                   <Button2
                     style={{
                       color: "#65B1EC",

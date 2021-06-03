@@ -30,7 +30,7 @@ export default function Services() {
         </Grid>
         <Grid style={{ marginLeft: 100 }} item lg={5}>
           <div
-            style={{ padding: 4  0, textAlign: "center", position: "relative" }}
+            style={{ padding: 40, textAlign: "center", position: "relative" }}
           >
             <Button
               style={{

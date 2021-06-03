@@ -7,7 +7,7 @@ export default class index extends Component {
   render() {
     return (
       <div>
-        <Grid container spacing={3}>
+        <Grid container>
           <Grid item lg={6}>
             <div
               style={{
@@ -114,29 +114,6 @@ export default class index extends Component {
               </p>
               <p>Manage multiple outlets for your business</p>
             </div>
-            <div
-              style={{
-                background: "#F8F8F8",
-                padding: 20,
-                margin: 30,
-                marginLeft: 0,
-                border: "1px solid #ccc",
-              }}
-            >
-              <h2 style={{ paddingBottom: 0 }}>User Profile </h2>
-              <Link
-                style={{
-                  color: "#65B1EC",
-                  fontWeight: "bold",
-                  paddingTop: 0,
-                  textDecoration: "none",
-                }}
-                to="/profile"
-              >
-                Personal Details
-              </Link>
-              <p>Provide your personal details or change your password</p>
-            </div>
           </Grid>
           <Grid item lg={6}>
             <div
@@ -187,6 +164,29 @@ export default class index extends Component {
                 Notifications
               </Link>
               <p>Manage updates for staff and consumers.</p>
+            </div>
+            <div
+              style={{
+                background: "#F8F8F8",
+                padding: 20,
+                margin: 30,
+                marginLeft: 0,
+                border: "1px solid #ccc",
+              }}
+            >
+              <h2 style={{ paddingBottom: 0 }}>User Profile </h2>
+              <Link
+                style={{
+                  color: "#65B1EC",
+                  fontWeight: "bold",
+                  paddingTop: 0,
+                  textDecoration: "none",
+                }}
+                to="/profile"
+              >
+                Personal Details
+              </Link>
+              <p>Provide your personal details or change your password</p>
             </div>
           </Grid>
         </Grid>

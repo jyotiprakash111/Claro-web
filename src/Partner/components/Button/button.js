@@ -13,6 +13,7 @@ export default function button(props) {
           height: props.height,
           textTransform: "none",
         }}
+        onClick={() => props.onClick()}
         variant={props.variant}
       >
         {props.text}
