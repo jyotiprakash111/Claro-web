@@ -1,7 +1,26 @@
 import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import Button from "@material-ui/core/Button";
+import MuiDialogTitle from "@material-ui/core/DialogTitle";
+import CloseIcon from "@material-ui/icons/Close";
+import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
 import "./style.css";
+
+const styles = (theme) => ({
+  root: {
+    margin: 0,
+    padding: theme.spacing(4),
+    paddingBottom: 0,
+  },
+  closeButton: {
+    position: "absolute",
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+    color: theme.palette.grey[500],
+  },
+});
 
 function renderPayment(temp) {
   console.log(temp);
@@ -127,6 +146,24 @@ function renderPayment(temp) {
   }
 }
 
+const DialogTitle = withStyles(styles)((props) => {
+  const { children, classes, onClose, ...other } = props;
+  return (
+    <MuiDialogTitle disableTypography className={classes.root} {...other}>
+      <Typography variant="h5">{children}</Typography>
+      {onClose ? (
+        <IconButton
+          aria-label="close"
+          className={classes.closeButton}
+          onClick={onClose}
+        >
+          <CloseIcon />
+        </IconButton>
+      ) : null}
+    </MuiDialogTitle>
+  );
+});
+
 export default function FormDialog(props) {
   const [paymentType, changePaymentType] = React.useState(0);
   console.log(paymentType);
@@ -134,10 +171,16 @@ export default function FormDialog(props) {
     <div>
       <Dialog
         fullScreen
-        style={{ width: 900, height: "80%", width: 800, margin: "20px auto" }}
+        style={{ width: 900, height: "80%", width: 800, margin: "0px auto" }}
         open={props.open}
         onClose={() => props.handleClose()}
       >
+        <DialogTitle
+          id="customized-dialog-title"
+          onClose={() => props.handleClose()}
+        >
+          Add payment option
+        </DialogTitle>
         <div style={{ padding: 20, height: 500, width: 700 }}>
           <form id="payment" style={{}}>
             <fieldset>
