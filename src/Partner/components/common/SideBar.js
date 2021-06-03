@@ -1,4 +1,4 @@
-import React, { ReactChild } from "react";
+import React, { useState } from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -19,8 +19,16 @@ import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import SortIcon from "@material-ui/icons/Sort";
 import LoyaltyIcon from "@material-ui/icons/Loyalty";
 import SettingsIcon from "@material-ui/icons/Settings";
+import Settings from "@material-ui/icons/Settings";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
+import Collapse from "@material-ui/core/Collapse";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
+import { menu } from "./menu";
+import { hasChildren } from "./utils";
+
 import { Link } from "react-router-dom";
 const drawerWidth = 250;
 
@@ -53,102 +61,101 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface LeftSideBarProps {
-  children: ReactChild;
-}
-
-export default function LeftSidebar({ children }: LeftSideBarProps) {
-  const classes = useStyles();
-  const makerRouter = (type) => {
-    console.log(type);
-    switch (type) {
-      case "Testimonial":
-        return "/testimonial";
-      case "Customers":
-        return "/";
-      case "Home":
-        return "/partner_home";
-      case "Sales":
-        return "/sales";
-      case "Schedule":
-        return "/schedule";
-      case "Online Booking":
-        return "/404/online booking";
-      case "Settings":
-        return "/settings";
-      case "Schedule2":
-        return "/batch_schedule";
-      default:
-        return "/404";
-    }
-  };
+const SingleLevel = ({ item }) => {
   return (
-    <div className={classes.root}>
-      <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-        anchor="left"
-      >
-        <div
-          style={{
-            display: "flex",
-            margin: 20,
-            justifyContent: "space-around",
-          }}
-        >
-          <span style={{ color: "#fff" }}>Business Name</span>
-          <span style={{ color: "#fff", marginLeft: 20 }}>
-            <ArrowDropDownIcon />
-          </span>
-        </div>
+    <Link style={{ color: "#fff", textDecoration: "none" }} to={item.to}>
+      <ListItem style={{ color: "white", margin: "5px 5px" }} button>
+        <ListItemIcon style={{ color: "#fff" }}>{item.icon}</ListItemIcon>
+        <ListItemText primary={item.title} />
+      </ListItem>
+    </Link>
+  );
+};
 
-        <List>
-          {[
-            "Home",
-            "Testimonial",
-            "Schedule",
-            "Sales",
-            "Customers",
-            // "Online Booking",
-            "Schedule2",
-            "Settings",
-          ].map((text, index) => (
-            <Link style={{ textDecoration: "none" }} to={makerRouter(text)}>
-              <ListItem
-                button
-                key={text}
-                style={{ color: "white", margin: "10px 5px" }}
-              >
-                <ListItemIcon style={{ color: "#fff" }}>
-                  {index === 0 && <HomeIcon />}
-                  {index === 1 && <SortIcon />}
-                  {index === 2 && <TodayIcon />}
-                  {index === 3 && <MonetizationOnIcon />}
-                  {index === 4 && <PeopleIcon />}
-                  {index === 5 && <LoyaltyIcon />}
-                  {index === 6 && <SettingsIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            </Link>
-          ))}
-        </List>
-        <ListItem
-          button
-          style={{ color: "white", margin: "20px 5px", marginTop: "auto" }}
-        >
-          <ListItemIcon style={{ color: "white" }}>
-            <HelpOutlineIcon />
-          </ListItemIcon>
-          <ListItemText primary="Help" />
-        </ListItem>
-        <p style={{ textAlign: "center", color: "#fff", fontWeight: 300 }}>
-          Powered by Claroo
-        </p>
-      </Drawer>
-    </div>
+export default function App() {
+  const classes = useStyles();
+  return (
+    <Drawer
+      className={classes.drawer}
+      variant="permanent"
+      classes={{
+        paper: classes.drawerPaper,
+      }}
+      anchor="left"
+    >
+      <div
+        style={{
+          display: "flex",
+          margin: 20,
+          justifyContent: "space-around",
+        }}
+      >
+        <span style={{ color: "#fff" }}>Business Name</span>
+        <span style={{ color: "#fff", marginLeft: 20 }}>
+          <ArrowDropDownIcon />
+        </span>
+      </div>
+      {menu.map((item, key) => (
+        <MenuItem key={key} item={item} />
+      ))}
+      {/* <ListItem
+        button
+        style={{ color: "white", margin: "20px 5px", marginTop: "auto" }}
+      >
+        <ListItemIcon style={{ color: "white" }}>
+          <HelpOutlineIcon />
+        </ListItemIcon>
+        <ListItemText primary="Help" />
+      </ListItem> */}
+      <p
+        style={{
+          textAlign: "center",
+          color: "#fff",
+          fontWeight: 300,
+          marginTop: "auto",
+        }}
+      >
+        Powered by Claroo
+      </p>
+    </Drawer>
   );
 }
+
+const MenuItem = ({ item }) => {
+  const Component = hasChildren(item) ? MultiLevel : SingleLevel;
+  return <Component item={item} />;
+};
+
+const MultiLevel = ({ item }) => {
+  const classes = useStyles();
+  const [openCollapse, setOpenCollapse] = React.useState(false);
+  const { items: children } = item;
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen((prev) => !prev);
+  };
+
+  return (
+    <React.Fragment>
+      <Link to={item.to} style={{ color: "#fff", textDecoration: "none" }}>
+        <ListItem
+          style={{ color: "white", margin: "5px 5px" }}
+          button
+          onClick={handleClick}
+        >
+          <ListItemIcon style={{ color: "#fff" }}>{item.icon}</ListItemIcon>
+          <ListItemText primary={item.title} />
+          {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </ListItem>
+      </Link>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          {children.map((child, key) => (
+            <MenuItem key={key} item={child} />
+          ))}
+        </List>
+      </Collapse>
+    </React.Fragment>
+  );
+};

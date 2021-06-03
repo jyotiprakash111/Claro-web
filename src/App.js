@@ -13,6 +13,9 @@ import location from "./Partner/pages/location/index";
 import payment from "./Partner/pages/payment/index";
 import settings from "./Partner/pages/Setting/index";
 import batchSchedule from "./Partner/pages/Batch_Schedule/index";
+import home from "./Partner/pages/Home/index";
+import home_services from "./Partner/pages/Home/Services/index";
+import home_classes from "./Partner/pages/Home/Services/Classes/index";
 import "./style.css";
 
 class App extends Component {
@@ -21,7 +24,10 @@ class App extends Component {
       <Router>
         <div className="root">
           <Switch>
-            <Route exact path="/" component={partner} />
+            <Route exact path="/" component={home} />
+            <Route exact path="/home_services" component={home_services} />
+            <Route exact path="/home_classes" component={home_classes} />
+            <Route exact path="/customer" component={partner} />
             <Route path="/partner_home" component={partnerSingle} />
             <Route path="/testimonial" component={testimonial} />
             <Route path="/general" component={general} />
