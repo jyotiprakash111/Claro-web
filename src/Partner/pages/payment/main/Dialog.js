@@ -146,6 +146,21 @@ function renderPayment(temp) {
   }
 }
 
+const renderHeight = (temp) => {
+  if (temp == 1) {
+    return "90%";
+  }
+  if (temp == 3) {
+    return "40%";
+  }
+  if (temp == 0) {
+    return "100%";
+  }
+  if (temp == 2) {
+    return "70%";
+  }
+};
+
 const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
@@ -171,7 +186,11 @@ export default function FormDialog(props) {
     <div>
       <Dialog
         fullScreen
-        style={{ width: 900, height: "80%", width: 800, margin: "0px auto" }}
+        style={{
+          height: renderHeight(paymentType),
+          width: 800,
+          margin: "0px auto",
+        }}
         open={props.open}
         onClose={() => props.handleClose()}
       >

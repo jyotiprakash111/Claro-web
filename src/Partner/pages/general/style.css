@@ -44,7 +44,7 @@
 #general_page select {
   padding: 6px;
   height: 32px;
-  border-radius: 2px;
+  border-radius: 5px !important;
 }
 
 #general_page fieldset {

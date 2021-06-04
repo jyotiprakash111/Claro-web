@@ -46,6 +46,12 @@
   height: 32px;
   border-radius: 2px;
 }
+#general_page .opening_hours input {
+  padding: 6px;
+  height: 32px !important;
+  border-radius: 2px;
+  width: 130px;
+}
 
 #general_page fieldset {
   margin-bottom: 0px;
