@@ -17,11 +17,11 @@ export default function SimpleSelect() {
       <Dialog open={open} handleClose={() => setDialog(false)} />
       <SideBar />
       <div style={{ marginLeft: 300 }}>
-        <Header name="User Profile" />
+        <Header to="/settings" name="Business Setup" />
 
         <Grid style={{ marginTop: 30 }} container>
           <Grid lg={4} item>
-            <h3>Basic Info</h3>
+            <h3 style={{ marginTop: 0 }}>Basic Info</h3>
             <p
               style={{
                 fontWeight: "light",
@@ -90,87 +90,7 @@ export default function SimpleSelect() {
               </fieldset>
             </form>
           </Grid>
-          <Grid style={{ marginTop: "9%" }} lg={4} item>
-            <h3>Opening Hours</h3>
-            <p
-              style={{
-                fontWeight: "light",
-                fontSize: 18,
-                color: "#757575",
-              }}
-            >
-              Lorem ipsum
-            </p>
-          </Grid>
-          <Grid style={{ marginTop: "9%" }} lg={8} item>
-            <form style={{ maxWidth: "70%" }}>
-              <fieldset>
-                <label for="name">Location Name</label>
-                <div style={{ display: "flex" }}>
-                  <input
-                    type="text"
-                    id="name"
-                    name="user_name"
-                    placeholder="KJKS BMT PADANG BESI"
-                  />
-                </div>
-                <label for="mail">Address line 1</label>
-                <input
-                  type="text"
-                  placeholder="Jl. Raya Indarung"
-                  id="mail"
-                  name="address1"
-                />
-                <label for="mail">Address line 2</label>
-                <input
-                  type="text"
-                  id="mail"
-                  name="address2"
-                  placeholder="Padang Besi,Kec,Lubuk Kllangan"
-                />
 
-                <label style={{ marginTop: 10 }} for="business">
-                  City/Locality
-                </label>
-                <input
-                  type="text"
-                  id="city"
-                  name="locality"
-                  placeholder="Kota Padang"
-                />
-
-                <label style={{ marginTop: 10 }} for="business">
-                  State/Region
-                </label>
-                <input
-                  type="text"
-                  id="state"
-                  name="state"
-                  placeholder="Sumatera Barat"
-                />
-
-                <label style={{ marginTop: 10 }} for="business">
-                  Postal code
-                </label>
-                <input
-                  type="number"
-                  id="postal"
-                  name="postal"
-                  placeholder="12345"
-                  maxLength={6}
-                />
-                <label style={{ marginTop: 10 }} for="business">
-                  Country
-                </label>
-                <input
-                  type="text"
-                  id="country"
-                  name="user_country"
-                  placeholder="Ex: America"
-                />
-              </fieldset>
-            </form>
-          </Grid>
           <Grid style={{ marginTop: 100 }} lg={4} item>
             <h3>Contact Details</h3>
             <p
@@ -211,7 +131,7 @@ export default function SimpleSelect() {
                 </div>
                 <label for="mail">Alternate Email address</label>
                 <input
-                  type="email"
+                  type="number"
                   placeholder="Alternate Email address"
                   id="mail"
                   name="user_email"
@@ -244,12 +164,6 @@ export default function SimpleSelect() {
                   >
                     <option value="Surgical Oncologist">
                       (GMT -11:00) Niue
-                    </option>
-                    <option value="Clinical Oncologist">
-                      Clinical Oncologist
-                    </option>
-                    <option value="Healthcare Provider">
-                      Radiation Oncologist
                     </option>
                   </select>
                 </div>

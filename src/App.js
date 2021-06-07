@@ -16,6 +16,7 @@ import batchSchedule from "./Partner/pages/Batch_Schedule/index";
 import home from "./Partner/pages/Home/index";
 import home_services from "./Partner/pages/Home/Services/index";
 import home_classes from "./Partner/pages/Home/Services/Classes/index";
+import homeScreen from "./Partner/pages/homePage/index";
 import "./style.css";
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
         <div className="root">
           <Switch>
             <Route exact path="/" component={home} />
+            <Route exact path="/homescreen" component={homeScreen} />
             <Route exact path="/home_services" component={home_services} />
             <Route exact path="/home_classes" component={home_classes} />
             <Route exact path="/customer" component={partner} />

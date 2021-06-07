@@ -33,9 +33,9 @@ export default function Main() {
             }}
           >
             <div id="form-dialog-title">
-              <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ display: "flex", alignItems: "flex-start" }}>
                 <div>
-                  <p style={{ marginBottom: 5, fontSize: 25 }}>
+                  <p style={{ marginBottom: 5, fontSize: 25, marginTop: 0 }}>
                     Add testimonial
                   </p>
                   <p style={{ fontSize: 16, width: "80%" }}>
@@ -110,7 +110,7 @@ export default function Main() {
                   }}
                 />
                 <h4
-                  style={{ marginBottom: 10, marginTop: 80, color: "#3C6671" }}
+                  style={{ marginBottom: 10, marginTop: 60, color: "#3C6671" }}
                 >
                   Describe their role ?
                 </h4>
@@ -163,7 +163,9 @@ export default function Main() {
         <div id="form-dialog-title">
           <div style={{ display: "flex", alignItems: "center" }}>
             <div>
-              <p style={{ marginBottom: 5, fontSize: 25 }}>Add testimonial</p>
+              <p style={{ marginBottom: 5, fontSize: 25, marginTop: 0 }}>
+                Add testimonial
+              </p>
               <p style={{ fontSize: 16, width: "80%" }}>
                 Honest testimonials have an impact on your audience's decision
                 making.
@@ -247,7 +249,7 @@ export default function Main() {
                 boxShadow: 0,
               }}
             />
-            <h4 style={{ marginBottom: 10, marginTop: 80, color: "#3C6671" }}>
+            <h4 style={{ marginBottom: 10, marginTop: 60, color: "#3C6671" }}>
               Describe their role ?
             </h4>
             <TextField
