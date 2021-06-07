@@ -1,20 +1,25 @@
-import React from "react";
+import React , {useState}from "react";
 import Dialog from "@material-ui/core/Dialog";
 import Button from "@material-ui/core/Button";
 import "./style.css";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { Divider } from "@material-ui/core";
+import { TramRounded } from "@material-ui/icons";
 
 export default function FormDialog(props) {
-  const [paymentType, changePaymentType] = React.useState(0);
-  console.log(paymentType);
+  const [paymentType, changePaymentType] = useState(0);
+  const [open, setOpen] = useState(true);
+
+  const handleClose = () =>{
+    setOpen(false)
+  }
   return (
     <div>
       <Dialog
         fullScreen
         style={{ width: 900, height: "70%", width: 800, margin: "20px auto" }}
-        open={false}
-        onClose={() => props.handleClose()}
+        open={open}
+        onClose={() => handleClose()}
       >
         <div style={{ padding: 20, height: 500, width: 700 }}>
           <div
@@ -24,8 +29,11 @@ export default function FormDialog(props) {
               justifyContent: "space-between",
             }}
           >
-            <h1>Add more timings > Single event</h1>
-            <CancelIcon />
+            <h1>Add more timings Single event</h1>
+            {/* <CancelIcon  onClose={() => handleClose()} /> */}
+            <button onClick={()=> handleClose()}>
+              Close
+            </button>
           </div>
 
           <Divider />
@@ -123,7 +131,7 @@ export default function FormDialog(props) {
                   height: 50,
                   marginTop: 20,
                 }}
-                onClick={() => props.handleClose()}
+                onClick={() => handleClose()}
                 variant="contained"
               >
                 Save and continue
