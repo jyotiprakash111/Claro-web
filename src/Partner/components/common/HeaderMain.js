@@ -14,9 +14,22 @@ export default class Header extends Component {
             justifyContent: "space-between",
           }}
         >
-          <h1 style={{ fontWeight: 400, marginBottom: 15 }}>
-            {this.props.name}
-          </h1>
+          <div style={{ marginBottom: 10 }}>
+            <h1 style={{ fontWeight: 400, marginBottom: 0 }}>
+              {this.props.name}
+            </h1>
+            <p
+              style={{
+                fontSize: 15,
+                color: "#65B1EC",
+                marginTop: 0,
+                marginBottom: 0,
+              }}
+            >
+              {this.props.to_text ? this.props.to_text : ""}
+            </p>
+          </div>
+
           {this.props.avatar ? (
             <div style={{ display: "flex", alignItems: "center" }}>
               <Link to="/notification">
@@ -45,7 +58,7 @@ export default class Header extends Component {
               style={{ color: "#65B1EC", textDecoration: "none" }}
               to={this.props.to}
             >
-              Back to Setup
+              {this.props.to_text ? this.props.to_text : "Back to Setup"}
             </Link>
           </div>
         ) : (
