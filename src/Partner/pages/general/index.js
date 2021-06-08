@@ -12,12 +12,13 @@ import "./style.css";
 export default function SimpleSelect() {
   const [open, setDialog] = React.useState(false);
 
+  const CountryData = require("../../../data/countrycode.json");
   return (
-    <div id="general_page">
+    <div id='general_page'>
       <Dialog open={open} handleClose={() => setDialog(false)} />
       <SideBar />
       <div style={{ marginLeft: 300 }}>
-        <Header to="/settings" name="Business Setup" />
+        <Header to='/settings' name='Business Setup' />
 
         <Grid style={{ marginTop: 30 }} container>
           <Grid lg={4} item>
@@ -37,55 +38,57 @@ export default function SimpleSelect() {
           <Grid lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Business Name</label>
+                <label for='name'>Business Name</label>
                 <div style={{ display: "flex" }}>
                   <input
-                    type="text"
-                    id="name"
-                    name="user_name"
-                    placeholder="Business Name"
+                    type='text'
+                    id='name'
+                    autoFocus
+                    name='user_name'
+                    placeholder='Business Name'
                   />
                 </div>
-                <label for="mail">Email address</label>
+                <label for='mail'>Email address</label>
                 <input
-                  type="email"
-                  placeholder="Email address"
-                  id="mail"
-                  name="user_email"
+                  type='email'
+                  placeholder='Email address'
+                  id='mail'
+                  name='user_email'
                 />
-                <label for="mail">Short bio:</label>
+                <label for='mail'>Short bio:</label>
                 <input
-                  type="text"
-                  id="mail"
-                  name="user_email"
-                  placeholder="Write a short bio"
+                  type='text'
+                  id='mail'
+                  name='user_email'
+                  placeholder='Write a short bio'
                 />
-                <label for="mail">Booking Page URL:</label>
+                <label for='mail'>Booking Page URL:</label>
                 <input
-                  type="text"
-                  id="url"
-                  name="user_url"
-                  placeholder="https://www.abc.com"
+                  type='text'
+                  id='url'
+                  name='user_url'
+                  placeholder='https://www.abc.com'
                 />
-                <label style={{ marginTop: 10 }} for="business">
+                <label style={{ marginTop: 10 }} for='business'>
                   Type of business
                 </label>
-                <select id="business" name="user_job">
-                  <option value="Surgical Oncologist">Dance School</option>
-                  <option value="Clinical Oncologist">
+                <select id='business' name='user_job'>
+                  <option value='Surgical Oncologist'>Dance School</option>
+                  <option value='Clinical Oncologist'>
                     Clinical Oncologist
                   </option>
-                  <option value="Healthcare Provider">
+                  <option value='Healthcare Provider'>
                     Radiation Oncologist
                   </option>
                 </select>
-                <label for="mail">Add about us:</label>
+                <label for='mail'>Add about us:</label>
                 <textarea
-                  type="text"
-                  row="2"
-                  id="mail"
-                  name="user_email"
-                  placeholder="brief description about"
+                  type='text'
+                  autoFocus
+                  row='2'
+                  id='mail'
+                  name='user_email'
+                  placeholder='Add about us'
                 />
               </fieldset>
             </form>
@@ -106,35 +109,35 @@ export default function SimpleSelect() {
           <Grid style={{ marginTop: 100 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Phone no.</label>
+                <label for='name'>Phone no.</label>
                 <div style={{ display: "flex" }}>
                   <select
-                    id="business"
+                    id='business'
                     style={{ width: 120, height: 40 }}
-                    name="user_job"
+                    name='user_job'
                   >
-                    <option value="Surgical Oncologist">Algeria (+21)</option>
-                    <option value="Clinical Oncologist">
-                      Clinical Oncologist
-                    </option>
-                    <option value="Healthcare Provider">
-                      Radiation Oncologist
-                    </option>
+                    {CountryData.map((item, i) => {
+                      return (
+                        <option key={i} value={item.dial_code}>
+                          {item.dial_code} {item.name}
+                        </option>
+                      );
+                    })}
                   </select>
                   <input
-                    type="text"
-                    id="name"
+                    type='text'
+                    id='name'
                     style={{ marginLeft: 10 }}
-                    name="user_name"
-                    placeholder="Phone no."
+                    name='user_name'
+                    placeholder='Phone no.'
                   />
                 </div>
-                <label for="mail">Alternate Email address</label>
+                <label for='mail'>Alternate Email address</label>
                 <input
-                  type="number"
-                  placeholder="Alternate Email address"
-                  id="mail"
-                  name="user_email"
+                  type='number'
+                  placeholder='Alternate Email address'
+                  id='mail'
+                  name='user_email'
                 />
               </fieldset>
             </form>
@@ -155,32 +158,32 @@ export default function SimpleSelect() {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Time zone</label>
+                <label for='name'>Time zone</label>
                 <div style={{ display: "flex" }}>
                   <select
-                    id="business"
+                    id='business'
                     style={{ width: "100%", height: 40 }}
-                    name="user_job"
+                    name='user_job'
                   >
-                    <option value="Surgical Oncologist">
+                    <option value='Surgical Oncologist'>
                       (GMT -11:00) Niue
                     </option>
                   </select>
                 </div>
-                <label for="name">Currency</label>
+                <label for='name'>Currency</label>
                 <div style={{ display: "flex" }}>
                   <select
-                    id="business"
+                    id='business'
                     style={{ width: "100%", height: 40 }}
-                    name="user_job"
+                    name='user_job'
                   >
-                    <option value="Surgical Oncologist">
+                    <option value='Surgical Oncologist'>
                       United States Dollars
                     </option>
-                    <option value="Clinical Oncologist">
+                    <option value='Clinical Oncologist'>
                       Clinical Oncologist
                     </option>
-                    <option value="Healthcare Provider">
+                    <option value='Healthcare Provider'>
                       Radiation Oncologist
                     </option>
                   </select>
@@ -203,22 +206,22 @@ export default function SimpleSelect() {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Profile photo</label>
+                <label for='name'>Profile photo</label>
                 <div style={{ display: "flex" }}>
                   <input
-                    placeholder="Alternate Email address"
-                    id="mail"
-                    name="user_email"
-                    type="file"
+                    placeholder='Alternate Email address'
+                    id='mail'
+                    name='user_email'
+                    type='file'
                   />
                 </div>
-                <label for="name">Add a cover photo</label>
+                <label for='name'>Add a cover photo</label>
                 <div style={{ display: "flex" }}>
                   <input
-                    placeholder="Alternate Email address"
-                    id="mail"
-                    name="user_email"
-                    type="file"
+                    placeholder='Alternate Email address'
+                    id='mail'
+                    name='user_email'
+                    type='file'
                   />
                 </div>
               </fieldset>
@@ -240,7 +243,7 @@ export default function SimpleSelect() {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Website</label>
+                <label for='name'>Website</label>
                 <div style={{ display: "flex" }}>
                   <LanguageIcon
                     style={{
@@ -250,13 +253,13 @@ export default function SimpleSelect() {
                     }}
                   />
                   <input
-                    placeholder="www.yoursite.com"
-                    id="mail"
-                    name="user_email"
-                    type="text"
+                    placeholder='www.yoursite.com'
+                    id='mail'
+                    name='user_email'
+                    type='text'
                   />
                 </div>
-                <label for="name">Facebook</label>
+                <label for='name'>Facebook</label>
                 <div style={{ display: "flex" }}>
                   <FacebookIcon
                     style={{
@@ -266,13 +269,13 @@ export default function SimpleSelect() {
                     }}
                   />
                   <input
-                    placeholder="www.facebook.com/yoursite"
-                    id="mail"
-                    name="user_email"
-                    type="text"
+                    placeholder='www.facebook.com/yoursite'
+                    id='mail'
+                    name='user_email'
+                    type='text'
                   />
                 </div>
-                <label for="name">Instagram</label>
+                <label for='name'>Instagram</label>
                 <div style={{ display: "flex" }}>
                   <InstagramIcon
                     style={{
@@ -282,13 +285,13 @@ export default function SimpleSelect() {
                     }}
                   />
                   <input
-                    placeholder="www.instagram.com/yoursite"
-                    id="mail"
-                    name="user_email"
-                    type="text"
+                    placeholder='www.instagram.com/yoursite'
+                    id='mail'
+                    name='user_email'
+                    type='text'
                   />
                 </div>
-                <label for="name">YouTube</label>
+                <label for='name'>YouTube</label>
                 <div style={{ display: "flex" }}>
                   <LanguageIcon
                     style={{
@@ -298,10 +301,10 @@ export default function SimpleSelect() {
                     }}
                   />
                   <input
-                    placeholder="www.youtube.com/yoursite"
-                    id="mail"
-                    name="user_email"
-                    type="text"
+                    placeholder='www.youtube.com/yoursite'
+                    id='mail'
+                    name='user_email'
+                    type='text'
                   />
                 </div>
               </fieldset>
@@ -322,13 +325,13 @@ export default function SimpleSelect() {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">
+                <label for='name'>
                   Your account is currently under a free plan
                 </label>
                 <div style={{ display: "flex" }}>
                   <Button
                     onClick={() => setDialog(true)}
-                    variant="outlined"
+                    variant='outlined'
                     style={{
                       width: "100%",
                       textAlign: "left",
@@ -364,7 +367,7 @@ export default function SimpleSelect() {
               textTransform: "none",
               width: 100,
             }}
-            variant="contained"
+            variant='contained'
           >
             Save
           </Button>
