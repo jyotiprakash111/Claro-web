@@ -23,8 +23,8 @@ export const menu = [
     title: "Services",
     items: [
       {
-        title: "Technical Analysis",
-        to: "/",
+        title: "Home Screen",
+        to: "/homescreen",
       },
     ],
   },
