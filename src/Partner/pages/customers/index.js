@@ -73,10 +73,11 @@ const rows = [
 
 const Customers = () => {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
   return (
     <div>
       <SideBar />
-      <Dialog open={true} />
+      <Dialog open={open} handleClose={() => setOpen(false)} />
       <div style={{ marginLeft: 300 }}>
         <Header name="Customers" avatar={true} />
         <div
@@ -127,6 +128,7 @@ const Customers = () => {
               border: "1px solid #FF8021",
               height: 40,
             }}
+            onClick={() => setOpen(true)}
           >
             New Customer
           </Button>
