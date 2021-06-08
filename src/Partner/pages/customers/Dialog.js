@@ -152,7 +152,7 @@ const DialogTitle = withStyles(styles)((props) => {
 
 export default function FormDialog(props) {
   const [paymentType, changePaymentType] = React.useState(0);
-  console.log(paymentType);
+  const [arr, setArr] = React.useState([]);
   return (
     <div>
       <Dialog
@@ -296,55 +296,66 @@ export default function FormDialog(props) {
                     textDecoration: "underlined",
                     marginTop: 20,
                   }}
+                  onClick={() => setArr([...arr, ...[arr.length]])}
                 >
                   + Add dependent participants
                 </Button>
               </div>
-              <div>
-                <p style={{ fontSize: 18 }}>New Participant</p>
-                <label style={{ marginTop: 0, fontSize: 13, color: "#323232" }}>
-                  Name of the participant?
-                </label>
-                <input
-                  type="text"
-                  style={{
-                    width: 350,
-                    borderRadius: 5,
-                    border: "1px solid rgba(50, 50, 50, 0.3)",
-                  }}
-                  placeholder="Type here"
-                  id="mail"
-                  name="account_no"
-                />
-                <label style={{ marginTop: 0, fontSize: 13, color: "#323232" }}>
-                  Birthday of the participant (for children below 18yo)
-                </label>
-                <input
-                  type="text"
-                  style={{
-                    width: 350,
-                    borderRadius: 5,
-                    border: "1px solid rgba(50, 50, 50, 0.3)",
-                  }}
-                  placeholder="Type here"
-                  id="mail"
-                  name="account_no"
-                />
-                <label style={{ marginTop: 0, fontSize: 13, color: "#323232" }}>
-                  Gender of the participant (optional)
-                </label>
-                <input
-                  type="text"
-                  style={{
-                    width: 350,
-                    borderRadius: 5,
-                    border: "1px solid rgba(50, 50, 50, 0.3)",
-                  }}
-                  placeholder="Type here"
-                  id="mail"
-                  name="account_no"
-                />
-              </div>
+              {arr.map((item, i) => {
+                return (
+                  <div>
+                    <p style={{ fontSize: 18 }}>New Participant {i + 1}</p>
+                    <label
+                      style={{ marginTop: 0, fontSize: 13, color: "#323232" }}
+                    >
+                      Name of the participant?
+                    </label>
+                    <input
+                      type="text"
+                      style={{
+                        width: 350,
+                        borderRadius: 5,
+                        border: "1px solid rgba(50, 50, 50, 0.3)",
+                      }}
+                      placeholder="Type here"
+                      id="mail"
+                      name="account_no"
+                    />
+                    <label
+                      style={{ marginTop: 0, fontSize: 13, color: "#323232" }}
+                    >
+                      Birthday of the participant (for children below 18yo)
+                    </label>
+                    <input
+                      type="text"
+                      style={{
+                        width: 350,
+                        borderRadius: 5,
+                        border: "1px solid rgba(50, 50, 50, 0.3)",
+                      }}
+                      placeholder="Type here"
+                      id="mail"
+                      name="account_no"
+                    />
+                    <label
+                      style={{ marginTop: 0, fontSize: 13, color: "#323232" }}
+                    >
+                      Gender of the participant (optional)
+                    </label>
+                    <input
+                      type="text"
+                      style={{
+                        width: 350,
+                        borderRadius: 5,
+                        border: "1px solid rgba(50, 50, 50, 0.3)",
+                      }}
+                      placeholder="Type here"
+                      id="mail"
+                      name="account_no"
+                    />
+                  </div>
+                );
+              })}
             </fieldset>
             <div style={{ textAlign: "right" }}>
               <Button
@@ -365,6 +376,7 @@ export default function FormDialog(props) {
             </div>
           </form>
         </div>
+        ;
       </Dialog>
     </div>
   );

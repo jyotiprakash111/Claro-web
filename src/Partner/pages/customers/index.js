@@ -74,6 +74,7 @@ const rows = [
 const Customers = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+
   return (
     <div>
       <SideBar />
