@@ -16,6 +16,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import Dialog from "./Dialog";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -75,8 +76,9 @@ const Customers = () => {
   return (
     <div>
       <SideBar />
+      <Dialog open={true} />
       <div style={{ marginLeft: 300 }}>
-        <Header name='Customers' avatar={true} />
+        <Header name="Customers" avatar={true} />
         <div
           style={{
             display: "flex",
@@ -92,14 +94,14 @@ const Customers = () => {
               alignItems: "center",
             }}
           >
-            <div component='form' className={classes.root}>
-              <IconButton className={classes.iconButton} aria-label='menu'>
+            <div component="form" className={classes.root}>
+              <IconButton className={classes.iconButton} aria-label="menu">
                 <SearchIcon />
               </IconButton>
               {/* <Divider className={classes.divider} orientation="vertical" /> */}
               <InputBase
                 className={classes.input}
-                placeholder='Any topic or teacher'
+                placeholder="Any topic or teacher"
                 inputProps={{ "aria-label": "search google maps" }}
               />
             </div>
@@ -113,13 +115,13 @@ const Customers = () => {
                 borderTopLeftRadius: 0,
                 borderBottomLeftRadius: 0,
               }}
-              variant='outlined'
+              variant="outlined"
             >
               Search
             </Button>
           </div>
           <Button
-            variant='outlined'
+            variant="outlined"
             style={{
               color: "#FF8021",
               border: "1px solid #FF8021",
@@ -131,7 +133,7 @@ const Customers = () => {
         </div>
         <p style={{ color: "#FF8021" }}>Ordering: Latest booking first</p>
         <TableContainer
-          id='customer'
+          id="customer"
           style={{
             marginTop: "3%",
             maxWidth: "90%",
@@ -140,30 +142,30 @@ const Customers = () => {
           }}
           component={Paper}
         >
-          <Link style={{ textDecoration: "none" }} to='partner_home'>
+          <Link style={{ textDecoration: "none" }} to="partner_home">
             <Table
               className={classes.table}
-              size='small'
-              aria-label='a dense table'
+              size="small"
+              aria-label="a dense table"
             >
               <TableHead>
                 <TableRow>
                   <TableCell>Participant Name</TableCell>
-                  <TableCell align='right'>Contact Number</TableCell>
-                  <TableCell align='right'>Email address</TableCell>
-                  <TableCell align='right'>Age</TableCell>
-                  <TableCell align='right'>Status</TableCell>
+                  <TableCell align="right">Contact Number</TableCell>
+                  <TableCell align="right">Email address</TableCell>
+                  <TableCell align="right">Age</TableCell>
+                  <TableCell align="right">Status</TableCell>
                 </TableRow>
               </TableHead>
 
               <TableBody>
                 {rows.map((row) => (
                   <TableRow style={{ padding: 10 }} key={row.name}>
-                    <TableCell scope='row'>{row.name}</TableCell>
-                    <TableCell align='right'>{row.calories}</TableCell>
-                    <TableCell align='right'>{row.fat}</TableCell>
-                    <TableCell align='right'>{row.carbs}</TableCell>
-                    <TableCell align='right'>{row.protein}</TableCell>
+                    <TableCell scope="row">{row.name}</TableCell>
+                    <TableCell align="right">{row.calories}</TableCell>
+                    <TableCell align="right">{row.fat}</TableCell>
+                    <TableCell align="right">{row.carbs}</TableCell>
+                    <TableCell align="right">{row.protein}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

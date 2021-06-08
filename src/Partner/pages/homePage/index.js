@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SideBar from "../../components/common/SideBar";
-import Header from "../../components/common/HeaderMain";
+import Header from "../../components/common/HeaderMain2";
 import Main from "./main/index";
 
 export default class index extends Component {
