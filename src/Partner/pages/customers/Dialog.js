@@ -6,6 +6,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
+import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import "./style.css";
 
 const styles = (theme) => ({
@@ -158,7 +159,6 @@ export default function FormDialog(props) {
       <Dialog
         fullScreen
         style={{
-          height: renderHeight(paymentType),
           width: 800,
           margin: "0px auto",
         }}
@@ -288,23 +288,28 @@ export default function FormDialog(props) {
                   />
                 </div>
               </div>
-              <div>
-                <Button
-                  style={{
-                    textTransform: "capitalize",
-                    color: "#65B1EC",
-                    textDecoration: "underlined",
-                    marginTop: 20,
-                  }}
-                  onClick={() => setArr([...arr, ...[arr.length]])}
-                >
-                  + Add dependent participants
-                </Button>
-              </div>
+
               {arr.map((item, i) => {
                 return (
                   <div>
-                    <p style={{ fontSize: 18 }}>New Participant {i + 1}</p>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        width: "53%",
+                      }}
+                    >
+                      <p style={{ fontSize: 18 }}>New Participant {i + 1}</p>
+                      <IconButton
+                        aria-label="close"
+                        onClick={() => setArr(arr.filter((item) => item !== i))}
+                      >
+                        <DeleteOutlineIcon
+                          style={{ color: "#e43a15", fontSize: 25 }}
+                        />
+                      </IconButton>
+                    </div>
+
                     <label
                       style={{ marginTop: 0, fontSize: 13, color: "#323232" }}
                     >
@@ -357,6 +362,19 @@ export default function FormDialog(props) {
                 );
               })}
             </fieldset>
+            <div>
+              <Button
+                style={{
+                  textTransform: "capitalize",
+                  color: "#65B1EC",
+                  textDecoration: "underlined",
+                  marginTop: 20,
+                }}
+                onClick={() => setArr([...arr, ...[arr.length]])}
+              >
+                + Add dependent participants
+              </Button>
+            </div>
             <div style={{ textAlign: "right" }}>
               <Button
                 style={{

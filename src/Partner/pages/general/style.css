@@ -46,6 +46,9 @@
   height: 32px;
   border-radius: 5px !important;
 }
+#general_page textarea {
+  font-family: "Lato", sans-serif;
+}
 
 #general_page fieldset {
   margin-bottom: 0px;

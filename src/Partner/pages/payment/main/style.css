@@ -39,6 +39,11 @@
   margin: 0 4px 8px 0;
 }
 
+#payment input[type="text"] {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
 #payment select {
   padding: 6px;
   height: 32px;
