@@ -172,7 +172,7 @@ export default function FormDialog(props) {
           New Customer
         </DialogTitle>
         <div style={{ padding: 20, height: 500, width: 700 }}>
-          <form id="payment" style={{}}>
+          <form id="customer">
             <fieldset>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div>
@@ -225,20 +225,18 @@ export default function FormDialog(props) {
                   </label>
                   <select
                     style={{
-                      borderRadius: 20,
+                      borderRadius: 5,
                       height: 40,
                       width: 300,
                       color: "#323232",
                       marginTop: 10,
                     }}
-                    id="business"
+                    id="customer"
                     name="user_job"
                     onChange={(e) => changePaymentType(e.target.value)}
                   >
-                    <option value={0}>Unknown</option>
-                    <option value={1}>Bank Transfer</option>
-                    <option value={2}>Others</option>
-                    <option value={3}>Cash</option>
+                    <option value={0}>Male</option>
+                    <option value={1}>Female</option>
                   </select>
                 </div>
                 <div>
@@ -259,7 +257,7 @@ export default function FormDialog(props) {
                   </label>
                   <select
                     style={{
-                      borderRadius: 20,
+                      borderRadius: 5,
                       height: 40,
                       width: 300,
                       color: "#323232",

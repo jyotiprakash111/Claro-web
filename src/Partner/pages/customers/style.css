@@ -1,5 +1,4 @@
-#customer {
-}
+
 #customer th {
   font-weight: bold;
   padding: 10px;
@@ -9,4 +8,71 @@
 #customer td {
   color: #323232;
   padding: 15px;
+}
+#customer form {
+  box-sizing: border-box;
+  width: 100%;
+}
+#customer input[type="text"],
+#customer input[type="password"],
+#customer input[type="date"],
+#customer input[type="datetime"],
+#customer input[type="email"],
+#customer input[type="number"],
+#customer input[type="search"],
+#customer input[type="file"],
+#customer input[type="tel"],
+#customer input[type="time"],
+#customer input[type="url"],
+#customer textarea,
+#customer select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 15px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  color: #323232;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #65b1ec;
+  border-radius: 5px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+#customer input[type="radio"],
+#customer input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+#customer select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+#customer fieldset {
+  margin-bottom: 0px;
+  border: none;
+}
+
+#customer legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+#customer label {
+  display: block;
+  margin-bottom: 8px;
+  color: #323232;
+}
+
+#customer label.light {
+  font-weight: 300;
+  display: inline;
 }
