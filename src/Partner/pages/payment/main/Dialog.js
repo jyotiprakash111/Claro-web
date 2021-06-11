@@ -148,16 +148,16 @@ function renderPayment(temp) {
 
 const renderHeight = (temp) => {
   if (temp == 1) {
-    return "90%";
+    return "500px";
   }
   if (temp == 3) {
-    return "40%";
+    return "270px";
   }
   if (temp == 0) {
-    return "100%";
+    return "600px";
   }
   if (temp == 2) {
-    return "70%";
+    return "450px";
   }
 };
 
@@ -187,7 +187,7 @@ export default function FormDialog(props) {
       <Dialog
         fullScreen
         style={{
-          height: renderHeight(paymentType),
+          maxHeight: renderHeight(paymentType),
           width: 800,
           margin: "0px auto",
         }}
