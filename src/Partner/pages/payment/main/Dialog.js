@@ -148,7 +148,7 @@ function renderPayment(temp) {
 
 const renderHeight = (temp) => {
   if (temp == 1) {
-    return "500px";
+    return "530px";
   }
   if (temp == 3) {
     return "270px";
@@ -208,7 +208,7 @@ export default function FormDialog(props) {
               </label>
               <select
                 style={{
-                  borderRadius: 20,
+                  borderRadius: 5,
                   height: 40,
                   width: "50%",
                   color: "#323232",
@@ -228,7 +228,7 @@ export default function FormDialog(props) {
             <div style={{ textAlign: "right" }}>
               <Button
                 style={{
-                  background: "#65B1EC",
+                  background: "#FF8021",
                   color: "#fff",
                   textTransform: "none",
                   borderRadius: 20,

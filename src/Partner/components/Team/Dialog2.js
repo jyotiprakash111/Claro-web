@@ -72,7 +72,12 @@ export default function CustomizedDialogs(props) {
         aria-labelledby="customized-dialog-title"
         open={props.open}
         fullScreen
-        style={{ maxWidth: 900, margin: "0 auto", minHeight: 600, padding: 20 }}
+        style={{
+          maxWidth: 800,
+          margin: "0 auto",
+          maxHeight: 700,
+          padding: 30,
+        }}
       >
         <Team_Add_New onClose={() => props.handleClose()} />
       </Dialog>
