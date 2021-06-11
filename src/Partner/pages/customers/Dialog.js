@@ -259,6 +259,7 @@ export default function FormDialog(props) {
                       width: 300,
                       color: "#323232",
                       marginTop: 10,
+                      border: "1px solid #ccc",
                     }}
                     id="customer"
                     name="user_job"
@@ -269,13 +270,20 @@ export default function FormDialog(props) {
                   </select>
                 </div>
                 <div>
-                  <label style={{ marginTop: 20 }}>Date of Birth</label>
+                  <label style={{ marginTop: 10 }}>Date of Birth</label>
                   <input
                     type="date"
-                    style={{ width: 300 }}
                     placeholder=""
                     id="mail"
                     name="account_no"
+                    style={{
+                      borderRadius: 5,
+                      height: 40,
+                      width: 300,
+                      color: "#323232",
+                      marginTop: 10,
+                      border: "1px solid #ccc",
+                    }}
                   />
                 </div>
               </div>
@@ -291,19 +299,19 @@ export default function FormDialog(props) {
                       width: 300,
                       color: "#323232",
                       marginTop: 10,
+                      border: "1px solid #ccc",
                     }}
                     id="business"
                     name="user_job"
                     onChange={(e) => changePaymentType(e.target.value)}
                   >
-                    <option value={0}>Email, SMS, Whatsapp</option>
-                    <option value={1}>Bank Transfer</option>
-                    <option value={2}>Others</option>
-                    <option value={3}>Cash</option>
+                    <option value={0}>Email</option>
+                    <option value={1}>Whatsapp</option>
+                    <option value={2}>Sms</option>
                   </select>
                 </div>
                 <div>
-                  <label style={{ marginTop: 20 }}>
+                  <label style={{ marginTop:10 }}>
                     Customer address (optional)
                   </label>
                   <input
@@ -409,7 +417,7 @@ export default function FormDialog(props) {
                 + Add dependent participants
               </Button>
             </div>
-            <div style={{ textAlign: "right" }}>
+            <div style={{textAlign:"end", marginRight:"2%"}}>
               <Button
                 style={{
                   background: "#FF8021",
@@ -417,8 +425,6 @@ export default function FormDialog(props) {
                   textTransform: "none",
                   borderRadius: 20,
                   width: 150,
-                  textAlign: "right",
-
                   marginBottom: 20,
                 }}
                 onClick={() => props.handleClose()}
@@ -429,7 +435,6 @@ export default function FormDialog(props) {
             </div>
           </form>
         </div>
-        ;
       </Dialog>
     </div>
   );

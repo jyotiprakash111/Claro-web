@@ -43,16 +43,16 @@ export default function FormDialog(props) {
   const [temp, changeTemp] = useState(0);
   const [temp2, changeTemp2] = useState(0);
   const [open, setOpen] = useState(true);
-
+  const [personName, setPersonName] = React.useState([]);
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2014-08-18T21:11:54")
   );
+  
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
-  const [personName, setPersonName] = React.useState([]);
 
   const handleChange = (event) => {
     setPersonName(event.target.value);
