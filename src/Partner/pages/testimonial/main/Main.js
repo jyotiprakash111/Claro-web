@@ -270,24 +270,37 @@ export default function Main() {
             />
           </form>
         </div>
-        <div>
-          <Button
-            style={{
-              border: "1px solid #00110D",
-              color: "#00110D",
-              textTransform: "none",
-
-              marginTop: 20,
-            }}
-            onClick={() => setArr([...arr, ...[arr.length]])}
-            variant="outlined"
-            color="primary"
-          >
-            <AddIcon />
-            Add another testimonial
-          </Button>
-        </div>
       </Paper>
+      <div>
+        <Button
+          style={{
+            border: "1px solid #00110D",
+            color: "#00110D",
+            textTransform: "none",
+
+            marginTop: 20,
+          }}
+          onClick={() => setArr([...arr, ...[arr.length]])}
+          variant="outlined"
+          color="primary"
+        >
+          <AddIcon />
+          Add another testimonial
+        </Button>
+      </div>
+      <div style={{ textAlign: "right", width: "80%", margin: 20 }}>
+        <Button
+          style={{
+            textAlign: "right",
+            width: 150,
+            background: "#FF8021",
+            color: "#fff",
+          }}
+          variant="contained"
+        >
+          Save
+        </Button>
+      </div>
     </div>
   );
 }

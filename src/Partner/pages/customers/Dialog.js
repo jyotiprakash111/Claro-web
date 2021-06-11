@@ -161,6 +161,7 @@ export default function FormDialog(props) {
         style={{
           width: 800,
           margin: "0px auto",
+          maxHeight: "95%",
         }}
         open={props.open}
         onClose={() => props.handleClose()}
@@ -171,7 +172,7 @@ export default function FormDialog(props) {
         >
           New Customer
         </DialogTitle>
-        <div style={{ padding: 20, height: 500, width: 700 }}>
+        <div style={{ padding: 20, height: 500, width: 700, paddingTop: 0 }}>
           <form id="customer">
             <fieldset>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -179,8 +180,15 @@ export default function FormDialog(props) {
                   <label style={{ marginTop: 20 }}>First Name</label>
                   <input
                     type="text"
-                    style={{ width: 300 }}
-                    placeholder="E.g. ‘Yoga for beginners’ or ‘Advanced Art’"
+                    style={{
+                      borderRadius: 5,
+                      height: 40,
+                      width: 300,
+                      color: "#323232",
+                      marginTop: 10,
+                      border: "1px solid #ccc",
+                    }}
+                    placeholder=""
                     id="mail"
                     name="account_no"
                   />
@@ -189,8 +197,15 @@ export default function FormDialog(props) {
                   <label style={{ marginTop: 20 }}>Last Name</label>
                   <input
                     type="text"
-                    style={{ width: 300 }}
-                    placeholder="No group selected"
+                    style={{
+                      borderRadius: 5,
+                      height: 40,
+                      width: 300,
+                      color: "#323232",
+                      marginTop: 10,
+                      border: "1px solid #ccc",
+                    }}
+                    placeholder=""
                     id="mail"
                     name="account_no"
                   />
@@ -201,7 +216,14 @@ export default function FormDialog(props) {
                   <label style={{ marginTop: 20 }}>Contact No</label>
                   <input
                     type="text"
-                    style={{ width: 300 }}
+                    style={{
+                      borderRadius: 5,
+                      height: 40,
+                      width: 300,
+                      color: "#323232",
+                      marginTop: 10,
+                      border: "1px solid #ccc",
+                    }}
                     placeholder="Enter mobile number here"
                     id="mail"
                     name="account_no"
@@ -211,7 +233,14 @@ export default function FormDialog(props) {
                   <label style={{ marginTop: 20 }}>Email Address</label>
                   <input
                     type="text"
-                    style={{ width: 300 }}
+                    style={{
+                      borderRadius: 5,
+                      height: 40,
+                      width: 300,
+                      color: "#323232",
+                      marginTop: 10,
+                      border: "1px solid #ccc",
+                    }}
                     placeholder="Enter customer’s email address here"
                     id="mail"
                     name="account_no"
@@ -279,7 +308,14 @@ export default function FormDialog(props) {
                   </label>
                   <input
                     type="text"
-                    style={{ width: 300 }}
+                    style={{
+                      borderRadius: 5,
+                      height: 40,
+                      width: 300,
+                      color: "#323232",
+                      marginTop: 10,
+                      border: "1px solid #ccc",
+                    }}
                     placeholder="Add customer’s address here"
                     id="mail"
                     name="account_no"
@@ -382,7 +418,8 @@ export default function FormDialog(props) {
                   borderRadius: 20,
                   width: 150,
                   textAlign: "right",
-                  marginTop: -20,
+
+                  marginBottom: 20,
                 }}
                 onClick={() => props.handleClose()}
                 variant="contained"
