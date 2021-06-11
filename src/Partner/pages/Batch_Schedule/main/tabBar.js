@@ -6,7 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import Schedule from "./singleBatch";
+import Schedule from "./Table";
 // import Booking from "./Booking/Card";
 // import Profile from "./Profile/index";
 // import Transaction from "./transaction";

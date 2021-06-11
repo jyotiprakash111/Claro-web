@@ -65,12 +65,12 @@ export default function Main() {
                 <input type="text" id="name" name="user_name" value="+91 " />
               </div>
               <Button
-                variant="outlined"
+                variant="contained"
                 style={{
-                  color: "#65b1ec",
-                  border: "1px solid #65b1ec",
+                  color: "#fff",
+                  background: "#FF8021",
                   width: 200,
-                  borderRadius: 20,
+                  borderRadius: 5,
                   marginTop: 10,
                 }}
               >

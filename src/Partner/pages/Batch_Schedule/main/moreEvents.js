@@ -17,6 +17,7 @@ import Input from "@material-ui/core/Input";
 import ListItemText from "@material-ui/core/ListItemText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import IconButton from "@material-ui/core/IconButton";
 
 const names = [
   "Monday",
@@ -47,12 +48,10 @@ export default function FormDialog(props) {
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2014-08-18T21:11:54")
   );
-  
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
-
 
   const handleChange = (event) => {
     setPersonName(event.target.value);
@@ -281,17 +280,15 @@ export default function FormDialog(props) {
   const methods = useForm({
     resolver: yupResolver(validationSchema),
   });
-  const handleClose = () => {
-    setOpen(false);
-  };
+
   return (
     <FormProvider {...methods}>
       <div>
         <Dialog
           fullScreen
-          style={{ width: 900, height: "90%", width: 800, margin: "20px auto" }}
-          open={open}
-          onClose={() => handleClose()}
+          style={{ width: 900, height: "90%", width: 760, margin: "20px auto" }}
+          open={props.open}
+          onClose={() => props.handleClose()}
         >
           <div style={{ padding: 20, height: 500, width: 700 }}>
             <div
@@ -302,8 +299,9 @@ export default function FormDialog(props) {
               }}
             >
               <h1>Add more timings Single event</h1>
-              {/* <CancelIcon  onClose={() => handleClose()} /> */}
-              <button onClick={() => handleClose()}>Close</button>
+              <IconButton onClick={() => props.handleClose()}>
+                <CancelIcon />
+              </IconButton>
             </div>
 
             <Divider />
@@ -391,7 +389,7 @@ export default function FormDialog(props) {
                     marginTop: 20,
                     marginBottom: 30,
                   }}
-                  onClick={() => handleClose()}
+                  onClick={() => props.handleClose()}
                   variant="contained"
                 >
                   Save and continue

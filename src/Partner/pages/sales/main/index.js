@@ -5,6 +5,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Table from "../../../components/Sales/Table";
+import FormDatePicker from "../../../components/controls/FormDatePicker";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, FormProvider, useForm } from "react-hook-form";
 
 const currencies = [
   {
@@ -26,25 +30,35 @@ const currencies = [
 ];
 
 export default function Main() {
+  const validationSchema = yup.object().shape({});
+  const methods = useForm({
+    resolver: yupResolver(validationSchema),
+  });
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginRight: 100,
-        }}
-      >
-        <div>
-          <p>Starting From</p>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <div>
+      <FormProvider {...methods}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginRight: 100,
+          }}
+        >
+          <div>
+            <p>Starting From</p>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <FormDatePicker
+                name="startTime"
+                placeholder="DD/MM/YYYY"
+                required={true}
+              />
+              {/* <div>
               <DateRangeIcon style={{ color: "#FF8021", fontSize: 30 }} />
             </div>
             <p
@@ -58,51 +72,52 @@ export default function Main() {
             >
               {" "}
               7 Feb 2021
-            </p>
+            </p> */}
+            </div>
+          </div>
+          <div>
+            <TextField
+              id="outlined-select-currency"
+              select
+              label="All location"
+              variant="outlined"
+              size="small"
+              style={{ width: 163, height: 44 }}
+            >
+              {currencies.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.value}
+                </MenuItem>
+              ))}
+            </TextField>
+            <Button
+              variant="outlined"
+              style={{
+                color: "#FF8021",
+                borderColor: "#FF8021",
+                width: 144,
+                height: 40,
+                marginLeft: 20,
+              }}
+            >
+              New sales
+            </Button>
           </div>
         </div>
-        <div>
-          <TextField
-            id="outlined-select-currency"
-            select
-            label="All location"
-            variant="outlined"
-            size="small"
-            style={{ width: 163, height: 44 }}
-          >
-            {currencies.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.value}
-              </MenuItem>
-            ))}
-          </TextField>
+        <div style={{ marginRight: 100, marginTop: 30 }}>
+          <Table />
           <Button
-            variant="outlined"
             style={{
+              textTransform: "unset",
               color: "#FF8021",
-              borderColor: "#FF8021",
-              width: 144,
-              height: 40,
-              marginLeft: 20,
+              marginTop: 10,
+              marginLeft: -5,
             }}
           >
-            New sales
+            Show More <ExpandMoreIcon />
           </Button>
         </div>
-      </div>
-      <div style={{ marginRight: 100, marginTop: 30 }}>
-        <Table />
-        <Button
-          style={{
-            textTransform: "unset",
-            color: "#FF8021",
-            marginTop: 10,
-            marginLeft: -5,
-          }}
-        >
-          Show More <ExpandMoreIcon />
-        </Button>
-      </div>
+      </FormProvider>
     </div>
   );
 }

@@ -12,6 +12,12 @@ import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import GroupIcon from "@material-ui/icons/Group";
+
+import FormDatePicker from "../../../components/controls/FormDatePicker";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, FormProvider, useForm } from "react-hook-form";
+
 import Dialog from "./Dialog";
 import "../style.css";
 
@@ -35,6 +41,11 @@ export default function SimpleSelect() {
     setAge(event.target.value);
   };
 
+  const validationSchema = yup.object().shape({});
+  const methods = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
   return (
     <div id="schedules">
       <Dialog open={open} handleClose={() => setOpen(false)} />
@@ -49,10 +60,15 @@ export default function SimpleSelect() {
             paddingRight: 50,
           }}
         >
-          <Button style={{ textTransform: "none", fontSize: 20 }}>
-            <CalendarTodayIcon style={{ color: "#FF8021" }} />
-            <span style={{ marginLeft: 20 }}>7 February 2021</span>
-          </Button>
+          <FormProvider {...methods}>
+            <div style={{ textTransform: "none", fontSize: 20 }}>
+              <FormDatePicker
+                name="startTime"
+                placeholder="DD/MM/YYYY"
+                required={true}
+              />
+            </div>
+          </FormProvider>
           {/* <div style={{ display: "flex", alignItems: "center" }}>
             <QueryBuilderIcon style={{ color: "#FF8021" }} />
             <p style={{ marginLeft: 10 }}>Indian Standard Time(IST)</p>

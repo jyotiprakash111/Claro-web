@@ -7,6 +7,12 @@ import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
+
+import FormDatePicker from "../../components/controls/FormDatePicker";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, FormProvider, useForm } from "react-hook-form";
+
 import "./style.css";
 
 const styles = (theme) => ({
@@ -154,8 +160,12 @@ const DialogTitle = withStyles(styles)((props) => {
 export default function FormDialog(props) {
   const [paymentType, changePaymentType] = React.useState(0);
   const [arr, setArr] = React.useState([]);
+  const validationSchema = yup.object().shape({});
+  const methods = useForm({
+    resolver: yupResolver(validationSchema),
+  });
   return (
-    <div>
+    <FormProvider {...methods}>
       <Dialog
         fullScreen
         style={{
@@ -271,19 +281,11 @@ export default function FormDialog(props) {
                 </div>
                 <div>
                   <label style={{ marginTop: 10 }}>Date of Birth</label>
-                  <input
-                    type="date"
-                    placeholder=""
-                    id="mail"
-                    name="account_no"
-                    style={{
-                      borderRadius: 5,
-                      height: 40,
-                      width: 300,
-                      color: "#323232",
-                      marginTop: 10,
-                      border: "1px solid #ccc",
-                    }}
+                  <FormDatePicker
+                    name="startTime"
+                    placeholder="DD/MM/YYYY"
+                    required={true}
+                    width="100%"
                   />
                 </div>
               </div>
@@ -311,7 +313,7 @@ export default function FormDialog(props) {
                   </select>
                 </div>
                 <div>
-                  <label style={{ marginTop:10 }}>
+                  <label style={{ marginTop: 10 }}>
                     Customer address (optional)
                   </label>
                   <input
@@ -417,7 +419,7 @@ export default function FormDialog(props) {
                 + Add dependent participants
               </Button>
             </div>
-            <div style={{textAlign:"end", marginRight:"2%"}}>
+            <div style={{ textAlign: "end", marginRight: "2%" }}>
               <Button
                 style={{
                   background: "#FF8021",
@@ -436,6 +438,6 @@ export default function FormDialog(props) {
           </form>
         </div>
       </Dialog>
-    </div>
+    </FormProvider>
   );
 }

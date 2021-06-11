@@ -3,14 +3,17 @@ import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-
-const options = ["Edit", "Delete"];
+import MoreEvents from "./moreEvents";
+const options = ["Edit", "View"];
 
 const ITEM_HEIGHT = 48;
 
 export default function LongMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  const [open1, setDialog] = React.useState(false);
+  const [open2, setDialog2] = React.useState(false);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -22,6 +25,7 @@ export default function LongMenu() {
 
   return (
     <div>
+      <MoreEvents open={open1} handleClose={() => setDialog(false)} />
       <IconButton
         aria-label="more"
         aria-controls="long-menu"
@@ -48,7 +52,7 @@ export default function LongMenu() {
           <MenuItem
             key={option}
             selected={option === "Pyxis"}
-            onClick={handleClose}
+            onClick={() => setDialog(true)}
             style={{
               background: i == 0 ? "#65B1EC" : "",
               color: i == 0 ? "#fff" : "",

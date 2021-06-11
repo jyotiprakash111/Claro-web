@@ -23,7 +23,7 @@ const MuiDatePicker = (props: any) => {
           required: required || false,
         }}
         style={{
-          width: "80%",
+          width: props.width ? props.width : "80%",
           border: "1px solid #ccc",
           borderRadius: 5,
           alignItems: "center",
@@ -51,6 +51,7 @@ function FormDatePicker(props: any) {
           control={control}
           label={label}
           defaultValue={null}
+          width={props.width}
           {...props}
         />
       </MuiPickersUtilsProvider>
