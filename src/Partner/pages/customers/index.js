@@ -87,7 +87,7 @@ const Customers = () => {
             justifyContent: "space-between",
             alignItems: "center",
             marginTop: 30,
-            paddingRight: 100,
+            maxWidth: "90%",
           }}
         >
           <div
