@@ -142,6 +142,7 @@ export default class index extends Component {
                 booking
               </p>
             </div>
+
             <div
               style={{
                 background: "#F8F8F8",

@@ -17,6 +17,7 @@ import home from "./Partner/pages/Home/index";
 import home_services from "./Partner/pages/Home/Services/index";
 import home_classes from "./Partner/pages/Home/Services/Classes/index";
 import homeScreen from "./Partner/pages/homePage/index";
+import onlineBooking from "./Partner/pages/onlineBooking/main/tabbar";
 import "./style.css";
 
 class App extends Component {
@@ -26,10 +27,10 @@ class App extends Component {
         <div className="root">
           <Switch>
             <Route exact path="/" component={home} />
-            <Route exact path="/homescreen" component={homeScreen} />
-            <Route exact path="/home_services" component={home_services} />
-            <Route exact path="/home_classes" component={home_classes} />
-            <Route exact path="/customer" component={partner} />
+            <Route path="/homescreen" component={homeScreen} />
+            <Route path="/home_services" component={home_services} />
+            <Route path="/home_classes" component={home_classes} />
+            <Route path="/customer" component={partner} />
             <Route path="/partner_home" component={partnerSingle} />
             <Route path="/testimonial" component={testimonial} />
             <Route path="/general" component={general} />
@@ -42,6 +43,7 @@ class App extends Component {
             <Route path="/payment" component={payment} />
             <Route path="/settings" component={settings} />
             <Route path="/batch_schedule" component={batchSchedule} />
+            <Route path="/online_booking" component={onlineBooking} />
           </Switch>
         </div>
       </Router>

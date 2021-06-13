@@ -49,6 +49,11 @@ export const menu = [
     to: "/batch_schedule",
   },
   {
+    icon: <LoyaltyIcon />,
+    title: "Online Booking",
+    to: "/batch_schedule",
+  },
+  {
     icon: <DescriptionOutlinedIcon />,
     title: "Settings",
     to: "/settings",
