@@ -64,7 +64,7 @@ const Customers = () => {
           id="customer"
           style={{
             marginTop: "0%",
-            maxWidth: "80%",
+            maxWidth: "100%",
             display: "block",
             overflowX: "auto",
           }}

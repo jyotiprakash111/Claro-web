@@ -63,7 +63,6 @@ export default function Tab3() {
           <div style={{ display: "flex" }}>
             <textarea
               type="text"
-              autoFocus
               row="2"
               id="mail"
               name="user_email"
@@ -83,7 +82,6 @@ export default function Tab3() {
           <div style={{ display: "flex" }}>
             <textarea
               type="text"
-              autoFocus
               row="2"
               id="mail"
               name="user_email"

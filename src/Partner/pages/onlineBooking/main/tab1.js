@@ -3,7 +3,7 @@ import LinkIcon from "@material-ui/icons/Link";
 import Button from "@material-ui/core/Button";
 
 export default function Tab1() {
-  const [temp, setTemp] = React.useState(false);
+  const [temp, setTemp] = React.useState(true);
   return (
     <div>
       <p style={{ width: 500, fontSize: 18 }}>
@@ -23,14 +23,17 @@ export default function Tab1() {
               height: 25,
               width: 50,
               fontSize: 12,
-              background: "#703cb0",
+              background: "#65B1EC",
               marginLeft: 20,
 
               color: "#fff",
             }}
+            onClick={() => {
+              setTemp(false);
+            }}
           >
             <LinkIcon style={{ fontSize: 20, color: "#fff" }} />
-            Link
+            Edit
           </Button>
         </div>
       ) : (
@@ -51,7 +54,7 @@ export default function Tab1() {
             </p>
             <input
               style={{
-                border: "1px solid #703cb0",
+                border: "1px solid #65B1EC",
                 height: 25,
                 width: "100%",
                 borderRadius: 2,
@@ -68,6 +71,9 @@ export default function Tab1() {
                 background: "#efefef",
                 border: "1px solid #ccc",
               }}
+              onClick={() => {
+                setTemp(true);
+              }}
             >
               Cancel
             </Button>
@@ -75,8 +81,11 @@ export default function Tab1() {
               style={{
                 color: "#fff",
                 textTransform: "none",
-                background: "#703cb0",
+                background: "#65B1EC",
                 marginLeft: 10,
+              }}
+              onClick={() => {
+                setTemp(true);
               }}
             >
               Save

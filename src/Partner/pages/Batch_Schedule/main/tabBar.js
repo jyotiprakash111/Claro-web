@@ -108,9 +108,6 @@ export default function SimpleTabs() {
         <Schedule />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <h1>Location</h1>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
         <Pricing />
       </TabPanel>
     </div>
