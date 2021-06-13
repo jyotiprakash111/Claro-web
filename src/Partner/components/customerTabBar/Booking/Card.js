@@ -8,6 +8,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Pexels_Photo_by_Lukas from "../../../assets/img/Pexels_Photo_by_Lukas.png";
+import IconButton from "@material-ui/core/IconButton";
 import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles({
@@ -51,7 +52,16 @@ export default function MediaCard() {
             style={{ display: "flex" }}
           >
             <p style={{ width: 200 }}>04:00 PM - 04:40 PM</p>
-            <p style={{ marginLeft: 60 }}>SMTWFS</p>
+            <p
+              style={{
+                marginLeft: 45,
+                color: "#323232",
+                fontWeight: "bold",
+                letterSpacing: 3,
+              }}
+            >
+              <span style={{ color: "#ccc" }}>SM</span>TWFS
+            </p>
           </Typography>
           <Typography
             className={classes.heading}
@@ -74,11 +84,11 @@ export default function MediaCard() {
       </CardActionArea>
       <Divider />
       <CardActions className={classes.cardContent}>
-        <Button
+        <IconButton
           style={{
             textTransform: "capitalize",
-            color: "#FF8021",
-            fontSize: 16,
+            color: "#323232",
+            fontSize: 13,
             border: "1px solid #ccc",
             width: 40,
             height: 40,
@@ -89,7 +99,7 @@ export default function MediaCard() {
           color="primary"
         >
           TW
-        </Button>
+        </IconButton>
         <Button
           style={{
             textTransform: "capitalize",
