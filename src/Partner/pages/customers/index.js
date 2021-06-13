@@ -160,7 +160,6 @@ const Customers = () => {
                   <TableCell align="right">Status</TableCell>
                 </TableRow>
               </TableHead>
-
               <TableBody>
                 {rows.map((row) => (
                   <TableRow style={{ padding: 10 }} key={row.name}>
