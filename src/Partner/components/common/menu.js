@@ -51,7 +51,7 @@ export const menu = [
   {
     icon: <LoyaltyIcon />,
     title: "Online Booking",
-    to: "/batch_schedule",
+    to: "/online_booking",
   },
   {
     icon: <DescriptionOutlinedIcon />,

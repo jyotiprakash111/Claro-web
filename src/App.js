@@ -17,7 +17,7 @@ import home from "./Partner/pages/Home/index";
 import home_services from "./Partner/pages/Home/Services/index";
 import home_classes from "./Partner/pages/Home/Services/Classes/index";
 import homeScreen from "./Partner/pages/homePage/index";
-import onlineBooking from "./Partner/pages/onlineBooking/main/tabbar";
+import onlineBooking from "./Partner/pages/onlineBooking/index.js";
 import "./style.css";
 
 class App extends Component {
