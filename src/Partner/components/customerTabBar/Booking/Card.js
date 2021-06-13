@@ -8,6 +8,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Pexels_Photo_by_Lukas from "../../../assets/img/Pexels_Photo_by_Lukas.png";
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles({
   root: {
@@ -47,8 +48,10 @@ export default function MediaCard() {
             className={classes.paragraph}
             variant="body2"
             component="p"
+            style={{ display: "flex" }}
           >
-            Business name
+            <p style={{ width: 200 }}>04:00 PM - 04:40 PM</p>
+            <p style={{ marginLeft: 60 }}>SMTWFS</p>
           </Typography>
           <Typography
             className={classes.heading}
@@ -56,54 +59,50 @@ export default function MediaCard() {
             variant="h5"
             component="h2"
           >
-            Class title
+            Mandaring Daily | N1 | Monday-Friday | Online Learning
           </Typography>
           <Typography
             className={classes.paragraph}
             variant="body2"
             component="p"
+            style={{ display: "flex", justifyContent: "space-between" }}
           >
-            Class date duration> 20 Feb - 15 Feb
-          </Typography>
-          <Typography
-            className={classes.paragraph}
-            variant="body2"
-            component="p"
-          >
-            Class time duration> 5:00pm - 6:00pm
-          </Typography>
-          <Typography
-            className={classes.paragraph}
-            variant="body2"
-            component="p"
-          >
-            Location
+            <div>ONLINE</div>
+            <div>View Details</div>
           </Typography>
         </CardContent>
       </CardActionArea>
+      <Divider />
       <CardActions className={classes.cardContent}>
         <Button
           style={{
             textTransform: "capitalize",
             color: "#FF8021",
-            fontSize: 24,
+            fontSize: 16,
+            border: "1px solid #ccc",
+            width: 40,
+            height: 40,
+            padding: 0,
+            borderRadius: 20,
           }}
           size="small"
           color="primary"
         >
-          Confirmed
+          TW
         </Button>
         <Button
           style={{
             textTransform: "capitalize",
             marginLeft: "auto",
             fontSize: 12,
+            width: 100,
+            height: 40,
           }}
-          variant="outlined"
+          variant="contained"
           size="small"
           color="primary"
         >
-          View Details
+          Book
         </Button>
       </CardActions>
     </Card>

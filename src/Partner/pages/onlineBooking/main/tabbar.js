@@ -6,8 +6,10 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import Schedule from "./Table";
-import Pricing from "./pricing/index.js";
+import Tab1 from "./tab1";
+import Tab2 from "./tab2";
+import Tab3 from "./tab3";
+// import Schedule from "./schedule";
 // import Booking from "./Booking/Card";
 // import Profile from "./Profile/index";
 // import Transaction from "./transaction";
@@ -53,15 +55,14 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     background: "transparent",
     boxShadow: "none",
-    borderBottom: "1px solid #ccc",
   },
   link: {
     color: "rgba(50, 50, 50, 0.5)",
-    width: "150px",
+    width: "200px",
     height: "42px",
     textTransform: "none",
-    fontSize: "20px",
-    marginRight: 20,
+    fontSize: "25px",
+    marginRight: 50,
     "&:hover, &:focus": {
       // background: "#FF8021",
       // color: "#fff",
@@ -73,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -88,30 +89,36 @@ export default function SimpleTabs() {
           aria-label="simple tabs example"
           TabIndicatorProps={{ style: { background: "#FF8021", height: 5 } }}
         >
-          <Tab className={classes.link} label="Basic info" {...a11yProps(0)} />
+          <Tab
+            className={classes.link}
+            label="Booking link"
+            {...a11yProps(0)}
+          />
           <Tab
             className={[classes.link]}
             // style={{ fontWeight: "500", color: "#323232", fontSize: "32px" }}
-            label="Schedule"
+            label="Booking pages"
             {...a11yProps(0)}
           />
 
-          <Tab className={classes.link} label="Pricing" {...a11yProps(2)} />
-
+          <Tab className={classes.link} label="Settings" {...a11yProps(3)} />
           {/* <Tab className={classes.link} label="Saved" {...a11yProps(3)} /> */}
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <h1>Basic Info</h1>
+        <Tab1 />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Schedule />
+        <Tab2 />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <h1>Location</h1>
+        <Tab3 />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Pricing />
+        <h1>Pricing</h1>
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <h1>More options</h1>
       </TabPanel>
     </div>
   );
