@@ -285,7 +285,7 @@ export default function FormDialog(props) {
                     name="startTime"
                     placeholder="DD/MM/YYYY"
                     required={true}
-                    width="100%"
+                    width="300px"
                   />
                 </div>
               </div>
