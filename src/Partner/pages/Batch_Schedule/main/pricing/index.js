@@ -7,7 +7,7 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
-import Table from "@material-ui/core/Table";
+// import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
@@ -16,6 +16,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import Table from "./Table";
 // import Dialog from "./Dialog";
 
 const useStyles = makeStyles((theme) => ({
@@ -58,9 +59,10 @@ const Customers = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <div>
+    <div style={{ marginRight: 100 }}>
       <div>
-        <TableContainer
+        <Table />
+        {/* <TableContainer
           id="customer"
           style={{
             marginTop: "0%",
@@ -101,6 +103,9 @@ const Customers = () => {
             </Table>
           </Link>
         </TableContainer>
+      
+       */}
+
         <div style={{ display: "flex", alignItems: "center" }}>
           <p style={{ color: "#FF8021" }}>Show More</p>
           <ArrowDropDownIcon style={{ color: "#FF8021", marginTop: 3 }} />
