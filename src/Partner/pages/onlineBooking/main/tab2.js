@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Home from "@material-ui/icons/Home";
 import LanguageIcon from "@material-ui/icons/Home";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Menu";
+import SettingsIcon from "@material-ui/icons/Settings";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import CallIcon from "@material-ui/icons/Call";
 import { Link } from "react-router-dom";
@@ -87,7 +87,7 @@ export default function Tab2() {
               <div
                 style={{ display: "flex", marginTop: 5, alignItems: "center" }}
               >
-                <InstagramIcon
+                <SettingsIcon
                   style={{
                     marginRight: 10,
                     color: "#757575",
