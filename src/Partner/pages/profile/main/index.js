@@ -26,7 +26,7 @@ export default function Main() {
         <Grid lg={7} item>
           <div style={{ display: "flex", alignItems: "center" }}>
             <form style={{ maxWidth: 480, marginTop: 10 }}>
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div>
                   <label for="name">First name </label>
                   <div style={{ display: "flex" }}>
@@ -34,18 +34,20 @@ export default function Main() {
                       type="text"
                       id="name"
                       name="user_name"
-                      value="E.g. Jane"
+                      placeholder="E.g. Jane"
+                      style={{ color: "#323232" }}
                     />
                   </div>
                 </div>
-                <div style={{ marginLeft: 50 }}>
+                <div>
                   <label for="name">Last name </label>
                   <div style={{ display: "flex" }}>
                     <input
                       type="text"
                       id="name"
                       name="user_name"
-                      value="E.g. Doe"
+                      placeholder="E.g. Doe"
+                      style={{ color: "#323232" }}
                     />
                   </div>
                 </div>
@@ -57,12 +59,19 @@ export default function Main() {
                   type="text"
                   id="name"
                   name="user_name"
-                  value="Email address"
+                  placeholder="Email address"
+                  style={{ color: "#323232" }}
                 />
               </div>
               <label for="name">Phone number*</label>
               <div style={{ display: "flex" }}>
-                <input type="text" id="name" name="user_name" value="+91 " />
+                <input
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  placeholder="+91 "
+                  style={{ color: "#323232" }}
+                />
               </div>
               <Button
                 variant="contained"

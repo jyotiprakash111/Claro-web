@@ -1,8 +1,11 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import LanguageIcon from "@material-ui/icons/Language";
+import Home from "@material-ui/icons/Home";
+import LanguageIcon from "@material-ui/icons/Home";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import InstagramIcon from "@material-ui/icons/Menu";
+import ScheduleIcon from "@material-ui/icons/Schedule";
+import CallIcon from "@material-ui/icons/Call";
 import { Link } from "react-router-dom";
 
 export default function Tab2() {
@@ -30,7 +33,7 @@ export default function Tab2() {
               <div
                 style={{ display: "flex", marginTop: 5, alignItems: "center" }}
               >
-                <LanguageIcon
+                <Home
                   style={{
                     marginRight: 10,
                     color: "#757575",
@@ -57,7 +60,7 @@ export default function Tab2() {
               <div
                 style={{ display: "flex", marginTop: 5, alignItems: "center" }}
               >
-                <FacebookIcon
+                <ScheduleIcon
                   style={{
                     marginRight: 10,
                     color: "#757575",
@@ -111,7 +114,7 @@ export default function Tab2() {
               <div
                 style={{ display: "flex", marginTop: 5, alignItems: "center" }}
               >
-                <LanguageIcon
+                <CallIcon
                   style={{
                     marginRight: 10,
                     color: "#757575",

@@ -13,7 +13,7 @@ import Dialog from "./Dialog2";
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    width: "100%",
   },
 });
 
