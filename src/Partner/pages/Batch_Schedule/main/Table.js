@@ -31,7 +31,7 @@ export default function BasicTable() {
   const classes = useStyles();
 
   return (
-    <TableContainer id="sales" component={Paper}>
+    <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead style={{ background: "#F8F8F8" }}>
           <TableRow>

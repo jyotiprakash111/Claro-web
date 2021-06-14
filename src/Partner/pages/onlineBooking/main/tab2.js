@@ -38,7 +38,7 @@ export default function Tab2() {
                   }}
                 />
                 <input
-                  placeholder="www.yoursite.com"
+                  placeholder="www.charoo.com/homepage"
                   id="mail"
                   name="user_email"
                   type="text"
@@ -53,7 +53,7 @@ export default function Tab2() {
                 />
               </div>
               <br />
-              <label for="name">Facebook</label>
+              <label for="name">Schedule</label>
               <div
                 style={{ display: "flex", marginTop: 5, alignItems: "center" }}
               >
@@ -65,7 +65,7 @@ export default function Tab2() {
                   }}
                 />
                 <input
-                  placeholder="www.facebook.com/facebook"
+                  placeholder="www.claroo.com/schedule"
                   id="mail"
                   name="user_email"
                   type="text"
@@ -80,7 +80,7 @@ export default function Tab2() {
                 />
               </div>
               <br />
-              <label for="name">Instagram</label>
+              <label for="name">Services</label>
               <div
                 style={{ display: "flex", marginTop: 5, alignItems: "center" }}
               >
@@ -92,7 +92,7 @@ export default function Tab2() {
                   }}
                 />
                 <input
-                  placeholder="www.instagram.com/instagram"
+                  placeholder="www.claroo.com/Services"
                   id="mail"
                   name="user_email"
                   type="text"
@@ -107,7 +107,7 @@ export default function Tab2() {
                 />
               </div>
               <br />
-              <label for="name">YouTube</label>
+              <label for="name">Contact us</label>
               <div
                 style={{ display: "flex", marginTop: 5, alignItems: "center" }}
               >
@@ -119,7 +119,7 @@ export default function Tab2() {
                   }}
                 />
                 <input
-                  placeholder="www.youtube.com/youtube"
+                  placeholder="www.claroo.com/contact_us"
                   id="mail"
                   name="user_email"
                   type="text"
