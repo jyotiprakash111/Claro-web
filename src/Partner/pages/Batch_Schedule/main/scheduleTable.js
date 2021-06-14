@@ -10,7 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import { Link } from "react-router-dom";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-import Menu from "./Menu";
+import Menu from "./schedule/Menu";
 import "./style.css";
 
 const useStyles = makeStyles({
