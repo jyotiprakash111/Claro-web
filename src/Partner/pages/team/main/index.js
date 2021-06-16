@@ -68,7 +68,9 @@ export default function SimpleSelect() {
           Add new Member
         </Button>
       </div>
-      <Table open={open2} onClose={() => setOpen2(false)} />
+      <div style={{ marginRight: 100 }}>
+        <Table open={open2} onClose={() => setOpen2(false)} />
+      </div>
     </div>
   );
 }

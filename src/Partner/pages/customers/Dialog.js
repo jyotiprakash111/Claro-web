@@ -172,6 +172,7 @@ export default function FormDialog(props) {
           width: 800,
           margin: "0px auto",
           maxHeight: "95%",
+          height: 650,
         }}
         open={props.open}
         onClose={() => props.handleClose()}
@@ -182,7 +183,7 @@ export default function FormDialog(props) {
         >
           New Customer
         </DialogTitle>
-        <div style={{ padding: 20, height: 500, width: 700, paddingTop: 0 }}>
+        <div style={{ padding: 20, width: 700, paddingTop: 0 }}>
           <form id="customer">
             <fieldset>
               <div style={{ display: "flex", justifyContent: "space-between" }}>

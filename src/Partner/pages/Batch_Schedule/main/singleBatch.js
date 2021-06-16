@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import CancelIcon from "@material-ui/icons/Cancel";
 import Button from "@material-ui/core/Button";
-import Menu from "./Menu";
-import MoreEvents from "./moreEvents";
+import Menu from "./schedule/Menu";
+import MoreEvents from "./schedule/moreEvents";
 
 export default class index extends Component {
   render() {

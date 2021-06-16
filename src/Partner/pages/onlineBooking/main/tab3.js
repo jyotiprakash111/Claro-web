@@ -104,9 +104,9 @@ export default function Tab3() {
             >
               <Grid item>
                 <AntSwitch
-                  checked={state.checkedC}
+                  checked={state.checkedC1}
                   onChange={handleChange}
-                  name="checkedC"
+                  name="checkedC1"
                 />
               </Grid>
               <Grid item>Show booking time zone</Grid>
@@ -132,9 +132,9 @@ export default function Tab3() {
             >
               <Grid item>
                 <AntSwitch
-                  checked={state.checkedC}
+                  checked={state.checkedC2}
                   onChange={handleChange}
-                  name="checkedC"
+                  name="checkedC2"
                 />
               </Grid>
               <Grid item>Show prices</Grid>
@@ -150,9 +150,9 @@ export default function Tab3() {
             >
               <Grid item>
                 <AntSwitch
-                  checked={state.checkedC}
+                  checked={state.checkedC3}
                   onChange={handleChange}
-                  name="checkedC"
+                  name="checkedC3"
                 />
               </Grid>
               <Grid item>Show duration</Grid>
@@ -168,9 +168,9 @@ export default function Tab3() {
             >
               <Grid item>
                 <AntSwitch
-                  checked={state.checkedC}
+                  checked={state.checkedC4}
                   onChange={handleChange}
-                  name="checkedC"
+                  name="checkedC4"
                 />
               </Grid>
               <Grid item>Show number of slots available in class session</Grid>
@@ -186,9 +186,9 @@ export default function Tab3() {
             >
               <Grid item>
                 <AntSwitch
-                  checked={state.checkedC}
+                  checked={state.checkedC5}
                   onChange={handleChange}
-                  name="checkedC"
+                  name="checkedC5"
                 />
               </Grid>
               <Grid item>Show booking notes</Grid>

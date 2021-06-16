@@ -51,7 +51,8 @@ export default function Index(props) {
                     type="text"
                     id="name"
                     name="user_name"
-                    value="E.g. Jane"
+                    placeholder="E.g. Jane"
+                    style={{ color: "#323232" }}
                   />
                 </div>
               </div>
@@ -62,7 +63,8 @@ export default function Index(props) {
                     type="text"
                     id="name"
                     name="user_name"
-                    value="E.g. Doe"
+                    placeholder="E.g. Doe"
+                    style={{ color: "#323232" }}
                   />
                 </div>
               </div>
@@ -74,7 +76,8 @@ export default function Index(props) {
                 type="text"
                 id="name"
                 name="user_name"
-                value="E.g. Lead instructor. Field is viewable while booking"
+                placeholder="E.g. Lead instructor. Field is viewable while booking"
+                style={{ color: "#323232" }}
               />
             </div>
             <label for="name">About the staff member (optional)</label>
@@ -84,7 +87,8 @@ export default function Index(props) {
                 id="name"
                 name="user_name"
                 rows={4}
-                value="Add notes viewable to customers for on the course landing page"
+                placeholder="Add notes viewable to customers for on the course landing page"
+                style={{ color: "#323232" }}
               />
             </div>
             <label for="name">Email address*</label>
@@ -93,7 +97,8 @@ export default function Index(props) {
                 type="text"
                 id="name"
                 name="user_name"
-                value="mail@example.com"
+                placeholder="mail@example.com"
+                style={{ color: "#323232" }}
               />
             </div>
             <label for="name">Phone number*</label>
@@ -102,7 +107,8 @@ export default function Index(props) {
                 type="text"
                 id="name"
                 name="user_name"
-                value="+91 98978 90889"
+                placeholder="+91 98978 90889"
+                style={{ color: "#323232" }}
               />
             </div>
             <FormControl>
