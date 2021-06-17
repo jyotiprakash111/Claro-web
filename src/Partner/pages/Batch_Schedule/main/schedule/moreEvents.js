@@ -3,19 +3,15 @@ import Dialog from "@material-ui/core/Dialog";
 import Button from "@material-ui/core/Button";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import "./style.css";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { Divider } from "@material-ui/core";
 import { Controller, FormProvider, useForm } from "react-hook-form";
-import { TramRounded } from "@material-ui/icons";
 import FormDatePicker from "../../../../components/controls/FormDatePicker";
 import FormTimePicker from "../../../../components/controls/FormTimePicker";
 import Checkbox from "@material-ui/core/Checkbox";
 import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import Input from "@material-ui/core/Input";
 import ListItemText from "@material-ui/core/ListItemText";
-import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import IconButton from "@material-ui/core/IconButton";
 
@@ -179,22 +175,6 @@ export default function FormDialog(props) {
                 </MenuItem>
               ))}
             </Select>
-            {/* <select
-              style={{
-                height: 40,
-              }}
-              id="business"
-              name="user_job"
-              onChange={(e) => changePaymentType(e.target.value)}
-            >
-              <option value={0}>Monday</option>
-              <option value={1}>Tuesday</option>
-              <option value={2}>Wednesday</option>
-              <option value={3}>Thursday</option>
-              <option value={4}>Friday</option>
-              <option value={5}>Saturday</option>
-              <option value={6}>Sunday</option>
-            </select> */}
           </div>
           <div style={{ display: "flex", alignItems: "center" }}>
             <p style={{ padding: 5, margin: 0 }}>Repeat every </p>
@@ -283,21 +263,16 @@ export default function FormDialog(props) {
 
   return (
     <FormProvider {...methods}>
-      <div>
+      <div id="batch_schedule_schedule_more_event">
         <Dialog
           fullScreen
-          style={{ width: 900, height: "90%", width: 760, margin: "20px auto" }}
+          className="dialog"
+          style={{ height: "90%", width: 760, margin: "20px auto" }}
           open={props.open}
           onClose={() => props.handleClose()}
         >
           <div style={{ padding: 20, height: 500, width: 700 }}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
+            <div className="batch_schedule_schedule_more_event_dialog_div">
               <h1>Add more timings Single event</h1>
               <IconButton onClick={() => props.handleClose()}>
                 <CancelIcon />
@@ -308,6 +283,7 @@ export default function FormDialog(props) {
             <form id="customer" style={{}}>
               <fieldset>
                 <div
+                  className="customer_div_1"
                   style={{ display: "flex", width: "100%", flexWrap: "wrap" }}
                 >
                   <div style={{ width: "50%" }}>
@@ -333,25 +309,11 @@ export default function FormDialog(props) {
                         height: 40,
                         width: "80%",
                       }}
-                      // value={age}
-                      // onChange={handleChange}
                     >
                       <MenuItem value={0}>Daily</MenuItem>
                       <MenuItem value={1}>Weekly</MenuItem>
                       <MenuItem value={3}>Does not repeat</MenuItem>
                     </Select>
-                    {/* <select
-                      style={{
-                        height: 40,
-                      }}
-                      id="business"
-                      name="user_job"
-                      onChange={(e) => changePaymentType(e.target.value)}
-                    >
-                      <option value={0}>Daily</option>
-                      <option value={1}>Weekly</option>
-                      <option value={3}></option>
-                    </select> */}
                   </div>
                   <div style={{ width: "50%" }}>
                     <label style={{ marginTop: 10 }} for="business">
