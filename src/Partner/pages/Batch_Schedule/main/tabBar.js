@@ -8,9 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Schedule from "./schedule/index";
 import Pricing from "./pricing/index.js";
-// import Booking from "./Booking/Card";
-// import Profile from "./Profile/index";
-// import Transaction from "./transaction";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

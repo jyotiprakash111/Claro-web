@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import CancelIcon from "@material-ui/icons/Cancel";
 import Button from "@material-ui/core/Button";
 import Menu from "./schedule/Menu";
 import MoreEvents from "./schedule/moreEvents";
 
-export default class index extends Component {
+export default class SingleBatch extends Component {
   render() {
     return (
-      <div>
+      <div id="batch_schedule_single_batch">
         <MoreEvents open={true} />
         <div
           style={{
