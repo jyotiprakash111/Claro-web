@@ -280,7 +280,7 @@ export default function FormDialog(props) {
             </div>
 
             <Divider />
-            <form id="customer" style={{}}>
+            <form id="single_Event" style={{}}>
               <fieldset>
                 <div
                   className="customer_div_1"

@@ -68,7 +68,7 @@ export default function Main() {
           marginTop: 20,
           display: "flex",
           justifyContent: "space-between",
-          marginRight: 30,
+          width: "90%",
         }}
       >
         <div>
@@ -108,7 +108,7 @@ export default function Main() {
             width: 150,
           }}
         >
-          See all the steps
+          add new classes
         </Button>
       </div>
       <div>

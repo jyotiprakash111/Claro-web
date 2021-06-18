@@ -1,31 +1,30 @@
-
-#customer th {
+#single_event th {
   font-weight: bold;
   padding: 10px;
   background: #f8f8f8;
   color: #323232;
 }
-#customer td {
+#single_event td {
   color: #323232;
   padding: 15px;
 }
-#customer form {
+#single_event form {
   box-sizing: border-box;
   width: 100%;
 }
-#customer input[type="text"],
-#customer input[type="password"],
-#customer input[type="date"],
-#customer input[type="datetime"],
-#customer input[type="email"],
-#customer input[type="number"],
-#customer input[type="search"],
-#customer input[type="file"],
-#customer input[type="tel"],
-#customer input[type="time"],
-#customer input[type="url"],
-#customer textarea,
-#customer select {
+#single_event input[type="text"],
+#single_event input[type="password"],
+#single_event input[type="date"],
+#single_event input[type="datetime"],
+#single_event input[type="email"],
+#single_event input[type="number"],
+#single_event input[type="search"],
+#single_event input[type="file"],
+#single_event input[type="tel"],
+#single_event input[type="time"],
+#single_event input[type="url"],
+#single_event textarea,
+#single_event select {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   font-size: 15px;
@@ -45,34 +44,34 @@
   padding-left: 20px;
 }
 
-#customer input[type="radio"],
-#customer input[type="checkbox"] {
+#single_event input[type="radio"],
+#single_event input[type="checkbox"] {
   margin: 0 4px 8px 0;
 }
 
-#customer select {
+#single_event select {
   padding: 6px;
   height: 32px;
   border-radius: 2px;
 }
 
-#customer fieldset {
+#single_event fieldset {
   margin-bottom: 0px;
   border: none;
 }
 
-#customer legend {
+#single_event legend {
   font-size: 1.4em;
   margin-bottom: 10px;
 }
 
-#customer label {
+#single_event label {
   display: block;
   margin-bottom: 8px;
   color: #323232;
 }
 
-#customer label.light {
+#single_event label.light {
   font-weight: 300;
   display: inline;
 }

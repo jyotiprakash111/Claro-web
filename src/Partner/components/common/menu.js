@@ -21,10 +21,11 @@ export const menu = [
   {
     icon: <SortIcon />,
     title: "Services",
+    to: "/home_services",
     items: [
       {
-        title: "Home Screen",
-        to: "/homescreen",
+        title: "Classes",
+        to: "/home_classes",
       },
     ],
   },
