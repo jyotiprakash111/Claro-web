@@ -8,6 +8,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
+import Table from "./Table";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -44,89 +45,112 @@ const top100Films = [
 
 export default function Location() {
   const [temp, setTemp] = React.useState("0");
-  return (
-    <div>
-      <p>
-        60% completed arlready! Let’s get started with adding prices for the
-        scheduled classes
-      </p>
-      <Grid container spacing={3}>
-        <Grid item lg={6}>
-          <label style={{ color: "#827575" }}>Price per session</label>
-          <TextField
-            id="outlined-select-currency"
-            style={{ width: "100%" }}
-            value="0"
-            // helperText="Please select your currency"
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item lg={6}></Grid>
-        <Grid item lg={6}>
-          {" "}
-          <label style={{ color: "#827575" }}>
-            Select the batches to apply this price plan
-          </label>
-          <TextField
-            id="outlined-select-currency"
-            select
-            size="large"
-            style={{ width: "100%" }}
-            value={temp}
-            onChange={(e) => setTemp(e.target.value)}
-            // helperText="Please select your currency"
-            variant="outlined"
-          >
-            {currencies.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-        </Grid>
-        <Grid item lg={6}></Grid>
-        {temp === "1" ? (
+  const [temp2, setTemp2] = React.useState("1");
+  if (temp2 == "0") {
+    return (
+      <div>
+        <p>
+          60% completed arlready! Let’s get started with adding prices for the
+          scheduled classes
+        </p>
+        <Grid container spacing={3}>
           <Grid item lg={6}>
-            <label style={{ color: "#827575" }}>Select the batches</label>
-            <Autocomplete
-              multiple
-              id="checkboxes-tags-demo"
-              options={top100Films}
-              disableCloseOnSelect
-              getOptionLabel={(option) => option.title}
-              renderOption={(option, { selected }) => (
-                <React.Fragment>
-                  <Checkbox
-                    icon={icon}
-                    checkedIcon={checkedIcon}
-                    style={{ marginRight: 8 }}
-                    checked={selected}
-                  />
-                  {option.title}
-                </React.Fragment>
-              )}
-              style={{ width: 500 }}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  variant="outlined"
-                  placeholder="Favorites"
-                />
-              )}
+            <label style={{ color: "#827575" }}>Price per session</label>
+            <TextField
+              id="outlined-select-currency"
+              style={{ width: "100%" }}
+              value="0"
+              // helperText="Please select your currency"
+              variant="outlined"
             />
           </Grid>
-        ) : (
-          ""
-        )}
-      </Grid>
-      <div style={{ width: 200, marginLeft: "auto", marginTop: "250px" }}>
-        <Button
-          variant="contained"
-          style={{ background: "#FF8021", color: "#fff" }}
-        >
-          Save and Continue
-        </Button>
+          <Grid item lg={6}></Grid>
+          <Grid item lg={6}>
+            {" "}
+            <label style={{ color: "#827575" }}>
+              Select the batches to apply this price plan
+            </label>
+            <TextField
+              id="outlined-select-currency"
+              select
+              size="large"
+              style={{ width: "100%" }}
+              value={temp}
+              onChange={(e) => setTemp(e.target.value)}
+              // helperText="Please select your currency"
+              variant="outlined"
+            >
+              {currencies.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+          </Grid>
+          <Grid item lg={6}></Grid>
+          {temp === "1" ? (
+            <Grid item lg={6}>
+              <label style={{ color: "#827575" }}>Select the batches</label>
+              <Autocomplete
+                multiple
+                id="checkboxes-tags-demo"
+                options={top100Films}
+                disableCloseOnSelect
+                getOptionLabel={(option) => option.title}
+                renderOption={(option, { selected }) => (
+                  <React.Fragment>
+                    <Checkbox
+                      icon={icon}
+                      checkedIcon={checkedIcon}
+                      style={{ marginRight: 8 }}
+                      checked={selected}
+                    />
+                    {option.title}
+                  </React.Fragment>
+                )}
+                style={{ width: 500 }}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    variant="outlined"
+                    placeholder="Favorites"
+                  />
+                )}
+              />
+            </Grid>
+          ) : (
+            ""
+          )}
+        </Grid>
+        <div style={{ width: 200, marginLeft: "auto", marginTop: "250px" }}>
+          <Button
+            variant="contained"
+            onClick={() => setTemp2("1")}
+            style={{ background: "#FF8021", color: "#fff" }}
+          >
+            Save and Continue
+          </Button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else if (temp2 == "1") {
+    return (
+      <div style={{ width: "90%" }}>
+        <div style={{ width: 200, textAlign: "right", marginLeft: "auto" }}>
+          <Button
+            style={{
+              textTransform: "none",
+              color: "#FF8021",
+              border: "1px solid #FF8021",
+            }}
+            onClick={() => setTemp2("0")}
+            variant="outlined"
+          >
+            Add price plan
+          </Button>
+        </div>
+        <Table />
+      </div>
+    );
+  }
 }
