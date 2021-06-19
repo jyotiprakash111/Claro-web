@@ -3,7 +3,8 @@ import { TextField } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
-
+import AddIcon from "@material-ui/icons/Remove";
+import IconButton from "@material-ui/core/IconButton";
 const currencies = [
   {
     value: "0",
@@ -44,7 +45,19 @@ export default function OtherOptions() {
           {arr.map((item, i) => {
             return (
               <div>
-                <label style={{ color: "#827575" }}>Benifit {i + 1}</label>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <label style={{ color: "#827575" }}>Benifit {i + 1}</label>
+                  <IconButton onClick={() => setArr(arr.splice(1))}>
+                    <AddIcon />
+                  </IconButton>
+                </div>
+
                 <TextField
                   style={{ width: "100%", marginBottom: 20 }}
                   variant="outlined"
@@ -126,7 +139,18 @@ export default function OtherOptions() {
           {arr2.map((item, i) => {
             return (
               <div>
-                <label style={{ color: "#827575" }}>Answer {i + 1}</label>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <label style={{ color: "#827575" }}>Answer {i + 1}</label>
+                  <IconButton onClick={() => setArr2(arr2.splice(1))}>
+                    <AddIcon />
+                  </IconButton>
+                </div>
                 <TextField
                   style={{ width: "100%", marginBottom: 20 }}
                   variant="outlined"

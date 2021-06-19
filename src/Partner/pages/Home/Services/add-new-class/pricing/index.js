@@ -4,6 +4,14 @@ import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 
+import Checkbox from "@material-ui/core/Checkbox";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
+
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
+
 const currencies = [
   {
     value: "0",
@@ -23,6 +31,15 @@ const currencies2 = [
     value: "1",
     label: "Apply to selected batches only",
   },
+];
+
+const top100Films = [
+  { title: "The Shawshank Redemption", year: 1994 },
+  { title: "The Godfather", year: 1972 },
+  { title: "The Godfather: Part II", year: 1974 },
+  { title: "The Dark Knight", year: 2008 },
+  { title: "12 Angry Men", year: 1957 },
+  { title: "Schindler's List", year: 1993 },
 ];
 
 export default function Location() {
@@ -70,23 +87,33 @@ export default function Location() {
         <Grid item lg={6}></Grid>
         {temp === "1" ? (
           <Grid item lg={6}>
-            {" "}
             <label style={{ color: "#827575" }}>Select the batches</label>
-            <TextField
-              id="outlined-select-currency"
-              select
-              size="large"
-              style={{ width: "100%" }}
-              value="0"
-              // helperText="Please select your currency"
-              variant="outlined"
-            >
-              {currencies2.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
+            <Autocomplete
+              multiple
+              id="checkboxes-tags-demo"
+              options={top100Films}
+              disableCloseOnSelect
+              getOptionLabel={(option) => option.title}
+              renderOption={(option, { selected }) => (
+                <React.Fragment>
+                  <Checkbox
+                    icon={icon}
+                    checkedIcon={checkedIcon}
+                    style={{ marginRight: 8 }}
+                    checked={selected}
+                  />
+                  {option.title}
+                </React.Fragment>
+              )}
+              style={{ width: 500 }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  variant="outlined"
+                  placeholder="Favorites"
+                />
+              )}
+            />
           </Grid>
         ) : (
           ""

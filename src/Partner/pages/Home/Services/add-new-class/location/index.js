@@ -34,6 +34,7 @@ const business_location = [
 ];
 
 export default function Location() {
+  const [temp, setTemp] = React.useState(0);
   return (
     <div>
       <p>
@@ -85,7 +86,7 @@ export default function Location() {
           </label>
           <div style={{ marginBottom: 20 }}></div>
           <div>
-            {["Zoom", "Google Meet", "Skype", "Others"].map((item) => {
+            {["Zoom", "Google Meet", "Skype", "Others"].map((item, i) => {
               return (
                 <Button
                   variant="outlined"
@@ -93,10 +94,13 @@ export default function Location() {
                     minWidth: 90,
                     color: "#ccc",
                     border: "1px solid #65B1EC",
+                    background: temp == i ? "#65B1EC" : "",
+                    color: temp == i ? "#fff" : "#65B1EC",
                     marginRight: 10,
                     borderRadius: 30,
                     padding: "15px 20px",
                   }}
+                  onClick={() => setTemp(i)}
                 >
                   {item}
                 </Button>
