@@ -26,7 +26,7 @@ export default class index extends Component {
                 borderRadius: 20,
                 width: 150,
                 textAlign: "right",
-                marginTop: -20,
+                marginTop: 0,
               }}
               //   onClick={() => props.handleClose()}
               variant="contained"
