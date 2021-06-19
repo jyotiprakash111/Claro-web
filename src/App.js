@@ -18,6 +18,7 @@ import home_services from "./Partner/pages/Home/Services/index";
 import home_classes from "./Partner/pages/Home/Services/Classes/index";
 import homeScreen from "./Partner/pages/homePage/index";
 import onlineBooking from "./Partner/pages/onlineBooking/index.js";
+import NewClass from "./Partner/pages/Home/Services/add-new-class/index";
 import "./style.css";
 
 class App extends Component {
@@ -44,6 +45,7 @@ class App extends Component {
             <Route path="/settings" component={settings} />
             <Route path="/batch_schedule" component={batchSchedule} />
             <Route path="/online_booking" component={onlineBooking} />
+            <Route path="/new_class" component={NewClass} />
           </Switch>
         </div>
       </Router>

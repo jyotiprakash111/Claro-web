@@ -12,6 +12,7 @@ import Pexels_Photo_by_Lukas from "../../../../assets/img/Pexels_Photo_by_Lukas.
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import IconButton from "@material-ui/core/IconButton";
 import { Divider } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -99,17 +100,19 @@ export default function Main() {
             </Select>
           </FormControl>
         </div>
-        <Button
-          style={{
-            background: "#65B1EC",
-            textTransform: "capitalize",
-            color: "#fff",
-            borderRadius: 30,
-            width: 150,
-          }}
-        >
-          add new classes
-        </Button>
+        <Link to="/new_class" style={{ textDecoration: "none" }}>
+          <Button
+            style={{
+              background: "#65B1EC",
+              textTransform: "capitalize",
+              color: "#fff",
+              borderRadius: 30,
+              width: 150,
+            }}
+          >
+            add new classes
+          </Button>
+        </Link>
       </div>
       <div>
         <p style={{ fontSize: 30, marginBottom: 0 }}>Category 1</p>
