@@ -1,0 +1,105 @@
+import React from "react";
+import { TextField } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import MenuItem from "@material-ui/core/MenuItem";
+import Button from "@material-ui/core/Button";
+
+const currencies = [
+  {
+    value: "0",
+    label: "Apply to all batches for this class",
+  },
+  {
+    value: "1",
+    label: "Apply to selected batches only",
+  },
+];
+const currencies2 = [
+  {
+    value: "0",
+    label: "",
+  },
+  {
+    value: "1",
+    label: "Apply to selected batches only",
+  },
+];
+
+export default function Location() {
+  const [temp, setTemp] = React.useState("0");
+  return (
+    <div>
+      <p>
+        60% completed arlready! Let’s get started with adding prices for the
+        scheduled classes
+      </p>
+      <Grid container spacing={3}>
+        <Grid item lg={6}>
+          <label style={{ color: "#827575" }}>Price per session</label>
+          <TextField
+            id="outlined-select-currency"
+            style={{ width: "100%" }}
+            value="0"
+            // helperText="Please select your currency"
+            variant="outlined"
+          />
+        </Grid>
+        <Grid item lg={6}></Grid>
+        <Grid item lg={6}>
+          {" "}
+          <label style={{ color: "#827575" }}>
+            Select the batches to apply this price plan
+          </label>
+          <TextField
+            id="outlined-select-currency"
+            select
+            size="large"
+            style={{ width: "100%" }}
+            value={temp}
+            onChange={(e) => setTemp(e.target.value)}
+            // helperText="Please select your currency"
+            variant="outlined"
+          >
+            {currencies.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+        <Grid item lg={6}></Grid>
+        {temp === "1" ? (
+          <Grid item lg={6}>
+            {" "}
+            <label style={{ color: "#827575" }}>Select the batches</label>
+            <TextField
+              id="outlined-select-currency"
+              select
+              size="large"
+              style={{ width: "100%" }}
+              value="0"
+              // helperText="Please select your currency"
+              variant="outlined"
+            >
+              {currencies2.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+          </Grid>
+        ) : (
+          ""
+        )}
+      </Grid>
+      <div style={{ width: 200, marginLeft: "auto", marginTop: "250px" }}>
+        <Button
+          variant="contained"
+          style={{ background: "#FF8021", color: "#fff" }}
+        >
+          Save and Continue
+        </Button>
+      </div>
+    </div>
+  );
+}

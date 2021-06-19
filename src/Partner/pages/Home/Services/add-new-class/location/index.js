@@ -1,0 +1,140 @@
+import React from "react";
+import { TextField } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import MenuItem from "@material-ui/core/MenuItem";
+import Button from "@material-ui/core/Button";
+
+const currencies = [
+  {
+    value: "0",
+    label: "No instructor assigned",
+  },
+  {
+    value: "1",
+    label: "Instructor name 1",
+  },
+  {
+    value: "2",
+    label: "Instructor name 2",
+  },
+];
+const business_location = [
+  {
+    value: "0",
+    label: "Business location",
+  },
+  {
+    value: "1",
+    label: "Online",
+  },
+  {
+    value: "2",
+    label: "Customer's location",
+  },
+];
+
+export default function Location() {
+  return (
+    <div>
+      <p>
+        Yay! You are 40%% done. Let’s now add timing, location and instructors
+      </p>
+      <Grid container spacing={3}>
+        <Grid item lg={6}>
+          <label style={{ color: "#827575" }}>Instructors</label>
+          <TextField
+            id="outlined-select-currency"
+            select
+            size="large"
+            style={{ width: "100%" }}
+            value="0"
+            // helperText="Please select your currency"
+            variant="outlined"
+          >
+            {currencies.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+        <Grid item lg={6}></Grid>
+        <Grid item lg={6}>
+          {" "}
+          <label style={{ color: "#827575" }}>Location for this class</label>
+          <TextField
+            id="outlined-select-currency"
+            select
+            size="large"
+            style={{ width: "100%" }}
+            value="0"
+            // helperText="Please select your currency"
+            variant="outlined"
+          >
+            {business_location.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+        <Grid item lg={6}></Grid>
+        <Grid item lg={6}>
+          <label style={{ color: "#827575" }}>
+            Platform for hosting the online class
+          </label>
+          <div style={{ marginBottom: 20 }}></div>
+          <div>
+            {["Zoom", "Google Meet", "Skype", "Others"].map((item) => {
+              return (
+                <Button
+                  variant="outlined"
+                  style={{
+                    minWidth: 90,
+                    color: "#ccc",
+                    border: "1px solid #65B1EC",
+                    marginRight: 10,
+                    borderRadius: 30,
+                    padding: "15px 20px",
+                  }}
+                >
+                  {item}
+                </Button>
+              );
+            })}
+          </div>
+        </Grid>
+        <Grid item lg={12}>
+          <label style={{ color: "#827575" }}>
+            Enter link to join the class (optional)
+          </label>
+          <TextField
+            variant="outlined"
+            placeholder="Enter here"
+            size="large"
+            style={{ width: "100%" }}
+          />
+        </Grid>
+        <Grid item lg={12}>
+          <label style={{ color: "#827575" }}>
+            Enter any other details to send to participants (optional)
+          </label>
+          <TextField
+            variant="outlined"
+            placeholder="Enter here"
+            size="large"
+            style={{ width: "100%", height: "50px" }}
+          />
+        </Grid>
+      </Grid>
+      <div style={{ width: 200, marginLeft: "auto", marginTop: 50 }}>
+        <Button
+          variant="contained"
+          style={{ background: "#FF8021", color: "#fff" }}
+        >
+          Save and Continue
+        </Button>
+      </div>
+    </div>
+  );
+}
