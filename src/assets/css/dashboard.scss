@@ -1,0 +1,157 @@
+.dashboard {
+  padding-left: 50px;
+  .home {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 38px;
+    border-bottom: 1px solid #65b1ec;
+    margin-bottom: 48px;
+  }
+  .chart {
+    margin: auto;
+  }
+  .hello-container {
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    min-height: 301px;
+    .btn-primary {
+      text-transform: none;
+      background: #65b1ec;
+      border-radius: 40px;
+      font-size: 14px;
+      line-height: 150%;
+      color: #f8f8f8;
+      margin-right: 11px;
+      letter-spacing: inherit;
+    }
+  }
+  .hello-container2 {
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    display: flex;
+    .step-p {
+      font-size: 18px;
+      line-height: 150%;
+      font-weight: 600;
+      color: #323232;
+    }
+    p {
+      font-size: 18px;
+      color: #323232;
+    }
+  }
+  .hello-container3 {
+    padding: 1px 17px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    margin-top: 10px;
+    p {
+      font-size: 15px;
+      line-height: 150%;
+      color: #908f7f;
+    }
+  }
+  .start-step-section {
+    display: flex;
+    .btn-primary {
+      letter-spacing: inherit;
+      text-transform: none;
+      background: #65b1ec;
+      border-radius: 40px;
+      font-size: 14px;
+      line-height: 150%;
+      color: #f8f8f8;
+      margin-right: 11px;
+      height: fit-content;
+      margin-top: 9px;
+    }
+    .all-steps {
+      font-size: 15px;
+      line-height: 150%;
+      text-decoration-line: underline;
+      color: #65b1ec;
+    }
+  }
+  .sales-container {
+    padding: 20px;
+    background: #f8f8f8;
+    opacity: 0.9;
+    border-radius: 10px;
+    margin-top: 30px;
+    h2 {
+      font-size: 24px;
+      line-height: 150%;
+      color: #323232;
+    }
+    .sales-price-container {
+      display: flex;
+      margin-bottom: 40px;
+      .confirmed-sales {
+        background: #ffffff;
+        border-radius: 5px;
+        padding: 10px;
+        min-width: 195px;
+        // margin: auto;
+        h4 {
+          font-size: 15px;
+          line-height: 150%;
+          color: #65b1ec;
+          font-weight: 500;
+          margin: 0px;
+        }
+        p {
+          font-size: 20px;
+          line-height: 28px;
+          color: #323232;
+          font-weight: 500;
+          margin: 8px 0px;
+        }
+      }
+      .in-review {
+        background: #ffffff;
+        border-radius: 5px;
+        padding: 10px;
+        min-width: 195px;
+        margin: auto;
+        h4 {
+          font-size: 15px;
+          line-height: 150%;
+          color: #ff8021;
+          font-weight: 500;
+          margin: 0px;
+        }
+        p {
+          font-size: 20px;
+          line-height: 28px;
+          color: #323232;
+          font-weight: 500;
+          margin: 8px 0px;
+        }
+      }
+    }
+    .all-trans {
+      margin-bottom: 50px;
+      display: flex;
+      justify-content: space-between;
+      .booking-heading {
+        font-size: 18px;
+        line-height: 150%;
+        color: #323232;
+      }
+      .schedule-para {
+        font-size: 12px;
+        line-height: 150%;
+        text-align: right;
+        text-decoration-line: underline;
+        color: #65b1ec;
+      }
+      .no-sales-heading {
+        font-size: 18px;
+        line-height: 150%;
+        color: #323232;
+      }
+    }
+  }
+}

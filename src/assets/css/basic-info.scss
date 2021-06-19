@@ -1,0 +1,147 @@
+.basic-info-container {
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    height: 56px;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: medium;
+  }
+  background: white;
+  .ta-center {
+    text-align: center;
+  }
+  .min-age-cont {
+    margin-left: 0px;
+    margin-top: 15px;
+  }
+  .fixed-price {
+    display: flex;
+    margin-bottom: 19px;
+    .inr-label {
+      color: rgba(0, 0, 0, 0.54);
+      font-size: 17px;
+      margin: 16px 8px;
+    }
+  }
+
+  .MuiInput-underline:before {
+    display: none;
+  }
+  .MuiInput-underline:after {
+    display: none;
+  }
+  .MuiSelect-select:focus {
+    border-radius: 0;
+    background-color: white;
+    // padding: 10px;
+  }
+  .save-btn {
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f8f8f8;
+    margin: 0px 10px;
+    font-family: sans-serif;
+    font-weight: 500;
+  }
+  .save-btn:hover {
+    background-color: #65b1ec;
+  }
+  .price-btn {
+    text-transform: none;
+    width: 672px;
+    border: 1px solid #ff8021;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000000;
+    margin-left: 12px;
+    margin-top: 72px;
+    margin-bottom: 30px;
+    background: white;
+    letter-spacing: normal;
+    font-family: sans-serif;
+  }
+  .upload-btn {
+    text-transform: none;
+    letter-spacing: normal;
+    background-color: #65b1ec;
+    padding: 7px;
+    color: #ffffff;
+    display: block;
+    margin-top: 15px;
+    width: 179px;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 500;
+  }
+
+  .price-select {
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgb(197, 194, 194);
+    padding: 13px;
+    border-radius: 4px;
+  }
+  .age-of-child-select {
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgb(197, 194, 194);
+    padding: 13px;
+    border-radius: 4px;
+  }
+  .class-image-heading {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 150%;
+    color: #323232;
+  }
+  .inf-icon {
+    display: inline-block;
+    color: #65b1ec;
+    font-size: 21px;
+    padding-top: 2px;
+    margin-left: 8px;
+  }
+
+  .price-btn:hover {
+    background: white;
+  }
+  .attribute-learn-more {
+    color: orange;
+    margin-right: 5px;
+  }
+  .total-booking {
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  .simple-select-label {
+    width: min-content;
+    margin-bottom: 20px;
+    // margin-left: 10px;
+  }
+  .form-label {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.00938em;
+    margin-bottom: 4px;
+    display: inline-flex;
+    margin-right: 0px;
+  }
+  .briefly-description {
+    margin-bottom: 10px;
+  }
+  .upload-icon {
+    margin-right: 9px;
+  }
+  .ds {
+    margin-top: 7px;
+  }
+}
+.makeStyles-content-6 {
+  background-color: white !important;
+  padding-top: 0 !important;
+}

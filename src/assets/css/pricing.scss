@@ -1,0 +1,173 @@
+.pricing {
+    .price-btn {
+        text-transform: none;
+        width: 672px;
+        border: 1px solid #ff8021;
+        box-sizing: border-box;
+        border-radius: 7px;
+        font-size: 14px;
+        line-height: 150%;
+        color: #000000;
+        background: white;
+        letter-spacing: normal;
+        font-family: sans-serif;
+    }
+    .form-label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: 5px;
+        display: flex;
+        margin-right: 0px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+    .price-plan-btn {
+        padding: 16px 32px;
+        width: auto;
+        height: 46px;
+        background-color: #65b1ec;
+        border-radius: 40px;
+        text-transform: none;
+        font-size: 14px;
+        line-height: 150%;
+        color: white;
+        margin-top: 72px;
+        margin-bottom: 30px;
+        letter-spacing: normal;
+        font-family: sans-serif;
+    }
+    .price-plan-btn:hover {
+        background-color: #65b1ec;
+        color: white;
+    }
+    .save-btn {
+        text-transform: none;
+        letter-spacing: normal;
+        font-size: 16px;
+        line-height: 150%;
+        color: #f8f8f8;
+        margin: 0px 10px;
+        font-family: sans-serif;
+        font-weight: 500;
+        margin-top: 96px;
+    }
+    .select {
+        height: 50px;
+        border: 1px solid rgb(197, 194, 194);
+        width: 100%;
+        border-radius: 4px;
+        margin-top: 10px;
+        padding-left: 12px;
+    }
+    .MuiInput-underline:before {
+        display: none;
+    }
+    .modal-container {
+        //   width: 770px;
+        background: #fdfdfd;
+        border-radius: 10px;
+        padding: 40px;
+        border: none;
+        width: 770px;
+        height: auto;
+        background: #fdfdfd;
+        border-radius: 10px;
+        margin: 0 auto;
+        .textfield-modal {
+            width: 100%;
+        }
+        .add-btn {
+            align-items: center;
+            padding: 16px 32px;
+            width: 199px;
+            background-color: #ff8021;
+            border: none;
+            border-radius: 40px;
+            color: white;
+        }
+    }
+    .MuiInput-underline:after {
+        display: none;
+    }
+    .MuiSelect-select:focus {
+        border-radius: 0;
+        background-color: white;
+        // padding: 10px;
+    }
+    .attribute-learn-more {
+        color: orange;
+        margin-right: 5px;
+    }
+    .fixed-price {
+        display: flex;
+        margin-bottom: 19px;
+        .inr-label {
+            color: rgba(0, 0, 0, 0.54);
+            font-size: 17px;
+            margin: 16px 8px 0px 0px;
+        }
+    }
+    .price-select {
+        width: 100%;
+        height: 50px;
+        border: 1px solid rgb(197, 194, 194);
+        padding: 13px;
+        border-radius: 4px;
+        margin-bottom: 25px;
+    }
+    .create-plan {
+        height: 92px;
+        background-color: #ff8021 !important;
+    }
+}
+
+.price-container {
+    display: flex;
+    padding-top: 8px;
+    .MuiInput-underline:before {
+        display: none;
+    }
+    .MuiInput-underline:after {
+        display: none;
+    }
+    .Mui-focused {
+        background-color: white;
+    }
+    .form-label {
+        margin-bottom: 5px;
+    }
+    .MuiInput-underline:before {
+        border-bottom: none;
+    }
+    .MuiSelect-select.MuiSelect-select {
+        background-color: white;
+    }
+    .MuiSelect-select:focus {
+        border-radius: 0;
+        background-color: white;
+        // padding: 10px;
+    }
+    p {
+        padding-right: 13px;
+    }
+}
+
+.select-batches {
+    .price-select {
+        .MuiInput-underline:after {
+            display: none;
+        }
+        .MuiSelect-select:focus {
+            border-radius: 0;
+            background-color: white;
+            // padding: 10px;
+        }
+    }
+}
+
+.close-icon {
+    float: right;
+    zoom: 1.4;
+    margin-top: 8px;
+    cursor: pointer;
+}

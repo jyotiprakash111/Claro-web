@@ -7,6 +7,8 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import BasicInformation from "./basic_information/index";
+import Schedule from '../../../newClassSchedule';
+import Location from '../../../newClassLocation';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -109,10 +111,10 @@ export default function SimpleTabs() {
         <BasicInformation />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+      <Schedule/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <Location/>
       </TabPanel>
       <TabPanel value={value} index={3}>
         Item Three

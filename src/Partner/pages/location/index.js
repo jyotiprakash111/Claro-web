@@ -31,7 +31,7 @@ const Location = () => {
   };
 
   return (
-    <div id="general_page">
+    <div id='general_page'>
       <SideBar />
       <div
         style={{
@@ -39,7 +39,7 @@ const Location = () => {
           marginLeft: 300,
         }}
       >
-        <Header to="/settings" name="Location" />
+        <Header to='/settings' name='Location' />
 
         <Grid container>
           <Grid lg={4} item>
@@ -57,63 +57,63 @@ const Location = () => {
           <Grid lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Location Name</label>
+                <label for='name'>Location Name</label>
                 <div style={{ display: "flex" }}>
                   <input
-                    type="text"
-                    id="name"
-                    name="user_name"
-                    placeholder="KJKS BMT PADANG BESI"
+                    type='text'
+                    id='name'
+                    name='user_name'
+                    placeholder='KJKS BMT PADANG BESI'
                   />
                 </div>
-                <label for="mail">Address line 1</label>
+                <label for='mail'>Address line 1</label>
                 <input
-                  type="text"
-                  placeholder="Jl. Raya Indarung"
-                  id="mail"
-                  name="user_email"
+                  type='text'
+                  placeholder='Jl. Raya Indarung'
+                  id='mail'
+                  name='user_email'
                 />
-                <label for="mail">Address line 2</label>
+                <label for='mail'>Address line 2</label>
                 <input
-                  type="text"
-                  id="mail"
-                  name="user_email"
-                  placeholder="Padang Besi,Kec,Lubuk Kllangan"
-                />
-
-                <label for="business">State/Region</label>
-                <input
-                  type="text"
-                  id="mail"
-                  name="user_email"
-                  placeholder="Sumatera Barat"
+                  type='text'
+                  id='mail'
+                  name='user_email'
+                  placeholder='Padang Besi,Kec,Lubuk Kllangan'
                 />
 
-                <label for="business">City/Locality</label>
+                <label for='business'>State/Region</label>
                 <input
-                  type="text"
-                  id="mail"
-                  name="user_email"
-                  placeholder="Kota Padang"
+                  type='text'
+                  id='mail'
+                  name='user_email'
+                  placeholder='Sumatera Barat'
                 />
 
-                <label for="business">Postal code</label>
+                <label for='business'>City/Locality</label>
                 <input
-                  type="tel"
-                  name="name"
-                  pattern="[0-9]"
+                  type='text'
+                  id='mail'
+                  name='user_email'
+                  placeholder='Kota Padang'
+                />
+
+                <label for='business'>Postal code</label>
+                <input
+                  type='tel'
+                  name='name'
+                  pattern='[0-9]'
                   maxLength={6}
-                  id="posNo"
-                  name="postal"
-                  placeholder="Ex-0000"
+                  id='posNo'
+                  name='postal'
+                  placeholder='Ex-0000'
                   onChange={(e) => setPostal(e.target.value.trim())}
                   onKeyDown={handleKeypress}
                 />
-                <label for="business">Country</label>
+                <label for='business'>Country</label>
                 <select
-                  id="business"
+                  id='business'
                   style={{ width: "100%", height: 40 }}
-                  name="user_job"
+                  name='user_job'
                 >
                   {CountryData.map((item, i) => {
                     return (
@@ -142,12 +142,12 @@ const Location = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Phone no.</label>
+                <label for='name'>Phone no.</label>
                 <div style={{ display: "flex" }}>
                   <select
-                    id="business"
+                    id='business'
                     style={{ width: "50%", height: 40 }}
-                    name="user_job"
+                    name='user_job'
                   >
                     {CountryData.map((item, i) => {
                       return (
@@ -158,19 +158,19 @@ const Location = () => {
                     })}
                   </select>
                   <input
-                    type="text"
-                    id="name"
-                    style={{ marginLeft: 10 }}
-                    name="user_name"
-                    placeholder="Phone no."
+                    type='text'
+                    id='name'
+                    // style={{ marginLeft: 10 }}
+                    name='mobileno'
+                    placeholder='Phone no.'
                   />
                 </div>
-                <label for="mail">Alternate Email address</label>
+                <label for='mail'>Alternate Email address</label>
                 <input
-                  type="text"
-                  placeholder="Alternate Email address"
-                  id="mail"
-                  name="user_email"
+                  type='text'
+                  placeholder='Alternate Email address'
+                  id='mail'
+                  name='user_email'
                 />
               </fieldset>
             </form>
@@ -181,7 +181,7 @@ const Location = () => {
           <Grid lg={8} item>
             <form style={{ maxWidth: 480, marginTop: 50 }}>
               <fieldset>
-                <ul className="opening_hours" style={{ padding: 0 }}>
+                <ul className='opening_hours' style={{ padding: 0 }}>
                   <li
                     style={{
                       listStyle: "none",
@@ -194,10 +194,10 @@ const Location = () => {
                   >
                     <div>
                       <input
-                        type="checkbox"
-                        id="vehicle1"
-                        name="vehicle1"
-                        value="Bike"
+                        type='checkbox'
+                        id='vehicle1'
+                        name='vehicle1'
+                        value='Bike'
                         style={{
                           fontSize: 10,
                           marginTop: 20,
@@ -221,15 +221,15 @@ const Location = () => {
                     </div>
 
                     <div style={{ marginLeft: 20 }}>
-                      <label for="name">Open</label>
+                      <label for='name'>Open</label>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                     <div style={{ marginLeft: 10 }}>
-                      <label for="name">Close</label>
+                      <label for='name'>Close</label>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                   </li>
@@ -246,10 +246,10 @@ const Location = () => {
                   >
                     <div>
                       <input
-                        type="checkbox"
-                        id="vehicle1"
-                        name="vehicle1"
-                        value="Bike"
+                        type='checkbox'
+                        id='vehicle1'
+                        name='vehicle1'
+                        value='Bike'
                         style={{
                           fontSize: 10,
                           marginTop: 20,
@@ -274,12 +274,12 @@ const Location = () => {
 
                     <div style={{ marginLeft: 20 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                     <div style={{ marginLeft: 10 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                   </li>
@@ -296,10 +296,10 @@ const Location = () => {
                   >
                     <div>
                       <input
-                        type="checkbox"
-                        id="vehicle1"
-                        name="vehicle1"
-                        value="Bike"
+                        type='checkbox'
+                        id='vehicle1'
+                        name='vehicle1'
+                        value='Bike'
                         style={{
                           fontSize: 10,
                           marginTop: 20,
@@ -324,12 +324,12 @@ const Location = () => {
 
                     <div style={{ marginLeft: 20 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                     <div style={{ marginLeft: 10 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                   </li>
@@ -346,10 +346,10 @@ const Location = () => {
                   >
                     <div>
                       <input
-                        type="checkbox"
-                        id="vehicle1"
-                        name="vehicle1"
-                        value="Bike"
+                        type='checkbox'
+                        id='vehicle1'
+                        name='vehicle1'
+                        value='Bike'
                         style={{
                           fontSize: 10,
                           marginTop: 20,
@@ -374,12 +374,12 @@ const Location = () => {
 
                     <div style={{ marginLeft: 20 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                     <div style={{ marginLeft: 10 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                   </li>
@@ -396,10 +396,10 @@ const Location = () => {
                   >
                     <div>
                       <input
-                        type="checkbox"
-                        id="vehicle1"
-                        name="vehicle1"
-                        value="Bike"
+                        type='checkbox'
+                        id='vehicle1'
+                        name='vehicle1'
+                        value='Bike'
                         style={{
                           fontSize: 10,
                           marginTop: 20,
@@ -424,12 +424,12 @@ const Location = () => {
 
                     <div style={{ marginLeft: 20 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                     <div style={{ marginLeft: 10 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                   </li>
@@ -446,10 +446,10 @@ const Location = () => {
                   >
                     <div>
                       <input
-                        type="checkbox"
-                        id="vehicle1"
-                        name="vehicle1"
-                        value="Bike"
+                        type='checkbox'
+                        id='vehicle1'
+                        name='vehicle1'
+                        value='Bike'
                         style={{
                           fontSize: 10,
                           marginTop: 20,
@@ -474,12 +474,12 @@ const Location = () => {
 
                     <div style={{ marginLeft: 20 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                     <div style={{ marginLeft: 10 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                   </li>
@@ -496,10 +496,10 @@ const Location = () => {
                   >
                     <div>
                       <input
-                        type="checkbox"
-                        id="vehicle1"
-                        name="vehicle1"
-                        value="Bike"
+                        type='checkbox'
+                        id='vehicle1'
+                        name='vehicle1'
+                        value='Bike'
                         style={{
                           fontSize: 10,
                           marginTop: 20,
@@ -524,12 +524,12 @@ const Location = () => {
 
                     <div style={{ marginLeft: 20 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                     <div style={{ marginLeft: 10 }}>
                       <div style={{ display: "flex" }}>
-                        <input type="time" id="open_time" name="open_time" />
+                        <input type='time' id='open_time' name='open_time' />
                       </div>
                     </div>
                   </li>
@@ -537,14 +537,14 @@ const Location = () => {
               </fieldset>
             </form>
             <Button
-              className="btnContainer"
+              className='btnContainer'
               style={{
                 background: "#FF8021",
                 color: "#fff",
                 textTransform: "none",
               }}
               onClick={() => handleClose()}
-              variant="contained"
+              variant='contained'
             >
               Save and continue
             </Button>

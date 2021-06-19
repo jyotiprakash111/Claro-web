@@ -1,0 +1,177 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 38.5%;
+  }
+}
+@media (-webkit-device-pixel-ratio: 1.25) {
+  html {
+    font-size: 56.5%;
+  }
+}
+@media (-webkit-device-pixel-ratio: 1.5) {
+  html {
+    font-size: 45.5%;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: sans-serif;
+  background-color: white;
+}
+
+body {
+  font-size: 1.3rem;
+  background-color: white;
+}
+
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.mt0 {
+  margin-top: 0px;
+}
+
+.mb0 {
+  margin-bottom: 0px;
+}
+
+.mr0 {
+  margin-right: 0px;
+}
+
+.ml0 {
+  margin-left: 0px;
+}
+
+.pt0 {
+  padding-top: 0px;
+}
+
+.pb0 {
+  padding-bottom: 0px;
+}
+
+.pr0 {
+  padding-right: 0px;
+}
+
+.pl0 {
+  padding-left: 0px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.is-invalid {
+  border-color: #c95b3b !important;
+  background-image: none !important;
+}
+
+a {
+  color: #65b1ec;
+}
+
+.errortext {
+  color: #c95b3b;
+}
+.errortext a {
+  color: #c95b3b;
+  text-decoration: underline;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  margin-right: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+.custom-checkbox::after {
+  content: " ";
+  background: #fff;
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid #65b1ec;
+  height: 16px;
+  width: 16px;
+}
+.custom-checkbox:checked:after {
+  content: "✔";
+  border-radius: 0px;
+  height: 16px;
+  display: block;
+  width: 16px;
+  text-align: center;
+  font-size: 11px;
+  color: #fff;
+  background: #65b1ec;
+  border: none;
+}
+
+.form-control {
+  height: 5rem;
+  border: 1px solid #65b1ec;
+  border-radius: 2.5rem;
+  width: 100%;
+  font-size: 1.8rem;
+  padding: 1rem 2.5rem;
+}
+.form-control:focus {
+  outline: none;
+}
+
+.custom-selectbox {
+  position: relative;
+  cursor: pointer;
+  padding-right: 3rem;
+}
+.custom-selectbox .arrow-down {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+.custom-selectbox .options {
+  position: absolute;
+  background: #fff;
+  list-style: none;
+  padding: 0;
+  top: 5rem;
+  left: 0;
+  box-shadow: 0px 0px 8px #ddd;
+  border-radius: 10px;
+  width: 100%;
+}
+.custom-selectbox .options li {
+  padding: 1rem;
+  cursor: pointer;
+}
+.custom-selectbox .options li:hover {
+  background: #65b1ec;
+  color: #fff;
+}

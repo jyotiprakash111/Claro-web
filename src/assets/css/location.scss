@@ -1,0 +1,109 @@
+.location {
+  p {
+    color: rgba(0, 0, 0, 0.54);
+    padding: 0;
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.00938em;
+    margin-bottom: 4px;
+  }
+  .MuiSelect-select.MuiSelect-select {
+    background-color: white;
+  }
+  .select {
+    border: 1px solid rgb(197, 194, 194);
+    border-radius: 4px;
+    width: 50%;
+    font-size: 17px;
+    color: #323232;
+    height: 50px;
+    padding: 9px;
+    background: white;
+    margin-bottom: 10px;
+  }
+
+  .select-full-length {
+    width: 100%;
+  }
+
+  .MuiInput-underline:after {
+    display: none;
+  }
+  .MuiInput-underline:before {
+    display: none;
+  }
+  input {
+    border-bottom: none;
+  }
+
+  .link {
+    .link-btn {
+      border: 1px solid #65b1ec;
+      box-sizing: border-box;
+      border-radius: 25px;
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+      padding: 16px 32px;
+      background: white;
+      margin-right: 30px;
+      margin-bottom: 24px;
+      margin-top: 5px;
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+
+      color: #000000;
+
+      opacity: 0.5;
+    }
+    .link-btn:hover {
+      background-color: #65b1ec;
+      color: white;
+    }
+    .link-btn:active {
+      background-color: #65b1ec;
+      color: white;
+      cursor: grab;
+    }
+  }
+  .price-btn {
+    text-transform: none;
+    width: 672px;
+    border: 1px solid #ff8021;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000000;
+    background: white;
+    letter-spacing: normal;
+    font-family: sans-serif;
+  }
+  .attribute-learn-more {
+    color: orange;
+    margin-right: 5px;
+  }
+
+  .save-btn {
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f8f8f8;
+    margin: 0px 10px;
+    font-family: sans-serif;
+    font-weight: 500;
+    margin-top: 96px;
+  }
+  .back-btn {
+    text-transform: none;
+    letter-spacing: normal;
+    margin-top: 96px;
+    font-size: 15px;
+    line-height: 150%;
+    color: #ff8021;
+    border: 1px solid #ff8021;
+  }
+}

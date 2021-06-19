@@ -1,0 +1,144 @@
+.modal-container2 {
+    //   width: 770px;
+    background: #fdfdfd;
+    border-radius: 10px;
+    padding: 40px;
+    border: none;
+    width: 770px;
+    height: auto;
+    background: #fdfdfd;
+    border-radius: 10px;
+    margin: 0 auto;
+    .price-first-container {
+        margin-bottom: 35px;
+    }
+    .description-bottom {
+        margin-bottom: 100px;
+    }
+    .pricing .select {
+        height: 50px;
+        border: 1px solid #c5c2c2;
+        width: 100%;
+        border-radius: 4px;
+        margin-top: 10px;
+        padding-left: 12px;
+    }
+    .plan-btn {
+        border-radius: 5px;
+        background-color: #f8f8f8;
+        color: #000000;
+        margin-bottom: 14px;
+        padding: 16px 30px;
+    }
+    .plan-btn:hover {
+        background-color: #ff8021;
+        color: white;
+    }
+    .inf-icon {
+        color: #65b1ec;
+        font-size: 21px;
+        padding-top: 4px;
+        margin-left: 8px;
+    }
+    .ds {
+        margin: 5px 2px;
+    }
+    .MuiSelect-select:focus {
+        border-radius: 0;
+        background-color: white;
+        // padding: 10px;
+    }
+    .payment-inf {
+        margin: 11px -4px;
+    }
+    .deposit-inf {
+        margin-top: 14px;
+        margin-left: -5px;
+    }
+    h1 {
+        border-bottom: 1px solid #c95b3b;
+        margin-bottom: 35px;
+    }
+    .textfield-modal {
+        width: 100%;
+    }
+    .MuiInput-underline:before {
+        display: none;
+    }
+    .MuiInput-underline:after {
+        display: none;
+    }
+    .Mui-focused {
+        background-color: white;
+    }
+    .form-label {
+        margin-bottom: 5px;
+    }
+    .MuiInput-underline:before {
+        border-bottom: none;
+    }
+    .save-btn1 {
+        text-transform: none;
+        letter-spacing: normal;
+        font-size: 16px;
+        line-height: 150%;
+        color: #f8f8f8;
+        margin: 0px 10px;
+        font-family: sans-serif;
+        font-weight: 500;
+    }
+    .confirm-add {
+        margin: auto;
+    }
+    .save-btn1:hover {
+        background-color: #65b1ec;
+    }
+    .select-batches {
+        margin-top: 15px;
+    }
+    .price-select {
+        width: 100%;
+        height: 50px;
+        border: 1px solid rgb(197, 194, 194);
+        padding: 13px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    .price-select2 {
+        width: 100%;
+        height: 50px;
+        border: 1px solid rgb(197, 194, 194);
+        padding: 13px;
+        border-radius: 4px;
+        margin-bottom: 25px;
+    }
+    .selectpricing {
+        margin-bottom: 0px;
+        width: 100%;
+        height: 50px;
+        border: 1px solid rgb(197, 194, 194);
+        padding: 13px;
+        border-radius: 4px;
+    }
+    .briefly {
+        margin-bottom: 100px;
+    }
+    .form-label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: 5px;
+        display: flex;
+        margin-right: 0px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+    .add-btn {
+        align-items: center;
+        padding: 16px 32px;
+        width: 199px;
+        background-color: #ff8021;
+        border: none;
+        border-radius: 40px;
+        color: white;
+    }
+}

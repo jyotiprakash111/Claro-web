@@ -1,0 +1,201 @@
+.form-container .MuiSelect-select.MuiSelect-select {
+  background-color: white;
+}
+.form-container .timezone-container {
+  display: flex;
+}
+.form-container .MuiInput-underline:before {
+  display: none;
+}
+.form-container .MuiInput-underline:after {
+  display: none;
+}
+.form-container .Mui-focused {
+  background-color: white;
+}
+.form-container .form-label {
+  margin-bottom: 5px;
+}
+.form-container .MuiInput-underline:before {
+  border-bottom: none;
+}
+.form-container .class-repeat {
+  height: 55.4px;
+  border-radius: 4px;
+}
+.form-container .class-repeat .MuiSelect-select.MuiSelect-select {
+  padding-right: 24px;
+  padding: 13px;
+  background-color: white;
+}
+.form-container .class-repeat .class-repeat-input {
+  width: 100%;
+  border: 1px solid #c5c2c2;
+  height: 55.4px;
+  border-radius: 4px;
+}
+.form-container .daily-repeat-input {
+  height: 50px !important;
+  border: 1px solid #c5c2c2;
+  padding: 9px;
+  border-radius: 4px;
+  height: 32px;
+  text-align: center;
+}
+.form-container .daily-repeat-input .MuiInputBase-input {
+  text-align: center;
+}
+.form-container .repeat-every-container {
+  display: flex;
+  margin: 32px 0px;
+}
+.form-container .repeat-every-container .MuiSelect-select.MuiSelect-select {
+  background-color: white;
+}
+.form-container .repeat-every-container .Mui-focused {
+  background-color: white;
+}
+.form-container .repeat-every-container .inf-icon-day {
+  padding: 11px 0px;
+}
+.form-container .repeat-every-container .label {
+  margin-right: 9px;
+  margin-top: 13px;
+}
+.form-container .repeat-every-container .dropdown {
+  margin: 0px 8px;
+}
+.form-container .repeat-every-container .weeks-field {
+  display: inline-block;
+  margin-left: 18px;
+}
+.form-container .repeat-every-container .inf-icon {
+  display: inline-block;
+  color: #65b1ec;
+  font-size: 21px;
+  padding-top: 2px;
+  margin-left: 8px;
+  margin-top: 12px;
+}
+.form-container .daily-container {
+  margin-top: 38px;
+}
+.form-container .day-label {
+  display: inline;
+  margin-left: 10px;
+}
+.form-container .legend {
+  margin-left: 9px;
+  margin-right: 7px;
+  margin-top: 15px;
+}
+.form-container .repeat-until-label {
+  margin-right: 17px;
+  margin-left: 9px;
+  margin-top: 15px;
+}
+.form-container .space-form {
+  margin-bottom: 38px;
+}
+.form-container .timezone {
+  font-size: 18px;
+  line-height: 21px;
+  color: #323232;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+.form-container .batch .label-div {
+  display: flex;
+}
+.form-container .batch .label {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.54);
+}
+.form-container .batch svg:not(:root).svg-inline--fa {
+  overflow: visible;
+  color: #65b1ec;
+  font-size: 21px;
+  margin-left: 4px;
+  padding-top: 2px;
+  margin-top: 16px;
+}
+.form-container .batch .batch-input-field {
+  min-width: 558px;
+  display: flex;
+}
+.form-container .occurences-input {
+  margin: 12px 0px;
+  width: 75%;
+  height: 50px;
+  border: 1px solid #c5c2c2;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.form-container .occurences-input .MuiInputBase-input {
+  padding: 15px;
+  text-align: center;
+}
+.form-container .occurences-input .oc-label {
+  font-size: 18px;
+  color: #323232;
+  margin: 0px 7px;
+}
+.form-container .calender {
+  margin-top: 15px;
+}
+.form-container .inf-icon {
+  display: inline-block;
+  color: #65b1ec;
+  font-size: 21px;
+  padding-top: 2px;
+  margin-left: 8px;
+  margin-top: 16px;
+}
+.form-container .select {
+  height: 50px;
+  border: 1px solid #c5c2c2;
+  width: 100%;
+  border-radius: 4px;
+}
+.form-container .price-btn {
+  text-transform: none;
+  width: 672px;
+  border: 1px solid #ff8021;
+  box-sizing: border-box;
+  border-radius: 7px;
+  font-size: 14px;
+  line-height: 150%;
+  color: #000000;
+  margin-left: 12px;
+  margin-top: 72px;
+  margin-bottom: 30px;
+  background: white;
+  letter-spacing: normal;
+  font-family: sans-serif;
+}
+.form-container .price-btn:hover {
+  background: white;
+}
+.form-container .attribute-learn-more {
+  color: orange;
+  margin-right: 5px;
+}
+.form-container .save-btn {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: #f8f8f8;
+  margin: 0px 10px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+.form-container .back-btn {
+  text-transform: none;
+  letter-spacing: normal;
+  margin-top: 96px;
+  font-size: 15px;
+  line-height: 150%;
+  color: #ff8021;
+  border: 1px solid #ff8021;
+}

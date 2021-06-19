@@ -1,0 +1,67 @@
+.other-options-div {
+  .select {
+    width: 100%;
+    margin-bottom: 19px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgb(197, 194, 194);
+    padding: 13px;
+    border-radius: 4px;
+  }
+  .cursor {
+    cursor: pointer;
+  }
+  .MuiInput-underline:before {
+    display: none;
+  }
+  .MuiInput-underline:after {
+    display: none;
+  }
+  .MuiSelect-select:focus {
+    border-radius: 0;
+    background-color: white;
+    // padding: 10px;
+  }
+  .benifts {
+    margin-bottom: 4px !important;
+  }
+  .add {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 150%;
+    color: #ff8021;
+    margin-top: 0px;
+  }
+  .add:hover {
+    background-color: yellow;
+    width: auto;
+  }
+  .form-label {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.00938em;
+    margin-bottom: 4px;
+    display: inline-flex;
+    margin-right: 0px;
+  }
+  .briefly-description {
+    margin-bottom: 27px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 150%;
+    color: #323232;
+  }
+
+  .save-btn {
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f8f8f8;
+    margin: 0px 10px;
+    font-family: sans-serif;
+    font-weight: 500;
+  }
+}

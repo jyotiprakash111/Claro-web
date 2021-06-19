@@ -21,7 +21,7 @@ export default function AlertDialog(props) {
     <div>
       <Dialog
         open={props.open}
-        onClose={() => props.handleClose()}
+        onClose={() => props.m()}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >

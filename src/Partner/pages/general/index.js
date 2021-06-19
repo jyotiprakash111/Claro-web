@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import LanguageIcon from "@material-ui/icons/Language";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -7,12 +7,125 @@ import SideBar from "../../components/common/SideBar";
 import Header from "../../components/common/HeaderMain";
 import Button from "@material-ui/core/Button";
 import Dialog from "./Dialog";
+import { NavLink, useHistory, Link } from "react-router-dom";
 import "./style.css";
 
-export default function SimpleSelect() {
+const  BusinessSetup = () => {
   const [open, setDialog] = React.useState(false);
+  const [businessName, setbusinessName] = useState("");
+  const [email,setEmail] = useState("");
+  const [bio, setBio] = useState("");
+  const [url , setUrl] = useState("");
+  const [businessType , setBusinessType] = useState("");
+  const [mobileno , setMobileno] = useState("");
+  const [alterEmail , setAlterEmail] = useState("");
+  const [profilePhoto , setProfilePhto] = useState("");
+  const [website , setWebsite] = useState("");
+  const [facebook , setFacebook] = useState("");
+  const [instagram , setInstagram] = useState("");
+  const [youtube , setYoutube] = useState("");
 
+  const history = useHistory();
   const CountryData = require("../../../data/countrycode.json");
+
+  // const apicall = () => {
+  //   let data = {
+  //     businessName: businessName,
+  //     bio: bio,
+  //     email: email,
+  //     url:url,
+  //     businessType: businessType,
+  //     mobileno:mobileno,
+  //     alterEmail:alterEmail
+  //   };
+  //   UserSignup(data)
+  //     .then((resp) => {
+  //       console.log(resp);
+  //       if (resp.message === "User registered successfully.") {
+  //         // alertify.success(
+  //         //   "You have been registered successfully. Check your email to verify your account"
+  //         // );
+  //         setTimeout(() => {
+  //           history.push({ pathname: "/login" });
+  //         }, 3000);
+  //       } else if (
+  //         resp.message ===
+  //         "It seems you have not verified your account.Please verify your email."
+  //       ) {
+  //         // alertify.error(resp.message);
+  //       } else if (
+  //         (resp.message =
+  //           "This Email is already registered. Please enter a different email.")
+  //       ) {
+  //         // alertify.error(resp.message);
+  //       }
+  //     })
+  //     .catch(console.log("BussinessSetup completed"));
+  // };
+
+  const businessSetup = (e) => {
+    e.preventDefault();
+
+    if ([undefined, null, ""].includes(businessName)) {
+      document.getElementById("business_err").innerText = "Please Enter Business Name";
+      document.getElementById("business_err").style.display = "block";
+      console.log("business Name is required");
+      return;
+    }
+    document.getElementById("business_err").style.display = "none";
+    if ([undefined, null, ""].includes(email)) {
+      document.getElementById("email_err").innerText = "Please Enter Email";
+      document.getElementById("email_err").style.display = "block";
+      return;
+    }
+    document.getElementById("email_err").style.display = "none";
+    const regex =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!regex.test(email)) {
+      console.log("false");
+      document.getElementById("email_err").innerText = "Email is incorrect";
+      document.getElementById("email_err").style.display = "block";
+      return;
+    }
+    document.getElementById("email_err").style.display = "none";
+    if ([undefined, null, ""].includes(bio)) {
+      document.getElementById("bio_err").innerText = "Please Enter Bio";
+      document.getElementById("bio_err").style.display = "block";
+      console.log("bio is required");
+      return;
+    }
+    document.getElementById("bio_err").style.display = "none";
+    // function isURL(str) {
+      const pattern = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+      if (!pattern.test(url)) {
+        console.log("Invalid URL");
+        document.getElementById("url_err").innerText = "URL is incorrect";
+        document.getElementById("url_err").style.display = "block";
+        return;
+      }
+      console.log("valid URL")
+    // }
+    document.getElementById("url_err").style.display = "none";
+    if ([undefined, null, ""].includes(url)) {
+      document.getElementById("url_err").innerText =
+        "Please Enter URL";
+      document.getElementById("url_err").style.display = "block";
+      console.log("invalid url");
+      return;
+    }
+    document.getElementById("url_err").style.display = "none";
+    // if (!checked) {
+    //   document.getElementById("checked-err").innerText =
+    //     "Please  agree the terms and conditions";
+    //   document.getElementById("checked-err").style.display = "block";
+    //   console.log("checkbox");
+    //   return;
+    // }
+    // document.getElementById("checked-err").style.display = "none";
+    // console.log("validate email true");
+    // apicall();
+  };
+
   return (
     <div id="general_page">
       <Dialog open={open} handleClose={() => setDialog(false)} />
@@ -36,32 +149,52 @@ export default function SimpleSelect() {
             </p>
           </Grid>
           <Grid lg={8} item>
-            <form style={{ maxWidth: 480 }}>
+            <form style={{ maxWidth: "65%" }}>
               <fieldset>
                 <label for="name">Business Name</label>
                 <div style={{ display: "flex" }}>
                   <input
                     type="text"
-                    id="name"
-                    autoFocus
-                    name="user_name"
-                    placeholder="Business Name"
+                    onkeyup='nospaces(this)'
+                    type='text'
+                    placeholder='Business Name'
+                    onChange={(e) => setbusinessName(e.target.value.trim())}
                   />
                 </div>
+                    <p
+                    className='errMsg'
+                    id='business_err'
+                    style={{ color: "red", display: "none" }}
+                  >
+                    First name is requreid
+                  </p>
                 <label for="mail">Email address</label>
                 <input
                   type="email"
                   placeholder="Email address"
                   id="mail"
-                  name="user_email"
+                  onChange={(e) => setEmail(e.target.value.trim())}
                 />
+                 <p
+                    className='errMsg'
+                    id='email_err'
+                    style={{ color: "red", display: "none" }}
+                  >
+                    Email is requreid
+                  </p>
                 <label for="mail">Short bio:</label>
                 <input
                   type="text"
-                  id="mail"
-                  name="user_email"
+                  onChange={(e) => setBio(e.target.value.trim())}
                   placeholder="Write a short bio"
                 />
+                 <p
+                    className='errMsg'
+                    id='bio_err'
+                    style={{ color: "red", display: "none" }}
+                  >
+                    Bio is requreid
+                  </p>
                 <label for="mail">Booking Page URL:</label>
                 <input
                   type="text"
@@ -69,6 +202,13 @@ export default function SimpleSelect() {
                   name="user_url"
                   placeholder="https://www.abc.com"
                 />
+                <p
+                    className='errMsg'
+                    id='url_err'
+                    style={{ color: "red", display: "none" }}
+                  >
+                    URL is requreid
+                  </p>
                 <label style={{ marginTop: 10 }} for="business">
                   Type of business
                 </label>
@@ -361,6 +501,7 @@ export default function SimpleSelect() {
             }}
           ></p>
           <Button
+          onClick={businessSetup}
             style={{
               background: "#262C4C",
               color: "#fff",
@@ -375,4 +516,5 @@ export default function SimpleSelect() {
       </div>
     </div>
   );
-}
+} 
+export default BusinessSetup;
