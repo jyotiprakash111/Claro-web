@@ -6,11 +6,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import BasicInformation from "./basic_information/index";
-import Location from "./location/index";
-import Pricing from "./pricing/index";
-import OtherOptions from "./other_options/index";
-import Schedule from "./Batch_Schedule/main/scheduleTable";
+import Schedule from "./schedule/index";
+import Pricing from "./pricing/index.js";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -50,6 +47,11 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  appbar: {
+    background: "transparent",
+    boxShadow: "none",
+    borderBottom: "1px solid #ccc",
+  },
   link: {
     color: "rgba(50, 50, 50, 0.5)",
     width: "150px",
@@ -60,14 +62,15 @@ const useStyles = makeStyles((theme) => ({
     "&:hover, &:focus": {
       // background: "#FF8021",
       // color: "#fff",
-      borderBottom: "1px solid #FF8021",
+      // borderBottom: "1px solid #FF8021",
     },
+    active: {},
   },
 }));
 
 export default function SimpleTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -75,54 +78,34 @@ export default function SimpleTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar style={{ background: "#fff", width: "95%" }} position="static">
+      <AppBar className={classes.appbar} position="static">
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"
-          TabIndicatorProps={{ style: { background: "#FF8021", height: 3 } }}
+          TabIndicatorProps={{ style: { background: "#FF8021", height: 5 } }}
         >
+          <Tab className={classes.link} label="Basic info" {...a11yProps(0)} />
           <Tab
-            style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label="Basic Information"
+            className={[classes.link]}
+            // style={{ fontWeight: "500", color: "#323232", fontSize: "32px" }}
+            label="Schedule"
             {...a11yProps(0)}
           />
-          <Tab
-            style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label="Schedule"
-            {...a11yProps(1)}
-          />
-          <Tab
-            style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label="Location"
-            {...a11yProps(2)}
-          />
-          <Tab
-            style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label="Pricing"
-            {...a11yProps(3)}
-          />
-          <Tab
-            style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label="Other Options"
-            {...a11yProps(4)}
-          />
+
+          <Tab className={classes.link} label="Pricing" {...a11yProps(2)} />
+
+          {/* <Tab className={classes.link} label="Saved" {...a11yProps(3)} /> */}
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <BasicInformation />
+        <h1>Basic Info</h1>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Schedule />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Location />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
         <Pricing />
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        <OtherOptions />
       </TabPanel>
     </div>
   );

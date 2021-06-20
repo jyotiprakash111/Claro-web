@@ -16,10 +16,11 @@ import Typography from "@material-ui/core/Typography";
 import AddIcon from "@material-ui/icons/Add";
 import Select from "@material-ui/core/Select";
 import Input from "@material-ui/core/Input";
-
+import { useDropzone } from "react-dropzone";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -104,6 +105,14 @@ export default function Index() {
     event.stopPropagation();
     setisSelectorOpen(false);
   };
+
+  const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
+
+  const files = acceptedFiles.map((file) => (
+    <li key={file.path}>
+      {file.path} - {file.size} bytes
+    </li>
+  ));
 
   return (
     <div>
@@ -310,16 +319,34 @@ export default function Index() {
             />
           </FormGroup>
           <p>Add class image</p>
-          <Button
+          <section
             style={{
-              background: "#65B1EC",
-              textTransform: "none",
               width: 200,
-              color: "#fff",
+              borderRadius: 5,
+              textAlign: "center",
+
+              height: 40,
+              background: "#65B1EC",
             }}
           >
-            <PublishIcon style={{ color: "#fff" }} /> Upload Image
-          </Button>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              {...getRootProps({ className: "dropzone" })}
+            >
+              <input {...getInputProps()} />
+              <IconButton>
+                <PublishIcon style={{ color: "#fff", marginTop: -5 }} />
+              </IconButton>
+              <p style={{ color: "#fff", marginTop: 10 }}>Upload Image</p>
+            </div>
+            <aside>
+              <ul>{files}</ul>
+            </aside>
+          </section>
         </Grid>
       </Grid>
       <Snackbar

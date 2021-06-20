@@ -15,7 +15,12 @@ export default class index extends Component {
           }}
         >
           <div style={{ display: "flex", alignItems: "center" }}>
-            <ArrowBackIosIcon /> <p>Go back to all batches</p>
+            <Button
+              style={{ textTransform: "none" }}
+              onClick={() => this.props.onChange2(0)}
+            >
+              <ArrowBackIosIcon /> Go back to all batches
+            </Button>
           </div>
           <div>
             <Button
@@ -26,7 +31,8 @@ export default class index extends Component {
                 borderRadius: 20,
                 width: 150,
                 textAlign: "right",
-                marginTop: 0,
+                marginTop: 20,
+                marginRight: 20,
               }}
               //   onClick={() => props.handleClose()}
               variant="contained"
@@ -44,7 +50,7 @@ export default class index extends Component {
         >
           <p style={{ fontSize: 30, margin: 0, padding: 0 }}>Batch name 1</p>
           <p style={{ fontSize: 30, margin: 0, padding: 0 }}>
-            <Menu />
+            <Menu onChange2={() => this.props.onChange2(2)} />
           </p>
         </div>
 

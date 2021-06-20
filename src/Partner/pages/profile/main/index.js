@@ -6,18 +6,18 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import "./style.css";
 
-export default function Main() {
+const Profile = () => {
   return (
-    <div id="user_profile">
+    <div id='user_profile'>
       <Breadcrumbs
         style={{ marginTop: 20 }}
-        separator="›"
-        aria-label="breadcrumb"
+        separator='›'
+        aria-label='breadcrumb'
       >
-        <Link color="inherit" href="/">
+        <Link color='inherit' href='/'>
           Setup
         </Link>
-        <Typography color="textPrimary">User profile</Typography>
+        <Typography color='textPrimary'>User profile</Typography>
       </Breadcrumbs>
       <p style={{ marginTop: 0 }}>
         Manage personal details and login credential
@@ -28,53 +28,53 @@ export default function Main() {
             <form style={{ maxWidth: 480, marginTop: 10 }}>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div>
-                  <label for="name">First name </label>
+                  <label for='name'>First name </label>
                   <div style={{ display: "flex" }}>
                     <input
-                      type="text"
-                      id="name"
-                      name="user_name"
-                      placeholder="E.g. Jane"
+                      type='text'
+                      id='name'
+                      name='user_name'
+                      placeholder='E.g. Jane'
                       style={{ color: "#323232" }}
                     />
                   </div>
                 </div>
                 <div>
-                  <label for="name">Last name </label>
+                  <label for='name'>Last name </label>
                   <div style={{ display: "flex" }}>
                     <input
-                      type="text"
-                      id="name"
-                      name="user_name"
-                      placeholder="E.g. Doe"
+                      type='text'
+                      id='name'
+                      name='user_name'
+                      placeholder='E.g. Doe'
                       style={{ color: "#323232" }}
                     />
                   </div>
                 </div>
               </div>
 
-              <label for="name">Email address*</label>
+              <label for='name'>Email address*</label>
               <div style={{ display: "flex" }}>
                 <input
-                  type="text"
-                  id="name"
-                  name="user_name"
-                  placeholder="Email address"
+                  type='text'
+                  id='name'
+                  name='user_name'
+                  placeholder='Email address'
                   style={{ color: "#323232" }}
                 />
               </div>
-              <label for="name">Phone number*</label>
+              <label for='name'>Phone number*</label>
               <div style={{ display: "flex" }}>
                 <input
-                  type="text"
-                  id="name"
-                  name="user_name"
-                  placeholder="+91 "
+                  type='text'
+                  id='name'
+                  name='user_name'
+                  placeholder='+91 '
                   style={{ color: "#323232" }}
                 />
               </div>
               <Button
-                variant="contained"
+                variant='contained'
                 style={{
                   color: "#fff",
                   background: "#FF8021",
@@ -103,4 +103,5 @@ export default function Main() {
       </Grid>
     </div>
   );
-}
+};
+export default Profile;
