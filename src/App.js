@@ -10,7 +10,7 @@ import team from "./Partner/pages/team/index";
 import notification from "./Partner/pages/notification/index";
 import profile from "./Partner/pages/profile/index";
 import location from "./Partner/pages/location/index";
-import payment from "./Partner/pages/payment/index";
+import payment from "./Partner/pages/payment/main";
 import settings from "./Partner/pages/Setting";
 import batchSchedule from "./Partner/pages/Batch_Schedule/index";
 import home from "./Partner/pages/Home/index";

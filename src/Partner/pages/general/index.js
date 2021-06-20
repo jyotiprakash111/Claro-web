@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink, useHistory, Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import LanguageIcon from "@material-ui/icons/Language";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -6,24 +7,28 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import SideBar from "../../components/common/SideBar";
 import Header from "../../components/common/HeaderMain";
 import Button from "@material-ui/core/Button";
-import Dialog from "./Dialog";
-import { NavLink, useHistory, Link } from "react-router-dom";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 import "./style.css";
 
-const  BusinessSetup = () => {
-  const [open, setDialog] = React.useState(false);
+const BusinessSetup = () => {
+  const [open, setOpen] = useState(false);
+
   const [businessName, setbusinessName] = useState("");
-  const [email,setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [bio, setBio] = useState("");
-  const [url , setUrl] = useState("");
-  const [businessType , setBusinessType] = useState("");
-  const [mobileno , setMobileno] = useState("");
-  const [alterEmail , setAlterEmail] = useState("");
-  const [profilePhoto , setProfilePhto] = useState("");
-  const [website , setWebsite] = useState("");
-  const [facebook , setFacebook] = useState("");
-  const [instagram , setInstagram] = useState("");
-  const [youtube , setYoutube] = useState("");
+  const [url, setUrl] = useState("");
+  const [businessType, setBusinessType] = useState("");
+  const [mobileno, setMobileno] = useState("");
+  const [alterEmail, setAlterEmail] = useState("");
+  const [profilePhoto, setProfilePhto] = useState("");
+  const [website, setWebsite] = useState("");
+  const [facebook, setFacebook] = useState("");
+  const [instagram, setInstagram] = useState("");
+  const [youtube, setYoutube] = useState("");
 
   const history = useHistory();
   const CountryData = require("../../../data/countrycode.json");
@@ -67,7 +72,8 @@ const  BusinessSetup = () => {
     e.preventDefault();
 
     if ([undefined, null, ""].includes(businessName)) {
-      document.getElementById("business_err").innerText = "Please Enter Business Name";
+      document.getElementById("business_err").innerText =
+        "Please Enter Business Name";
       document.getElementById("business_err").style.display = "block";
       console.log("business Name is required");
       return;
@@ -96,19 +102,19 @@ const  BusinessSetup = () => {
     }
     document.getElementById("bio_err").style.display = "none";
     // function isURL(str) {
-      const pattern = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
-      if (!pattern.test(url)) {
-        console.log("Invalid URL");
-        document.getElementById("url_err").innerText = "URL is incorrect";
-        document.getElementById("url_err").style.display = "block";
-        return;
-      }
-      console.log("valid URL")
+    const pattern =
+      /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+    if (!pattern.test(url)) {
+      console.log("Invalid URL");
+      document.getElementById("url_err").innerText = "URL is incorrect";
+      document.getElementById("url_err").style.display = "block";
+      return;
+    }
+    console.log("valid URL");
     // }
     document.getElementById("url_err").style.display = "none";
     if ([undefined, null, ""].includes(url)) {
-      document.getElementById("url_err").innerText =
-        "Please Enter URL";
+      document.getElementById("url_err").innerText = "Please Enter URL";
       document.getElementById("url_err").style.display = "block";
       console.log("invalid url");
       return;
@@ -127,11 +133,10 @@ const  BusinessSetup = () => {
   };
 
   return (
-    <div id="general_page">
-      <Dialog open={open} handleClose={() => setDialog(false)} />
+    <div id='general_page'>
       <SideBar />
       <div style={{ marginLeft: 300 }}>
-        <Header to="/settings" name="Business Setup" />
+        <Header to='/settings' name='Business Setup' />
 
         <Grid style={{ marginTop: 30 }} container>
           <Grid lg={4} item>
@@ -151,84 +156,84 @@ const  BusinessSetup = () => {
           <Grid lg={8} item>
             <form style={{ maxWidth: "65%" }}>
               <fieldset>
-                <label for="name">Business Name</label>
+                <label for='name'>Business Name</label>
                 <div style={{ display: "flex" }}>
                   <input
-                    type="text"
+                    type='text'
                     onkeyup='nospaces(this)'
                     type='text'
                     placeholder='Business Name'
                     onChange={(e) => setbusinessName(e.target.value.trim())}
                   />
                 </div>
-                    <p
-                    className='errMsg'
-                    id='business_err'
-                    style={{ color: "red", display: "none" }}
-                  >
-                    First name is requreid
-                  </p>
-                <label for="mail">Email address</label>
+                <p
+                  className='errMsg'
+                  id='business_err'
+                  style={{ color: "red", display: "none" }}
+                >
+                  First name is requreid
+                </p>
+                <label for='mail'>Email address</label>
                 <input
-                  type="email"
-                  placeholder="Email address"
-                  id="mail"
+                  type='email'
+                  placeholder='Email address'
+                  id='mail'
                   onChange={(e) => setEmail(e.target.value.trim())}
                 />
-                 <p
-                    className='errMsg'
-                    id='email_err'
-                    style={{ color: "red", display: "none" }}
-                  >
-                    Email is requreid
-                  </p>
-                <label for="mail">Short bio:</label>
+                <p
+                  className='errMsg'
+                  id='email_err'
+                  style={{ color: "red", display: "none" }}
+                >
+                  Email is requreid
+                </p>
+                <label for='mail'>Short bio:</label>
                 <input
-                  type="text"
+                  type='text'
                   onChange={(e) => setBio(e.target.value.trim())}
-                  placeholder="Write a short bio"
-                />
-                 <p
-                    className='errMsg'
-                    id='bio_err'
-                    style={{ color: "red", display: "none" }}
-                  >
-                    Bio is requreid
-                  </p>
-                <label for="mail">Booking Page URL:</label>
-                <input
-                  type="text"
-                  id="url"
-                  name="user_url"
-                  placeholder="https://www.abc.com"
+                  placeholder='Write a short bio'
                 />
                 <p
-                    className='errMsg'
-                    id='url_err'
-                    style={{ color: "red", display: "none" }}
-                  >
-                    URL is requreid
-                  </p>
-                <label style={{ marginTop: 10 }} for="business">
+                  className='errMsg'
+                  id='bio_err'
+                  style={{ color: "red", display: "none" }}
+                >
+                  Bio is requreid
+                </p>
+                <label for='mail'>Booking Page URL:</label>
+                <input
+                  type='text'
+                  id='url'
+                  name='user_url'
+                  placeholder='https://www.abc.com'
+                />
+                <p
+                  className='errMsg'
+                  id='url_err'
+                  style={{ color: "red", display: "none" }}
+                >
+                  URL is requreid
+                </p>
+                <label style={{ marginTop: 10 }} for='business'>
                   Type of business
                 </label>
-                <select id="business" name="user_job">
-                  <option value="Surgical Oncologist">Dance School</option>
-                  <option value="Clinical Oncologist">
+                <select id='business' name='user_job'>
+                  <option value='Surgical Oncologist'>Dance School</option>
+                  <option value='Clinical Oncologist'>
                     Clinical Oncologist
                   </option>
-                  <option value="Healthcare Provider">
+                  <option value='Healthcare Provider'>
                     Radiation Oncologist
                   </option>
                 </select>
-                <label for="mail">Add about us:</label>
+                <label for='mail'>Add about us:</label>
                 <textarea
-                  type="text"
+                  type='text'
                   autoFocus
-                  row="2"
-                  id="mail"
-                  name="user_email"
-                  placeholder="Add about us"
+                  row='2'
+                  id='mail'
+                  name='user_email'
+                  placeholder='Add about us'
                 />
               </fieldset>
             </form>
@@ -249,12 +254,12 @@ const  BusinessSetup = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Phone no.</label>
+                <label for='name'>Phone no.</label>
                 <div style={{ display: "flex" }}>
                   <select
-                    id="business"
+                    id='business'
                     style={{ width: 120, height: 40 }}
-                    name="user_job"
+                    name='user_job'
                   >
                     {CountryData.map((item, i) => {
                       return (
@@ -265,19 +270,19 @@ const  BusinessSetup = () => {
                     })}
                   </select>
                   <input
-                    type="text"
-                    id="name"
+                    type='text'
+                    id='name'
                     style={{ marginLeft: 10 }}
-                    name="user_name"
-                    placeholder="Phone no."
+                    name='user_name'
+                    placeholder='Phone no.'
                   />
                 </div>
-                <label for="mail">Alternate Email address</label>
+                <label for='mail'>Alternate Email address</label>
                 <input
-                  type="number"
-                  placeholder="Alternate Email address"
-                  id="mail"
-                  name="user_email"
+                  type='number'
+                  placeholder='Alternate Email address'
+                  id='mail'
+                  name='user_email'
                 />
               </fieldset>
             </form>
@@ -298,32 +303,32 @@ const  BusinessSetup = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Time zone</label>
+                <label for='name'>Time zone</label>
                 <div style={{ display: "flex" }}>
                   <select
-                    id="business"
+                    id='business'
                     style={{ width: "100%", height: 40 }}
-                    name="user_job"
+                    name='user_job'
                   >
-                    <option value="Surgical Oncologist">
+                    <option value='Surgical Oncologist'>
                       (GMT -11:00) Niue
                     </option>
                   </select>
                 </div>
-                <label for="name">Currency</label>
+                <label for='name'>Currency</label>
                 <div style={{ display: "flex" }}>
                   <select
-                    id="business"
+                    id='business'
                     style={{ width: "100%", height: 40 }}
-                    name="user_job"
+                    name='user_job'
                   >
-                    <option value="Surgical Oncologist">
+                    <option value='Surgical Oncologist'>
                       United States Dollars
                     </option>
-                    <option value="Clinical Oncologist">
+                    <option value='Clinical Oncologist'>
                       Clinical Oncologist
                     </option>
-                    <option value="Healthcare Provider">
+                    <option value='Healthcare Provider'>
                       Radiation Oncologist
                     </option>
                   </select>
@@ -346,22 +351,22 @@ const  BusinessSetup = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Profile photo</label>
+                <label for='name'>Profile photo</label>
                 <div style={{ display: "flex" }}>
                   <input
-                    placeholder="Alternate Email address"
-                    id="mail"
-                    name="user_email"
-                    type="file"
+                    placeholder='Alternate Email address'
+                    id='mail'
+                    name='user_email'
+                    type='file'
                   />
                 </div>
-                <label for="name">Add a cover photo</label>
+                <label for='name'>Add a cover photo</label>
                 <div style={{ display: "flex" }}>
                   <input
-                    placeholder="Alternate Email address"
-                    id="mail"
-                    name="user_email"
-                    type="file"
+                    placeholder='Alternate Email address'
+                    id='mail'
+                    name='user_email'
+                    type='file'
                   />
                 </div>
               </fieldset>
@@ -383,7 +388,7 @@ const  BusinessSetup = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">Website</label>
+                <label for='name'>Website</label>
                 <div style={{ display: "flex" }}>
                   <LanguageIcon
                     style={{
@@ -393,13 +398,13 @@ const  BusinessSetup = () => {
                     }}
                   />
                   <input
-                    placeholder="www.yoursite.com"
-                    id="mail"
-                    name="user_email"
-                    type="text"
+                    placeholder='www.yoursite.com'
+                    id='mail'
+                    name='user_email'
+                    type='text'
                   />
                 </div>
-                <label for="name">Facebook</label>
+                <label for='name'>Facebook</label>
                 <div style={{ display: "flex" }}>
                   <FacebookIcon
                     style={{
@@ -409,13 +414,13 @@ const  BusinessSetup = () => {
                     }}
                   />
                   <input
-                    placeholder="www.facebook.com/yoursite"
-                    id="mail"
-                    name="user_email"
-                    type="text"
+                    placeholder='www.facebook.com/yoursite'
+                    id='mail'
+                    name='user_email'
+                    type='text'
                   />
                 </div>
-                <label for="name">Instagram</label>
+                <label for='name'>Instagram</label>
                 <div style={{ display: "flex" }}>
                   <InstagramIcon
                     style={{
@@ -425,13 +430,13 @@ const  BusinessSetup = () => {
                     }}
                   />
                   <input
-                    placeholder="www.instagram.com/yoursite"
-                    id="mail"
-                    name="user_email"
-                    type="text"
+                    placeholder='www.instagram.com/yoursite'
+                    id='mail'
+                    name='user_email'
+                    type='text'
                   />
                 </div>
-                <label for="name">YouTube</label>
+                <label for='name'>YouTube</label>
                 <div style={{ display: "flex" }}>
                   <LanguageIcon
                     style={{
@@ -441,10 +446,10 @@ const  BusinessSetup = () => {
                     }}
                   />
                   <input
-                    placeholder="www.youtube.com/yoursite"
-                    id="mail"
-                    name="user_email"
-                    type="text"
+                    placeholder='www.youtube.com/yoursite'
+                    id='mail'
+                    name='user_email'
+                    type='text'
                   />
                 </div>
               </fieldset>
@@ -465,13 +470,13 @@ const  BusinessSetup = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for="name">
+                <label for='name'>
                   Your account is currently under a free plan
                 </label>
                 <div style={{ display: "flex" }}>
                   <Button
-                    onClick={() => setDialog(true)}
-                    variant="outlined"
+                    onClick={() => setOpen(true)}
+                    variant='outlined'
                     style={{
                       width: "100%",
                       textAlign: "left",
@@ -490,6 +495,31 @@ const  BusinessSetup = () => {
             </form>
           </Grid>
         </Grid>
+        <div>
+          <Dialog
+            open={open}
+            onClose={() => setOpen(false)}
+            aria-labelledby='alert-dialog-title'
+            aria-describedby='alert-dialog-description'
+          >
+            <DialogTitle id='alert-dialog-title'>
+              {"We are sorry to see you go"}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText id='alert-dialog-description'>
+                Please write to us at hello@claroo.co raising your request to
+                delete the account.We will check that there aren't any active
+                bookings to be taken care of.Also we would really like to see if
+                there is anything we can do to make you stay:)
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={() => setOpen(false)} color='primary' autoFocus>
+                Cancel
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </div>
         <div style={{ display: "flex", alignItems: "center", padding: 20 }}>
           <p
             style={{
@@ -501,14 +531,14 @@ const  BusinessSetup = () => {
             }}
           ></p>
           <Button
-          onClick={businessSetup}
+            onClick={businessSetup}
             style={{
               background: "#262C4C",
               color: "#fff",
               textTransform: "none",
               width: 100,
             }}
-            variant="contained"
+            variant='contained'
           >
             Save
           </Button>
@@ -516,5 +546,5 @@ const  BusinessSetup = () => {
       </div>
     </div>
   );
-} 
+};
 export default BusinessSetup;
