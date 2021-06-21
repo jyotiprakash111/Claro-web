@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
+// import Grid from "@material-ui/core/Grid";
+import {Divider ,Grid} from "@material-ui/core";
 import { Link } from "react-router-dom";
 import SideBar from "../../components/common/SideBar";
 import Header from "../../components/common/HeaderMain";

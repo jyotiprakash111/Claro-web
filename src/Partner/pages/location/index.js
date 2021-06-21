@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Grid from "@material-ui/core/Grid";
 import SideBar from "../../components/common/SideBar";
 import Header from "../../components/common/HeaderMain";
 import "./style.css";
-import Button from "@material-ui/core/Button";
+import { Button, Grid } from "@material-ui/core";
 
 const Location = () => {
   const [open, setOpen] = useState(true);
@@ -39,7 +38,7 @@ const Location = () => {
           marginLeft: 300,
         }}
       >
-        <Header to='/settings' name='Location' />
+        <Header to='/settings' name='Location' title='Location' avatar={true} />
 
         <Grid container>
           <Grid lg={4} item>

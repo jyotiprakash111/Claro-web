@@ -31,7 +31,7 @@ export default function SimpleSelect() {
     <div>
       <SideBar />
       <div style={{ marginLeft: 300 }}>
-        <Header to='/settings' name='Payment' />
+        <Header to='/settings' title="Payment" name='Payment' avatar={true}/>
         <Dialog open={open} handleClose={() => setOpen(false)} />
         <Grid container>
           <Grid item lg={8}>

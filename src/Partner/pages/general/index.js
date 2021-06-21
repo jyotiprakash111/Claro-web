@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import { NavLink, useHistory, Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
-import LanguageIcon from "@material-ui/icons/Language";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import {
+  Add as LanguageIcon,
+  Add as FacebookIcon,
+  Add as InstagramIcon,
+} from "@material-ui/icons";
 import SideBar from "../../components/common/SideBar";
 import Header from "../../components/common/HeaderMain";
-import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
+import {
+  Button,
+  Grid,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@material-ui/core";
 import "./style.css";
 
 const BusinessSetup = () => {
@@ -136,7 +140,12 @@ const BusinessSetup = () => {
     <div id='general_page'>
       <SideBar />
       <div style={{ marginLeft: 300 }}>
-        <Header to='/settings' name='Business Setup' />
+        <Header
+          to='/settings'
+          title='Business Setup'
+          name='Business Setup'
+          avatar={true}
+        />
 
         <Grid style={{ marginTop: 30 }} container>
           <Grid lg={4} item>

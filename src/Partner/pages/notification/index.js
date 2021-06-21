@@ -9,7 +9,7 @@ export default class index extends Component {
       <div>
         <SideBar />
         <div style={{ marginLeft: 300 }}>
-          <Header name="Notification" />
+          <Header to='/settings' title="Notification" name="Notification" avatar={true}/>
           <Main />
         </div>
       </div>

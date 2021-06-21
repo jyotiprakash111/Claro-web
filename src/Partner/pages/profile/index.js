@@ -106,7 +106,7 @@ const Profile = () => {
     <div>
       <SideBar />
       <div style={{ marginLeft: 300 }}>
-        <Header to='/settings' title='Setting' name='User Profile' />
+        <Header to='/settings' title='User Profile' name='User Profile' />
         <div id='user_profile'>
           <p style={{ marginTop: 0 }}>
             Manage personal details and login credential
