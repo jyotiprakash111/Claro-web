@@ -17,7 +17,7 @@ function TabPanel(props) {
 
   return (
     <div
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
@@ -68,52 +68,57 @@ const useStyles = makeStyles((theme) => ({
 export default function SimpleTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  const handleNext = () => {
+    setActiveStep((newValue) => newValue + 1);
+  };
+
   return (
     <div className={classes.root}>
-      <AppBar style={{ background: "#fff", width: "95%" }} position="static">
+      <AppBar style={{ background: "#fff", width: "95%" }} position='static'>
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label="simple tabs example"
+          aria-label='simple tabs example'
           TabIndicatorProps={{ style: { background: "#FF8021", height: 3 } }}
         >
           <Tab
             style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label="Basic Information"
+            label='Basic Information'
             {...a11yProps(0)}
           />
           <Tab
             style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label="Schedule"
+            label='Schedule'
             {...a11yProps(1)}
           />
           <Tab
             style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label="Location"
+            label='Location'
             {...a11yProps(2)}
           />
           <Tab
             style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label="Pricing"
+            label='Pricing'
             {...a11yProps(3)}
           />
           <Tab
             style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label="Other Options"
+            label='Other Options'
             {...a11yProps(4)}
           />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <BasicInformation />
+        <BasicInformation handleNext={handleNext} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Schedule />
+        <Schedule handleNext={handleChange} />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Location />

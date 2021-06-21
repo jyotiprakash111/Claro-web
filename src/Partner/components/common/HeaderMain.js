@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 import Avatar from "@material-ui/core/Avatar";
+import Typography from "@material-ui/core/Typography";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import { Link } from "react-router-dom";
 
 export default class Header extends Component {
@@ -32,19 +34,19 @@ export default class Header extends Component {
 
           {this.props.avatar ? (
             <div style={{ display: "flex", alignItems: "center" }}>
-              <Link to="/notification">
+              <Link to='/notification'>
                 <NotificationsNoneIcon
                   style={{ fontSize: 30, marginRight: 10, color: "#323232" }}
                 />
               </Link>
-              <Link to="/profile" style={{ textDecoration: "none" }}>
+              <Link to='/profile' style={{ textDecoration: "none" }}>
                 <Avatar
                   style={{
                     background: "#65B1EC",
                     marginRight: 20,
                   }}
-                  alt="Remy Sharp"
-                  src="/static/images/avatar/1.jpg"
+                  alt='Remy Sharp'
+                  src='/static/images/avatar/1.jpg'
                 />
               </Link>
             </div>
@@ -53,13 +55,28 @@ export default class Header extends Component {
           )}
         </div>
         {this.props.to ? (
+          // <div style={{ marginTop: 10 }}>
+          //   <Link
+          //     style={{ color: "#65B1EC", textDecoration: "none" }}
+          //     to={this.props.to}
+          //   >
+          //     {this.props.to_text ? this.props.to_text : "Back to Setup"}
+          //   </Link>
+          // </div>
           <div style={{ marginTop: 10 }}>
-            <Link
-              style={{ color: "#65B1EC", textDecoration: "none" }}
-              to={this.props.to}
+            <Breadcrumbs
+              style={{ marginTop: 20 }}
+              separator='›'
+              aria-label='breadcrumb'
             >
-              {this.props.to_text ? this.props.to_text : "Back to Setup"}
-            </Link>
+              <Link
+                style={{ color: "#65B1EC", textDecoration: "none" }}
+                to={this.props.to}
+              >
+                {this.props.to_text ? this.props.to_text : "Back to Setup"}
+              </Link>
+              <Typography color='textPrimary'>{this.props.title}</Typography>
+            </Breadcrumbs>
           </div>
         ) : (
           ""

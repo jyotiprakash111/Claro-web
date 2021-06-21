@@ -9,7 +9,11 @@ export default class index extends Component {
       <div>
         <SideBar />
         <div style={{ marginLeft: 300 }}>
-          <Header name='Sales' avatar={true} />
+          <Header
+            avatar={true}
+            name="Home"
+            to_text="www.business_name.claroo.co"
+          />
           <Main />
         </div>
       </div>

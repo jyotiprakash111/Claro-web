@@ -1,3 +1,4 @@
+import React from "react";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
 import LocalLibraryOutlinedIcon from "@material-ui/icons/LocalLibraryOutlined";
 import TrendingUpOutlinedIcon from "@material-ui/icons/TrendingUpOutlined";
@@ -10,7 +11,6 @@ import MailIcon from "@material-ui/icons/Mail";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import SortIcon from "@material-ui/icons/Sort";
 import LoyaltyIcon from "@material-ui/icons/Loyalty";
-import React from "react";
 
 export const menu = [
   {

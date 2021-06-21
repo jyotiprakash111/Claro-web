@@ -30,7 +30,12 @@ export default function Services() {
         </Grid>
         <Grid style={{ marginLeft: 100 }} item lg={5}>
           <div
-            style={{ padding: 40, textAlign: "center", position: "relative" }}
+            style={{
+              padding: 40,
+              textAlign: "center",
+              position: "relative",
+              background: "#F8F8F8",
+            }}
           >
             <Button
               style={{
@@ -48,7 +53,7 @@ export default function Services() {
               Coming soon
             </Button>
             <img src={Meeting} />
-            <h3 style={{ fontSize: "24px" }}>Classes </h3>
+            <h3 style={{ fontSize: "24px" }}>Appointments</h3>
             <p>
               Great for services that occur on scheduled dates and time. They
               can be group or private lessons and one time class or recurring.

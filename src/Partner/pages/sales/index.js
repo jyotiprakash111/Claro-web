@@ -7,8 +7,8 @@ import FormControl from "@material-ui/core/FormControl";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-// import Table from "../../components/Sales/Table";
-import Table from "@material-ui/core/Table";
+import Table from "../../components/Sales/Table";
+// import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
@@ -29,18 +29,6 @@ import { Controller, FormProvider, useForm } from "react-hook-form";
 import SideBar from "../../components/common/SideBar";
 import Header from "../../components/common/HeaderMain";
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-  table: {
-    minWidth: 650,
-  },
-}));
 const currencies = [
   {
     value: "Bhubaneswar",
@@ -60,138 +48,100 @@ const currencies = [
   },
 ];
 
-const Sales = () => {
+export default function Sales() {
   const validationSchema = yup.object().shape({});
   const methods = useForm({
     resolver: yupResolver(validationSchema),
   });
-  function createData(name, calories, fat, carbs, protein, amount) {
-    return { name, calories, fat, carbs, protein, amount };
-  }
-
-  const rows = [
-    createData("xxxx", "dd mmm yyyy", "John Doe", "Paytm", "Paid", "$ xx"),
-    createData("xxxx", "dd mmm yyyy", "John Doe", "Paytm", "Paid", "$ xx"),
-    createData("xxxx", "dd mmm yyyy", "John Doe", "Paytm", "Paid", "$ xx"),
-    createData("xxxx", "dd mmm yyyy", "John Doe", "Paytm", "Paid", "$ xx"),
-    createData("xxxx", "dd mmm yyyy", "John Doe", "Paytm", "Paid", "$ xx"),
-  ];
-
-  const [age, setAge] = React.useState("");
-
-  const classes = useStyles();
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
 
   return (
-    <div>
-      <FormProvider {...methods}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginRight: 100,
-          }}
-        >
-          <div>
-            <p>Starting From</p>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <FormDatePicker
-                name='startTime'
-                placeholder='DD/MM/YYYY'
-                required={true}
-              />
-            </div>
-          </div>
-          <div>
-            <TextField
-              id='outlined-select-currency'
-              select
-              label='All location'
-              variant='outlined'
-              size='small'
-              style={{ width: 163, height: 44 }}
-            >
-              {currencies.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.value}
-                </MenuItem>
-              ))}
-            </TextField>
-            <Button
-              variant='outlined'
-              style={{
-                color: "#FF8021",
-                borderColor: "#FF8021",
-                width: 144,
-                height: 40,
-                marginLeft: 20,
-              }}
-            >
-              New sales
-            </Button>
-            {/* </FormControl> */}
-          </div>
-        </div>
-        <div style={{ marginRight: 100, marginTop: 30 }}>
-          {/* <Table /> */}
-          <TableContainer id='sales' component={Paper}>
-            <Table className={classes.table} aria-label='simple table'>
-              <TableHead style={{ background: "#F8F8F8" }}>
-                <TableRow>
-                  <TableCell>Invoice no</TableCell>
-                  <TableCell>Transaction date</TableCell>
-                  <TableCell>Customer name</TableCell>
-                  <TableCell>Method</TableCell>
-                  <TableCell>Status</TableCell>
-                  <TableCell>Amount</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map((row) => (
-                  <TableRow key={row.name}>
-                    <TableCell>{row.name}</TableCell>
-                    <TableCell>{row.calories}</TableCell>
-                    <TableCell>{row.fat}</TableCell>
-                    <TableCell>{row.carbs}</TableCell>
-                    <TableCell>{row.protein}</TableCell>
-                    <TableCell>
-                      <div
-                        style={{
-                          alignItems: "center",
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        {row.amount}
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <Button
+    <FormProvider {...methods}>
+      <div>
+        <SideBar />
+        <div style={{ marginLeft: 300 }}>
+          <Header name='Sales' avatar={true} />
+          <div
             style={{
-              textTransform: "unset",
-              color: "#FF8021",
-              marginTop: 10,
-              marginLeft: -5,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginRight: 100,
             }}
           >
-            Show More <ExpandMoreIcon />
-          </Button>
+            <div>
+              <p>Starting From</p>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <FormDatePicker
+                  name='startTime'
+                  placeholder='DD/MM/YYYY'
+                  required={true}
+                />
+                {/* <div>
+              <DateRangeIcon style={{ color: "#FF8021", fontSize: 30 }} />
+            </div>
+            <p
+              style={{
+                margin: 0,
+                padding: 0,
+                marginTop: -10,
+                fontSize: 18,
+                marginLeft: 10,
+              }}
+            >
+              {" "}
+              7 Feb 2021
+            </p> */}
+              </div>
+            </div>
+            <div>
+              <TextField
+                id='outlined-select-currency'
+                select
+                label='All location'
+                variant='outlined'
+                size='small'
+                style={{ width: 163, height: 44 }}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.value}
+                  </MenuItem>
+                ))}
+              </TextField>
+              <Button
+                variant='outlined'
+                style={{
+                  color: "#FF8021",
+                  borderColor: "#FF8021",
+                  width: 144,
+                  height: 40,
+                  marginLeft: 20,
+                }}
+              >
+                New sales
+              </Button>
+            </div>
+          </div>
+          <div style={{ marginRight: 100, marginTop: 30 }}>
+            <Table />
+            <Button
+              style={{
+                textTransform: "unset",
+                color: "#FF8021",
+                marginTop: 10,
+                marginLeft: -5,
+              }}
+            >
+              Show More <ExpandMoreIcon />
+            </Button>
+          </div>
         </div>
-      </FormProvider>
-    </div>
+      </div>
+    </FormProvider>
   );
-};
-export default Sales;
+}

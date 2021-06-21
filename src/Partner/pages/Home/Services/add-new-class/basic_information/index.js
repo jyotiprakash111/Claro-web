@@ -23,7 +23,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 
 function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
+  return <MuiAlert elevation={6} variant='filled' {...props} />;
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -67,7 +67,7 @@ const age_of_students = [
   },
 ];
 
-export default function Index() {
+const BasicInfo = ({ handleNext }) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -125,17 +125,17 @@ export default function Index() {
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Class Title</label>
           <TextField
-            variant="outlined"
-            placeholder="Yoga for beginners"
+            variant='outlined'
+            placeholder='Yoga for beginners'
             style={{ width: "100%" }}
           />
         </Grid>
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Category</label>
           <Select
-            variant="outlined"
-            placeholder="Category"
-            size="normal"
+            variant='outlined'
+            placeholder='Category'
+            size='normal'
             MenuProps={{
               anchorOrigin: {
                 vertical: "bottom",
@@ -163,7 +163,7 @@ export default function Index() {
             input={
               <Input
                 style={{ borderBottom: "none" }}
-                variant="outlined"
+                variant='outlined'
                 onClick={() => setisSelectorOpen(true)}
               />
             }
@@ -185,7 +185,7 @@ export default function Index() {
                 value={new_category}
                 onChange={(e) => setNewCategory(e.target.value)}
                 fullWidth
-                variant="outlined"
+                variant='outlined'
               ></TextField>
               <Button
                 style={{
@@ -236,8 +236,8 @@ export default function Index() {
             Briefly describe this class
           </label>
           <TextField
-            variant="outlined"
-            placeholder="Shows on the class public page.Add class info/instructions."
+            variant='outlined'
+            placeholder='Shows on the class public page.Add class info/instructions.'
             style={{ width: "100%" }}
             multiline
             rows={4}
@@ -246,23 +246,23 @@ export default function Index() {
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Total booking slots</label>
           <TextField
-            variant="outlined"
-            placeholder="Total booking slots"
+            variant='outlined'
+            placeholder='Total booking slots'
             style={{ width: "100%" }}
-            type="number"
+            type='number'
           />
         </Grid>
         <Grid item lg={6}></Grid>
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Price</label>
           <TextField
-            id="outlined-select-currency"
+            id='outlined-select-currency'
             select
             value={currency}
-            size="small"
+            size='small'
             onChange={handleChange}
             style={{ width: "100%" }}
-            variant="outlined"
+            variant='outlined'
           >
             {currencies.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -276,9 +276,9 @@ export default function Index() {
             >
               <label style={{ fontSize: 20 }}>INR</label>
               <TextField
-                variant="outlined"
-                placeholder="Enter Fixed Price"
-                type="number"
+                variant='outlined'
+                placeholder='Enter Fixed Price'
+                type='number'
                 style={{ width: "100%", marginLeft: 10 }}
               />
             </div>
@@ -290,12 +290,12 @@ export default function Index() {
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Age of your students</label>
           <TextField
-            id="outlined-select-currency"
+            id='outlined-select-currency'
             select
-            size="small"
+            size='small'
             style={{ width: "100%" }}
             // helperText="Please select your currency"
-            variant="outlined"
+            variant='outlined'
           >
             {age_of_students.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -312,10 +312,10 @@ export default function Index() {
                 <Switch
                   //   checked={state.gilad}
                   //   onChange={handleChange}
-                  name="gilad"
+                  name='gilad'
                 />
               }
-              label="Enable Online Bookings"
+              label='Enable Online Bookings'
             />
           </FormGroup>
           <p>Add class image</p>
@@ -355,13 +355,14 @@ export default function Index() {
         autoHideDuration={6000}
         onClose={handleClose}
       >
-        <Alert severity="success">Batch Successfully Created!</Alert>
+        <Alert severity='success'>Batch Successfully Created!</Alert>
       </Snackbar>
 
       <div style={{ width: 200, marginLeft: "auto" }}>
         <Button
           onClick={() => handleClick()}
-          variant="contained"
+          // onClick={handleNext}
+          variant='contained'
           style={{ background: "#FF8021", color: "#fff", width: "100%" }}
         >
           Save and Continue
@@ -369,4 +370,5 @@ export default function Index() {
       </div>
     </div>
   );
-}
+};
+export default BasicInfo;

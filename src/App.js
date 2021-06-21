@@ -5,7 +5,7 @@ import partnerSingle from "./Partner/pages/singleCustomers/index";
 import testimonial from "./Partner/pages/testimonial/index";
 import general from "./Partner/pages/general/index";
 import schedule from "./Partner/pages/schedule/index";
-import sales from "./Partner/pages/sales/index2";
+import sales from "./Partner/pages/sales";
 import team from "./Partner/pages/team/index";
 import notification from "./Partner/pages/notification/index";
 import profile from "./Partner/pages/profile/index";
@@ -13,7 +13,7 @@ import location from "./Partner/pages/location/index";
 import payment from "./Partner/pages/payment/main";
 import settings from "./Partner/pages/Setting";
 import batchSchedule from "./Partner/pages/Batch_Schedule/index";
-import home from "./Partner/pages/Home/index";
+import home from "./Partner/pages/Home/index2";
 import home_services from "./Partner/pages/Home/Services/index";
 import home_classes from "./Partner/pages/Home/Services/Classes/index";
 import homeScreen from "./Partner/pages/homePage/index";
@@ -30,8 +30,8 @@ class App extends Component {
       <Router>
         <div className='root'>
           <Switch>
-            <Route exact path='/' component={homeScreen} />
-            <Route path='/homescreen' component={home} />
+            <Route exact path='/' component={home} />
+            <Route path='/homescreen' component={homeScreen} />
             <Route path='/home_services' component={home_services} />
             <Route path='/home_classes' component={home_classes} />
             <Route path='/customer' component={partner} />
