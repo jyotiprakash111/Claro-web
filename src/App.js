@@ -11,18 +11,15 @@ import notification from "./Partner/pages/notification/index";
 import profile from "./Partner/pages/profile/index";
 import location from "./Partner/pages/location/index";
 import payment from "./Partner/pages/payment/main";
-import settings from "./Partner/pages/Setting";
-import batchSchedule from "./Partner/pages/Batch_Schedule/index";
-import home from "./Partner/pages/Home/index2";
-import home_services from "./Partner/pages/Home/Services/index";
-import home_classes from "./Partner/pages/Home/Services/Classes/index";
+import settings from "./Partner/pages/setting";
+import batchSchedule from "./Partner/pages/batchSchedule/index";
+import home from "./Partner/pages/home/index2";
+import home_services from "./Partner/pages/home/Services/index";
+import home_classes from "./Partner/pages/home/Services/Classes/index";
 import homeScreen from "./Partner/pages/homePage/index";
 import onlineBooking from "./Partner/pages/onlineBooking/index.js";
-import NewClass from "./Partner/pages/Home/Services/add-new-class/index";
+import NewClass from "./Partner/pages/home/Services/add-new-class/index";
 import NewSchedule from "./Partner/pages/newClassSchedule";
-import Demo from "./Partner/pages/demo";
-
-import "./style.css";
 
 class App extends Component {
   render() {
@@ -51,7 +48,6 @@ class App extends Component {
             <Route path='/new_class' component={NewClass} />
 
             <Route path='/new_class_schedule' component={NewSchedule} />
-            <Route path='/demo' component={Demo} />
           </Switch>
         </div>
       </Router>

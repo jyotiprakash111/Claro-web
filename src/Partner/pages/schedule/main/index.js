@@ -1,18 +1,14 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Button from "@material-ui/core/Button";
-import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
-import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
-import DateRangeIcon from "@material-ui/icons/DateRange";
-import GroupIcon from "@material-ui/icons/Group";
-
+import {
+  MenuItem,
+  FormControl,
+  Select,
+  Button,
+  Grid,
+  Divider,
+} from "@material-ui/core";
+import { Add as DateRangeIcon, Add as GroupIcon } from "@material-ui/icons";
 import FormDatePicker from "../../../components/controls/FormDatePicker";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -47,9 +43,8 @@ export default function SimpleSelect() {
   });
 
   return (
-    <div id="schedules">
+    <div id='schedules'>
       <Dialog open={open} handleClose={() => setOpen(false)} />
-
       <div>
         <p>Starting from</p>
         <div
@@ -63,8 +58,8 @@ export default function SimpleSelect() {
           <FormProvider {...methods}>
             <div style={{ textTransform: "none", fontSize: 20 }}>
               <FormDatePicker
-                name="startTime"
-                placeholder="DD/MM/YYYY"
+                name='startTime'
+                placeholder='DD/MM/YYYY'
                 required={true}
               />
             </div>
@@ -74,13 +69,13 @@ export default function SimpleSelect() {
             <p style={{ marginLeft: 10 }}>Indian Standard Time(IST)</p>
           </div> */}
           <div>
-            <FormControl variant="outlined" className={classes.formControl}>
+            <FormControl variant='outlined' className={classes.formControl}>
               <Select
-                labelId="demo-simple-select-outlined-label"
-                id="demo-simple-select-outlined"
+                labelId='demo-simple-select-outlined-label'
+                id='demo-simple-select-outlined'
                 value={10}
                 onChange={handleChange}
-                size="small"
+                size='small'
                 style={{ height: 40 }}
               >
                 <MenuItem value={10}>All location </MenuItem>
@@ -89,13 +84,13 @@ export default function SimpleSelect() {
               </Select>
             </FormControl>
 
-            <FormControl variant="outlined" className={classes.formControl}>
+            <FormControl variant='outlined' className={classes.formControl}>
               <Select
-                labelId="demo-simple-select-outlined-label"
-                id="demo-simple-select-outlined"
+                labelId='demo-simple-select-outlined-label'
+                id='demo-simple-select-outlined'
                 value={10}
                 onChange={handleChange}
-                size="small"
+                size='small'
                 style={{ height: 40 }}
               >
                 <MenuItem value={10}>All Instructors</MenuItem>
@@ -160,7 +155,7 @@ export default function SimpleSelect() {
             </table>
 
             <Button
-              variant="outlined"
+              variant='outlined'
               style={{
                 color: "#FF8021",
                 border: "1px solid #FF8021",
@@ -189,7 +184,7 @@ export default function SimpleSelect() {
               >
                 <p style={{ fontSize: 20 }}>Class title</p>
                 <Button
-                  variant="contained"
+                  variant='contained'
                   style={{
                     borderRadius: 5,
                     background: "#65B1EC",
