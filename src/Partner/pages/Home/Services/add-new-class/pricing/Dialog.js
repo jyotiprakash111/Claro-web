@@ -355,7 +355,7 @@ export default function FormDialog(props) {
                 textAlign: "right",
                 marginTop: 20,
               }}
-              // onClick={() => changePricingType(-1)}
+              onClick={() => changePricingType(-1)}
               variant="contained"
             >
               Confirm and Add
@@ -474,7 +474,7 @@ export default function FormDialog(props) {
                 textAlign: "right",
                 marginTop: 20,
               }}
-              // onClick={() => changePricingType(-1)}
+              onClick={() => changePricingType(-1)}
               variant="contained"
             >
               Confirm and Add
@@ -537,7 +537,7 @@ export default function FormDialog(props) {
                 textAlign: "right",
                 marginTop: 20,
               }}
-              // onClick={() => changePricingType(-1)}
+              onClick={() => changePricingType(-1)}
               variant="contained"
             >
               Confirm and Add
@@ -656,10 +656,7 @@ export default function FormDialog(props) {
                 textAlign: "right",
                 marginTop: 20,
               }}
-              onClick={() => {
-                props.handleClose();
-              }}
-              // onClick={() => changePricingType(-1)}
+              onClick={() => changePricingType(-1)}
               variant="contained"
             >
               Confirm and Add
@@ -668,6 +665,25 @@ export default function FormDialog(props) {
         </div>
       );
     }
+  }
+
+  function renderTitle(temp) {
+    if (temp == 0) {
+      return "Add trial class plan";
+    }
+    if (temp == 1) {
+      return "Add drop in plan";
+    }
+    if (temp == 2) {
+      return "New one time fee";
+    }
+    if (temp == 3) {
+      return "Monthly / Weekly payment";
+    }
+    if (temp == 4) {
+      return "New custom fee";
+    }
+    return "Create plan price";
   }
 
   return (
@@ -680,11 +696,17 @@ export default function FormDialog(props) {
           margin: "0px auto",
         }}
         open={props.open}
-        onClose={() => props.handleClose()}
+        onClose={() => {
+          changePricingType(-1);
+          props.handleClose();
+        }}
       >
         <DialogTitle
           id="customized-dialog-title"
-          onClose={() => props.handleClose()}
+          onClose={() => {
+            changePricingType(-1);
+            props.handleClose();
+          }}
           style={{
             borderBottom: "1px solid #FF8021",
             marginLeft: 30,
@@ -694,7 +716,7 @@ export default function FormDialog(props) {
             fontWeight: "700",
           }}
         >
-          Create plan price
+          {renderTitle(pricingType)}
         </DialogTitle>
         <div style={{ padding: 20, height: 500, width: 700, marginBottom: 40 }}>
           <form id="pricing_plan" style={{}}>

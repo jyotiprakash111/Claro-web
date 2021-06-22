@@ -24,6 +24,7 @@ import IconButton from "@material-ui/core/IconButton";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import Tooltip from "@material-ui/core/Tooltip";
 import InfoIcon from "@material-ui/icons/Info";
+import ClearIcon from "@material-ui/icons/Clear";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -153,322 +154,339 @@ export default function Index() {
   ));
 
   return (
-    <ClickAwayListener>
-      <div onClick={() => (isSelectorOpen ? setisSelectorOpen(false) : "")}>
-        <p>
-          We are super excited to find you adding a new activity to your list!
-          Kindly fill the following details
-        </p>
+    <div>
+      <p>
+        We are super excited to find you adding a new activity to your list!
+        Kindly fill the following details
+      </p>
 
-        <Grid style={{ width: "100%" }} container spacing={3}>
-          <Grid item lg={6}>
-            <label style={{ color: "#827575" }}>Class Title</label>
-            <TextField
-              variant="outlined"
-              placeholder="Yoga for beginners"
-              style={{ width: "100%" }}
-            />
-          </Grid>
-          <Grid item lg={6}>
-            <label style={{ color: "#827575" }}>Category</label>
-            <Select
-              variant="outlined"
-              placeholder="Category"
-              size="normal"
-              MenuProps={{
-                anchorOrigin: {
-                  vertical: "bottom",
-                  horizontal: "left",
-                },
-                transformOrigin: {
-                  vertical: "top",
-                  horizontal: "left",
-                },
-                getContentAnchorEl: null,
-              }}
-              select
-              style={{
-                width: "100%",
-                borderBottom: "none",
-                border: "1px solid #ccc",
-                boxShadow: "none",
-                padding: 5,
-                height: 38,
-                paddingLeft: 20,
-                borderRadius: 5,
-              }}
-              open={isSelectorOpen}
-              onChange={handleChange2}
-              input={
-                <Input
-                  style={{ borderBottom: "none" }}
-                  variant="outlined"
-                  onClick={() => setisSelectorOpen(true)}
-                />
-              }
-            >
-              {category.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-              <div
-                style={{
-                  display: "flex",
-                  width: "90%",
-                  marginLeft: 10,
-                  marginTop: 10,
-                }}
-              >
-                <TextField
-                  value={new_category}
-                  onChange={(e) => setNewCategory(e.target.value)}
-                  fullWidth
-                  variant="outlined"
-                ></TextField>
-                <Button
-                  style={{
-                    textTransform: "none",
-                    fontSize: 16,
-                    width: 300,
-                    color: "#65B1EC",
-                  }}
-                  onClick={() => {
-                    if (new_category) {
-                      setCategory([
-                        ...category,
-                        ...[{ label: new_category, value: category.length }],
-                      ]);
-                      setNewCategory("");
-                    }
-                  }}
-                >
-                  <AddIcon style={{ fontSize: 24, color: "#65B1EC" }} /> Add new
-                  category
-                </Button>
-              </div>
-            </Select>
-          </Grid>
-          <Grid item lg={12}>
-            <label style={{ color: "#827575" }}>
-              Briefly describe this class
-            </label>
-            <TextField
-              variant="outlined"
-              placeholder="Shows on the class public page.Add class info/instructions."
-              style={{ width: "100%" }}
-              multiline
-              rows={4}
-            />
-          </Grid>
-          <Grid item lg={6}>
-            <div style={{ display: "flex" }}>
-              <label style={{ color: "#827575" }}>Total booking slots</label>
-              <div>
-                <Tooltip
-                  title="Total Booking Slots"
-                  aria-label="add"
-                  style={{ background: "#65B1EC" }}
-                >
-                  <InfoIcon
-                    style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
-                  />
-                </Tooltip>
-              </div>
-            </div>
-            <TextField
-              variant="outlined"
-              placeholder="Total booking slots"
-              style={{ width: "100%" }}
-              type="number"
-            />
-          </Grid>
-          <Grid item lg={6}></Grid>
-          <Grid item lg={6}>
-            <div style={{ display: "flex" }}>
-              <label style={{ color: "#827575" }}>Price</label>
-              <div>
-                <Tooltip
-                  title="Price"
-                  aria-label="add"
-                  style={{ background: "#65B1EC" }}
-                >
-                  <InfoIcon
-                    style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
-                  />
-                </Tooltip>
-              </div>
-            </div>
-            <TextField
-              id="outlined-select-currency"
-              select
-              value={currency}
-              size="small"
-              onChange={handleChange}
-              style={{ width: "100%" }}
-              variant="outlined"
-            >
-              {currencies.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-            {currency == 1 ? (
-              <div
-                style={{ display: "flex", alignItems: "center", marginTop: 20 }}
-              >
-                <label style={{ fontSize: 20 }}>INR</label>
-                <TextField
-                  variant="outlined"
-                  placeholder="Enter Fixed Price"
-                  type="number"
-                  style={{ width: "100%", marginLeft: 10 }}
-                />
-              </div>
-            ) : (
-              ""
-            )}
-          </Grid>
-          <Grid item lg={6}></Grid>
-          <Grid item lg={6}>
-            <label style={{ color: "#827575" }}>Age of your student</label>
-            <TextField
-              id="outlined-select-currency"
-              select
-              size="small"
-              style={{ width: "100%" }}
-              variant="outlined"
-              value={age_of_students_temp}
-              onChange={(e) => setAgeOfStudents(e.target.value)}
-            >
-              {age_of_students.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-            {age_of_students_temp == 2 ? (
-              <div>
-                <div style={{ marginTop: 20, display: "flex" }}>
-                  <div>
-                    <label style={{ color: "#827575" }}>Min age</label>
-                    <TextField
-                      variant="outlined"
-                      placeholder="Min Age"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                  <div style={{ marginLeft: 20 }}>
-                    <label style={{ color: "#827575" }}>Max Age</label>
-                    <TextField
-                      variant="outlined"
-                      placeholder="Max Age"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                </div>
-                <FormControlLabel
-                  control={<Checkbox name="gilad" />}
-                  label="Request Adult Presence"
-                />
-              </div>
-            ) : (
-              ""
-            )}
-          </Grid>
-          <Grid item lg={6}></Grid>
-          <Grid item lg={6}>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <div>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      //   checked={state.gilad}
-                      //   onChange={handleChange}
-                      name="gilad"
-                      classes={purple}
-                    />
-                  }
-                  label="Enable Online Bookings"
-                />
-              </div>
-              <div>
-                <Tooltip
-                  title="with online online booking customers can book the class directly on their own"
-                  aria-label="add"
-                  style={{ background: "#65B1EC" }}
-                >
-                  <InfoIcon style={{ color: "#65B1EC" }} />
-                </Tooltip>
-              </div>
-            </div>
-            <p>Add class image</p>
-            <section
-              style={{
-                width: 200,
-                borderRadius: 5,
-                textAlign: "center",
-
-                height: 40,
-                background: "#65B1EC",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "100%",
-                }}
-                {...getRootProps({ className: "dropzone" })}
-              >
-                <input {...getInputProps()} />
-                <PublishIcon style={{ color: "#fff" }} />
-                <span style={{ color: "#fff" }}>Upload Image</span>
-              </div>
-              <aside>
-                <ul>{files}</ul>
-              </aside>
-            </section>
-          </Grid>
+      <Grid style={{ width: "100%" }} container spacing={3}>
+        <Grid item lg={6}>
+          <label style={{ color: "#827575" }}>Class Title</label>
+          <TextField
+            variant="outlined"
+            placeholder="Yoga for beginners"
+            style={{ width: "100%" }}
+          />
         </Grid>
-        <Snackbar
-          anchorOrigin={{ vertical: "top", horizontal: "right" }}
-          open={open}
-          autoHideDuration={6000}
-          onClose={handleClose}
-        >
-          <Alert severity="success">Batch Successfully Created!</Alert>
-        </Snackbar>
-
-        <div style={{ width: 200, marginLeft: "auto" }}>
-          <Button
-            onClick={() => handleClick()}
-            variant="contained"
-            style={{ background: "#FF8021", color: "#fff", width: "100%" }}
-          >
-            Save and Continue
-          </Button>
-        </div>
-        <div>
-          <p
+        <Grid item lg={6}>
+          <label style={{ color: "#827575" }}>Category</label>
+          <Select
+            variant="outlined"
+            placeholder="Category"
+            size="normal"
+            MenuProps={{
+              anchorOrigin: {
+                vertical: "bottom",
+                horizontal: "left",
+              },
+              transformOrigin: {
+                vertical: "top",
+                horizontal: "left",
+              },
+              getContentAnchorEl: null,
+            }}
+            select
             style={{
-              border: "1px solid #FF8021",
-              width: "70%",
-              borderRadius: 5,
+              width: "100%",
+              borderBottom: "none",
+              border: "1px solid #ccc",
+              boxShadow: "none",
               padding: 5,
-              fontSize: "0.9rem",
-              paddingLeft: 30,
+              height: 38,
+              paddingLeft: 20,
+              borderRadius: 5,
+            }}
+            open={isSelectorOpen}
+            onChange={handleChange2}
+            input={
+              <Input
+                style={{ borderBottom: "none" }}
+                variant="outlined"
+                onClick={() => setisSelectorOpen(true)}
+              />
+            }
+          >
+            {category.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+            <div
+              style={{
+                display: "flex",
+                width: "90%",
+                marginLeft: 10,
+                marginTop: 10,
+              }}
+            >
+              <TextField
+                value={new_category}
+                onChange={(e) => setNewCategory(e.target.value)}
+                fullWidth
+                type="search"
+                variant="outlined"
+              ></TextField>
+              <Button
+                style={{
+                  textTransform: "none",
+                  fontSize: 16,
+                  width: 300,
+                  color: "#65B1EC",
+                }}
+                onClick={() => {
+                  if (new_category) {
+                    setCategory([
+                      ...category,
+                      ...[{ label: new_category, value: category.length }],
+                    ]);
+                    setNewCategory("");
+                  }
+                }}
+              >
+                <AddIcon style={{ fontSize: 24, color: "#65B1EC" }} /> Add new
+                category
+              </Button>
+            </div>
+            {/* <Button
+              style={{
+                textTransform: "none",
+                fontSize: 16,
+                width: 300,
+                color: "red",
+              }}
+              onClick={() => setisSelectorOpen(false)}
+            >
+              <ClearIcon style={{ fontSize: 24, color: "red" }} /> close
+            </Button> */}
+            <MenuItem
+              style={{ color: "#FF8021", marginTop: 10 }}
+              key={""}
+              value={""}
+            >
+              Close
+            </MenuItem>
+          </Select>
+        </Grid>
+        <Grid item lg={12}>
+          <label style={{ color: "#827575" }}>
+            Briefly describe this class
+          </label>
+          <TextField
+            variant="outlined"
+            placeholder="Shows on the class public page.Add class info/instructions."
+            style={{ width: "100%" }}
+            multiline
+            rows={4}
+          />
+        </Grid>
+        <Grid item lg={6}>
+          <div style={{ display: "flex" }}>
+            <label style={{ color: "#827575" }}>Total booking slots</label>
+            <div>
+              <Tooltip
+                title="Total Booking Slots"
+                aria-label="add"
+                style={{ background: "#65B1EC" }}
+              >
+                <InfoIcon
+                  style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
+                />
+              </Tooltip>
+            </div>
+          </div>
+          <TextField
+            variant="outlined"
+            placeholder="Total booking slots"
+            style={{ width: "100%" }}
+            type="number"
+          />
+        </Grid>
+        <Grid item lg={6}></Grid>
+        <Grid item lg={6}>
+          <div style={{ display: "flex" }}>
+            <label style={{ color: "#827575" }}>Price</label>
+            <div>
+              <Tooltip
+                title="Price"
+                aria-label="add"
+                style={{ background: "#65B1EC" }}
+              >
+                <InfoIcon
+                  style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
+                />
+              </Tooltip>
+            </div>
+          </div>
+          <TextField
+            id="outlined-select-currency"
+            select
+            value={currency}
+            size="small"
+            onChange={handleChange}
+            style={{ width: "100%" }}
+            variant="outlined"
+          >
+            {currencies.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+          {currency == 1 ? (
+            <div
+              style={{ display: "flex", alignItems: "center", marginTop: 20 }}
+            >
+              <label style={{ fontSize: 20 }}>INR</label>
+              <TextField
+                variant="outlined"
+                placeholder="Enter Fixed Price"
+                type="number"
+                style={{ width: "100%", marginLeft: 10 }}
+              />
+            </div>
+          ) : (
+            ""
+          )}
+        </Grid>
+        <Grid item lg={6}></Grid>
+        <Grid item lg={6}>
+          <label style={{ color: "#827575" }}>Age of your student</label>
+          <TextField
+            id="outlined-select-currency"
+            select
+            size="small"
+            style={{ width: "100%" }}
+            variant="outlined"
+            value={age_of_students_temp}
+            onChange={(e) => setAgeOfStudents(e.target.value)}
+          >
+            {age_of_students.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+          {age_of_students_temp == 2 ? (
+            <div>
+              <div style={{ marginTop: 20, display: "flex" }}>
+                <div>
+                  <label style={{ color: "#827575" }}>Min age</label>
+                  <TextField
+                    variant="outlined"
+                    placeholder="Min Age"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+                <div style={{ marginLeft: 20 }}>
+                  <label style={{ color: "#827575" }}>Max Age</label>
+                  <TextField
+                    variant="outlined"
+                    placeholder="Max Age"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+              </div>
+              <FormControlLabel
+                control={<Checkbox name="gilad" />}
+                label="Request Adult Presence"
+              />
+            </div>
+          ) : (
+            ""
+          )}
+        </Grid>
+        <Grid item lg={6}></Grid>
+        <Grid item lg={6}>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div>
+              <FormControlLabel
+                control={
+                  <Switch
+                    //   checked={state.gilad}
+                    //   onChange={handleChange}
+                    name="gilad"
+                    classes={purple}
+                  />
+                }
+                label="Enable Online Bookings"
+              />
+            </div>
+            <div>
+              <Tooltip
+                title="with online online booking customers can book the class directly on their own"
+                aria-label="add"
+                style={{ background: "#65B1EC" }}
+              >
+                <InfoIcon style={{ color: "#65B1EC" }} />
+              </Tooltip>
+            </div>
+          </div>
+          <p>Add class image</p>
+          <section
+            style={{
+              width: 200,
+              borderRadius: 5,
+              textAlign: "center",
+
+              height: 40,
+              background: "#65B1EC",
             }}
           >
-            <a style={{ textDecoration: "none", color: "#FF8021" }} href="#">
-              Learn more{" "}
-            </a>
-            about setting up your class schedule in the Claroo Knowledge Base.
-          </p>
-        </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "100%",
+              }}
+              {...getRootProps({ className: "dropzone" })}
+            >
+              <input {...getInputProps()} />
+              <PublishIcon style={{ color: "#fff" }} />
+              <span style={{ color: "#fff" }}>Upload Image</span>
+            </div>
+            <aside>
+              <ul>{files}</ul>
+            </aside>
+          </section>
+        </Grid>
+      </Grid>
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <Alert severity="success">Batch Successfully Created!</Alert>
+      </Snackbar>
+
+      <div style={{ width: 200, marginLeft: "auto" }}>
+        <Button
+          onClick={() => handleClick()}
+          variant="contained"
+          style={{ background: "#FF8021", color: "#fff", width: "100%" }}
+        >
+          Save and Continue
+        </Button>
       </div>
-    </ClickAwayListener>
+      <div>
+        <p
+          style={{
+            border: "1px solid #FF8021",
+            width: "70%",
+            borderRadius: 5,
+            padding: 5,
+            fontSize: "0.9rem",
+            paddingLeft: 30,
+          }}
+        >
+          <a style={{ textDecoration: "none", color: "#FF8021" }} href="#">
+            Learn more{" "}
+          </a>
+          about setting up your class schedule in the Claroo Knowledge Base.
+        </p>
+      </div>
+    </div>
   );
 }

@@ -29,6 +29,7 @@ export default function LongMenu(props) {
         aria-label="more"
         aria-controls="long-menu"
         aria-haspopup="true"
+        style={{ height: 30 }}
         onClick={handleClick}
       >
         <MoreVertIcon />

@@ -145,6 +145,24 @@ export default function Location() {
           Save and Continue
         </Button>
       </div>
+      <div>
+        <p
+          style={{
+            border: "1px solid #FF8021",
+            width: "70%",
+            borderRadius: 5,
+            padding: 5,
+            fontSize: "0.9rem",
+            paddingLeft: 30,
+            marginTop: 50,
+          }}
+        >
+          <a style={{ textDecoration: "none", color: "#FF8021" }} href="#">
+            Learn more{" "}
+          </a>
+          about setting up your class schedule in the Claroo Knowledge Base.
+        </p>
+      </div>
     </div>
   );
 }

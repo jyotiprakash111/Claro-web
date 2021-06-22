@@ -132,7 +132,7 @@ export default function Main() {
                 />
               </form>
             </div>
-            {/* {i !== 0 ? (
+            {i !== 0 ? (
               <div>
                 <Button
                   style={{
@@ -152,7 +152,7 @@ export default function Main() {
               </div>
             ) : (
               ""
-            )} */}
+            )}
           </Paper>
         );
       })}
