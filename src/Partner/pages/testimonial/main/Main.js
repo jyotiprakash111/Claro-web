@@ -133,7 +133,7 @@ export default function Main() {
                 />
               </form>
             </div>
-            {/* {i !== 0 ? (
+            {i !== 0 ? (
               <div>
                 <Button
                   style={{
@@ -165,8 +165,12 @@ export default function Main() {
               </div>
             ) : (
               ""
+<<<<<<< HEAD
             )} */}
 >>>>>>> f5de08400cd97bd4f547a0c5ba2e7970ff695d65
+=======
+            )}
+>>>>>>> aefb9fbc89f3def9b59415b1e7b8a6ca655e0a39
           </Paper>
         );
       })}
