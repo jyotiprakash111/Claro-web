@@ -5,6 +5,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Remove";
 import IconButton from "@material-ui/core/IconButton";
+import Divider from "@material-ui/core/Divider";
+
 const currencies = [
   {
     value: "0",
@@ -134,7 +136,8 @@ export default function OtherOptions() {
             placeholder="We will send prep instructions along the class reminder 1 day and 1 hour before the class start time"
           />
           <h1>FAQs</h1>
-          {arr3.map((item, i) => {
+
+          {arr2.map((item, i) => {
             return (
               <div>
                 <div
@@ -147,61 +150,6 @@ export default function OtherOptions() {
                   <label style={{ color: "#827575" }}>Question {i + 1}</label>
                   <IconButton
                     onClick={() =>
-                      setArr3(arr3.filter((item2) => item2 != item))
-                    }
-                  >
-                    <AddIcon />
-                  </IconButton>
-                </div>
-                <TextField
-                  style={{ width: "100%", marginBottom: 20 }}
-                  variant="outlined"
-                  value={item}
-                  multiline
-                  rows={3}
-                  placeholder="Add notes viewable to customers for on the course landing page"
-                />
-              </div>
-            );
-          })}
-          <label style={{ color: "#827575" }}>Question {arr3.length + 1}</label>
-          <TextField
-            style={{ width: "100%", marginBottom: 0 }}
-            variant="outlined"
-            multiline
-            onChange={(e) => setText3(e.target.value)}
-            value={text3}
-            rows={3}
-            placeholder="E.g. Lead instructor. Field viewable while booking"
-          />
-          <Button
-            onClick={() => {
-              setText3("");
-              setArr3([...arr3, ...[text3]]);
-            }}
-            style={{
-              textTransform: "none",
-              color: "#FF8021",
-              marginTop: 10,
-              marginBottom: 30,
-            }}
-          >
-            + Add another Question
-          </Button>
-
-          {arr2.map((item, i) => {
-            return (
-              <div>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <label style={{ color: "#827575" }}>Answer {i + 1}</label>
-                  <IconButton
-                    onClick={() =>
                       setArr2(arr2.filter((item2) => item2 != item))
                     }
                   >
@@ -211,15 +159,48 @@ export default function OtherOptions() {
                 <TextField
                   style={{ width: "100%", marginBottom: 20 }}
                   variant="outlined"
-                  value={item}
+                  value={item.q}
                   multiline
                   rows={3}
                   placeholder="Add notes viewable to customers for on the course landing page"
                 />
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: 10,
+                  }}
+                >
+                  <label style={{ color: "#827575" }}>Answer {i + 1}</label>
+                </div>
+                <TextField
+                  style={{ width: "100%", marginBottom: 20 }}
+                  variant="outlined"
+                  value={item.a}
+                  multiline
+                  rows={3}
+                  placeholder="Add notes viewable to customers for on the course landing page"
+                />
+
+                <Divider style={{ marginBottom: 10 }} />
               </div>
             );
           })}
+
           <div>
+            <label style={{ color: "#827575" }}>
+              Question {arr2.length + 1}
+            </label>
+            <TextField
+              style={{ width: "100%", marginBottom: 20 }}
+              variant="outlined"
+              multiline
+              onChange={(e) => setText3(e.target.value)}
+              value={text3}
+              rows={3}
+              placeholder="E.g. Lead instructor. Field viewable while booking"
+            />
             <label style={{ color: "#827575" }}>Answer {arr2.length + 1}</label>
             <TextField
               style={{ width: "100%" }}
@@ -233,11 +214,12 @@ export default function OtherOptions() {
             <Button
               onClick={() => {
                 setText2("");
-                setArr2([...arr2, ...[text2]]);
+                setText3("");
+                setArr2([...arr2, ...[{ q: text3, a: text2 }]]);
               }}
               style={{ textTransform: "none", color: "#FF8021", marginTop: 10 }}
             >
-              + Add another benefit
+              + Add another FAQ
             </Button>
           </div>
         </Grid>

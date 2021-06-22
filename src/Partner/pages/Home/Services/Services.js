@@ -4,6 +4,8 @@ import Classes from "../../../assets/img/classes.png";
 import Meeting from "../../../assets/img/meeting.png";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
+
 export default function Services() {
   return (
     <div>
@@ -12,21 +14,27 @@ export default function Services() {
       </p>
       <Grid container spacing={0}>
         <Grid item lg={5}>
-          <Paper
-            style={{ padding: 40, textAlign: "center", background: "#F8F8F8" }}
-          >
-            <img src={Classes} />
-            <h3 style={{ fontSize: "24px" }}>Classes </h3>
-            <p>
-              Great for services that occur on scheduled dates and time. They
-              can be group or private lessons and one time class or recurring.
-              Good for dance, yoga classes.
-            </p>
-            <p>
-              Example: Yoga Class on February 15th with 30 max attendees, or
-              Pilates Class every Thursday at 6pm with 10 attendees.
-            </p>
-          </Paper>
+          <Link style={{ textDecoration: "none" }} to="/home_classes">
+            <Paper
+              style={{
+                padding: 40,
+                textAlign: "center",
+                background: "#F8F8F8",
+              }}
+            >
+              <img src={Classes} />
+              <h3 style={{ fontSize: "24px" }}>Classes </h3>
+              <p>
+                Great for services that occur on scheduled dates and time. They
+                can be group or private lessons and one time class or recurring.
+                Good for dance, yoga classes.
+              </p>
+              <p>
+                Example: Yoga Class on February 15th with 30 max attendees, or
+                Pilates Class every Thursday at 6pm with 10 attendees.
+              </p>
+            </Paper>
+          </Link>
         </Grid>
         <Grid style={{ marginLeft: 100 }} item lg={5}>
           <div

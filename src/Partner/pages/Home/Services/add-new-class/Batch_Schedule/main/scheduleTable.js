@@ -50,7 +50,7 @@ export default function DenseTable() {
             onClick={() => setDialog(true)}
             variant="outlined"
           >
-            Add Timing
+            Add
           </Button>
         </div>
         <TableContainer id="customer" component={Paper}>
