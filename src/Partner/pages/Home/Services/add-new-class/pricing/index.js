@@ -9,6 +9,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import Table from "./Table";
+import Dialog from "./Dialog";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -46,9 +47,11 @@ const top100Films = [
 export default function Location() {
   const [temp, setTemp] = React.useState("0");
   const [temp2, setTemp2] = React.useState("1");
+  const [counter, setCounter] = React.useState(false);
   if (temp2 == "0") {
     return (
       <div>
+        <Dialog open={counter} />
         <p>
           60% completed arlready! Let’s get started with adding prices for the
           scheduled classes
@@ -117,6 +120,22 @@ export default function Location() {
                   />
                 )}
               />
+
+              <Button
+                style={{
+                  background: "#65B1EC",
+                  marginTop: 50,
+                  borderRadius: 40,
+                  height: 50,
+                  textTransform: "none",
+                  width: 150,
+                  color: "#fff",
+                }}
+                onClick={() => setCounter(true)}
+                variant="contained"
+              >
+                Add a price plan
+              </Button>
             </Grid>
           ) : (
             ""
