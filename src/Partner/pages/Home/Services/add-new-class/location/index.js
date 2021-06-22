@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { TextField } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -33,9 +33,11 @@ const business_location = [
   },
 ];
 
+
 export default function Location() {
-  const [temp, setTemp] = React.useState(0);
-  const [temp2, setTemp2] = React.useState(0);
+  const [temp, setTemp] = useState(0);
+  const [temp2, setTemp2] = useState(0);
+  const [temp3, setTemp3] = useState(0);
   return (
     <div>
       <p>
@@ -82,11 +84,10 @@ export default function Location() {
         <Grid item lg={6}></Grid>
         {temp2 == 1 ? (
           <div>
-            <Grid item lg={12}>
-              <label style={{ color: "#827575" }}>
+            <Grid item lg={12} style={{marginLeft:"2%"}}>
+              <label style={{ color: "#827575"}}>
                 Platform for hosting the online class
               </label>
-              <div style={{ marginBottom: 20 }}></div>
               <div>
                 {["Zoom", "Google Meet", "Skype", "Others"].map((item, i) => {
                   return (
@@ -110,7 +111,7 @@ export default function Location() {
                 })}
               </div>
             </Grid>
-            <Grid style={{ marginTop: 20 }} item lg={12}>
+            <Grid style={{ marginTop: 20,marginLeft:"2%"  }} item lg={12}>
               <label style={{ color: "#827575" }}>
                 Enter link to join the class (optional)
               </label>
@@ -121,7 +122,7 @@ export default function Location() {
                 style={{ width: "100%", marginBottom: "20px" }}
               />
             </Grid>
-            <Grid item lg={12}>
+            <Grid item lg={12} style={{marginLeft:"2%"}}>
               <label style={{ color: "#827575" }}>
                 Enter any other details to send to participants (optional)
               </label>
@@ -134,7 +135,7 @@ export default function Location() {
             </Grid>
           </div>
         ) : (
-          ""
+        <div />
         )}
       </Grid>
       <div style={{ width: 200, marginLeft: "auto", marginTop: 50 }}>
