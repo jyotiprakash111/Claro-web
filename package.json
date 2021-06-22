@@ -26,6 +26,7 @@
     "date-fns": "^2.19.0",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
+    "netlify-cli": "^3.37.38",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.6.1",

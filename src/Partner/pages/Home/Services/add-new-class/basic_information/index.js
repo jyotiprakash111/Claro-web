@@ -2,7 +2,7 @@ import React from "react";
 import { TextField } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
-
+import Checkbox from "@material-ui/core/Checkbox";
 import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
@@ -22,10 +22,45 @@ import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Tooltip from "@material-ui/core/Tooltip";
+import InfoIcon from "@material-ui/icons/Info";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant='filled' {...props} />;
 }
+
+const usePurpleSwitch = () => {
+  return {
+    root: {
+      padding: 7,
+    },
+    thumb: {
+      width: 24,
+      height: 24,
+      backgroundColor: "#fff",
+      boxShadow:
+        "0 0 12px 0 rgba(0,0,0,0.08), 0 0 8px 0 rgba(0,0,0,0.12), 0 0 4px 0 rgba(0,0,0,0.38)",
+    },
+    switchBase: {
+      color: "rgba(0,0,0,0.38)",
+      padding: 7,
+    },
+    track: {
+      borderRadius: 20,
+      backgroundColor: "#65B1EC",
+    },
+    checked: {
+      "& $thumb": {
+        backgroundColor: "#fff",
+      },
+      "& + $track": {
+        opacity: "1 !important",
+        backgroundColor: "#65B1EC",
+      },
+    },
+    focusVisible: {},
+  };
+};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -71,7 +106,8 @@ const age_of_students = [
 const BasicInfo = ({ handleNext }) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-
+  const useStyles2 = makeStyles(usePurpleSwitch());
+  const purple = useStyles2();
   const handleClick = () => {
     setOpen(true);
   };
@@ -86,6 +122,7 @@ const BasicInfo = ({ handleNext }) => {
 
   const [currency, setCurrency] = React.useState(0);
   const [isSelectorOpen, setisSelectorOpen] = React.useState(false);
+  const [age_of_students_temp, setAgeOfStudents] = React.useState(0);
   const [new_category, setNewCategory] = React.useState("");
   const [category, setCategory] = React.useState([
     {
@@ -225,7 +262,20 @@ const BasicInfo = ({ handleNext }) => {
             />
           </Grid>
           <Grid item lg={6}>
-            <label style={{ color: "#827575" }}>Total booking slots</label>
+            <div style={{ display: "flex" }}>
+              <label style={{ color: "#827575" }}>Total booking slots</label>
+              <div>
+                <Tooltip
+                  title="Total Booking Slots"
+                  aria-label="add"
+                  style={{ background: "#65B1EC" }}
+                >
+                  <InfoIcon
+                    style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
+                  />
+                </Tooltip>
+              </div>
+            </div>
             <TextField
               variant="outlined"
               placeholder="Total booking slots"
@@ -235,7 +285,20 @@ const BasicInfo = ({ handleNext }) => {
           </Grid>
           <Grid item lg={6}></Grid>
           <Grid item lg={6}>
-            <label style={{ color: "#827575" }}>Price</label>
+            <div style={{ display: "flex" }}>
+              <label style={{ color: "#827575" }}>Price</label>
+              <div>
+                <Tooltip
+                  title="Price"
+                  aria-label="add"
+                  style={{ background: "#65B1EC" }}
+                >
+                  <InfoIcon
+                    style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
+                  />
+                </Tooltip>
+              </div>
+            </div>
             <TextField
               id="outlined-select-currency"
               select
@@ -275,8 +338,9 @@ const BasicInfo = ({ handleNext }) => {
               select
               size="small"
               style={{ width: "100%" }}
-              // helperText="Please select your currency"
               variant="outlined"
+              value={age_of_students_temp}
+              onChange={(e) => setAgeOfStudents(e.target.value)}
             >
               {age_of_students.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
@@ -284,21 +348,63 @@ const BasicInfo = ({ handleNext }) => {
                 </MenuItem>
               ))}
             </TextField>
+            {age_of_students_temp == 2 ? (
+              <div>
+                <div style={{ marginTop: 20, display: "flex" }}>
+                  <div>
+                    <label style={{ color: "#827575" }}>Min age</label>
+                    <TextField
+                      variant="outlined"
+                      placeholder="Min Age"
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                  <div style={{ marginLeft: 20 }}>
+                    <label style={{ color: "#827575" }}>Max Age</label>
+                    <TextField
+                      variant="outlined"
+                      placeholder="Max Age"
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                </div>
+                <FormControlLabel
+                  control={<Checkbox name="gilad" />}
+                  label="Request Adult Presence"
+                />
+              </div>
+            ) : (
+              ""
+            )}
           </Grid>
           <Grid item lg={6}></Grid>
           <Grid item lg={6}>
-            <FormGroup style={{}}>
-              <FormControlLabel
-                control={
-                  <Switch
-                    //   checked={state.gilad}
-                    //   onChange={handleChange}
-                    name="gilad"
-                  />
-                }
-                label="Enable Online Bookings"
-              />
-            </FormGroup>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      //   checked={state.gilad}
+                      //   onChange={handleChange}
+                      color="primary"
+                      name="gilad"
+                      name="checkedB"
+                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                  }
+                  label="Enable Online Bookings"
+                />
+              </div>
+              <div>
+                <Tooltip
+                  title="with online online booking customers can book the class directly on their own"
+                  aria-label="add"
+                  style={{ background: "#65B1EC" }}
+                >
+                  <InfoIcon style={{ color: "#65B1EC" }} />
+                </Tooltip>
+              </div>
+            </div>
             <p>Add class image</p>
             <section
               style={{
@@ -315,14 +421,13 @@ const BasicInfo = ({ handleNext }) => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  height: "100%",
                 }}
                 {...getRootProps({ className: "dropzone" })}
               >
                 <input {...getInputProps()} />
-                <IconButton>
-                  <PublishIcon style={{ color: "#fff", marginTop: -5 }} />
-                </IconButton>
-                <p style={{ color: "#fff", marginTop: 10 }}>Upload Image</p>
+                <PublishIcon style={{ color: "#fff" }} />
+                <span style={{ color: "#fff" }}>Upload Image</span>
               </div>
               <aside>
                 <ul>{files}</ul>
@@ -347,6 +452,23 @@ const BasicInfo = ({ handleNext }) => {
           >
             Save and Continue
           </Button>
+        </div>
+        <div>
+          <p
+            style={{
+              border: "1px solid #FF8021",
+              width: "70%",
+              borderRadius: 5,
+              padding: 5,
+              fontSize: "0.9rem",
+              paddingLeft: 30,
+            }}
+          >
+            <a style={{ textDecoration: "none", color: "#FF8021" }} href="#">
+              Learn more{" "}
+            </a>
+            about setting up your class schedule in the Claroo Knowledge Base.
+          </p>
         </div>
       </div>
     </ClickAwayListener>
