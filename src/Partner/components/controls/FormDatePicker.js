@@ -28,6 +28,7 @@ const MuiDatePicker = (props: any) => {
           borderRadius: 5,
           alignItems: "center",
         }}
+        type="date"
         error={isError}
         helperText={errorMessage}
         inputVariant="outlined"

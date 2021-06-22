@@ -1,0 +1,13 @@
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: none !important;
+}
+.MuiInput-underline:active:not(.Mui-disabled):before {
+  border-bottom: none !important;
+}
+.MuiInput-underline {
+  border-bottom-color: transparent;
+}
+.MuiSelect-select:focus {
+  border-radius: 0;
+  background-color: none !important;
+}

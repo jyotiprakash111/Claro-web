@@ -132,23 +132,27 @@ export default function Main() {
                 />
               </form>
             </div>
-            <div>
-              <Button
-                style={{
-                  border: "1px solid #F14336",
-                  color: "#F14336",
-                  textTransform: "none",
+            {/* {i !== 0 ? (
+              <div>
+                <Button
+                  style={{
+                    border: "1px solid #F14336",
+                    color: "#F14336",
+                    textTransform: "none",
 
-                  marginTop: 20,
-                }}
-                onClick={() => setArr(arr.filter((item) => item !== i))}
-                variant="outlined"
-                color="primary"
-              >
-                <CancelIcon style={{ marginRight: 10 }} />
-                Remove Testimonial
-              </Button>
-            </div>
+                    marginTop: 20,
+                  }}
+                  onClick={() => setArr(arr.filter((item) => item !== i))}
+                  variant="outlined"
+                  color="primary"
+                >
+                  <CancelIcon style={{ marginRight: 10 }} />
+                  Remove Testimonial
+                </Button>
+              </div>
+            ) : (
+              ""
+            )} */}
           </Paper>
         );
       })}
@@ -269,6 +273,23 @@ export default function Main() {
               }}
             />
           </form>
+          <div>
+            <Button
+              style={{
+                border: "1px solid #F14336",
+                color: "#F14336",
+                textTransform: "none",
+
+                marginTop: 20,
+              }}
+              onClick={() => {}}
+              variant="outlined"
+              color="primary"
+            >
+              <CancelIcon style={{ marginRight: 10 }} />
+              Discard
+            </Button>
+          </div>
         </div>
       </Paper>
       <div>

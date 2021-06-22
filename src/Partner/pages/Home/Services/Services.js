@@ -50,13 +50,13 @@ export default function Services() {
             <img src={Meeting} />
             <h3 style={{ fontSize: "24px" }}>Classes </h3>
             <p>
-              Great for services that occur on scheduled dates and time. They
-              can be group or private lessons and one time class or recurring.
-              Good for dance, yoga classes.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quod
+              porro ab, neque adipisci iste ipsa facilis deserunt corrupti
+              animi, ratione repellat omnis recusandae?
             </p>
             <p>
-              Example: Yoga Class on February 15th with 30 max attendees, or
-              Pilates Class every Thursday at 6pm with 10 attendees.
+              Nulla, impedit deserunt veritatis in magnam ducimus voluptatum
+              voluptate? Quod veritatis inventore tempora dolores qui nihil.
             </p>
           </div>
         </Grid>

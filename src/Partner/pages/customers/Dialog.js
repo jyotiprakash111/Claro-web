@@ -224,7 +224,7 @@ export default function FormDialog(props) {
               </div>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div>
-                  <label style={{ marginTop: 20 }}>Contact No</label>
+                  <label style={{ marginTop: 10 }}>Contact No</label>
                   <input
                     type="text"
                     style={{
@@ -241,7 +241,7 @@ export default function FormDialog(props) {
                   />
                 </div>
                 <div>
-                  <label style={{ marginTop: 20 }}>Email Address</label>
+                  <label style={{ marginTop: 10 }}>Email Address</label>
                   <input
                     type="text"
                     style={{
