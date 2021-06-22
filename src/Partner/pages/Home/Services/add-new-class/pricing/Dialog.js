@@ -11,6 +11,19 @@ import Paper from "@material-ui/core/Paper";
 import "./style.css";
 import { TextField } from "@material-ui/core";
 
+import MenuItem from "@material-ui/core/MenuItem";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+
+import Checkbox from "@material-ui/core/Checkbox";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
+
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
+
 const styles = (theme) => ({
   root: {
     margin: 0,
@@ -49,6 +62,15 @@ const list = [
   },
 ];
 
+const top100Films = [
+  { title: "The Shawshank Redemption", year: 1994 },
+  { title: "The Godfather", year: 1972 },
+  { title: "The Godfather: Part II", year: 1974 },
+  { title: "The Dark Knight", year: 2008 },
+  { title: "12 Angry Men", year: 1957 },
+  { title: "Schindler's List", year: 1993 },
+];
+
 const batches = [
   {
     value: "0",
@@ -59,171 +81,6 @@ const batches = [
     label: "Apply to selected batches only",
   },
 ];
-
-function renderPayment(temp) {
-  console.log(temp);
-  if (temp == 0) {
-    return (
-      <div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div style={{ width: "48%" }}>
-            <label style={{ marginTop: 20 }}>Price</label>
-            <input
-              type="text"
-              style={{ height: 50, padding: 10 }}
-              placeholder="INR Enter Price"
-              id="mail"
-              name="account_no"
-            />
-          </div>
-          <div style={{ width: "48%" }}>
-            <label style={{ marginTop: 20 }}>Price name(optional)</label>
-            <input
-              type="text"
-              style={{ height: 50, padding: 10 }}
-              placeholder="E.g. Yoga for beninners's or 'Advanced Art"
-              id="mail"
-              name="account_no"
-            />
-          </div>
-        </div>
-
-        <label style={{ marginTop: 20 }}>Description (optional)</label>
-        <textarea
-          type="text"
-          style={{ padding: 10, borderRadius: 5 }}
-          rows="5"
-          placeholder="Short description about any terms and conditions visible to customer upon selecting this pricing plan"
-          id="mail"
-          name="account_no"
-        />
-        {/* <TextField
-          style={{ borderRadius: '5px ' }}
-          multiline
-          rows={5}
-          placeholder="E.g. Yoga for beninners's or 'Advanced Art"
-          variant="outlined"
-        /> */}
-        <label style={{ marginTop: 20 }}>
-          Select the batches to apply price plan
-        </label>
-        <select
-          id="business"
-          style={{ width: "100%", height: 40 }}
-          name="user_job"
-        >
-          {batches.map((item, i) => {
-            return (
-              <option key={i} value={item.value}>
-                {item.label}
-              </option>
-            );
-          })}
-        </select>
-        <div style={{ textAlign: "right" }}>
-          <Button
-            style={{
-              background: "#FF8021",
-              color: "#fff",
-              textTransform: "none",
-              borderRadius: 20,
-              width: 150,
-              textAlign: "right",
-              marginTop: 20,
-            }}
-            // onClick={() => changePricingType(-1)}
-            variant="contained"
-          >
-            Confirm and Add
-          </Button>
-        </div>
-      </div>
-    );
-  }
-  if (temp == 1) {
-    return (
-      <div>
-        <label style={{ marginTop: 20 }}>Account No</label>
-        <input
-          type="text"
-          style={{ width: 250 }}
-          placeholder="Eg CR27592891"
-          id="mail"
-          name="account_no"
-        />
-        <label style={{ marginTop: 20 }}>Account Name</label>
-        <input
-          type="text"
-          style={{ width: 250 }}
-          placeholder="Eg John Doe"
-          id="mail"
-          name="account_no"
-        />
-        <label style={{ marginTop: 20 }}>Additional details</label>
-        <input
-          type="text"
-          style={{ width: 250 }}
-          placeholder="Add any other information"
-          id="mail"
-          name="account_no"
-        />
-      </div>
-    );
-  }
-  if (temp == 1) {
-    return (
-      <div>
-        <label style={{ marginTop: 20 }}>Account No</label>
-        <input
-          type="text"
-          style={{ width: 250 }}
-          placeholder="Eg CR27592891"
-          id="mail"
-          name="account_no"
-        />
-        <label style={{ marginTop: 20 }}>Account Name</label>
-        <input
-          type="text"
-          style={{ width: 250 }}
-          placeholder="Eg John Doe"
-          id="mail"
-          name="account_no"
-        />
-        <label style={{ marginTop: 20 }}>Additional details</label>
-        <input
-          type="text"
-          style={{ width: 250 }}
-          placeholder="Add any other information"
-          id="mail"
-          name="account_no"
-        />
-      </div>
-    );
-  }
-
-  if (temp == 2) {
-    return (
-      <div>
-        <label style={{ marginTop: 20 }}>Name the payment method</label>
-        <input
-          type="text"
-          style={{ width: 250 }}
-          placeholder="E.g. Google pay"
-          id="mail"
-          name="account_no"
-        />
-        <label style={{ marginTop: 20 }}>Additional details (optional)</label>
-        <input
-          type="text"
-          style={{ width: 250 }}
-          placeholder="E.g. Google pay"
-          id="mail"
-          name="account_no"
-        />
-      </div>
-    );
-  }
-}
 
 const renderHeight = (temp) => {
   if (temp == 1) {
@@ -261,7 +118,558 @@ const DialogTitle = withStyles(styles)((props) => {
 export default function FormDialog(props) {
   const [paymentType, changePaymentType] = React.useState(0);
   const [pricingType, changePricingType] = React.useState(-1);
+  const [count, setCount] = React.useState(0);
   console.log(paymentType);
+
+  function renderPayment(temp) {
+    // const [count, setCount] = React.useState(0);
+    console.log(temp);
+
+    if (temp == 0) {
+      return (
+        <div>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ width: "48%" }}>
+              <label style={{ marginTop: 20 }}>Price</label>
+              <input
+                type="text"
+                style={{ height: 50, padding: 10 }}
+                placeholder="INR Enter Price"
+                id="mail"
+                name="account_no"
+              />
+            </div>
+            <div style={{ width: "48%" }}>
+              <label style={{ marginTop: 20 }}>Price name(optional)</label>
+              <input
+                type="text"
+                style={{ height: 50, padding: 10 }}
+                placeholder="E.g. Yoga for beninners's or 'Advanced Art"
+                id="mail"
+                name="account_no"
+              />
+            </div>
+          </div>
+
+          <label style={{ marginTop: 20 }}>Description (optional)</label>
+          <textarea
+            type="text"
+            style={{ padding: 10, borderRadius: 5 }}
+            rows="5"
+            placeholder="Short description about any terms and conditions visible to customer upon selecting this pricing plan"
+            id="mail"
+            name="account_no"
+          />
+
+          <label style={{ marginTop: 20 }}>
+            Select the batches to apply price plan
+          </label>
+
+          <Select
+            labelId="demo-simple-select-outlined-label"
+            id="demo-simple-select-outlined"
+            style={{
+              width: "100%",
+              height: 50,
+              borderRadius: 5,
+              border: "1px solid #ccc",
+            }}
+            value={count}
+            onChange={(e) => setCount(e.target.value)}
+            variant="outlined"
+            label="Age"
+          >
+            {batches.map((item) => {
+              return <MenuItem value={item.value}>{item.label}</MenuItem>;
+            })}
+          </Select>
+          {count == "1" ? (
+            <div>
+              <label style={{ marginTop: 20 }}>Select the batches</label>
+              <Autocomplete
+                multiple
+                id="checkboxes-tags-demo"
+                options={top100Films}
+                disableCloseOnSelect
+                getOptionLabel={(option) => option.title}
+                renderOption={(option, { selected }) => (
+                  <React.Fragment>
+                    <Checkbox
+                      icon={icon}
+                      checkedIcon={checkedIcon}
+                      style={{ marginRight: 8 }}
+                      checked={selected}
+                    />
+                    {option.title}
+                  </React.Fragment>
+                )}
+                renderInput={(params) => (
+                  <TextField
+                    style={{
+                      width: "100%",
+                      borderRadius: 5,
+                      padding: 0,
+                      height: 50,
+                      border: "1px solid #ccc",
+                    }}
+                    {...params}
+                    type="search"
+                    variant="outlined"
+                    placeholder="Favorites"
+                  />
+                )}
+              />
+            </div>
+          ) : (
+            ""
+          )}
+
+          <div style={{ textAlign: "right" }}>
+            <Button
+              style={{
+                background: "#FF8021",
+                color: "#fff",
+                textTransform: "none",
+                borderRadius: 20,
+                width: 150,
+                textAlign: "right",
+                marginTop: 20,
+              }}
+              onClick={() => changePricingType(-1)}
+              variant="contained"
+            >
+              Confirm and Add
+            </Button>
+          </div>
+        </div>
+      );
+    }
+
+    if (temp == 1) {
+      return (
+        <div>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ width: "48%" }}>
+              <label style={{ marginTop: 20 }}>Price</label>
+              <input
+                type="text"
+                style={{ height: 50, padding: 10 }}
+                placeholder="INR Enter Price"
+                id="mail"
+                name="account_no"
+              />
+            </div>
+            <div style={{ width: "48%" }}>
+              <label style={{ marginTop: 20 }}>Price name(optional)</label>
+              <input
+                type="text"
+                style={{ height: 50, padding: 10 }}
+                placeholder="E.g. Yoga for beninners's or 'Advanced Art"
+                id="mail"
+                name="account_no"
+              />
+            </div>
+          </div>
+
+          <label style={{ marginTop: 20 }}>Description (optional)</label>
+          <textarea
+            type="text"
+            style={{ padding: 10, borderRadius: 5 }}
+            rows="5"
+            placeholder="Short description about any terms and conditions visible to customer upon selecting this pricing plan"
+            id="mail"
+            name="account_no"
+          />
+
+          <label style={{ marginTop: 20 }}>
+            Select the batches to apply price plan
+          </label>
+
+          <Select
+            labelId="demo-simple-select-outlined-label"
+            id="demo-simple-select-outlined"
+            style={{
+              width: "100%",
+              height: 50,
+              borderRadius: 5,
+              border: "1px solid #ccc",
+            }}
+            value={count}
+            onChange={(e) => setCount(e.target.value)}
+            variant="outlined"
+            label="Age"
+          >
+            {batches.map((item) => {
+              return <MenuItem value={item.value}>{item.label}</MenuItem>;
+            })}
+          </Select>
+          {count == "1" ? (
+            <div>
+              <label style={{ marginTop: 20 }}>Select the batches</label>
+              <Autocomplete
+                multiple
+                id="checkboxes-tags-demo"
+                options={top100Films}
+                disableCloseOnSelect
+                getOptionLabel={(option) => option.title}
+                renderOption={(option, { selected }) => (
+                  <React.Fragment>
+                    <Checkbox
+                      icon={icon}
+                      checkedIcon={checkedIcon}
+                      style={{ marginRight: 8 }}
+                      checked={selected}
+                    />
+                    {option.title}
+                  </React.Fragment>
+                )}
+                renderInput={(params) => (
+                  <TextField
+                    style={{
+                      width: "100%",
+                      borderRadius: 5,
+                      padding: 0,
+                      height: 50,
+                      border: "1px solid #ccc",
+                    }}
+                    {...params}
+                    type="search"
+                    variant="outlined"
+                    placeholder="Favorites"
+                  />
+                )}
+              />
+            </div>
+          ) : (
+            ""
+          )}
+
+          <div style={{ textAlign: "right" }}>
+            <Button
+              style={{
+                background: "#FF8021",
+                color: "#fff",
+                textTransform: "none",
+                borderRadius: 20,
+                width: 150,
+                textAlign: "right",
+                marginTop: 20,
+              }}
+              // onClick={() => changePricingType(-1)}
+              variant="contained"
+            >
+              Confirm and Add
+            </Button>
+          </div>
+        </div>
+      );
+    }
+    if (temp == 2) {
+      return (
+        <div>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ width: "48%" }}>
+              <label style={{ marginTop: 20 }}>Price</label>
+              <input
+                type="text"
+                style={{ height: 50, padding: 10 }}
+                placeholder="INR Enter Price"
+                id="mail"
+                name="account_no"
+              />
+            </div>
+            <div style={{ width: "48%" }}>
+              <label style={{ marginTop: 20 }}>Price name(optional)</label>
+              <input
+                type="text"
+                style={{ height: 50, padding: 10 }}
+                placeholder="E.g. Yoga for beninners's or 'Advanced Art"
+                id="mail"
+                name="account_no"
+              />
+            </div>
+          </div>
+
+          <label style={{ marginTop: 20 }}>Description (optional)</label>
+          <textarea
+            type="text"
+            style={{ padding: 10, borderRadius: 5 }}
+            rows="5"
+            placeholder="Short description about any terms and conditions visible to customer upon selecting this pricing plan"
+            id="mail"
+            name="account_no"
+          />
+
+          <label style={{ marginTop: 20 }}>
+            Select the batches to apply price plan
+          </label>
+
+          <Select
+            labelId="demo-simple-select-outlined-label"
+            id="demo-simple-select-outlined"
+            style={{
+              width: "100%",
+              height: 50,
+              borderRadius: 5,
+              border: "1px solid #ccc",
+            }}
+            value={count}
+            onChange={(e) => setCount(e.target.value)}
+            variant="outlined"
+            label="Age"
+          >
+            {batches.map((item) => {
+              return <MenuItem value={item.value}>{item.label}</MenuItem>;
+            })}
+          </Select>
+          {count == "1" ? (
+            <div>
+              <label style={{ marginTop: 20 }}>Select the batches</label>
+              <Autocomplete
+                multiple
+                id="checkboxes-tags-demo"
+                options={top100Films}
+                disableCloseOnSelect
+                getOptionLabel={(option) => option.title}
+                renderOption={(option, { selected }) => (
+                  <React.Fragment>
+                    <Checkbox
+                      icon={icon}
+                      checkedIcon={checkedIcon}
+                      style={{ marginRight: 8 }}
+                      checked={selected}
+                    />
+                    {option.title}
+                  </React.Fragment>
+                )}
+                renderInput={(params) => (
+                  <TextField
+                    style={{
+                      width: "100%",
+                      borderRadius: 5,
+                      padding: 0,
+                      height: 50,
+                      border: "1px solid #ccc",
+                    }}
+                    {...params}
+                    type="search"
+                    variant="outlined"
+                    placeholder="Favorites"
+                  />
+                )}
+              />
+            </div>
+          ) : (
+            ""
+          )}
+
+          <div style={{ textAlign: "right" }}>
+            <Button
+              style={{
+                background: "#FF8021",
+                color: "#fff",
+                textTransform: "none",
+                borderRadius: 20,
+                width: 150,
+                textAlign: "right",
+                marginTop: 20,
+              }}
+              // onClick={() => changePricingType(-1)}
+              variant="contained"
+            >
+              Confirm and Add
+            </Button>
+          </div>
+        </div>
+      );
+    }
+    if (temp == 3) {
+      return (
+        <div>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ width: "48%" }}>
+              <label style={{ marginTop: 20 }}>Price</label>
+              <input
+                type="text"
+                style={{ height: 50, padding: 10 }}
+                placeholder="INR Enter Price"
+                id="mail"
+                name="account_no"
+              />
+            </div>
+            <div style={{ width: "48%" }}>
+              <label style={{ marginTop: 20 }}>Price name(optional)</label>
+              <input
+                type="text"
+                style={{ height: 50, padding: 10 }}
+                placeholder="E.g. Yoga for beninners's or 'Advanced Art"
+                id="mail"
+                name="account_no"
+              />
+            </div>
+          </div>
+          <label style={{ marginTop: 20 }}>Price name(optional)</label>
+          <input
+            type="text"
+            style={{ height: 50, padding: 10 }}
+            placeholder="E.g. Yoga for beninners's or 'Advanced Art"
+            id="mail"
+            name="account_no"
+          />
+          <label style={{ marginTop: 20 }}>Description (optional)</label>
+          <textarea
+            type="text"
+            style={{ padding: 10, borderRadius: 5 }}
+            rows="5"
+            placeholder="Short description about any terms and conditions visible to customer upon selecting this pricing plan"
+            id="mail"
+            name="account_no"
+          />
+
+          <div style={{ textAlign: "right" }}>
+            <Button
+              style={{
+                background: "#FF8021",
+                color: "#fff",
+                textTransform: "none",
+                borderRadius: 20,
+                width: 150,
+                textAlign: "right",
+                marginTop: 20,
+              }}
+              // onClick={() => changePricingType(-1)}
+              variant="contained"
+            >
+              Confirm and Add
+            </Button>
+          </div>
+        </div>
+      );
+    }
+    if (temp == 4) {
+      return (
+        <div>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ width: "48%" }}>
+              <label style={{ marginTop: 20 }}>Pricing name(required)</label>
+              <input
+                type="text"
+                style={{ height: 50, padding: 10 }}
+                placeholder=""
+                id="mail"
+                name="account_no"
+              />
+            </div>
+            <div style={{ width: "48%" }}>
+              <label style={{ marginTop: 20 }}>Installment fee</label>
+              <input
+                type="text"
+                style={{ height: 50, padding: 10 }}
+                placeholder="INR Enter Price"
+                id="mail"
+                name="account_no"
+              />
+            </div>
+          </div>
+
+          <label style={{ marginTop: 20 }}>Description (optional)</label>
+          <textarea
+            type="text"
+            style={{ padding: 10, borderRadius: 5 }}
+            rows="5"
+            placeholder="Short description about any terms and conditions visible to customer upon selecting this pricing plan"
+            id="mail"
+            name="account_no"
+          />
+
+          <label style={{ marginTop: 20 }}>
+            Select the batches to apply price plan
+          </label>
+
+          <Select
+            labelId="demo-simple-select-outlined-label"
+            id="demo-simple-select-outlined"
+            style={{
+              width: "100%",
+              height: 50,
+              borderRadius: 5,
+              border: "1px solid #ccc",
+            }}
+            value={count}
+            onChange={(e) => setCount(e.target.value)}
+            variant="outlined"
+            label="Age"
+          >
+            {batches.map((item) => {
+              return <MenuItem value={item.value}>{item.label}</MenuItem>;
+            })}
+          </Select>
+          {count == "1" ? (
+            <div>
+              <label style={{ marginTop: 20 }}>Select the batches</label>
+              <Autocomplete
+                multiple
+                id="checkboxes-tags-demo"
+                options={top100Films}
+                disableCloseOnSelect
+                getOptionLabel={(option) => option.title}
+                renderOption={(option, { selected }) => (
+                  <React.Fragment>
+                    <Checkbox
+                      icon={icon}
+                      checkedIcon={checkedIcon}
+                      style={{ marginRight: 8 }}
+                      checked={selected}
+                    />
+                    {option.title}
+                  </React.Fragment>
+                )}
+                renderInput={(params) => (
+                  <TextField
+                    style={{
+                      width: "100%",
+                      borderRadius: 5,
+                      padding: 0,
+                      height: 50,
+                      border: "1px solid #ccc",
+                    }}
+                    {...params}
+                    type="search"
+                    variant="outlined"
+                    placeholder="Favorites"
+                  />
+                )}
+              />
+            </div>
+          ) : (
+            ""
+          )}
+
+          <div style={{ textAlign: "right" }}>
+            <Button
+              style={{
+                background: "#FF8021",
+                color: "#fff",
+                textTransform: "none",
+                borderRadius: 20,
+                width: 150,
+                textAlign: "right",
+                marginTop: 20,
+              }}
+              onClick={() => {
+                props.handleClose();
+              }}
+              // onClick={() => changePricingType(-1)}
+              variant="contained"
+            >
+              Confirm and Add
+            </Button>
+          </div>
+        </div>
+      );
+    }
+  }
+
   return (
     <div>
       <Dialog
@@ -296,7 +704,7 @@ export default function FormDialog(props) {
             ? list.map((item, i) => {
                 return (
                   <ListItem
-                    onClick={() => changePricingType(0)}
+                    onClick={() => changePricingType(i)}
                     style={{}}
                     button
                   >
