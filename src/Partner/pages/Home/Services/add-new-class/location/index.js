@@ -139,7 +139,7 @@ export default function Location() {
                  <div>
                  <Grid item lg={12} style={{ marginLeft: "2%" }}>
                    <label style={{ color: "#827575" }}>
-                     Enter any other details to send to participants (optional)
+                   Please mention the platform used for taking the class
                    </label>
                    <TextField
                      variant='outlined'

@@ -1,14 +1,13 @@
 import React from "react";
-import { TextField, Button, IconButton, Paper} from "@material-ui/core";
-import { useDropzone } from "react-dropzone";
-import {
-  Add as AddIcon,
-  Add as PublishIcon,
-  Add as CancelIcon,
-} from "@material-ui/icons";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Paper from "@material-ui/core/Paper";
+import AddIcon from "@material-ui/icons/Add";
+import CancelIcon from "@material-ui/icons/CancelOutlined";
 import Upload_Image from "../../../assets/img/upload.png";
-import SideBar from "../../../components/common/SideBar";
-import Header from "../../../components/common/HeaderMain";
+import { useDropzone } from "react-dropzone";
+import PublishIcon from "@material-ui/icons/Publish";
+import IconButton from "@material-ui/core/IconButton";
 import "./style3.css";
 
 export default function Main() {
@@ -33,7 +32,7 @@ export default function Main() {
               marginTop: 20,
             }}
           >
-            <div id='form-dialog-title'>
+            <div id="form-dialog-title">
               <div style={{ display: "flex", alignItems: "flex-start" }}>
                 <div>
                   <p style={{ marginBottom: 5, fontSize: 25, marginTop: 0 }}>
@@ -74,12 +73,12 @@ export default function Main() {
                   Who is it from ?
                 </h4>
                 <TextField
-                  type='text'
-                  id='name'
-                  name='user_name'
-                  placeholder='Name'
-                  variant='outlined'
-                  size='small'
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  placeholder="Name"
+                  variant="outlined"
+                  size="small"
                   style={{
                     width: 300,
                     height: 35,
@@ -93,14 +92,14 @@ export default function Main() {
                   What did they have to say ?
                 </h4>
                 <TextField
-                  type='text'
-                  id='name'
-                  name='user_name'
-                  placeholder='Description'
-                  variant='outlined'
-                  size='small'
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  placeholder="Description"
+                  variant="outlined"
+                  size="small"
                   multiline
-                  rows='3'
+                  rows="3"
                   fullWidth
                   style={{
                     height: 35,
@@ -116,12 +115,12 @@ export default function Main() {
                   Describe their role ?
                 </h4>
                 <TextField
-                  type='text'
-                  id='name'
-                  name='user_name'
-                  placeholder='Role'
-                  variant='outlined'
-                  size='small'
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  placeholder="Role"
+                  variant="outlined"
+                  size="small"
                   fullWidth
                   style={{
                     height: 35,
@@ -141,18 +140,6 @@ export default function Main() {
                     color: "#F14336",
                     textTransform: "none",
 
-<<<<<<< HEAD
-                  marginTop: 20,
-                }}
-                onClick={() => setArr(arr.filter((item) => item !== i))}
-                variant='outlined'
-                color='primary'
-              >
-                <CancelIcon style={{ marginRight: 10 }} />
-                Remove Testimonial
-              </Button>
-            </div>
-=======
                     marginTop: 20,
                   }}
                   onClick={() => setArr(arr.filter((item) => item !== i))}
@@ -165,12 +152,7 @@ export default function Main() {
               </div>
             ) : (
               ""
-<<<<<<< HEAD
-            )} */}
->>>>>>> f5de08400cd97bd4f547a0c5ba2e7970ff695d65
-=======
             )}
->>>>>>> aefb9fbc89f3def9b59415b1e7b8a6ca655e0a39
           </Paper>
         );
       })}
@@ -182,7 +164,7 @@ export default function Main() {
           marginTop: 20,
         }}
       >
-        <div id='form-dialog-title'>
+        <div id="form-dialog-title">
           <div style={{ display: "flex", alignItems: "center" }}>
             <div>
               <p style={{ marginBottom: 5, fontSize: 25, marginTop: 0 }}>
@@ -196,7 +178,7 @@ export default function Main() {
             <div style={{ position: "relative" }}>
               <span>
                 <input
-                  type='file'
+                  type="file"
                   style={{ position: "absolute", opacity: 0, height: 100 }}
                 />
                 <div>
@@ -235,12 +217,12 @@ export default function Main() {
               Who is it from ?
             </h4>
             <TextField
-              type='text'
-              id='name'
-              name='user_name'
-              placeholder='Name'
-              variant='outlined'
-              size='small'
+              type="text"
+              id="name"
+              name="user_name"
+              placeholder="Name"
+              variant="outlined"
+              size="small"
               style={{
                 width: 300,
                 height: 35,
@@ -254,14 +236,14 @@ export default function Main() {
               What did they have to say ?
             </h4>
             <TextField
-              type='text'
-              id='name'
-              name='user_name'
-              placeholder='Description'
-              variant='outlined'
-              size='small'
+              type="text"
+              id="name"
+              name="user_name"
+              placeholder="Description"
+              variant="outlined"
+              size="small"
               multiline
-              rows='3'
+              rows="3"
               fullWidth
               style={{
                 height: 35,
@@ -275,12 +257,12 @@ export default function Main() {
               Describe their role ?
             </h4>
             <TextField
-              type='text'
-              id='name'
-              name='user_name'
-              placeholder='Role'
-              variant='outlined'
-              size='small'
+              type="text"
+              id="name"
+              name="user_name"
+              placeholder="Role"
+              variant="outlined"
+              size="small"
               fullWidth
               style={{
                 height: 35,
@@ -320,8 +302,8 @@ export default function Main() {
             marginTop: 20,
           }}
           onClick={() => setArr([...arr, ...[arr.length]])}
-          variant='outlined'
-          color='primary'
+          variant="outlined"
+          color="primary"
         >
           <AddIcon />
           Add another testimonial
@@ -335,7 +317,7 @@ export default function Main() {
             background: "#FF8021",
             color: "#fff",
           }}
-          variant='contained'
+          variant="contained"
         >
           Save
         </Button>

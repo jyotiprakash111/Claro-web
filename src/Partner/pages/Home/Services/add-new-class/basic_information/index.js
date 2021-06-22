@@ -405,8 +405,9 @@ const BasicInfo = ({ handleNext }) => {
                   <Switch
                     //   checked={state.gilad}
                     //   onChange={handleChange}
-                    name="gilad"
-                    classes={purple}
+                    color="primary"
+                    name="checkedB"
+                    inputProps={{ 'aria-label': 'primary checkbox' }}
                   />
                 }
                 label="Enable Online Bookings"

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import SideBar from "../../components/common/SideBar";
 import Main from "./main/tabBar";
+import Header from "../../components/common/HeaderMain";
+
 
 export default class index extends Component {
   render() {
@@ -8,7 +10,7 @@ export default class index extends Component {
       <div id="batch_schedule">
         <SideBar />
         <div style={{ marginLeft: 300 }}>
-          <p className="batch_schedule_title">Class title</p>
+         <Header  name ="Batch Schedule" avatar={true}/>
           <Main />
         </div>
       </div>
