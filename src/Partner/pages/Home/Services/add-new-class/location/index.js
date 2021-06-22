@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { TextField } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -33,7 +33,6 @@ const business_location = [
   },
 ];
 
-
 export default function Location() {
   const [temp, setTemp] = useState(0);
   const [temp2, setTemp2] = useState(0);
@@ -47,13 +46,13 @@ export default function Location() {
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Instructors</label>
           <TextField
-            id="outlined-select-currency"
+            id='outlined-select-currency'
             select
-            size="large"
+            size='large'
             style={{ width: "100%" }}
-            value="0"
+            value='0'
             // helperText="Please select your currency"
-            variant="outlined"
+            variant='outlined'
           >
             {currencies.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -66,13 +65,13 @@ export default function Location() {
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Location for this class</label>
           <TextField
-            id="outlined-select-currency"
+            id='outlined-select-currency'
             select
-            size="large"
+            size='large'
             style={{ width: "100%" }}
             value={temp2}
             onChange={(e) => setTemp2(e.target.value)}
-            variant="outlined"
+            variant='outlined'
           >
             {business_location.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -84,15 +83,15 @@ export default function Location() {
         <Grid item lg={6}></Grid>
         {temp2 == 1 ? (
           <div>
-            <Grid item lg={12} style={{marginLeft:"2%"}}>
-              <label style={{ color: "#827575"}}>
+            <Grid item lg={12} style={{ marginLeft: "2%" }}>
+              <label style={{ color: "#827575" }}>
                 Platform for hosting the online class
               </label>
               <div>
                 {["Zoom", "Google Meet", "Skype", "Others"].map((item, i) => {
                   return (
                     <Button
-                      variant="outlined"
+                      variant='outlined'
                       style={{
                         minWidth: 90,
                         color: "#ccc",
@@ -111,36 +110,56 @@ export default function Location() {
                 })}
               </div>
             </Grid>
-            <Grid style={{ marginTop: 20,marginLeft:"2%"  }} item lg={12}>
-              <label style={{ color: "#827575" }}>
-                Enter link to join the class (optional)
-              </label>
-              <TextField
-                variant="outlined"
-                placeholder="Enter here"
-                size="large"
-                style={{ width: "100%", marginBottom: "20px" }}
-              />
-            </Grid>
-            <Grid item lg={12} style={{marginLeft:"2%"}}>
-              <label style={{ color: "#827575" }}>
-                Enter any other details to send to participants (optional)
-              </label>
-              <TextField
-                variant="outlined"
-                placeholder="Enter here"
-                size="large"
-                style={{ width: "100%", height: "50px" }}
-              />
-            </Grid>
+           
+              <div>
+                <Grid style={{ marginTop: 20, marginLeft: "2%" }} item lg={12}>
+                  <label style={{ color: "#827575" }}>
+                    Enter link to join the class (optional)
+                  </label>
+                  <TextField
+                    variant='outlined'
+                    placeholder='Enter here'
+                    size='large'
+                    style={{ width: "100%", marginBottom: "20px" }}
+                  />
+                </Grid>
+                <Grid item lg={12} style={{ marginLeft: "2%" }}>
+                  <label style={{ color: "#827575" }}>
+                    Enter any other details to send to participants (optional)
+                  </label>
+                  <TextField
+                    variant='outlined'
+                    placeholder='Enter here'
+                    size='large'
+                    style={{ width: "100%", height: "50px" }}
+                  />
+                </Grid>
+              </div>
+              {temp == 3 ? (
+                 <div>
+                 <Grid item lg={12} style={{ marginLeft: "2%" }}>
+                   <label style={{ color: "#827575" }}>
+                     Enter any other details to send to participants (optional)
+                   </label>
+                   <TextField
+                     variant='outlined'
+                     placeholder='Enter here'
+                     size='large'
+                     style={{ width: "100%", height: "50px" }}
+                   />
+                 </Grid>
+               </div>
+            ) : (
+              <div />
+            )}
           </div>
         ) : (
-        <div />
+          <div />
         )}
       </Grid>
       <div style={{ width: 200, marginLeft: "auto", marginTop: 50 }}>
         <Button
-          variant="contained"
+          variant='contained'
           style={{ background: "#FF8021", color: "#fff" }}
         >
           Save and Continue
