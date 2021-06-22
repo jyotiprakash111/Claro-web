@@ -51,7 +51,7 @@ export default function Location() {
   if (temp2 == "0") {
     return (
       <div>
-        <Dialog open={counter} />
+        <Dialog open={counter} handleClose={() => setCounter(false)} />
         <p>
           60% completed arlready! Let’s get started with adding prices for the
           scheduled classes
