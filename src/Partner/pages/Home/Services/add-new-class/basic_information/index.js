@@ -207,29 +207,6 @@ const BasicInfo = ({ handleNext }) => {
               </Button>
             </div>
           </Select>
-          {/* <Autocomplete
-            id="combo-box-demo"
-            options={top100Films}
-            getOptionLabel={(option) => option.title}
-            style={{ width: 300 }}
-            renderInput={(params) => (
-              <TextField size="small" {...params} variant="outlined" />
-            )}
-            renderOption={(option) => {
-              const matches =
-                option.structured_formatting.main_text_matched_substrings;
-
-              return (
-                <Grid container alignItems="center">
-                  <Grid item xs>
-                    <Typography variant="body2" color="textSecondary">
-                      {option.structured_formatting.secondary_text}
-                    </Typography>
-                  </Grid>
-                </Grid>
-              );
-            }}
-          /> */}
         </Grid>
         <Grid item lg={12}>
           <label style={{ color: "#827575" }}>
