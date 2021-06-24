@@ -29,7 +29,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { menu } from "./menu";
 import { hasChildren } from "./utils";
 
-import { Link } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 const drawerWidth = 250;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -62,11 +62,36 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const SingleLevel = ({ item }) => {
+  const location = useLocation();
+  console.log(item, location.pathname);
   return (
-    <Link style={{ color: "#fff", textDecoration: "none" }} to={item.to}>
-      <ListItem style={{ color: "white", margin: "5px 5px" }} button>
-        <ListItemIcon style={{ color: "#fff" }}>{item.icon}</ListItemIcon>
-        <ListItemText primary={item.title} />
+    <Link
+      style={{
+        color: location.pathname == item.to ? "#65B1EC" : "#fff",
+        textDecoration: "none",
+      }}
+      to={item.to}
+    >
+      <ListItem
+        style={{
+          margin: "5px 5px",
+          color: location.pathname == item.to ? "#65B1EC" : "#fff",
+          background: location.pathname == item.to ? "#fff" : "transparent",
+          borderTopRightRadius: "36.5px",
+          borderBottomRightRadius: "36.5px",
+          width: "90%",
+        }}
+        button
+      >
+        <ListItemIcon
+          style={{ color: location.pathname == item.to ? "#65B1EC" : "#fff" }}
+        >
+          {item.icon}
+        </ListItemIcon>
+        <ListItemText
+          style={{ color: location.pathname == item.to ? "#65B1EC" : "#fff" }}
+          primary={item.title}
+        />
       </ListItem>
     </Link>
   );
@@ -135,16 +160,35 @@ const MultiLevel = ({ item }) => {
   const handleClick = () => {
     setOpen((prev) => !prev);
   };
-
+  const location = useLocation();
+  console.log(item, location.pathname);
   return (
     <React.Fragment>
-      <Link to={item.to} style={{ color: "#fff", textDecoration: "none" }}>
+      <Link
+        to={item.to}
+        style={{
+          color: "#fff",
+          textDecoration: "none",
+        }}
+      >
         <ListItem
-          style={{ color: "white", margin: "5px 5px" }}
+          style={{
+            margin: "5px 5px",
+            color: location.pathname == item.to ? "#65B1EC" : "#fff",
+            background: location.pathname == item.to ? "#fff" : "transparent",
+            borderTopRightRadius: "36.5px",
+            borderBottomRightRadius: "36.5px",
+            width: "90%",
+          }}
           button
+          // selected={to === location.pathname}
           onClick={handleClick}
         >
-          <ListItemIcon style={{ color: "#fff" }}>{item.icon}</ListItemIcon>
+          <ListItemIcon
+            style={{ color: location.pathname == item.to ? "#65B1EC" : "#fff" }}
+          >
+            {item.icon}
+          </ListItemIcon>
           <ListItemText primary={item.title} />
           {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </ListItem>
