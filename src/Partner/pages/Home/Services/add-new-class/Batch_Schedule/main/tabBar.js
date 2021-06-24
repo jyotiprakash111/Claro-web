@@ -7,7 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Schedule from "./schedule/index";
-import Pricing from "./pricing/index.js.js";
+import Pricing from "./pricing/index.js.js.js";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
