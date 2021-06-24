@@ -10,12 +10,12 @@ import { ListItem } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import "./style.css";
 import { TextField } from "@material-ui/core";
-
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-
+import Switch from "@material-ui/core/Switch";
 import Checkbox from "@material-ui/core/Checkbox";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
@@ -79,6 +79,16 @@ const batches = [
   {
     value: "1",
     label: "Apply to selected batches only",
+  },
+];
+const payment_interval = [
+  {
+    value: "0",
+    label: "Montly",
+  },
+  {
+    value: "1",
+    label: "Weekly",
   },
 ];
 
@@ -250,7 +260,7 @@ export default function FormDialog(props) {
         <div>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div style={{ width: "48%" }}>
-              <label style={{ marginTop: 20 }}>Price</label>
+              <label style={{ marginTop: 20 }}>Price name(optional)</label>
               <input
                 type="text"
                 style={{ height: 50, padding: 10 }}
@@ -260,7 +270,7 @@ export default function FormDialog(props) {
               />
             </div>
             <div style={{ width: "48%" }}>
-              <label style={{ marginTop: 20 }}>Price name(optional)</label>
+              <label style={{ marginTop: 20 }}>Price per session</label>
               <input
                 type="text"
                 style={{ height: 50, padding: 10 }}
@@ -400,6 +410,30 @@ export default function FormDialog(props) {
             name="account_no"
           />
 
+          <FormControlLabel
+            control={
+              <Switch
+                //   checked={state.gilad}
+                //   onChange={handleChange}
+                color="primary"
+                name="checkedB"
+                inputProps={{ "aria-label": "primary checkbox" }}
+              />
+            }
+            label="Proration on"
+          />
+          <FormControlLabel
+            control={
+              <Switch
+                //   checked={state.gilad}
+                //   onChange={handleChange}
+                color="primary"
+                name="checkedB"
+                inputProps={{ "aria-label": "primary checkbox" }}
+              />
+            }
+            label="Allow day selection"
+          />
           <label style={{ marginTop: 20 }}>
             Select the batches to apply price plan
           </label>
@@ -486,9 +520,28 @@ export default function FormDialog(props) {
     if (temp == 3) {
       return (
         <div>
+          <label style={{ marginTop: 20 }}>Payment Interval</label>
+          <Select
+            labelId="demo-simple-select-outlined-label"
+            id="demo-simple-select-outlined"
+            style={{
+              width: "48%",
+              height: 50,
+              borderRadius: 5,
+              border: "1px solid #ccc",
+            }}
+            value={paymentType}
+            onChange={(e) => changePaymentType(e.target.value)}
+            variant="outlined"
+            label="Age"
+          >
+            {payment_interval.map((item) => {
+              return <MenuItem value={item.value}>{item.label}</MenuItem>;
+            })}
+          </Select>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div style={{ width: "48%" }}>
-              <label style={{ marginTop: 20 }}>Price</label>
+              <label style={{ marginTop: 20 }}>Installment fee</label>
               <input
                 type="text"
                 style={{ height: 50, padding: 10 }}
@@ -498,7 +551,7 @@ export default function FormDialog(props) {
               />
             </div>
             <div style={{ width: "48%" }}>
-              <label style={{ marginTop: 20 }}>Price name(optional)</label>
+              <label style={{ marginTop: 20 }}>Deposit amount (optional)</label>
               <input
                 type="text"
                 style={{ height: 50, padding: 10 }}
@@ -525,6 +578,37 @@ export default function FormDialog(props) {
             id="mail"
             name="account_no"
           />
+          {paymentType == "0" ? (
+            <div>
+              {" "}
+              <FormControlLabel
+                control={
+                  <Switch
+                    //   checked={state.gilad}
+                    //   onChange={handleChange}
+                    color="primary"
+                    name="checkedB"
+                    inputProps={{ "aria-label": "primary checkbox" }}
+                  />
+                }
+                label="Proration on"
+              />
+              <FormControlLabel
+                control={
+                  <Switch
+                    //   checked={state.gilad}
+                    //   onChange={handleChange}
+                    color="primary"
+                    name="checkedB"
+                    inputProps={{ "aria-label": "primary checkbox" }}
+                  />
+                }
+                label="Allow day selection"
+              />
+            </div>
+          ) : (
+            ""
+          )}
 
           <div style={{ textAlign: "right" }}>
             <Button
@@ -691,7 +775,7 @@ export default function FormDialog(props) {
       <Dialog
         fullScreen
         style={{
-          maxHeight: renderHeight(paymentType),
+          //   maxHeight: renderHeight(paymentType),
           width: 800,
           margin: "0px auto",
         }}
