@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Confetti from "../../assets/img/confetti.png";
@@ -20,7 +20,7 @@ export default function SimpleSelect() {
   const [open, setOpen] = useState(false);
   return (
     <div className={classes.container}>
-        {/* Popup Starts */}
+      {/* Popup Starts */}
       <Dialog handleClose={() => setOpen(false)} open={open} />
       <Grid spacing={3} container>
         <Grid item lg={4}>
@@ -32,9 +32,9 @@ export default function SimpleSelect() {
             </p>
             <Button
               onClick={() => setOpen(true)}
-              variant='contained'
+              variant="contained"
               width={150}
-              text='Book a free demo'
+              text="Book a free demo"
             />
           </Paper>
         </Grid>
@@ -48,18 +48,20 @@ export default function SimpleSelect() {
                 <p className={classes.p}>
                   Setting up basic information about your class
                 </p>
-                <div style={{ display: "flex" }}>
+                <div style={{ display: "flex", alignItems: "center" }}>
                   <Button
                     onClick={() => setOpen(true)}
                     width={150}
-                    variant='contained'
-                    text='Start step 1'
+                    variant="contained"
+                    text="Start step 1"
                   />
-                  <Link to="/homescreen"
+                  <Link
+                    to="/homescreen"
                     style={{
                       color: "#65B1EC",
                       textTransform: "capitalize",
                       textDecoration: "underline",
+                      marginLeft: 10,
                     }}
                   >
                     See all the steps

@@ -21,33 +21,35 @@ import onlineBooking from "./Partner/pages/onlineBooking/index.js";
 import NewClass from "./Partner/pages/home/Services/add-new-class/index";
 import NewSchedule from "./Partner/pages/newClassSchedule";
 
+import "./style.css";
+
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className='root'>
+        <div className="root">
           <Switch>
-            <Route exact path='/' component={home} />
-            <Route path='/homescreen' component={homeScreen} />
-            <Route path='/home_services' component={home_services} />
-            <Route path='/home_classes' component={home_classes} />
-            <Route path='/customer' component={partner} />
-            <Route path='/partner_home' component={partnerSingle} />
-            <Route path='/testimonial' component={testimonial} />
-            <Route path='/general' component={general} />
-            <Route path='/schedule' component={schedule} />
-            <Route path='/sales' component={sales} />
-            <Route path='/team' component={team} />
-            <Route path='/notification' component={notification} />
-            <Route path='/profile' component={profile} />
-            <Route path='/location' component={location} />
-            <Route path='/payment' component={payment} />
-            <Route path='/settings' component={settings} />
-            <Route path='/batch_schedule' component={batchSchedule} />
-            <Route path='/online_booking' component={onlineBooking} />
-            <Route path='/new_class' component={NewClass} />
+            <Route exact path="/" component={home} />
+            <Route path="/homescreen" component={homeScreen} />
+            <Route path="/home_services" component={home_services} />
+            <Route path="/home_classes" component={home_classes} />
+            <Route path="/customer" component={partner} />
+            <Route path="/partner_home" component={partnerSingle} />
+            <Route path="/testimonial" component={testimonial} />
+            <Route path="/general" component={general} />
+            <Route path="/schedule" component={schedule} />
+            <Route path="/sales" component={sales} />
+            <Route path="/team" component={team} />
+            <Route path="/notification" component={notification} />
+            <Route path="/profile" component={profile} />
+            <Route path="/location" component={location} />
+            <Route path="/payment" component={payment} />
+            <Route path="/settings" component={settings} />
+            <Route path="/batch_schedule" component={batchSchedule} />
+            <Route path="/online_booking" component={onlineBooking} />
+            <Route path="/new_class" component={NewClass} />
 
-            <Route path='/new_class_schedule' component={NewSchedule} />
+            <Route path="/new_class_schedule" component={NewSchedule} />
           </Switch>
         </div>
       </Router>

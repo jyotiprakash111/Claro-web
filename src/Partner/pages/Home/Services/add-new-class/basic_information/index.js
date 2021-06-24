@@ -26,42 +26,34 @@ import Tooltip from "@material-ui/core/Tooltip";
 import InfoIcon from "@material-ui/icons/Info";
 import ClearIcon from "@material-ui/icons/Clear";
 
+import { withStyles } from "@material-ui/core/styles";
+
 function Alert(props) {
-  return <MuiAlert elevation={6} variant='filled' {...props} />;
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const usePurpleSwitch = () => {
-  return {
-    root: {
-      padding: 7,
+const PurpleSwitch = withStyles({
+  switchBase: {
+    color: "#65B1EC",
+    "&$checked": {
+      color: "#65B1EC",
     },
-    thumb: {
-      width: 24,
-      height: 24,
-      backgroundColor: "#fff",
-      boxShadow:
-        "0 0 12px 0 rgba(0,0,0,0.08), 0 0 8px 0 rgba(0,0,0,0.12), 0 0 4px 0 rgba(0,0,0,0.38)",
-    },
-    switchBase: {
-      color: "rgba(0,0,0,0.38)",
-      padding: 7,
-    },
-    track: {
-      borderRadius: 20,
+    "&$checked + $track": {
       backgroundColor: "#65B1EC",
     },
-    checked: {
-      "& $thumb": {
-        backgroundColor: "#fff",
-      },
-      "& + $track": {
-        opacity: "1 !important",
-        backgroundColor: "#65B1EC",
-      },
-    },
-    focusVisible: {},
-  };
-};
+  },
+  checked: {},
+  track: {},
+})(Switch);
+
+const LightTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: "#65B1EC",
+    color: "#fff",
+    boxShadow: theme.shadows[1],
+    fontSize: 11,
+  },
+}))(Tooltip);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -107,8 +99,8 @@ const age_of_students = [
 const BasicInfo = ({ handleNext }) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const useStyles2 = makeStyles(usePurpleSwitch());
-  const purple = useStyles2();
+  // const useStyles2 = makeStyles(usePurpleSwitch());
+  // const purple = useStyles2();
   const handleClick = () => {
     setOpen(true);
   };
@@ -153,6 +145,20 @@ const BasicInfo = ({ handleNext }) => {
     </li>
   ));
 
+  // const PurpleSwitch = withStyles({
+  //   switchBase: {
+  //     color: purple[300],
+  //     "&$checked": {
+  //       color: purple[500],
+  //     },
+  //     "&$checked + $track": {
+  //       backgroundColor: purple[500],
+  //     },
+  //   },
+  //   checked: {},
+  //   track: {},
+  // })(Switch);
+
   return (
     <div>
       <p>
@@ -186,6 +192,13 @@ const BasicInfo = ({ handleNext }) => {
               },
               getContentAnchorEl: null,
             }}
+            className={classes.border}
+            // inputProps={{
+            //   classes: {
+            //     root: classes.border,
+            //     icon: classes.icon,
+            //   },
+            // }}
             select
             style={{
               width: "100%",
@@ -284,15 +297,16 @@ const BasicInfo = ({ handleNext }) => {
           <div style={{ display: "flex" }}>
             <label style={{ color: "#827575" }}>Total booking slots</label>
             <div>
-              <Tooltip
+              <LightTooltip
                 title="Total Booking Slots"
                 aria-label="add"
+                placement="right-end"
                 style={{ background: "#65B1EC" }}
               >
                 <InfoIcon
                   style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
                 />
-              </Tooltip>
+              </LightTooltip>
             </div>
           </div>
           <TextField
@@ -307,7 +321,8 @@ const BasicInfo = ({ handleNext }) => {
           <div style={{ display: "flex" }}>
             <label style={{ color: "#827575" }}>Price</label>
             <div>
-              <Tooltip
+              <LightTooltip
+                placement="right-end"
                 title="Price"
                 aria-label="add"
                 style={{ background: "#65B1EC" }}
@@ -315,7 +330,7 @@ const BasicInfo = ({ handleNext }) => {
                 <InfoIcon
                   style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
                 />
-              </Tooltip>
+              </LightTooltip>
             </div>
           </div>
           <TextField
@@ -403,24 +418,30 @@ const BasicInfo = ({ handleNext }) => {
               <FormControlLabel
                 control={
                   <Switch
-                    //   checked={state.gilad}
-                    //   onChange={handleChange}
+                    control={
+                      <PurpleSwitch
+                        // checked={state.checkedA}
+                        // onChange={handleChange}
+                        name="checkedA"
+                      />
+                    }
                     color="primary"
                     name="checkedB"
-                    inputProps={{ 'aria-label': 'primary checkbox' }}
+                    inputProps={{ "aria-label": "primary checkbox" }}
                   />
                 }
                 label="Enable Online Bookings"
               />
             </div>
             <div>
-              <Tooltip
+              <LightTooltip
                 title="with online online booking customers can book the class directly on their own"
                 aria-label="add"
+                placement="right-end"
                 style={{ background: "#65B1EC" }}
               >
                 <InfoIcon style={{ color: "#65B1EC" }} />
-              </Tooltip>
+              </LightTooltip>
             </div>
           </div>
           <p>Add class image</p>

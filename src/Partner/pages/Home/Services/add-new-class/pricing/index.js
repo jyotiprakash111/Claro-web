@@ -3,7 +3,8 @@ import { TextField } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
-
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
 import Checkbox from "@material-ui/core/Checkbox";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
@@ -43,6 +44,63 @@ const top100Films = [
   { title: "12 Angry Men", year: 1957 },
   { title: "Schindler's List", year: 1993 },
 ];
+
+const useStyles = makeStyles({
+  root: {
+    "&:hover": {
+      backgroundColor: "#65B1EC",
+    },
+  },
+  icon: {
+    borderRadius: 3,
+    width: 16,
+    height: 16,
+    boxShadow: "inset 0 0 0 1px #65B1EC, inset 0 -1px 0 #65B1EC",
+    backgroundColor: "#65B1EC",
+    backgroundImage: "#65B1EC",
+    "$root.Mui-focusVisible &": {
+      outline: "2px auto #65B1EC",
+      outlineOffset: 2,
+    },
+    "input:hover ~ &": {
+      backgroundColor: "#65B1EC",
+    },
+    "input:disabled ~ &": {
+      boxShadow: "none",
+      background: "#65B1EC",
+    },
+  },
+  checkedIcon: {
+    backgroundColor: "#65B1EC",
+    backgroundImage: "#65B1EC",
+    "&:before": {
+      display: "block",
+      width: 16,
+      height: 16,
+      backgroundImage: "#65B1EC",
+      content: '""',
+    },
+    "input:hover ~ &": {
+      backgroundColor: "#65B1EC",
+    },
+  },
+});
+
+function StyledCheckbox(props) {
+  const classes = useStyles();
+
+  return (
+    <Checkbox
+      className={classes.root}
+      disableRipple
+      color="default"
+      checkedIcon={<span className={clsx(classes.icon, classes.checkedIcon)} />}
+      icon={<span className={classes.icon} />}
+      inputProps={{ "aria-label": "decorative checkbox" }}
+      {...props}
+    />
+  );
+}
 
 export default function Location() {
   const [temp, setTemp] = React.useState("0");
@@ -102,7 +160,7 @@ export default function Location() {
                 getOptionLabel={(option) => option.title}
                 renderOption={(option, { selected }) => (
                   <React.Fragment>
-                    <Checkbox
+                    <StyledCheckbox
                       icon={icon}
                       checkedIcon={checkedIcon}
                       style={{ marginRight: 8 }}

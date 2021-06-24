@@ -11,3 +11,7 @@
   border-radius: 0;
   background-color: none !important;
 }
+.MuiSelect-select:focus {
+  border-radius: 0;
+  background-color: transparent;
+}
