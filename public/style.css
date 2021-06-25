@@ -4,6 +4,11 @@ body {
   font-family: "NeueHaasUnica", sans-serif;
 }
 
+.MuiSelect-select:focus {
+  border-radius: 0;
+  background-color: transparent !important;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],

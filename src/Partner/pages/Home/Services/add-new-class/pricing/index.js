@@ -45,46 +45,7 @@ const top100Films = [
   { title: "Schindler's List", year: 1993 },
 ];
 
-const useStyles = makeStyles({
-  root: {
-    "&:hover": {
-      backgroundColor: "#65B1EC",
-    },
-  },
-  icon: {
-    borderRadius: 3,
-    width: 16,
-    height: 16,
-    boxShadow: "inset 0 0 0 1px #65B1EC, inset 0 -1px 0 #65B1EC",
-    backgroundColor: "#65B1EC",
-    backgroundImage: "#65B1EC",
-    "$root.Mui-focusVisible &": {
-      outline: "2px auto #65B1EC",
-      outlineOffset: 2,
-    },
-    "input:hover ~ &": {
-      backgroundColor: "#65B1EC",
-    },
-    "input:disabled ~ &": {
-      boxShadow: "none",
-      background: "#65B1EC",
-    },
-  },
-  checkedIcon: {
-    backgroundColor: "#65B1EC",
-    backgroundImage: "#65B1EC",
-    "&:before": {
-      display: "block",
-      width: 16,
-      height: 16,
-      backgroundImage: "#65B1EC",
-      content: '""',
-    },
-    "input:hover ~ &": {
-      backgroundColor: "#65B1EC",
-    },
-  },
-});
+const useStyles = makeStyles({});
 
 function StyledCheckbox(props) {
   const classes = useStyles();

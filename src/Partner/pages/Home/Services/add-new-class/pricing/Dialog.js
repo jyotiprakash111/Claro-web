@@ -21,6 +21,8 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 
+import "./style.css";
+
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
@@ -812,11 +814,12 @@ export default function FormDialog(props) {
                   <ListItem
                     onClick={() => changePricingType(i)}
                     style={{}}
+                    className="select_hover_list"
                     button
                   >
                     <Paper
                       style={{
-                        background: "#f8f8f8",
+                        // background: "#f8f8f8",
                         padding: "10px 20px",
                         marginBottom: 10,
                         width: "100%",

@@ -58,3 +58,15 @@
   margin-bottom: 8px;
   color: #323232;
 }
+
+.select_hover_list {
+  background: #000;
+}
+.select_hover_list > div {
+  background: #f8f8f8;
+}
+.select_hover_list > div:hover {
+  background: #ff8021;
+  color: #fff;
+  transition: 0.2s ease-in;
+}
