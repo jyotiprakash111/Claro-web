@@ -130,4 +130,8 @@ select {
   justify-content: space-between;
 }
 
+.MuiSwitch-colorPrimary.Mui-checked {
+  color: rgb(101, 177, 236) !important;
+}
+
 /*************************Batch Schedule End********************************/

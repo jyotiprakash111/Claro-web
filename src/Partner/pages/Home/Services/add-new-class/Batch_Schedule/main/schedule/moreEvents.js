@@ -190,7 +190,7 @@ export default function FormDialog(props) {
               id="mail"
               name="account_no"
             />
-            <p>day(s)</p>
+            <p>Weeks(s)</p>
           </div>
           <div style={{ marginTop: 20, width: "50%" }}>
             <label style={{ marginTop: 10 }} for="business">

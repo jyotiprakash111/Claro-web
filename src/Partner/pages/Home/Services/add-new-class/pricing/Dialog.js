@@ -20,7 +20,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
-
+import InputAdornment from "@material-ui/core/InputAdornment";
 import "./style.css";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -143,13 +143,27 @@ export default function FormDialog(props) {
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div style={{ width: "48%" }}>
               <label style={{ marginTop: 20 }}>Price</label>
-              <input
-                type="text"
-                style={{ height: 50, padding: 10 }}
-                placeholder="INR Enter Price"
-                id="mail"
-                name="account_no"
-              />
+              <div style={{ position: "relative" }}>
+                <input
+                  type="number"
+                  style={{ height: 50, padding: 10, paddingLeft: 50 }}
+                  placeholder="Enter Price"
+                  name="account_no"
+                  startAdornment={
+                    <InputAdornment position="start">$</InputAdornment>
+                  }
+                />
+                <label
+                  style={{
+                    position: "absolute",
+                    left: 10,
+                    top: 15,
+                    fontSize: 16,
+                  }}
+                >
+                  INR
+                </label>
+              </div>
             </div>
             <div style={{ width: "48%" }}>
               <label style={{ marginTop: 20 }}>Price name(optional)</label>
