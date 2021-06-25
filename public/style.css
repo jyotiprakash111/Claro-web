@@ -4,6 +4,11 @@ body {
   font-family: "NeueHaasUnica", sans-serif;
 }
 
+.MuiSelect-select:focus {
+  border-radius: 0;
+  background-color: transparent !important;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -123,6 +128,10 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.MuiSwitch-colorPrimary.Mui-checked {
+  color: rgb(101, 177, 236) !important;
 }
 
 /*************************Batch Schedule End********************************/

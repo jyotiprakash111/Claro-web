@@ -73,6 +73,7 @@ export default function Tab3() {
                 paddingTop: 10,
                 paddingLeft: 10,
                 marginBottom: 20,
+                border: "1px solid #000",
               }}
             />
           </div>
@@ -91,12 +92,13 @@ export default function Tab3() {
                 padding: 20,
                 paddingTop: 10,
                 paddingLeft: 10,
+                border: "1px solid #000",
               }}
             />
           </div>
           <Typography component="div">
             <Grid
-              style={{ padding: 5, marginTop: 20 }}
+              style={{ padding: 5, marginTop: 10 }}
               component="label"
               container
               alignItems="center"

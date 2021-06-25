@@ -15,3 +15,10 @@
   border-radius: 0;
   background-color: transparent;
 }
+.MuiCheckbox-root {
+  color: #65b1ec !important;
+}
+.MuiSelect-select:focus {
+  border-radius: 0;
+  background-color: transparent;
+}

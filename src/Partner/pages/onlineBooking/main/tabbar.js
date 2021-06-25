@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     background: "transparent",
     boxShadow: "none",
+    borderBottom: "1px solid #ccc",
   },
   link: {
     color: "rgba(50, 50, 50, 0.5)",

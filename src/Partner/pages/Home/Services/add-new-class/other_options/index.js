@@ -26,6 +26,8 @@ export default function OtherOptions() {
   const [text, setText] = React.useState("");
   const [text2, setText2] = React.useState("");
   const [text3, setText3] = React.useState("");
+
+  console.log(arr);
   return (
     <div>
       <Grid container>
@@ -58,7 +60,9 @@ export default function OtherOptions() {
                 >
                   <label style={{ color: "#827575" }}>Benifit {i + 1}</label>
                   <IconButton
-                    onClick={() => setArr(arr.filter((item2) => item2 != item))}
+                    onClick={() =>
+                      setArr(arr.filter((item2) => item2 !== item))
+                    }
                   >
                     <AddIcon />
                   </IconButton>
@@ -87,8 +91,10 @@ export default function OtherOptions() {
           />
           <Button
             onClick={() => {
-              setText("");
-              setArr([...arr, ...[text]]);
+              if (text) {
+                setText("");
+                setArr([...arr, ...[text]]);
+              }
             }}
             style={{ textTransform: "none", color: "#FF8021", marginTop: 20 }}
           >
@@ -182,7 +188,6 @@ export default function OtherOptions() {
                   rows={3}
                   placeholder="Add notes viewable to customers for on the course landing page"
                 />
-
                 <Divider style={{ marginBottom: 10 }} />
               </div>
             );
