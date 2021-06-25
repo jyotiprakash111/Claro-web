@@ -281,11 +281,14 @@ export default function FormDialog(props) {
                   </select>
                 </div>
                 <div>
-                  <label style={{ marginTop: 10 }}>Date of Birth</label>
+                  <label style={{ marginTop: 10, marginBottom: 10 }}>
+                    Date of Birth
+                  </label>
                   <FormDatePicker
                     name="startTime"
                     placeholder="DD/MM/YYYY"
                     required={true}
+                    height="40px"
                     width="300px"
                   />
                 </div>
