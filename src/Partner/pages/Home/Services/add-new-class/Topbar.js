@@ -7,7 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import BasicInformation from "./basic_information/index";
-import Location from "./location/index";
+import Location from "./location/index2";
 import Pricing from "./pricing/index";
 import OtherOptions from "./other_options/index";
 import Schedule from "./Batch_Schedule/main/scheduleTable";
@@ -17,7 +17,7 @@ function TabPanel(props) {
 
   return (
     <div
-      role='tabpanel'
+      role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
@@ -87,32 +87,32 @@ export default function SimpleTabs() {
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label='simple tabs example'
+          aria-label="simple tabs example"
           TabIndicatorProps={{ style: { background: "#FF8021", height: 3 } }}
         >
           <Tab
             style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label='Basic Information'
+            label="Basic Information"
             {...a11yProps(0)}
           />
           <Tab
             style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label='Schedule'
+            label="Schedule"
             {...a11yProps(1)}
           />
           <Tab
             style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label='Location'
+            label="Location"
             {...a11yProps(2)}
           />
           <Tab
             style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label='Pricing'
+            label="Pricing"
             {...a11yProps(3)}
           />
           <Tab
             style={{ color: "#323232", textTransform: "none", fontSize: 17 }}
-            label='Other Options'
+            label="Other Options"
             {...a11yProps(4)}
           />
         </Tabs>

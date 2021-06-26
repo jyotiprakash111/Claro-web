@@ -37,22 +37,25 @@ export default function Location() {
   const [temp, setTemp] = useState(0);
   const [temp2, setTemp2] = useState(0);
   const [temp3, setTemp3] = useState(0);
+
   return (
     <div>
       <p>
-        Yay! You are 40%% done. Let’s now add timing, location and instructors
+        Yay! You are 40% done. Let’s now add timing, location and instructors
       </p>
       <Grid container spacing={3}>
         <Grid item lg={6}>
-          <label style={{ color: "#827575" }}>Instructors</label>
+          <label style={{ color: "#827575", marginBottom: 10 }}>
+            Instructors
+          </label>
           <TextField
-            id='outlined-select-currency'
+            id="outlined-select-currency"
             select
-            size='large'
-            style={{ width: "100%" }}
-            value='0'
+            size="large"
+            style={{ width: "100%", marginTop: 10 }}
+            value="0"
             // helperText="Please select your currency"
-            variant='outlined'
+            variant="outlined"
           >
             {currencies.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -65,13 +68,13 @@ export default function Location() {
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Location for this class</label>
           <TextField
-            id='outlined-select-currency'
+            id="outlined-select-currency"
             select
-            size='large'
-            style={{ width: "100%" }}
+            size="large"
+            style={{ width: "100%", marginTop: 10 }}
             value={temp2}
             onChange={(e) => setTemp2(e.target.value)}
-            variant='outlined'
+            variant="outlined"
           >
             {business_location.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -91,7 +94,7 @@ export default function Location() {
                 {["Zoom", "Google Meet", "Skype", "Others"].map((item, i) => {
                   return (
                     <Button
-                      variant='outlined'
+                      variant="outlined"
                       style={{
                         minWidth: 90,
                         color: "#ccc",
@@ -101,6 +104,7 @@ export default function Location() {
                         marginRight: 10,
                         borderRadius: 30,
                         padding: "15px 20px",
+                        marginTop: 10,
                       }}
                       onClick={() => setTemp(i)}
                     >
@@ -110,45 +114,45 @@ export default function Location() {
                 })}
               </div>
             </Grid>
-           
+
+            <div>
+              <Grid style={{ marginTop: 20, marginLeft: "2%" }} item lg={12}>
+                <label style={{ color: "#827575" }}>
+                  Enter link to join the class (optional)
+                </label>
+                <TextField
+                  variant="outlined"
+                  placeholder="Enter here"
+                  size="large"
+                  style={{ width: "100%", marginBottom: "20px", marginTop: 10 }}
+                />
+              </Grid>
+              <Grid item lg={12} style={{ marginLeft: "2%" }}>
+                <label style={{ color: "#827575" }}>
+                  Enter any other details to send to participants (optional)
+                </label>
+                <TextField
+                  variant="outlined"
+                  placeholder="Enter here"
+                  size="large"
+                  style={{ width: "100%", height: "50px", marginTop: 10 }}
+                />
+              </Grid>
+            </div>
+            {temp == 3 ? (
               <div>
-                <Grid style={{ marginTop: 20, marginLeft: "2%" }} item lg={12}>
-                  <label style={{ color: "#827575" }}>
-                    Enter link to join the class (optional)
-                  </label>
-                  <TextField
-                    variant='outlined'
-                    placeholder='Enter here'
-                    size='large'
-                    style={{ width: "100%", marginBottom: "20px" }}
-                  />
-                </Grid>
                 <Grid item lg={12} style={{ marginLeft: "2%" }}>
                   <label style={{ color: "#827575" }}>
-                    Enter any other details to send to participants (optional)
+                    Please mention the platform used for taking the class
                   </label>
                   <TextField
-                    variant='outlined'
-                    placeholder='Enter here'
-                    size='large'
-                    style={{ width: "100%", height: "50px" }}
+                    variant="outlined"
+                    placeholder="Enter here"
+                    size="large"
+                    style={{ width: "100%", height: "50px", marginTop: 10 }}
                   />
                 </Grid>
               </div>
-              {temp == 3 ? (
-                 <div>
-                 <Grid item lg={12} style={{ marginLeft: "2%" }}>
-                   <label style={{ color: "#827575" }}>
-                   Please mention the platform used for taking the class
-                   </label>
-                   <TextField
-                     variant='outlined'
-                     placeholder='Enter here'
-                     size='large'
-                     style={{ width: "100%", height: "50px" }}
-                   />
-                 </Grid>
-               </div>
             ) : (
               <div />
             )}
@@ -159,7 +163,7 @@ export default function Location() {
       </Grid>
       <div style={{ width: 200, marginLeft: "auto", marginTop: 50 }}>
         <Button
-          variant='contained'
+          variant="contained"
           style={{ background: "#FF8021", color: "#fff" }}
         >
           Save and Continue
@@ -169,10 +173,10 @@ export default function Location() {
         <p
           style={{
             border: "1px solid #FF8021",
-            width: "70%",
+            width: "100%",
             borderRadius: 5,
             padding: 5,
-            fontSize: "0.9rem",
+            fontSize: "1rem",
             paddingLeft: 30,
             marginTop: 50,
           }}

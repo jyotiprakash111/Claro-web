@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { NavLink, useHistory, Link } from "react-router-dom";
 import {
-  Add as LanguageIcon,
-  Add as FacebookIcon,
-  Add as InstagramIcon,
+  Language as LanguageIcon,
+  Facebook as FacebookIcon,
+  Instagram as InstagramIcon,
+  YouTube as YoutubeIcon,
 } from "@material-ui/icons";
 import SideBar from "../../components/common/SideBar";
 import Header from "../../components/common/HeaderMain";
@@ -137,13 +138,13 @@ const BusinessSetup = () => {
   };
 
   return (
-    <div id='general_page'>
+    <div id="general_page">
       <SideBar />
       <div style={{ marginLeft: 300 }}>
         <Header
-          to='/settings'
-          title='Business Setup'
-          name='Business Setup'
+          to="/settings"
+          title="Business Setup"
+          name="Business Setup"
           avatar={true}
         />
 
@@ -165,84 +166,84 @@ const BusinessSetup = () => {
           <Grid lg={8} item>
             <form style={{ maxWidth: "65%" }}>
               <fieldset>
-                <label for='name'>Business Name</label>
+                <label for="name">Business Name</label>
                 <div style={{ display: "flex" }}>
                   <input
-                    type='text'
-                    onkeyup='nospaces(this)'
-                    type='text'
-                    placeholder='Business Name'
+                    type="text"
+                    onkeyup="nospaces(this)"
+                    type="text"
+                    placeholder="Business Name"
                     onChange={(e) => setbusinessName(e.target.value.trim())}
                   />
                 </div>
                 <p
-                  className='errMsg'
-                  id='business_err'
+                  className="errMsg"
+                  id="business_err"
                   style={{ color: "red", display: "none" }}
                 >
                   First name is requreid
                 </p>
-                <label for='mail'>Email address</label>
+                <label for="mail">Email address</label>
                 <input
-                  type='email'
-                  placeholder='Email address'
-                  id='mail'
+                  type="email"
+                  placeholder="Email address"
+                  id="mail"
                   onChange={(e) => setEmail(e.target.value.trim())}
                 />
                 <p
-                  className='errMsg'
-                  id='email_err'
+                  className="errMsg"
+                  id="email_err"
                   style={{ color: "red", display: "none" }}
                 >
                   Email is requreid
                 </p>
-                <label for='mail'>Short bio:</label>
+                <label for="mail">Short bio:</label>
                 <input
-                  type='text'
+                  type="text"
                   onChange={(e) => setBio(e.target.value.trim())}
-                  placeholder='Write a short bio'
+                  placeholder="Write a short bio"
                 />
                 <p
-                  className='errMsg'
-                  id='bio_err'
+                  className="errMsg"
+                  id="bio_err"
                   style={{ color: "red", display: "none" }}
                 >
                   Bio is requreid
                 </p>
-                <label for='mail'>Booking Page URL:</label>
+                <label for="mail">Booking Page URL:</label>
                 <input
-                  type='text'
-                  id='url'
-                  name='user_url'
-                  placeholder='https://www.abc.com'
+                  type="text"
+                  id="url"
+                  name="user_url"
+                  placeholder="https://www.abc.com"
                 />
                 <p
-                  className='errMsg'
-                  id='url_err'
+                  className="errMsg"
+                  id="url_err"
                   style={{ color: "red", display: "none" }}
                 >
                   URL is requreid
                 </p>
-                <label style={{ marginTop: 10 }} for='business'>
+                <label style={{ marginTop: 10 }} for="business">
                   Type of business
                 </label>
-                <select id='business' name='user_job'>
-                  <option value='Surgical Oncologist'>Dance School</option>
-                  <option value='Clinical Oncologist'>
+                <select id="business" name="user_job">
+                  <option value="Surgical Oncologist">Dance School</option>
+                  <option value="Clinical Oncologist">
                     Clinical Oncologist
                   </option>
-                  <option value='Healthcare Provider'>
+                  <option value="Healthcare Provider">
                     Radiation Oncologist
                   </option>
                 </select>
-                <label for='mail'>Add about us:</label>
+                <label for="mail">Add about us:</label>
                 <textarea
-                  type='text'
+                  type="text"
                   autoFocus
-                  row='2'
-                  id='mail'
-                  name='user_email'
-                  placeholder='Add about us'
+                  row="2"
+                  id="mail"
+                  name="user_email"
+                  placeholder="Add about us"
                 />
               </fieldset>
             </form>
@@ -263,12 +264,12 @@ const BusinessSetup = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for='name'>Phone no.</label>
+                <label for="name">Phone no.</label>
                 <div style={{ display: "flex" }}>
                   <select
-                    id='business'
-                    style={{ width: 120, height: 40 }}
-                    name='user_job'
+                    id="business"
+                    style={{ width: 150, height: 40 }}
+                    name="user_job"
                   >
                     {CountryData.map((item, i) => {
                       return (
@@ -279,19 +280,19 @@ const BusinessSetup = () => {
                     })}
                   </select>
                   <input
-                    type='text'
-                    id='name'
+                    type="text"
+                    id="name"
                     style={{ marginLeft: 10 }}
-                    name='user_name'
-                    placeholder='Phone no.'
+                    name="user_name"
+                    placeholder="Phone no."
                   />
                 </div>
-                <label for='mail'>Alternate Email address</label>
+                <label for="mail">Alternate Email address</label>
                 <input
-                  type='number'
-                  placeholder='Alternate Email address'
-                  id='mail'
-                  name='user_email'
+                  type="number"
+                  placeholder="Alternate Email address"
+                  id="mail"
+                  name="user_email"
                 />
               </fieldset>
             </form>
@@ -312,32 +313,32 @@ const BusinessSetup = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for='name'>Time zone</label>
+                <label for="name">Time zone</label>
                 <div style={{ display: "flex" }}>
                   <select
-                    id='business'
+                    id="business"
                     style={{ width: "100%", height: 40 }}
-                    name='user_job'
+                    name="user_job"
                   >
-                    <option value='Surgical Oncologist'>
+                    <option value="Surgical Oncologist">
                       (GMT -11:00) Niue
                     </option>
                   </select>
                 </div>
-                <label for='name'>Currency</label>
+                <label for="name">Currency</label>
                 <div style={{ display: "flex" }}>
                   <select
-                    id='business'
+                    id="business"
                     style={{ width: "100%", height: 40 }}
-                    name='user_job'
+                    name="user_job"
                   >
-                    <option value='Surgical Oncologist'>
+                    <option value="Surgical Oncologist">
                       United States Dollars
                     </option>
-                    <option value='Clinical Oncologist'>
+                    <option value="Clinical Oncologist">
                       Clinical Oncologist
                     </option>
-                    <option value='Healthcare Provider'>
+                    <option value="Healthcare Provider">
                       Radiation Oncologist
                     </option>
                   </select>
@@ -360,23 +361,93 @@ const BusinessSetup = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for='name'>Profile photo</label>
+                <label for="name">Profile photo</label>
                 <div style={{ display: "flex" }}>
                   <input
-                    placeholder='Alternate Email address'
-                    id='mail'
-                    name='user_email'
-                    type='file'
+                    placeholder="Alternate Email address"
+                    id="mail"
+                    name="user_email"
+                    type="file"
                   />
                 </div>
-                <label for='name'>Add a cover photo</label>
+                <label for="name">Add a cover photo</label>
                 <div style={{ display: "flex" }}>
                   <input
-                    placeholder='Alternate Email address'
-                    id='mail'
-                    name='user_email'
-                    type='file'
+                    placeholder="Alternate Email address"
+                    id="mail"
+                    name="user_email"
+                    type="file"
                   />
+                </div>
+              </fieldset>
+            </form>
+          </Grid>
+          <Grid style={{ marginTop: 50 }} lg={4} item>
+            <h3>Social Media Links</h3>
+            <p
+              style={{
+                fontWeight: "light",
+                fontSize: 18,
+                color: "#757575",
+              }}
+            >
+              Add your company email and phone number for sharing with clients.
+            </p>
+          </Grid>
+          <Grid style={{ marginTop: 50 }} lg={8} item>
+            <form style={{ maxWidth: 480 }}>
+              <fieldset>
+                <label for="name">Phone no.</label>
+                <div style={{ display: "flex" }}>
+                  <select
+                    id="business"
+                    style={{ width: 150, height: 40 }}
+                    name="user_job"
+                  >
+                    {CountryData.map((item, i) => {
+                      return (
+                        <option key={i} value={item.dial_code}>
+                          {item.dial_code} {item.name}
+                        </option>
+                      );
+                    })}
+                  </select>
+                  <div>
+                    <input
+                      type="text"
+                      id="name"
+                      style={{ marginLeft: 10 }}
+                      name="user_name"
+                      placeholder="Phone no."
+                    />
+                    <div
+                      style={{
+                        fontSize: 12,
+                        color: "#aaa",
+                        marginTop: -8,
+                        marginLeft: 10,
+                      }}
+                      for="name"
+                    >
+                      It helps guests get in touch with you after they have made
+                      a booking
+                    </div>
+                  </div>
+                </div>
+                <div style={{ display: "flex", marginTop: 20 }}>
+                  <div>
+                    Would you like new webpage visitor to contact you via
+                    WhatsApp
+                  </div>
+                  <div style={{ display: "flex" }}>
+                    <Button
+                      style={{ background: "#65B1EC", color: "#fff" }}
+                      variant="contained"
+                    >
+                      Yes
+                    </Button>
+                    <Button>No</Button>
+                  </div>
                 </div>
               </fieldset>
             </form>
@@ -397,7 +468,7 @@ const BusinessSetup = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for='name'>Website</label>
+                <label for="name">Website</label>
                 <div style={{ display: "flex" }}>
                   <LanguageIcon
                     style={{
@@ -407,13 +478,13 @@ const BusinessSetup = () => {
                     }}
                   />
                   <input
-                    placeholder='www.yoursite.com'
-                    id='mail'
-                    name='user_email'
-                    type='text'
+                    placeholder="www.yoursite.com"
+                    id="mail"
+                    name="user_email"
+                    type="text"
                   />
                 </div>
-                <label for='name'>Facebook</label>
+                <label for="name">Facebook</label>
                 <div style={{ display: "flex" }}>
                   <FacebookIcon
                     style={{
@@ -423,13 +494,13 @@ const BusinessSetup = () => {
                     }}
                   />
                   <input
-                    placeholder='www.facebook.com/yoursite'
-                    id='mail'
-                    name='user_email'
-                    type='text'
+                    placeholder="www.facebook.com/yoursite"
+                    id="mail"
+                    name="user_email"
+                    type="text"
                   />
                 </div>
-                <label for='name'>Instagram</label>
+                <label for="name">Instagram</label>
                 <div style={{ display: "flex" }}>
                   <InstagramIcon
                     style={{
@@ -439,15 +510,15 @@ const BusinessSetup = () => {
                     }}
                   />
                   <input
-                    placeholder='www.instagram.com/yoursite'
-                    id='mail'
-                    name='user_email'
-                    type='text'
+                    placeholder="www.instagram.com/yoursite"
+                    id="mail"
+                    name="user_email"
+                    type="text"
                   />
                 </div>
-                <label for='name'>YouTube</label>
+                <label for="name">YouTube</label>
                 <div style={{ display: "flex" }}>
-                  <LanguageIcon
+                  <YoutubeIcon
                     style={{
                       marginTop: 7,
                       marginRight: 15,
@@ -455,10 +526,10 @@ const BusinessSetup = () => {
                     }}
                   />
                   <input
-                    placeholder='www.youtube.com/yoursite'
-                    id='mail'
-                    name='user_email'
-                    type='text'
+                    placeholder="www.youtube.com/yoursite"
+                    id="mail"
+                    name="user_email"
+                    type="text"
                   />
                 </div>
               </fieldset>
@@ -479,13 +550,13 @@ const BusinessSetup = () => {
           <Grid style={{ marginTop: 50 }} lg={8} item>
             <form style={{ maxWidth: 480 }}>
               <fieldset>
-                <label for='name'>
+                <label for="name">
                   Your account is currently under a free plan
                 </label>
                 <div style={{ display: "flex" }}>
                   <Button
                     onClick={() => setOpen(true)}
-                    variant='outlined'
+                    variant="outlined"
                     style={{
                       width: "100%",
                       textAlign: "left",
@@ -508,14 +579,14 @@ const BusinessSetup = () => {
           <Dialog
             open={open}
             onClose={() => setOpen(false)}
-            aria-labelledby='alert-dialog-title'
-            aria-describedby='alert-dialog-description'
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
           >
-            <DialogTitle id='alert-dialog-title'>
+            <DialogTitle id="alert-dialog-title">
               {"We are sorry to see you go"}
             </DialogTitle>
             <DialogContent>
-              <DialogContentText id='alert-dialog-description'>
+              <DialogContentText id="alert-dialog-description">
                 Please write to us at hello@claroo.co raising your request to
                 delete the account.We will check that there aren't any active
                 bookings to be taken care of.Also we would really like to see if
@@ -523,7 +594,7 @@ const BusinessSetup = () => {
               </DialogContentText>
             </DialogContent>
             <DialogActions>
-              <Button onClick={() => setOpen(false)} color='primary' autoFocus>
+              <Button onClick={() => setOpen(false)} color="primary" autoFocus>
                 Cancel
               </Button>
             </DialogActions>
@@ -547,7 +618,7 @@ const BusinessSetup = () => {
               textTransform: "none",
               width: 100,
             }}
-            variant='contained'
+            variant="contained"
           >
             Save
           </Button>
