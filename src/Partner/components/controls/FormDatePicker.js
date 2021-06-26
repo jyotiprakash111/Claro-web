@@ -24,6 +24,7 @@ const MuiDatePicker = (props: any) => {
         }}
         style={{
           width: props.width ? props.width : "80%",
+          height: props.height ? props.height : "",
           border: "1px solid #ccc",
           borderRadius: 5,
           alignItems: "center",
