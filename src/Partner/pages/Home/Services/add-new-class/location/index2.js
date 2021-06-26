@@ -105,7 +105,7 @@ export default function Location() {
             }}
             variant="outlined"
           >
-            Add price plan
+            Add
           </Button>
         </div>
         <Table />
