@@ -5,7 +5,8 @@ import {
   KeyboardTimePicker,
   MuiPickersUtilsProvider,
 } from "@material-ui/pickers";
-import { KeyboardDatePicker } from "@material-ui/pickers";
+import TimerIcon from '@material-ui/icons/Timer';
+
 
 const MuiTimePicker = (props: any) => {
   const { name, required, errorobj } = props;
@@ -34,6 +35,7 @@ const MuiTimePicker = (props: any) => {
         color="secondary"
         inputVariant="outlined"
         {...props}
+        keyboardIcon={<TimerIcon />}
       />
     </React.Fragment>
   );
