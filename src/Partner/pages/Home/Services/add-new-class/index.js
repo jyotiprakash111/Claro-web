@@ -6,10 +6,13 @@ import Topbar from "./Topbar";
 export default function Index() {
   return (
     <div>
-      {" "}
       <SideBar />
-      <div style={{ marginLeft: 300, marginTop: 20 }}>
-        <Topbar />
+      <div style={{ marginLeft: 300}}>
+        <Header
+            avatar={true}
+            name="New Class"
+          />
+        <Topbar/>
       </div>
     </div>
   );

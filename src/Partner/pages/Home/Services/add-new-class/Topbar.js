@@ -81,7 +81,7 @@ export default function SimpleTabs() {
   return (
     <div className={classes.root}>
       <AppBar
-        style={{ background: "#fff", width: "95%", marginLeft: 24 }}
+        style={{ background: "#fff", width: "95%", marginLeft: 24, marginTop:"2%"}}
         position="static"
       >
         <Tabs

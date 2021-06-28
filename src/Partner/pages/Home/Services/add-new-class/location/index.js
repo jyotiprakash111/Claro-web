@@ -1,9 +1,18 @@
 import React, { useState } from "react";
-import { TextField } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
-import MenuItem from "@material-ui/core/MenuItem";
-import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
 
+import { TextField, MenuItem, Grid, Button, Checkbox } from "@material-ui/core";
+// import MenuItem from "@material-ui/core/MenuItem";
+// import Grid from "@material-ui/core/Grid";
+// import Button from "@material-ui/core/Button";
+// import Checkbox from "@material-ui/core/Checkbox";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
+
+const icon = <CheckBoxOutlineBlankIcon fontSize='small' />;
+const checkedIcon = <CheckBoxIcon fontSize='small' />;
 const currencies = [
   {
     value: "0",
@@ -33,10 +42,37 @@ const business_location = [
   },
 ];
 
+const useStyles = makeStyles({});
+
+function StyledCheckbox(props) {
+  const classes = useStyles();
+
+  return (
+    <Checkbox
+      className={classes.root}
+      disableRipple
+      color='default'
+      checkedIcon={<span className={clsx(classes.icon, classes.checkedIcon)} />}
+      icon={<span className={classes.icon} />}
+      inputProps={{ "aria-label": "decorative checkbox" }}
+      {...props}
+    />
+  );
+}
+
 export default function Location() {
   const [temp, setTemp] = useState(0);
   const [temp2, setTemp2] = useState(0);
   const [temp3, setTemp3] = useState(0);
+
+  const top100Films = [
+    { title: "The Shawshank Redemption", year: 1994 },
+    { title: "The Godfather", year: 1972 },
+    { title: "The Godfather: Part II", year: 1974 },
+    { title: "The Dark Knight", year: 2008 },
+    { title: "12 Angry Men", year: 1957 },
+    { title: "Schindler's List", year: 1993 },
+  ];
 
   return (
     <div>
@@ -49,13 +85,13 @@ export default function Location() {
             Instructors
           </label>
           <TextField
-            id="outlined-select-currency"
+            id='outlined-select-currency'
             select
-            size="large"
+            size='large'
             style={{ width: "100%", marginTop: 10 }}
-            value="0"
+            value='0'
             // helperText="Please select your currency"
-            variant="outlined"
+            variant='outlined'
           >
             {currencies.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -68,13 +104,13 @@ export default function Location() {
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Location for this class</label>
           <TextField
-            id="outlined-select-currency"
+            id='outlined-select-currency'
             select
-            size="large"
+            size='large'
             style={{ width: "100%", marginTop: 10 }}
             value={temp2}
             onChange={(e) => setTemp2(e.target.value)}
-            variant="outlined"
+            variant='outlined'
           >
             {business_location.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -83,7 +119,35 @@ export default function Location() {
             ))}
           </TextField>
         </Grid>
-        <Grid item lg={6}></Grid>
+          <Grid container spacing={3} item lg={6}>
+            <label style={{ color: "#827575" }}>Select the batches</label>
+            <Autocomplete
+              multiple
+              id='checkboxes-tags-demo'
+              options={top100Films}
+              disableCloseOnSelect
+              getOptionLabel={(option) => option.title}
+              renderOption={(option, { selected }) => (
+                <React.Fragment>
+                  <StyledCheckbox
+                    icon={icon}
+                    checkedIcon={checkedIcon}
+                    style={{ marginRight: 8 }}
+                    checked={selected}
+                  />
+                  {option.title}
+                </React.Fragment>
+              )}
+              style={{ width: 500 }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  variant='outlined'
+                  placeholder='Select Batches'
+                />
+              )}
+            />
+          </Grid>
         {temp2 == 1 ? (
           <div>
             <Grid item lg={12} style={{ marginLeft: "2%" }}>
@@ -94,7 +158,7 @@ export default function Location() {
                 {["Zoom", "Google Meet", "Skype", "Others"].map((item, i) => {
                   return (
                     <Button
-                      variant="outlined"
+                      variant='outlined'
                       style={{
                         minWidth: 90,
                         color: "#ccc",
@@ -114,16 +178,15 @@ export default function Location() {
                 })}
               </div>
             </Grid>
-
             <div>
               <Grid style={{ marginTop: 20, marginLeft: "2%" }} item lg={12}>
                 <label style={{ color: "#827575" }}>
                   Enter link to join the class (optional)
                 </label>
                 <TextField
-                  variant="outlined"
-                  placeholder="Enter here"
-                  size="large"
+                  variant='outlined'
+                  placeholder='Enter here'
+                  size='large'
                   style={{ width: "100%", marginBottom: "20px", marginTop: 10 }}
                 />
               </Grid>
@@ -132,9 +195,9 @@ export default function Location() {
                   Enter any other details to send to participants (optional)
                 </label>
                 <TextField
-                  variant="outlined"
-                  placeholder="Enter here"
-                  size="large"
+                  variant='outlined'
+                  placeholder='Enter here'
+                  size='large'
                   style={{ width: "100%", height: "50px", marginTop: 10 }}
                 />
               </Grid>
@@ -146,9 +209,9 @@ export default function Location() {
                     Please mention the platform used for taking the class
                   </label>
                   <TextField
-                    variant="outlined"
-                    placeholder="Enter here"
-                    size="large"
+                    variant='outlined'
+                    placeholder='Enter here'
+                    size='large'
                     style={{ width: "100%", height: "50px", marginTop: 10 }}
                   />
                 </Grid>
@@ -163,7 +226,7 @@ export default function Location() {
       </Grid>
       <div style={{ width: 200, marginLeft: "auto", marginTop: 50 }}>
         <Button
-          variant="contained"
+          variant='contained'
           style={{ background: "#FF8021", color: "#fff" }}
         >
           Save and Continue
@@ -181,7 +244,7 @@ export default function Location() {
             marginTop: 50,
           }}
         >
-          <a style={{ textDecoration: "none", color: "#FF8021" }} href="#">
+          <a style={{ textDecoration: "none", color: "#FF8021" }} href='#'>
             Learn more{" "}
           </a>
           about setting up your class schedule in the Claroo Knowledge Base.
