@@ -288,7 +288,7 @@ const BasicInfo = ({ handleNext }) => {
           <TextField
             variant="outlined"
             placeholder="Shows on the class public page.Add class info/instructions."
-            style={{ width: "100%" }}
+            style={{ width: "100%", border: "none" }}
             multiline
             rows={4}
           />
