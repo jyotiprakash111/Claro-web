@@ -30,10 +30,10 @@ const currencies2 = [
     value: "0",
     label: "",
   },
-  {
-    value: "1",
-    label: "Apply to selected batches only",
-  },
+  // {
+  //   value: "1",
+  //   label: "Apply to selected batches only",
+  // },
 ];
 
 const top100Films = [
@@ -112,7 +112,7 @@ export default function Location() {
           <Grid item lg={6}></Grid>
           {temp === "1" ? (
             <Grid item lg={6}>
-              <label style={{ color: "#827575" }}>Select the batches</label>
+              <label style={{ color: "#827575" }}>Select the batchess</label>
               <Autocomplete
                 multiple
                 id="checkboxes-tags-demo"
@@ -174,6 +174,7 @@ export default function Location() {
   } else if (temp2 == "1") {
     return (
       <div style={{ width: "90%" }}>
+        <Dialog open={counter} handleClose={() => setCounter(false)} />
         <div style={{ width: 200, textAlign: "right", marginLeft: "auto" }}>
           <Button
             style={{
@@ -181,7 +182,7 @@ export default function Location() {
               color: "#FF8021",
               border: "1px solid #FF8021",
             }}
-            onClick={() => setTemp2("0")}
+            onClick={() => setCounter(true)}
             variant="outlined"
           >
             Add price plan

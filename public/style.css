@@ -136,5 +136,8 @@ select {
 textarea {
   box-shadow: none;
 }
+.MuiInputBase-input {
+  border-radius: 5px;
+}
 
 /*************************Batch Schedule End********************************/

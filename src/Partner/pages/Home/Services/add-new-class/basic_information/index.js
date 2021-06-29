@@ -21,6 +21,7 @@ import UploadIcon from "../../../../../assets/img/Social/upload.png";
 import { useDropzone } from "react-dropzone";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
+import Switch_Custom from "../../../../../components/common/Switch";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -413,23 +414,7 @@ const BasicInfo = ({ handleNext }) => {
         <Grid item lg={6}>
           <div style={{ display: "flex", alignItems: "center" }}>
             <div>
-              <FormControlLabel
-                control={
-                  <Switch
-                    control={
-                      <PurpleSwitch
-                        // checked={state.checkedA}
-                        // onChange={handleChange}
-                        name="checkedA"
-                      />
-                    }
-                    color="primary"
-                    name="checkedB"
-                    inputProps={{ "aria-label": "primary checkbox" }}
-                  />
-                }
-                label="Enable Online Bookings"
-              />
+              <Switch_Custom />
             </div>
             <div>
               <LightTooltip

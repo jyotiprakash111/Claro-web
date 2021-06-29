@@ -123,15 +123,7 @@ export default function App() {
       {menu.map((item, key) => (
         <MenuItem key={key} item={item} />
       ))}
-      {/* <ListItem
-        button
-        style={{ color: "white", margin: "20px 5px", marginTop: "auto" }}
-      >
-        <ListItemIcon style={{ color: "white" }}>
-          <HelpOutlineIcon />
-        </ListItemIcon>
-        <ListItemText primary="Help" />
-      </ListItem> */}
+
       <p
         style={{
           textAlign: "center",

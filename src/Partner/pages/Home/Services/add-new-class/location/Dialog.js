@@ -61,10 +61,10 @@ const batches = [
     value: "0",
     label: "Apply to all batches for this class",
   },
-  {
-    value: "1",
-    label: "Apply to selected batches only",
-  },
+  // {
+  //   value: "1",
+  //   label: "Apply to selected batches only",
+  // },
 ];
 const payment_interval = [
   {
