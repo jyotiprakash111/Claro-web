@@ -45,23 +45,8 @@ export default function FormDialog(props) {
     new Date("2014-08-18T21:11:54")
   );
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
   const handleChange = (event) => {
     setPersonName(event.target.value);
-  };
-
-  const handleChangeMultiple = (event) => {
-    const { options } = event.target;
-    const value = [];
-    for (let i = 0, l = options.length; i < l; i += 1) {
-      if (options[i].selected) {
-        value.push(options[i].value);
-      }
-    }
-    setPersonName(value);
   };
 
   const renderInput = (e) => {
@@ -260,14 +245,18 @@ export default function FormDialog(props) {
   const methods = useForm({
     resolver: yupResolver(validationSchema),
   });
-
+  console.log(paymentType == 3);
   return (
     <FormProvider {...methods}>
       <div id="batch_schedule_schedule_more_event">
         <Dialog
           fullScreen
           className="dialog"
-          style={{ height: "90%", width: 760, margin: "20px auto" }}
+          style={{
+            height: paymentType == 3 ? "70vh" : "90%",
+            width: 760,
+            margin: "20px auto",
+          }}
           open={props.open}
           onClose={() => props.handleClose()}
         >
