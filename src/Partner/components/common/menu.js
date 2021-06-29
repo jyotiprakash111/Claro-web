@@ -56,19 +56,19 @@ export const menu = [
     icon: <DescriptionOutlinedIcon />,
     title: "Settings",
     to: "/settings",
-    items: [
-      {
-        title: "General",
-        to: "/settings",
-      },
-      {
-        title: "Home Services",
-        to: "/home_services",
-      },
-      {
-        title: "Home Classes",
-        to: "/home_classes",
-      },
-    ],
+    // items: [
+    //   {
+    //     title: "General",
+    //     to: "/settings",
+    //   },
+    //   {
+    //     title: "Home Services",
+    //     to: "/home_services",
+    //   },
+    //   {
+    //     title: "Home Classes",
+    //     to: "/home_classes",
+    //   },
+    // ],
   },
 ];
