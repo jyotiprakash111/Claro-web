@@ -61,16 +61,16 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const SingleLevel = ({ item }) => {
+const SingleLevel = ({ item, isChildren }) => {
   const location = useLocation();
-  console.log(item, location.pathname);
+  console.log(item, location.pathname, location);
   return (
     <Link
       style={{
         color: location.pathname == item.to ? "#65B1EC" : "#fff",
         textDecoration: "none",
       }}
-      to={item.to}
+      to={isChildren ? `${item.to}?tabopen=true` : item.to}
     >
       <ListItem
         style={{
@@ -138,22 +138,40 @@ export default function App() {
   );
 }
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, isChildren }) => {
   const Component = hasChildren(item) ? MultiLevel : SingleLevel;
-  return <Component item={item} />;
+  return <Component isChildren={isChildren} item={item} />;
+};
+
+const getQueryStringParams = (query) => {
+  return query
+    ? (/^[?#]/.test(query) ? query.slice(1) : query)
+        .split("&")
+        .reduce((params, param) => {
+          let [key, value] = param.split("=");
+          params[key] = value
+            ? decodeURIComponent(value.replace(/\+/g, " "))
+            : "";
+          return params;
+        }, {})
+    : {};
 };
 
 const MultiLevel = ({ item }) => {
   const classes = useStyles();
+  const location = useLocation();
+  console.log(item, location);
   const [openCollapse, setOpenCollapse] = React.useState(false);
   const { items: children } = item;
-  const [open, setOpen] = useState(false);
+
+  const [open, setOpen] = useState(
+    getQueryStringParams(location.search).tabopen == "true"
+  );
 
   const handleClick = () => {
     setOpen((prev) => !prev);
   };
-  const location = useLocation();
-  console.log(item, location.pathname);
+
   return (
     <React.Fragment>
       <Link
@@ -188,7 +206,7 @@ const MultiLevel = ({ item }) => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {children.map((child, key) => (
-            <MenuItem key={key} item={child} />
+            <MenuItem isChildren={true} key={key} item={child} />
           ))}
         </List>
       </Collapse>

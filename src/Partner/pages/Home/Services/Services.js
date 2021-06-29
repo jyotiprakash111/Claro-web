@@ -54,8 +54,8 @@ export default function Services() {
                 left: 30,
                 textTransform: "capitalize",
                 paddingLeft: 20,
-                paddingRight: 20,
-                top: 0,
+                paddingRight: 2 + 0,
+                top: 10,
               }}
             >
               Coming soon
