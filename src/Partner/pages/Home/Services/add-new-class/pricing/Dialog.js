@@ -2,7 +2,7 @@ import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import Button from "@material-ui/core/Button";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
-import CloseIcon from "@material-ui/icons/Close";
+import CloseIcon from "@material-ui/icons/Cancel";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
@@ -21,6 +21,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import Divider from "@material-ui/core/Divider";
 import "./style.css";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -801,24 +802,14 @@ export default function FormDialog(props) {
           props.handleClose();
         }}
       >
-        <DialogTitle
-          id="customized-dialog-title"
-          onClose={() => {
-            changePricingType(-1);
-            props.handleClose();
-          }}
-          style={{
-            borderBottom: "1px solid #FF8021",
-            marginLeft: 30,
-            marginRight: 50,
-            paddingBottom: 10,
-            paddingLeft: 0,
-            fontWeight: "700",
-          }}
-        >
-          {renderTitle(pricingType)}
-        </DialogTitle>
-        <div style={{ padding: 20, height: 500, width: 700, marginBottom: 40 }}>
+        <div style={{ padding: 20, height: 500, width: 750 }}>
+          <div className="batch_schedule_schedule_more_event_dialog_div">
+            <h1>Pricing</h1>
+            <IconButton onClick={() => props.handleClose()}>
+              <CloseIcon />
+            </IconButton>
+          </div>
+          <Divider />
           <form id="pricing_plan" style={{}}>
             <fieldset>{renderPayment(pricingType)}</fieldset>
           </form>

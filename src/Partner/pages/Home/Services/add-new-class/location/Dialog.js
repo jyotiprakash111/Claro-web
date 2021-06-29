@@ -1,13 +1,14 @@
 import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
-import CloseIcon from "@material-ui/icons/Close";
+import CloseIcon from "@material-ui/icons/Cancel";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import "./style.css";
 import Index from "./index";
 import "./style.css";
+import Divider from "@material-ui/core/Divider";
 
 const styles = (theme) => ({
   root: {
@@ -131,7 +132,14 @@ export default function FormDialog(props) {
           props.handleClose();
         }}
       >
-        <DialogTitle
+        <div style={{ padding: 20, height: 500, width: 750 }}>
+          <div className="batch_schedule_schedule_more_event_dialog_div">
+            <h1>Location</h1>
+            <IconButton onClick={() => props.handleClose()}>
+              <CloseIcon />
+            </IconButton>
+          </div>
+          {/* <DialogTitle
           id="customized-dialog-title"
           onClose={() => {
             changePricingType(0);
@@ -147,9 +155,14 @@ export default function FormDialog(props) {
           }}
         >
           Location
-        </DialogTitle>
-        <div style={{ padding: 20, height: 500, width: 700, marginBottom: 40 }}>
-          <Index />
+        </DialogTitle> */}
+
+          <Divider />
+          <div
+            style={{ padding: 20, height: 500, width: 700, marginBottom: 40 }}
+          >
+            <Index />
+          </div>
         </div>
       </Dialog>
     </div>
