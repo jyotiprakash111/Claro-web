@@ -36,7 +36,7 @@ const MenuProps = {
 };
 
 export default function FormDialog(props) {
-  const [paymentType, changePaymentType] = useState(-1);
+  const [paymentType, changePaymentType] = useState(3);
   const [temp, changeTemp] = useState(0);
   const [temp2, changeTemp2] = useState(0);
   const [open, setOpen] = useState(true);
@@ -267,7 +267,11 @@ export default function FormDialog(props) {
         <Dialog
           fullScreen
           className="dialog"
-          style={{ height: "90%", width: 760, margin: "20px auto" }}
+          style={{
+            height: paymentType == 3 ? "70%" : "90%",
+            width: 760,
+            margin: "20px auto",
+          }}
           open={props.open}
           onClose={() => props.handleClose()}
         >

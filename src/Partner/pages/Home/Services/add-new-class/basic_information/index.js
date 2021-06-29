@@ -10,19 +10,20 @@ import {
   Select,
   Input,
   Snackbar,
-  Tooltip
+  Tooltip,
 } from "@material-ui/core";
 import {
   Publish as PublishIcon,
   Info as InfoIcon,
   Add as AddIcon,
 } from "@material-ui/icons";
+import UploadIcon from "../../../../../assets/img/Social/upload.png";
 import { useDropzone } from "react-dropzone";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 function Alert(props) {
-  return <MuiAlert elevation={6} variant='filled' {...props} />;
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
 const PurpleSwitch = withStyles({
@@ -41,7 +42,7 @@ const PurpleSwitch = withStyles({
 
 const LightTooltip = withStyles((theme) => ({
   tooltip: {
-    backgroundColor: "#65B1EC",
+    backgroundColor: "#fff",
     color: "#fff",
     boxShadow: theme.shadows[1],
     fontSize: 15,
@@ -110,8 +111,7 @@ const BasicInfo = ({ handleNext }) => {
   const [isSelectorOpen, setisSelectorOpen] = React.useState(false);
   const [age_of_students_temp, setAgeOfStudents] = React.useState(0);
   const [new_category, setNewCategory] = React.useState("");
-  const [value, setValue] = React.useState('');
-
+  const [value, setValue] = React.useState("");
 
   const [category, setCategory] = React.useState([
     {
@@ -166,17 +166,17 @@ const BasicInfo = ({ handleNext }) => {
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Class Title</label>
           <TextField
-            variant='outlined'
-            placeholder='Yoga for beginners'
+            variant="outlined"
+            placeholder="Yoga for beginners"
             style={{ width: "100%" }}
           />
         </Grid>
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Category</label>
           <Select
-            variant='outlined'
-            placeholder='Category'
-            size='normal'
+            variant="outlined"
+            placeholder="Category"
+            size="normal"
             MenuProps={{
               anchorOrigin: {
                 vertical: "bottom",
@@ -211,7 +211,7 @@ const BasicInfo = ({ handleNext }) => {
             input={
               <Input
                 style={{ borderBottom: "none" }}
-                variant='outlined'
+                variant="outlined"
                 onClick={() => setisSelectorOpen(true)}
               />
             }
@@ -233,8 +233,8 @@ const BasicInfo = ({ handleNext }) => {
                 value={new_category}
                 onChange={(e) => setNewCategory(e.target.value)}
                 fullWidth
-                type='search'
-                variant='outlined'
+                type="search"
+                variant="outlined"
               ></TextField>
               <Button
                 style={{
@@ -282,15 +282,9 @@ const BasicInfo = ({ handleNext }) => {
             Briefly describe this class
           </label>
           <TextField
-<<<<<<< HEAD
             variant="outlined"
             placeholder="Shows on the class public page.Add class info/instructions."
-            style={{ width: "100%", border: "none" }}
-=======
-            variant='outlined'
-            placeholder='Shows on the class public page.Add class info/instructions.'
-            style={{ width: "100%", height:"35%" }}
->>>>>>> b1b498bbea6c352b25d203646efb2be8602d03f3
+            style={{ width: "100%", height: "35%", border: "none" }}
             multiline
             rowsMax={4}
             // value={value}
@@ -302,9 +296,9 @@ const BasicInfo = ({ handleNext }) => {
             <label style={{ color: "#827575" }}>Total booking slots</label>
             <div>
               <LightTooltip
-                title='Total booking slots'
-                aria-label='add'
-                placement='right-end'
+                title="Total booking slots"
+                aria-label="add"
+                placement="right-end"
                 style={{ background: "#65B1EC" }}
               >
                 <InfoIcon
@@ -314,10 +308,10 @@ const BasicInfo = ({ handleNext }) => {
             </div>
           </div>
           <TextField
-            variant='outlined'
-            placeholder='Total booking slots'
+            variant="outlined"
+            placeholder="Total booking slots"
             style={{ width: "100%" }}
-            type='number'
+            type="number"
           />
         </Grid>
         <Grid item lg={6}></Grid>
@@ -326,9 +320,9 @@ const BasicInfo = ({ handleNext }) => {
             <label style={{ color: "#827575" }}>Price</label>
             <div>
               <LightTooltip
-                placement='right-end'
-                title='Price'
-                aria-label='add'
+                placement="right-end"
+                title="Price"
+                aria-label="add"
                 style={{ background: "#65B1EC" }}
               >
                 <InfoIcon
@@ -338,13 +332,13 @@ const BasicInfo = ({ handleNext }) => {
             </div>
           </div>
           <TextField
-            id='outlined-select-currency'
+            id="outlined-select-currency"
             select
             value={currency}
-            size='small'
+            size="small"
             onChange={handleChange}
             style={{ width: "100%" }}
-            variant='outlined'
+            variant="outlined"
           >
             {currencies.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -358,9 +352,9 @@ const BasicInfo = ({ handleNext }) => {
             >
               <label style={{ fontSize: 20 }}>INR</label>
               <TextField
-                variant='outlined'
-                placeholder='Enter Fixed Price'
-                type='number'
+                variant="outlined"
+                placeholder="Enter Fixed Price"
+                type="number"
                 style={{ width: "100%", marginLeft: 10 }}
               />
             </div>
@@ -372,11 +366,11 @@ const BasicInfo = ({ handleNext }) => {
         <Grid item lg={6}>
           <label style={{ color: "#827575" }}>Age of your student</label>
           <TextField
-            id='outlined-select-currency'
+            id="outlined-select-currency"
             select
-            size='small'
+            size="small"
             style={{ width: "100%" }}
-            variant='outlined'
+            variant="outlined"
             value={age_of_students_temp}
             onChange={(e) => setAgeOfStudents(e.target.value)}
           >
@@ -392,23 +386,23 @@ const BasicInfo = ({ handleNext }) => {
                 <div>
                   <label style={{ color: "#827575" }}>Min age</label>
                   <TextField
-                    variant='outlined'
-                    placeholder='Min Age'
+                    variant="outlined"
+                    placeholder="Min Age"
                     style={{ width: "100%" }}
                   />
                 </div>
                 <div style={{ marginLeft: 20 }}>
                   <label style={{ color: "#827575" }}>Max Age</label>
                   <TextField
-                    variant='outlined'
-                    placeholder='Max Age'
+                    variant="outlined"
+                    placeholder="Max Age"
                     style={{ width: "100%" }}
                   />
                 </div>
               </div>
               <FormControlLabel
-                control={<Checkbox name='gilad' />}
-                label='Request Adult Presence'
+                control={<Checkbox name="gilad" />}
+                label="Request Adult Presence"
               />
             </div>
           ) : (
@@ -426,25 +420,25 @@ const BasicInfo = ({ handleNext }) => {
                       <PurpleSwitch
                         // checked={state.checkedA}
                         // onChange={handleChange}
-                        name='checkedA'
+                        name="checkedA"
                       />
                     }
-                    color='primary'
-                    name='checkedB'
+                    color="primary"
+                    name="checkedB"
                     inputProps={{ "aria-label": "primary checkbox" }}
                   />
                 }
-                label='Enable Online Bookings'
+                label="Enable Online Bookings"
               />
             </div>
             <div>
               <LightTooltip
-                title='With online booking customers can book the class directly on their own'
-                aria-label='add'
-                placement='right-end'
+                title="With online booking customers can book the class directly on their own"
+                aria-label="add"
+                placement="right-end"
                 style={{ background: "#65B1EC" }}
               >
-                <InfoIcon style={{ color: "#65B1EC",fontSize: 20, }} />
+                <InfoIcon style={{ color: "#65B1EC", fontSize: 20 }} />
               </LightTooltip>
             </div>
           </div>
@@ -469,7 +463,7 @@ const BasicInfo = ({ handleNext }) => {
               {...getRootProps({ className: "dropzone" })}
             >
               <input {...getInputProps()} />
-              <PublishIcon style={{ color: "#fff" }} />
+              <img src={UploadIcon} style={{ width: 20, marginRight: 10 }} />
               <span style={{ color: "#fff" }}>Upload Image</span>
             </div>
             <aside>
@@ -484,13 +478,13 @@ const BasicInfo = ({ handleNext }) => {
         autoHideDuration={6000}
         onClose={handleClose}
       >
-        <Alert severity='success'>Batch Successfully Created!</Alert>
+        <Alert severity="success">Batch Successfully Created!</Alert>
       </Snackbar>
 
       <div style={{ width: 200, marginLeft: "auto" }}>
         <Button
           onClick={() => handleClick()}
-          variant='contained'
+          variant="contained"
           style={{ background: "#FF8021", color: "#fff", width: "100%" }}
         >
           Save and Continue
@@ -507,7 +501,7 @@ const BasicInfo = ({ handleNext }) => {
             paddingLeft: 30,
           }}
         >
-          <a style={{ textDecoration: "none", color: "#FF8021" }} href='#'>
+          <a style={{ textDecoration: "none", color: "#FF8021" }} href="#">
             Learn more{" "}
           </a>
           about setting up your class schedule in the Claroo Knowledge Base.

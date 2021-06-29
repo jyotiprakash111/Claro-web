@@ -267,7 +267,7 @@ export default function FormDialog(props) {
         <Dialog
           fullScreen
           className="dialog"
-          style={{ height: "90%", width: 760, margin: "20px auto" }}
+          style={{ height: "70%", width: 760, margin: "20px auto" }}
           open={props.open}
           onClose={() => props.handleClose()}
         >
