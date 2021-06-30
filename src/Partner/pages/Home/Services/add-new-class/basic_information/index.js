@@ -414,7 +414,7 @@ const BasicInfo = ({ handleNext }) => {
         <Grid item lg={6}>
           <div style={{ display: "flex", alignItems: "center" }}>
             <div>
-              <Switch_Custom />
+              <Switch_Custom title="Enable Online Bookings" />
             </div>
             <div>
               <LightTooltip
