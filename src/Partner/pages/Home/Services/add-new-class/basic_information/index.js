@@ -22,7 +22,7 @@ import { useDropzone } from "react-dropzone";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Switch_Custom from "../../../../../components/common/Switch";
-
+import InputAdornment from '@material-ui/core/InputAdornment';
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -354,9 +354,12 @@ const BasicInfo = ({ handleNext }) => {
               {/* <label style={{ fontSize: 20 }}>Price</label> */}
               <TextField
                 variant="outlined"
-                placeholder="INR Fixed Price"
+                placeholder="Price"
                 type="number"
                 style={{ width: "100%" }}
+                InputProps={{
+                  startAdornment: <InputAdornment position="start">INR</InputAdornment>,
+                }}
               />
             </div>
           ) : (
