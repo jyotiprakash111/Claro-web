@@ -351,12 +351,12 @@ const BasicInfo = ({ handleNext }) => {
             <div
               style={{ display: "flex", alignItems: "center", marginTop: 20 }}
             >
-              <label style={{ fontSize: 20 }}>INR</label>
+              {/* <label style={{ fontSize: 20 }}>Price</label> */}
               <TextField
                 variant="outlined"
-                placeholder="Enter Fixed Price"
+                placeholder="INR Fixed Price"
                 type="number"
-                style={{ width: "100%", marginLeft: 10 }}
+                style={{ width: "100%" }}
               />
             </div>
           ) : (
