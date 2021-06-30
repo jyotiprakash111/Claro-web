@@ -23,6 +23,8 @@ import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Divider from "@material-ui/core/Divider";
 import "./style.css";
+import InfoIcon from "@material-ui/icons/Info";
+import { Tooltip } from "@material-ui/core";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -73,6 +75,15 @@ const top100Films = [
   { title: "12 Angry Men", year: 1957 },
   { title: "Schindler's List", year: 1993 },
 ];
+
+const LightTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: "#65B1EC",
+    color: "#fff",
+    boxShadow: theme.shadows[1],
+    fontSize: 15,
+  },
+}))(Tooltip);
 
 const batches = [
   {
@@ -426,31 +437,52 @@ export default function FormDialog(props) {
             id="mail"
             name="account_no"
           />
-
-          <FormControlLabel
-            control={
-              <Switch
-                //   checked={state.gilad}
-                //   onChange={handleChange}
-                color="primary"
-                name="checkedB"
-                inputProps={{ "aria-label": "primary checkbox" }}
+          <div>
+            <div style={{ display: "flex" }}>
+              <FormControlLabel
+                control={
+                  <Switch
+                    //   checked={state.gilad}
+                    //   onChange={handleChange}
+                    color="primary"
+                    name="checkedB"
+                    inputProps={{ "aria-label": "primary checkbox" }}
+                  />
+                }
+                label="Proration on"
               />
-            }
-            label="Proration on"
-          />
-          <FormControlLabel
-            control={
-              <Switch
-                //   checked={state.gilad}
-                //   onChange={handleChange}
-                color="primary"
-                name="checkedB"
-                inputProps={{ "aria-label": "primary checkbox" }}
+              <LightTooltip
+                title="Proration allows customer to pay only the remaining classes from the time they sign up for the course"
+                aria-label="add"
+                placement="right-end"
+                style={{ background: "#65B1EC" }}
+              >
+                <InfoIcon style={{ color: "#65B1EC", fontSize: 20 }} />
+              </LightTooltip>
+            </div>
+            <div style={{ display: "flex" }}>
+              <FormControlLabel
+                control={
+                  <Switch
+                    //   checked={state.gilad}
+                    //   onChange={handleChange}
+                    color="primary"
+                    name="checkedB"
+                    inputProps={{ "aria-label": "primary checkbox" }}
+                  />
+                }
+                label="Allow day selection"
               />
-            }
-            label="Allow day selection"
-          />
+              <LightTooltip
+                title="If on customer can select classes scheduled on specific days of the week.E.g Mon and Wed from MWF"
+                aria-label="add"
+                placement="right-end"
+                style={{ background: "#65B1EC" }}
+              >
+                <InfoIcon style={{ color: "#65B1EC", fontSize: 20 }} />
+              </LightTooltip>
+            </div>
+          </div>
           <label style={{ marginTop: 20 }}>
             Select the batches to apply price plan
           </label>
@@ -537,7 +569,22 @@ export default function FormDialog(props) {
     if (temp == 3) {
       return (
         <div>
-          <label style={{ marginTop: 20 }}>Payment Interval</label>
+          <div style={{ display: "flex", marginTop: 20 }}>
+            <label style={{ color: "#827575" }}>Payment Interval</label>
+            <div>
+              <LightTooltip
+                title="Weekly payment can start from monday and monthly payment start from start 1st of every month"
+                aria-label="add"
+                placement="right-end"
+                style={{ background: "#65B1EC" }}
+              >
+                <InfoIcon
+                  style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
+                />
+              </LightTooltip>
+            </div>
+          </div>
+
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
@@ -568,7 +615,24 @@ export default function FormDialog(props) {
               />
             </div>
             <div style={{ width: "48%" }}>
-              <label style={{ marginTop: 20 }}>Deposit amount (optional)</label>
+              <div style={{ display: "flex", marginTop: 20 }}>
+                <label style={{ color: "#827575" }}>
+                  Deposit amount (optional)
+                </label>
+                <div>
+                  <LightTooltip
+                    title="Amount collected with first payment.Usually used as security to safeguard future payments"
+                    aria-label="add"
+                    placement="right-end"
+                    style={{ background: "#65B1EC" }}
+                  >
+                    <InfoIcon
+                      style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
+                    />
+                  </LightTooltip>
+                </div>
+              </div>
+
               <input
                 type="text"
                 style={{ height: 50, padding: 10 }}
@@ -597,31 +661,64 @@ export default function FormDialog(props) {
           />
           {paymentType == "0" ? (
             <div>
-              {" "}
-              <FormControlLabel
-                control={
-                  <Switch
-                    //   checked={state.gilad}
-                    //   onChange={handleChange}
-                    color="primary"
-                    name="checkedB"
-                    inputProps={{ "aria-label": "primary checkbox" }}
+              <div style={{ display: "flex" }}>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      //   checked={state.gilad}
+                      //   onChange={handleChange}
+                      color="primary"
+                      name="checkedB"
+                      inputProps={{ "aria-label": "primary checkbox" }}
+                    />
+                  }
+                  label="Proration on"
+                />
+                <LightTooltip
+                  title="Proration allows customer to pay only the remaining classes from the time they sign up for the course"
+                  aria-label="add"
+                  placement="right-end"
+                  style={{ background: "#65B1EC" }}
+                >
+                  <InfoIcon
+                    style={{
+                      color: "#65B1EC",
+                      fontSize: 20,
+                      marginTop: 5,
+                      marginLeft: -10,
+                    }}
                   />
-                }
-                label="Proration on"
-              />
-              <FormControlLabel
-                control={
-                  <Switch
-                    //   checked={state.gilad}
-                    //   onChange={handleChange}
-                    color="primary"
-                    name="checkedB"
-                    inputProps={{ "aria-label": "primary checkbox" }}
+                </LightTooltip>
+              </div>
+              <div style={{ display: "flex" }}>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      //   checked={state.gilad}
+                      //   onChange={handleChange}
+                      color="primary"
+                      name="checkedB"
+                      inputProps={{ "aria-label": "primary checkbox" }}
+                    />
+                  }
+                  label="Allow day selection"
+                />
+                <LightTooltip
+                  title="If on customer can select classes scheduled on specific days of the week.E.g Mon and Wed from MWF"
+                  aria-label="add"
+                  placement="right-end"
+                  style={{ background: "#65B1EC" }}
+                >
+                  <InfoIcon
+                    style={{
+                      color: "#65B1EC",
+                      fontSize: 20,
+                      marginTop: 5,
+                      marginLeft: -10,
+                    }}
                   />
-                }
-                label="Allow day selection"
-              />
+                </LightTooltip>
+              </div>
             </div>
           ) : (
             ""
