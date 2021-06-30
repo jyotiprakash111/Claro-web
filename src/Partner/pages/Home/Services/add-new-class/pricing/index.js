@@ -64,9 +64,28 @@ function StyledCheckbox(props) {
 }
 
 export default function Location() {
-  const [temp, setTemp] = React.useState("0");
+  const [temp, setTemp] = React.useState("");
   const [temp2, setTemp2] = React.useState("1");
   const [counter, setCounter] = React.useState(false);
+
+  function renderField(temp) {
+    if (temp == "Add trial class plan") {
+      return setTemp(0);
+    }
+    if (temp == "Add drop in plan") {
+      return setTemp(1);
+    }
+    if (temp == "One-time Fee") {
+      return setTemp(2);
+    }
+    if (temp == "Monthly/Weekly Fee") {
+      return setTemp(3);
+    }
+    if (temp == "Custom Plan") {
+      return setTemp(4);
+    }
+  }
+
   if (temp2 == "0") {
     return (
       <div>
@@ -174,7 +193,11 @@ export default function Location() {
   } else if (temp2 == "1") {
     return (
       <div style={{ width: "90%" }}>
-        <Dialog open={counter} handleClose={() => setCounter(false)} />
+        <Dialog
+          open={counter}
+          temp={temp}
+          handleClose={() => setCounter(false)}
+        />
         <div style={{ width: 200, textAlign: "right", marginLeft: "auto" }}>
           <Button
             style={{
@@ -182,13 +205,21 @@ export default function Location() {
               color: "#FF8021",
               border: "1px solid #FF8021",
             }}
-            onClick={() => setCounter(true)}
+            onClick={() => {
+              setTemp("");
+              setCounter(true);
+            }}
             variant="outlined"
           >
             Add price plan
           </Button>
         </div>
-        <Table />
+        <Table
+          selectPrice={(e) => {
+            renderField(e);
+            setCounter(true);
+          }}
+        />
         <div>
           <p
             style={{

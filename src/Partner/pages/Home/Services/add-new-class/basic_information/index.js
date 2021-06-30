@@ -43,7 +43,7 @@ const PurpleSwitch = withStyles({
 
 const LightTooltip = withStyles((theme) => ({
   tooltip: {
-    backgroundColor: "#fff",
+    backgroundColor: "#65B1EC",
     color: "#fff",
     boxShadow: theme.shadows[1],
     fontSize: 15,

@@ -132,7 +132,7 @@ export default function FormDialog(props) {
   const [paymentType, changePaymentType] = React.useState(0);
   const [pricingType, changePricingType] = React.useState(-1);
   const [count, setCount] = React.useState(0);
-  console.log(paymentType);
+  console.log(props.temp, paymentType);
 
   function renderPayment(temp) {
     // const [count, setCount] = React.useState(0);
@@ -776,13 +776,13 @@ export default function FormDialog(props) {
       return "Add drop in plan";
     }
     if (temp == 2) {
-      return "New one time fee";
+      return "One time fee";
     }
     if (temp == 3) {
       return "Monthly / Weekly payment";
     }
     if (temp == 4) {
-      return "New custom fee";
+      return "Custom fee";
     }
     return "Create plan price";
   }
@@ -804,16 +804,18 @@ export default function FormDialog(props) {
       >
         <div style={{ padding: 20, height: 500, width: 750 }}>
           <div className="batch_schedule_schedule_more_event_dialog_div">
-            <h1>Pricing</h1>
+            <h1>{renderTitle(props.temp ? props.temp : pricingType)}</h1>
             <IconButton onClick={() => props.handleClose()}>
               <CloseIcon />
             </IconButton>
           </div>
           <Divider />
           <form id="pricing_plan" style={{}}>
-            <fieldset>{renderPayment(pricingType)}</fieldset>
+            <fieldset>
+              {renderPayment(props.temp ? props.temp : pricingType)}
+            </fieldset>
           </form>
-          {pricingType == -1
+          {pricingType == -1 && !props.temp
             ? list.map((item, i) => {
                 return (
                   <ListItem
