@@ -23,7 +23,7 @@ export default function Services() {
               }}
             >
               <img src={Classes} />
-              <h3 style={{ fontSize: "24px" }}>Classes </h3>
+              <h3 style={{ fontSize: "24px" }}>Classes</h3>
               <p>
                 Great for services that occur on scheduled dates and time. They
                 can be group or private lessons and one time class or recurring.
@@ -49,12 +49,10 @@ export default function Services() {
               style={{
                 background: "#FF8021",
                 color: "#fff",
-                padding: 5,
                 position: "absolute",
                 left: 30,
                 textTransform: "capitalize",
-                paddingLeft: 20,
-                paddingRight: 2 + 0,
+                paddingLeft: 18,
                 top: 10,
               }}
             >
