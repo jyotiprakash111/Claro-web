@@ -15,7 +15,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import Switch from "@material-ui/core/Switch";
+import Switch from "../../../../../components/common/Switch";
+// import Switch from "@material-ui/core/Switch";
 import Checkbox from "@material-ui/core/Checkbox";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
@@ -439,47 +440,41 @@ export default function FormDialog(props) {
           />
           <div>
             <div style={{ display: "flex" }}>
-              <FormControlLabel
-                control={
-                  <Switch
-                    //   checked={state.gilad}
-                    //   onChange={handleChange}
-                    color="primary"
-                    name="checkedB"
-                    inputProps={{ "aria-label": "primary checkbox" }}
-                  />
-                }
-                label="Proration on"
-              />
+              <Switch title="Proration on" />
+
               <LightTooltip
                 title="Proration allows customer to pay only the remaining classes from the time they sign up for the course"
                 aria-label="add"
                 placement="right-end"
                 style={{ background: "#65B1EC" }}
               >
-                <InfoIcon style={{ color: "#65B1EC", fontSize: 20 }} />
+                <InfoIcon
+                  style={{
+                    color: "#65B1EC",
+                    fontSize: 20,
+                    marginTop: 7,
+                    marginLeft: -10,
+                  }}
+                />
               </LightTooltip>
             </div>
             <div style={{ display: "flex" }}>
-              <FormControlLabel
-                control={
-                  <Switch
-                    //   checked={state.gilad}
-                    //   onChange={handleChange}
-                    color="primary"
-                    name="checkedB"
-                    inputProps={{ "aria-label": "primary checkbox" }}
-                  />
-                }
-                label="Allow day selection"
-              />
+              <Switch title="Allow day selection" />
+
               <LightTooltip
                 title="If on customer can select classes scheduled on specific days of the week.E.g Mon and Wed from MWF"
                 aria-label="add"
                 placement="right-end"
                 style={{ background: "#65B1EC" }}
               >
-                <InfoIcon style={{ color: "#65B1EC", fontSize: 20 }} />
+                <InfoIcon
+                  style={{
+                    color: "#65B1EC",
+                    fontSize: 20,
+                    marginTop: 7,
+                    marginLeft: -10,
+                  }}
+                />
               </LightTooltip>
             </div>
           </div>
@@ -662,18 +657,8 @@ export default function FormDialog(props) {
           {paymentType == "0" ? (
             <div>
               <div style={{ display: "flex" }}>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      //   checked={state.gilad}
-                      //   onChange={handleChange}
-                      color="primary"
-                      name="checkedB"
-                      inputProps={{ "aria-label": "primary checkbox" }}
-                    />
-                  }
-                  label="Proration on"
-                />
+                <Switch title="Proration on" />
+
                 <LightTooltip
                   title="Proration allows customer to pay only the remaining classes from the time they sign up for the course"
                   aria-label="add"
@@ -684,25 +669,15 @@ export default function FormDialog(props) {
                     style={{
                       color: "#65B1EC",
                       fontSize: 20,
-                      marginTop: 5,
+                      marginTop: 7,
                       marginLeft: -10,
                     }}
                   />
                 </LightTooltip>
               </div>
               <div style={{ display: "flex" }}>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      //   checked={state.gilad}
-                      //   onChange={handleChange}
-                      color="primary"
-                      name="checkedB"
-                      inputProps={{ "aria-label": "primary checkbox" }}
-                    />
-                  }
-                  label="Allow day selection"
-                />
+                <Switch title="Allow day selection" />
+
                 <LightTooltip
                   title="If on customer can select classes scheduled on specific days of the week.E.g Mon and Wed from MWF"
                   aria-label="add"
@@ -713,7 +688,7 @@ export default function FormDialog(props) {
                     style={{
                       color: "#65B1EC",
                       fontSize: 20,
-                      marginTop: 5,
+                      marginTop: 7,
                       marginLeft: -10,
                     }}
                   />

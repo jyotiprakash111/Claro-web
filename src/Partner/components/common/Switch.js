@@ -21,7 +21,7 @@ const PurpleSwitch = withStyles({
   track: {},
 })(Switch);
 
-export default function CustomizedSwitches() {
+export default function CustomizedSwitches(props) {
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: true,
@@ -42,7 +42,7 @@ export default function CustomizedSwitches() {
             name="checkedA"
           />
         }
-        label="Enable Online Bookings"
+        label={props.title}
       />
     </FormGroup>
   );
