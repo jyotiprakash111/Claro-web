@@ -5,15 +5,18 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { Divider } from "@material-ui/core";
-import { Controller, FormProvider, useForm } from "react-hook-form";
-import FormDatePicker from "../../../../components/controls/FormDatePicker";
-import FormTimePicker from "../../../../components/controls/FormTimePicker";
+import { FormProvider, useForm } from "react-hook-form";
+import FormDatePicker from "../../../../../components/controls/FormDatePicker";
+import FormTimePicker from "../../../../../components/controls/FormTimePicker";
 import Checkbox from "@material-ui/core/Checkbox";
 import MenuItem from "@material-ui/core/MenuItem";
 import Input from "@material-ui/core/Input";
 import ListItemText from "@material-ui/core/ListItemText";
 import Select from "@material-ui/core/Select";
 import IconButton from "@material-ui/core/IconButton";
+
+//style import//
+import useStyles from "./style";
 
 const names = [
   "Monday",
@@ -36,14 +39,13 @@ const MenuProps = {
 };
 
 export default function FormDialog(props) {
+  const classes = useStyles();
+
   const [paymentType, changePaymentType] = useState(-1);
   const [temp, changeTemp] = useState(0);
   const [temp2, changeTemp2] = useState(0);
-  const [open, setOpen] = useState(true);
+
   const [personName, setPersonName] = React.useState([]);
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2014-08-18T21:11:54")
-  );
 
   const handleChange = (event) => {
     setPersonName(event.target.value);
@@ -70,7 +72,7 @@ export default function FormDialog(props) {
             <p>day(s)</p>
           </div>
           <div style={{ marginTop: 20, width: "50%" }}>
-            <label style={{ marginTop: 10 }} for="business">
+            <label className={classes.formSingleEventDivLabel} for="business">
               Class repeat pattern
             </label>
             <Select
@@ -101,7 +103,6 @@ export default function FormDialog(props) {
                   style={{
                     width: 100,
                     border: "1px solid #ccc",
-
                     marginRight: 10,
                   }}
                   placeholder="Eg 5"
@@ -113,7 +114,7 @@ export default function FormDialog(props) {
             )}
           </div>
           <div style={{ width: "80%" }}>
-            <label style={{ marginTop: 10 }} for="business">
+            <label className={classes.formSingleEventDivLabel} for="business">
               Class end time
             </label>
             <input
@@ -134,7 +135,7 @@ export default function FormDialog(props) {
       return (
         <div>
           <div style={{ marginTop: 20, width: "50%" }}>
-            <label style={{ marginTop: 10 }} for="business">
+            <label className={classes.formSingleEventDivLabel} for="business">
               Select days
             </label>
             <Select
@@ -178,7 +179,7 @@ export default function FormDialog(props) {
             <p>day(s)</p>
           </div>
           <div style={{ marginTop: 20, width: "50%" }}>
-            <label style={{ marginTop: 10 }} for="business">
+            <label className={classes.formSingleEventDivLabel} for="business">
               Repeat until
             </label>
             <Select
@@ -222,7 +223,7 @@ export default function FormDialog(props) {
             )}
           </div>
           <div style={{ width: "80%" }}>
-            <label style={{ marginTop: 10 }} for="business">
+            <label className={classes.formSingleEventDivLabel} for="business">
               Batch Name
             </label>
             <input
@@ -260,7 +261,7 @@ export default function FormDialog(props) {
           open={props.open}
           onClose={() => props.handleClose()}
         >
-          <div style={{ padding: 20, height: 500, width: 700 }}>
+          <div className={classes.dialogContainerHeading}>
             <div className="batch_schedule_schedule_more_event_dialog_div">
               <h1>Add more timings Single event</h1>
               <IconButton onClick={() => props.handleClose()}>
@@ -275,16 +276,21 @@ export default function FormDialog(props) {
                   className="customer_div_1"
                   style={{ display: "flex", width: "100%", flexWrap: "wrap" }}
                 >
-                  <div style={{ width: "50%" }}>
-                    <label style={{ marginTop: 10 }} for="business">
+                  <div className={classes.formSingleEventDiv}>
+                    <label
+                      className={classes.formSingleEventDivLabel}
+                      for="business"
+                    >
                       Class start date
                     </label>
                     <FormDatePicker name="startDate" placeholder="Start Date" />
                   </div>
 
-                  <div style={{ width: "50%" }}>
-                    {" "}
-                    <label style={{ marginTop: 10 }} for="business">
+                  <div className={classes.formSingleEventDiv}>
+                    <label
+                      className={classes.formSingleEventDivLabel}
+                      for="business"
+                    >
                       Class repeat pattern
                     </label>
                     <Select
@@ -293,19 +299,18 @@ export default function FormDialog(props) {
                       variant="outlined"
                       value={paymentType}
                       onChange={(e) => changePaymentType(e.target.value)}
-                      style={{
-                        border: "1px solid #ccc",
-                        height: 40,
-                        width: "80%",
-                      }}
+                      className={classes.formSingleEventDivSelect}
                     >
                       <MenuItem value={0}>Daily</MenuItem>
                       <MenuItem value={1}>Weekly</MenuItem>
                       <MenuItem value={3}>Does not repeat</MenuItem>
                     </Select>
                   </div>
-                  <div style={{ width: "50%" }}>
-                    <label style={{ marginTop: 10 }} for="business">
+                  <div className={classes.formSingleEventDiv}>
+                    <label
+                      className={classes.formSingleEventDivLabel}
+                      for="business"
+                    >
                       Class start time
                     </label>
                     <FormTimePicker
@@ -314,8 +319,11 @@ export default function FormDialog(props) {
                       required={true}
                     />
                   </div>
-                  <div style={{ width: "50%" }}>
-                    <label style={{ marginTop: 10 }} for="business">
+                  <div className={classes.formSingleEventDiv}>
+                    <label
+                      className={classes.formSingleEventDivLabel}
+                      for="business"
+                    >
                       Class end time
                     </label>
                     <FormTimePicker
@@ -330,16 +338,7 @@ export default function FormDialog(props) {
                 <p>Time zone: Location and GMT time</p>
                 {renderInput(paymentType)}
                 <Button
-                  style={{
-                    background: "#FF8021",
-                    color: "#fff",
-                    textTransform: "none",
-                    borderRadius: 5,
-                    width: 180,
-                    height: 40,
-                    marginTop: 20,
-                    marginBottom: 30,
-                  }}
+                  className={classes.formSingleEventDivButton}
                   onClick={() => props.handleClose()}
                   variant="contained"
                 >
