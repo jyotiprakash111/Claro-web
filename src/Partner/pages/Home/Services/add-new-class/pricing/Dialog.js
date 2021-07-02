@@ -2,7 +2,7 @@ import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import Button from "@material-ui/core/Button";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
-import CloseIcon from "@material-ui/icons/Close";
+import CloseIcon from "@material-ui/icons/Cancel";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
@@ -15,13 +15,17 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import Switch from "@material-ui/core/Switch";
+import Switch from "../../../../../components/common/Switch";
+// import Switch from "@material-ui/core/Switch";
 import Checkbox from "@material-ui/core/Checkbox";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import Divider from "@material-ui/core/Divider";
 import "./style.css";
+import InfoIcon from "@material-ui/icons/Info";
+import { Tooltip } from "@material-ui/core";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -73,15 +77,24 @@ const top100Films = [
   { title: "Schindler's List", year: 1993 },
 ];
 
+const LightTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: "#65B1EC",
+    color: "#fff",
+    boxShadow: theme.shadows[1],
+    fontSize: 15,
+  },
+}))(Tooltip);
+
 const batches = [
   {
     value: "0",
     label: "Apply to all batches for this class",
   },
-  {
-    value: "1",
-    label: "Apply to selected batches only",
-  },
+  // {
+  //   value: "1",
+  //   label: "Apply to selected batches only",
+  // },
 ];
 const payment_interval = [
   {
@@ -131,7 +144,7 @@ export default function FormDialog(props) {
   const [paymentType, changePaymentType] = React.useState(0);
   const [pricingType, changePricingType] = React.useState(-1);
   const [count, setCount] = React.useState(0);
-  console.log(paymentType);
+  console.log(props.temp, paymentType);
 
   function renderPayment(temp) {
     // const [count, setCount] = React.useState(0);
@@ -425,31 +438,46 @@ export default function FormDialog(props) {
             id="mail"
             name="account_no"
           />
+          <div>
+            <div style={{ display: "flex" }}>
+              <Switch title="Proration on" />
 
-          <FormControlLabel
-            control={
-              <Switch
-                //   checked={state.gilad}
-                //   onChange={handleChange}
-                color="primary"
-                name="checkedB"
-                inputProps={{ "aria-label": "primary checkbox" }}
-              />
-            }
-            label="Proration on"
-          />
-          <FormControlLabel
-            control={
-              <Switch
-                //   checked={state.gilad}
-                //   onChange={handleChange}
-                color="primary"
-                name="checkedB"
-                inputProps={{ "aria-label": "primary checkbox" }}
-              />
-            }
-            label="Allow day selection"
-          />
+              <LightTooltip
+                title="Proration allows customer to pay only the remaining classes from the time they sign up for the course"
+                aria-label="add"
+                placement="right-end"
+                style={{ background: "#65B1EC" }}
+              >
+                <InfoIcon
+                  style={{
+                    color: "#65B1EC",
+                    fontSize: 20,
+                    marginTop: 7,
+                    marginLeft: -10,
+                  }}
+                />
+              </LightTooltip>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Switch title="Allow day selection" />
+
+              <LightTooltip
+                title="If on customer can select classes scheduled on specific days of the week.E.g Mon and Wed from MWF"
+                aria-label="add"
+                placement="right-end"
+                style={{ background: "#65B1EC" }}
+              >
+                <InfoIcon
+                  style={{
+                    color: "#65B1EC",
+                    fontSize: 20,
+                    marginTop: 7,
+                    marginLeft: -10,
+                  }}
+                />
+              </LightTooltip>
+            </div>
+          </div>
           <label style={{ marginTop: 20 }}>
             Select the batches to apply price plan
           </label>
@@ -536,7 +564,22 @@ export default function FormDialog(props) {
     if (temp == 3) {
       return (
         <div>
-          <label style={{ marginTop: 20 }}>Payment Interval</label>
+          <div style={{ display: "flex", marginTop: 20 }}>
+            <label style={{ color: "#827575" }}>Payment Interval</label>
+            <div>
+              <LightTooltip
+                title="Weekly payment can start from monday and monthly payment start from start 1st of every month"
+                aria-label="add"
+                placement="right-end"
+                style={{ background: "#65B1EC" }}
+              >
+                <InfoIcon
+                  style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
+                />
+              </LightTooltip>
+            </div>
+          </div>
+
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
@@ -567,7 +610,24 @@ export default function FormDialog(props) {
               />
             </div>
             <div style={{ width: "48%" }}>
-              <label style={{ marginTop: 20 }}>Deposit amount (optional)</label>
+              <div style={{ display: "flex", marginTop: 20 }}>
+                <label style={{ color: "#827575" }}>
+                  Deposit amount (optional)
+                </label>
+                <div>
+                  <LightTooltip
+                    title="Amount collected with first payment.Usually used as security to safeguard future payments"
+                    aria-label="add"
+                    placement="right-end"
+                    style={{ background: "#65B1EC" }}
+                  >
+                    <InfoIcon
+                      style={{ color: "#65B1EC", fontSize: 20, marginLeft: 5 }}
+                    />
+                  </LightTooltip>
+                </div>
+              </div>
+
               <input
                 type="text"
                 style={{ height: 50, padding: 10 }}
@@ -596,31 +656,44 @@ export default function FormDialog(props) {
           />
           {paymentType == "0" ? (
             <div>
-              {" "}
-              <FormControlLabel
-                control={
-                  <Switch
-                    //   checked={state.gilad}
-                    //   onChange={handleChange}
-                    color="primary"
-                    name="checkedB"
-                    inputProps={{ "aria-label": "primary checkbox" }}
+              <div style={{ display: "flex" }}>
+                <Switch title="Proration on" />
+
+                <LightTooltip
+                  title="Proration allows customer to pay only the remaining classes from the time they sign up for the course"
+                  aria-label="add"
+                  placement="right-end"
+                  style={{ background: "#65B1EC" }}
+                >
+                  <InfoIcon
+                    style={{
+                      color: "#65B1EC",
+                      fontSize: 20,
+                      marginTop: 7,
+                      marginLeft: -10,
+                    }}
                   />
-                }
-                label="Proration on"
-              />
-              <FormControlLabel
-                control={
-                  <Switch
-                    //   checked={state.gilad}
-                    //   onChange={handleChange}
-                    color="primary"
-                    name="checkedB"
-                    inputProps={{ "aria-label": "primary checkbox" }}
+                </LightTooltip>
+              </div>
+              <div style={{ display: "flex" }}>
+                <Switch title="Allow day selection" />
+
+                <LightTooltip
+                  title="If on customer can select classes scheduled on specific days of the week.E.g Mon and Wed from MWF"
+                  aria-label="add"
+                  placement="right-end"
+                  style={{ background: "#65B1EC" }}
+                >
+                  <InfoIcon
+                    style={{
+                      color: "#65B1EC",
+                      fontSize: 20,
+                      marginTop: 7,
+                      marginLeft: -10,
+                    }}
                   />
-                }
-                label="Allow day selection"
-              />
+                </LightTooltip>
+              </div>
             </div>
           ) : (
             ""
@@ -775,13 +848,13 @@ export default function FormDialog(props) {
       return "Add drop in plan";
     }
     if (temp == 2) {
-      return "New one time fee";
+      return "One time fee";
     }
     if (temp == 3) {
       return "Monthly / Weekly payment";
     }
     if (temp == 4) {
-      return "New custom fee";
+      return "Custom fee";
     }
     return "Create plan price";
   }
@@ -801,28 +874,20 @@ export default function FormDialog(props) {
           props.handleClose();
         }}
       >
-        <DialogTitle
-          id="customized-dialog-title"
-          onClose={() => {
-            changePricingType(-1);
-            props.handleClose();
-          }}
-          style={{
-            borderBottom: "1px solid #FF8021",
-            marginLeft: 30,
-            marginRight: 50,
-            paddingBottom: 10,
-            paddingLeft: 0,
-            fontWeight: "700",
-          }}
-        >
-          {renderTitle(pricingType)}
-        </DialogTitle>
-        <div style={{ padding: 20, height: 500, width: 700, marginBottom: 40 }}>
+        <div style={{ padding: 20, height: 500, width: 750 }}>
+          <div className="batch_schedule_schedule_more_event_dialog_div">
+            <h1>{renderTitle(props.temp ? props.temp : pricingType)}</h1>
+            <IconButton onClick={() => props.handleClose()}>
+              <CloseIcon />
+            </IconButton>
+          </div>
+          <Divider />
           <form id="pricing_plan" style={{}}>
-            <fieldset>{renderPayment(pricingType)}</fieldset>
+            <fieldset>
+              {renderPayment(props.temp ? props.temp : pricingType)}
+            </fieldset>
           </form>
-          {pricingType == -1
+          {pricingType == -1 && !props.temp
             ? list.map((item, i) => {
                 return (
                   <ListItem

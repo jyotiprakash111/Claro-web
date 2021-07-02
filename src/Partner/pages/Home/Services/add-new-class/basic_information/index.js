@@ -1,32 +1,27 @@
 import React from "react";
-import { TextField } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
-import MenuItem from "@material-ui/core/MenuItem";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormLabel from "@material-ui/core/FormLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import Switch from "@material-ui/core/Switch";
-import PublishIcon from "@material-ui/icons/Publish";
-import Button from "@material-ui/core/Button";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import Typography from "@material-ui/core/Typography";
-import AddIcon from "@material-ui/icons/Add";
-import Select from "@material-ui/core/Select";
-import Input from "@material-ui/core/Input";
+import {
+  TextField,
+  Grid,
+  MenuItem,
+  Checkbox,
+  FormControlLabel,
+  Switch,
+  Button,
+  Select,
+  Input,
+  Snackbar,
+  Tooltip,
+} from "@material-ui/core";
+import {
+  Publish as PublishIcon,
+  Info as InfoIcon,
+  Add as AddIcon,
+} from "@material-ui/icons";
+import UploadIcon from "../../../../../assets/img/Social/upload.png";
 import { useDropzone } from "react-dropzone";
-import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
-import { makeStyles } from "@material-ui/core/styles";
-import IconButton from "@material-ui/core/IconButton";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Tooltip from "@material-ui/core/Tooltip";
-import InfoIcon from "@material-ui/icons/Info";
-import ClearIcon from "@material-ui/icons/Clear";
-
-import { withStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+import Switch_Custom from "../../../../../components/common/Switch";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -34,12 +29,12 @@ function Alert(props) {
 
 const PurpleSwitch = withStyles({
   switchBase: {
-    color: "#65B1EC",
+    color: "#ea0788",
     "&$checked": {
-      color: "#65B1EC",
+      color: "#ea0788",
     },
     "&$checked + $track": {
-      backgroundColor: "#65B1EC",
+      backgroundColor: "#ea0788",
     },
   },
   checked: {},
@@ -51,7 +46,7 @@ const LightTooltip = withStyles((theme) => ({
     backgroundColor: "#65B1EC",
     color: "#fff",
     boxShadow: theme.shadows[1],
-    fontSize: 11,
+    fontSize: 15,
   },
 }))(Tooltip);
 
@@ -117,6 +112,8 @@ const BasicInfo = ({ handleNext }) => {
   const [isSelectorOpen, setisSelectorOpen] = React.useState(false);
   const [age_of_students_temp, setAgeOfStudents] = React.useState(0);
   const [new_category, setNewCategory] = React.useState("");
+  const [value, setValue] = React.useState("");
+
   const [category, setCategory] = React.useState([
     {
       value: "0",
@@ -288,9 +285,11 @@ const BasicInfo = ({ handleNext }) => {
           <TextField
             variant="outlined"
             placeholder="Shows on the class public page.Add class info/instructions."
-            style={{ width: "100%" }}
+            style={{ width: "100%", height: "35%", border: "none" }}
             multiline
-            rows={4}
+            rowsMax={4}
+            // value={value}
+            // onChange={handleChange}
           />
         </Grid>
         <Grid item lg={6}>
@@ -298,7 +297,7 @@ const BasicInfo = ({ handleNext }) => {
             <label style={{ color: "#827575" }}>Total booking slots</label>
             <div>
               <LightTooltip
-                title="Total Booking Slots"
+                title="Total booking slots"
                 aria-label="add"
                 placement="right-end"
                 style={{ background: "#65B1EC" }}
@@ -415,32 +414,16 @@ const BasicInfo = ({ handleNext }) => {
         <Grid item lg={6}>
           <div style={{ display: "flex", alignItems: "center" }}>
             <div>
-              <FormControlLabel
-                control={
-                  <Switch
-                    control={
-                      <PurpleSwitch
-                        // checked={state.checkedA}
-                        // onChange={handleChange}
-                        name="checkedA"
-                      />
-                    }
-                    color="primary"
-                    name="checkedB"
-                    inputProps={{ "aria-label": "primary checkbox" }}
-                  />
-                }
-                label="Enable Online Bookings"
-              />
+              <Switch_Custom title="Enable Online Bookings" />
             </div>
             <div>
               <LightTooltip
-                title="with online online booking customers can book the class directly on their own"
+                title="With online booking customers can book the class directly on their own"
                 aria-label="add"
                 placement="right-end"
                 style={{ background: "#65B1EC" }}
               >
-                <InfoIcon style={{ color: "#65B1EC" }} />
+                <InfoIcon style={{ color: "#65B1EC", fontSize: 20 }} />
               </LightTooltip>
             </div>
           </div>
@@ -465,7 +448,7 @@ const BasicInfo = ({ handleNext }) => {
               {...getRootProps({ className: "dropzone" })}
             >
               <input {...getInputProps()} />
-              <PublishIcon style={{ color: "#fff" }} />
+              <img src={UploadIcon} style={{ width: 20, marginRight: 10 }} />
               <span style={{ color: "#fff" }}>Upload Image</span>
             </div>
             <aside>

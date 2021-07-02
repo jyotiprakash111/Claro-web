@@ -133,5 +133,11 @@ select {
 .MuiSwitch-colorPrimary.Mui-checked {
   color: rgb(101, 177, 236) !important;
 }
+textarea {
+  box-shadow: none;
+}
+.MuiInputBase-input {
+  border-radius: 5px;
+}
 
 /*************************Batch Schedule End********************************/

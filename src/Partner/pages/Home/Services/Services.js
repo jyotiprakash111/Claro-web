@@ -54,8 +54,8 @@ export default function Services() {
                 left: 30,
                 textTransform: "capitalize",
                 paddingLeft: 20,
-                paddingRight: 20,
-                top: 0,
+                paddingRight: 2 + 0,
+                top: 10,
               }}
             >
               Coming soon
@@ -63,13 +63,13 @@ export default function Services() {
             <img src={Meeting} />
             <h3 style={{ fontSize: "24px" }}>Appointments</h3>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quod
-              porro ab, neque adipisci iste ipsa facilis deserunt corrupti
-              animi, ratione repellat omnis recusandae?
+              Integrate our Booking Widget to your intranet, website, Facebook
+              Page, as well as to the booking profile (i.e., the microsite) we
+              create for you.
             </p>
             <p>
-              Nulla, impedit deserunt veritatis in magnam ducimus voluptatum
-              voluptate? Quod veritatis inventore tempora dolores qui nihil.
+              View and manage classes, parent-teacher meetings and any other
+              shared event from your TIMIFY calendar.
             </p>
           </div>
         </Grid>

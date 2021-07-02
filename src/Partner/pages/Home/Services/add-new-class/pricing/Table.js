@@ -19,12 +19,19 @@ function createData(name, calories, fat, carbs, protein, amount) {
 }
 
 const rows = [
-  createData("xxxx", "dd mmm yyyy", "John Doe", "Paytm", "Paid", "$ xx"),
-  createData("xxxx", "dd mmm yyyy", "John Doe", "Paytm", "Paid", "$ xx"),
-  createData("xxxx", "dd mmm yyyy", "John Doe", "Paytm", "Paid", "$ xx"),
+  createData("xxxx", "dd mmm yyyy", "John Doe", "One-time Fee", "Paid", "$ xx"),
+  createData(
+    "xxxx",
+    "dd mmm yyyy",
+    "John Doe",
+    "Monthly/Weekly Fee",
+    "Paid",
+    "$ xx"
+  ),
+  createData("xxxx", "dd mmm yyyy", "John Doe", "Custom Plan", "Paid", "$ xx"),
 ];
 
-export default function BasicTable() {
+export default function BasicTable(props) {
   const classes = useStyles();
 
   return (
@@ -40,7 +47,10 @@ export default function BasicTable() {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.name}>
+            <TableRow
+              onClick={() => props.selectPrice(row.carbs)}
+              key={row.name}
+            >
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.calories}</TableCell>
               <TableCell>{row.fat}</TableCell>

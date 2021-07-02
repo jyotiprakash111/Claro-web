@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { TextField } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
-import MenuItem from "@material-ui/core/MenuItem";
-import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
 
+import { TextField, MenuItem, Grid, Button, Checkbox } from "@material-ui/core";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
+
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
 const currencies = [
   {
     value: "0",
@@ -33,10 +38,37 @@ const business_location = [
   },
 ];
 
+const useStyles = makeStyles({});
+
+function StyledCheckbox(props) {
+  const classes = useStyles();
+
+  return (
+    <Checkbox
+      className={classes.root}
+      disableRipple
+      color="default"
+      checkedIcon={<span className={clsx(classes.icon, classes.checkedIcon)} />}
+      icon={<span className={classes.icon} />}
+      inputProps={{ "aria-label": "decorative checkbox" }}
+      {...props}
+    />
+  );
+}
+
 export default function Location() {
   const [temp, setTemp] = useState(0);
   const [temp2, setTemp2] = useState(0);
   const [temp3, setTemp3] = useState(0);
+
+  const top100Films = [
+    { title: "The Shawshank Redemption", year: 1994 },
+    { title: "The Godfather", year: 1972 },
+    { title: "The Godfather: Part II", year: 1974 },
+    { title: "The Dark Knight", year: 2008 },
+    { title: "12 Angry Men", year: 1957 },
+    { title: "Schindler's List", year: 1993 },
+  ];
 
   return (
     <div>
@@ -84,6 +116,35 @@ export default function Location() {
           </TextField>
         </Grid>
         <Grid item lg={6}></Grid>
+        <Grid item lg={6}>
+          <label style={{ color: "#827575" }}>Select the batches</label>
+          <Autocomplete
+            multiple
+            id="checkboxes-tags-demo"
+            options={top100Films}
+            disableCloseOnSelect
+            getOptionLabel={(option) => option.title}
+            renderOption={(option, { selected }) => (
+              <React.Fragment>
+                <StyledCheckbox
+                  icon={icon}
+                  checkedIcon={checkedIcon}
+                  style={{ marginRight: 8 }}
+                  checked={selected}
+                />
+                {option.title}
+              </React.Fragment>
+            )}
+            style={{ marginTop: 10 }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                variant="outlined"
+                placeholder="Select Batches"
+              />
+            )}
+          />
+        </Grid>
         {temp2 == 1 ? (
           <div>
             <Grid item lg={12} style={{ marginLeft: "2%" }}>
@@ -114,7 +175,6 @@ export default function Location() {
                 })}
               </div>
             </Grid>
-
             <div>
               <Grid style={{ marginTop: 20, marginLeft: "2%" }} item lg={12}>
                 <label style={{ color: "#827575" }}>

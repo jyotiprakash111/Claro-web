@@ -1,31 +1,14 @@
 import React from "react";
 import Dialog from "@material-ui/core/Dialog";
-import Button from "@material-ui/core/Button";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
-import CloseIcon from "@material-ui/icons/Close";
+import CloseIcon from "@material-ui/icons/Cancel";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
-import { ListItem } from "@material-ui/core";
-import Paper from "@material-ui/core/Paper";
 import "./style.css";
-import { TextField } from "@material-ui/core";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Switch from "@material-ui/core/Switch";
-import Checkbox from "@material-ui/core/Checkbox";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
-import CheckBoxIcon from "@material-ui/icons/CheckBox";
-import InputAdornment from "@material-ui/core/InputAdornment";
 import Index from "./index";
 import "./style.css";
-
-const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
-const checkedIcon = <CheckBoxIcon fontSize="small" />;
+import Divider from "@material-ui/core/Divider";
 
 const styles = (theme) => ({
   root: {
@@ -79,10 +62,10 @@ const batches = [
     value: "0",
     label: "Apply to all batches for this class",
   },
-  {
-    value: "1",
-    label: "Apply to selected batches only",
-  },
+  // {
+  //   value: "1",
+  //   label: "Apply to selected batches only",
+  // },
 ];
 const payment_interval = [
   {
@@ -149,7 +132,14 @@ export default function FormDialog(props) {
           props.handleClose();
         }}
       >
-        <DialogTitle
+        <div style={{ padding: 20, height: 500, width: 750 }}>
+          <div className="batch_schedule_schedule_more_event_dialog_div">
+            <h1>Location</h1>
+            <IconButton onClick={() => props.handleClose()}>
+              <CloseIcon />
+            </IconButton>
+          </div>
+          {/* <DialogTitle
           id="customized-dialog-title"
           onClose={() => {
             changePricingType(0);
@@ -165,9 +155,14 @@ export default function FormDialog(props) {
           }}
         >
           Location
-        </DialogTitle>
-        <div style={{ padding: 20, height: 500, width: 700, marginBottom: 40 }}>
-          <Index />
+        </DialogTitle> */}
+
+          <Divider />
+          <div
+            style={{ padding: 20, height: 500, width: 700, marginBottom: 40 }}
+          >
+            <Index />
+          </div>
         </div>
       </Dialog>
     </div>

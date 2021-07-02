@@ -30,10 +30,10 @@ const currencies2 = [
     value: "0",
     label: "",
   },
-  {
-    value: "1",
-    label: "Apply to selected batches only",
-  },
+  // {
+  //   value: "1",
+  //   label: "Apply to selected batches only",
+  // },
 ];
 
 const top100Films = [

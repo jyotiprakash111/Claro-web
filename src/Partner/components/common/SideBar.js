@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import Typography from "@material-ui/core/Typography";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Divider from "@material-ui/core/Divider";
 import HomeIcon from "@material-ui/icons/Home";
 import TodayIcon from "@material-ui/icons/Today";
 import PeopleIcon from "@material-ui/icons/People";
@@ -20,8 +20,8 @@ import SortIcon from "@material-ui/icons/Sort";
 import LoyaltyIcon from "@material-ui/icons/Loyalty";
 import SettingsIcon from "@material-ui/icons/Settings";
 import Settings from "@material-ui/icons/Settings";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Collapse from "@material-ui/core/Collapse";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -61,16 +61,16 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const SingleLevel = ({ item }) => {
+const SingleLevel = ({ item, isChildren }) => {
   const location = useLocation();
-  console.log(item, location.pathname);
+  console.log(item, location.pathname, location);
   return (
     <Link
       style={{
         color: location.pathname == item.to ? "#65B1EC" : "#fff",
         textDecoration: "none",
       }}
-      to={item.to}
+      to={isChildren ? `${item.to}?tabopen=true` : item.to}
     >
       <ListItem
         style={{
@@ -123,15 +123,7 @@ export default function App() {
       {menu.map((item, key) => (
         <MenuItem key={key} item={item} />
       ))}
-      {/* <ListItem
-        button
-        style={{ color: "white", margin: "20px 5px", marginTop: "auto" }}
-      >
-        <ListItemIcon style={{ color: "white" }}>
-          <HelpOutlineIcon />
-        </ListItemIcon>
-        <ListItemText primary="Help" />
-      </ListItem> */}
+
       <p
         style={{
           textAlign: "center",
@@ -146,22 +138,40 @@ export default function App() {
   );
 }
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, isChildren }) => {
   const Component = hasChildren(item) ? MultiLevel : SingleLevel;
-  return <Component item={item} />;
+  return <Component isChildren={isChildren} item={item} />;
+};
+
+const getQueryStringParams = (query) => {
+  return query
+    ? (/^[?#]/.test(query) ? query.slice(1) : query)
+        .split("&")
+        .reduce((params, param) => {
+          let [key, value] = param.split("=");
+          params[key] = value
+            ? decodeURIComponent(value.replace(/\+/g, " "))
+            : "";
+          return params;
+        }, {})
+    : {};
 };
 
 const MultiLevel = ({ item }) => {
   const classes = useStyles();
+  const location = useLocation();
+  console.log(item, location);
   const [openCollapse, setOpenCollapse] = React.useState(false);
   const { items: children } = item;
-  const [open, setOpen] = useState(false);
+
+  const [open, setOpen] = useState(
+    getQueryStringParams(location.search).tabopen == "true"
+  );
 
   const handleClick = () => {
     setOpen((prev) => !prev);
   };
-  const location = useLocation();
-  console.log(item, location.pathname);
+
   return (
     <React.Fragment>
       <Link
@@ -196,7 +206,7 @@ const MultiLevel = ({ item }) => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {children.map((child, key) => (
-            <MenuItem key={key} item={child} />
+            <MenuItem isChildren={true} key={key} item={child} />
           ))}
         </List>
       </Collapse>
