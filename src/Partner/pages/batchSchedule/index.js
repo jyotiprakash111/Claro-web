@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SideBar from "../../components/common/SideBar";
-import Main from "./main/tabBar";
+import Main from "./tabBar/tabBar";
 import Header from "../../components/common/HeaderMain";
 import useStyles from "./style";
 
