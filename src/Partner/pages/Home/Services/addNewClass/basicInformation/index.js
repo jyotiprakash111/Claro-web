@@ -444,6 +444,7 @@ const BasicInfo = ({ handleNext }) => {
                 alignItems: "center",
                 justifyContent: "center",
                 height: "100%",
+                cursor: "pointer",
               }}
               {...getRootProps({ className: "dropzone" })}
             >

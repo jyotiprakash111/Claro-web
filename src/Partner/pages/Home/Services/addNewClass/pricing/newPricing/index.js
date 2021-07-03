@@ -873,7 +873,12 @@ export default function FormDialog(props) {
         <div style={{ padding: 20, height: 500, width: 750 }}>
           <div className="batch_schedule_schedule_more_event_dialog_div">
             <h1>{renderTitle(props.temp ? props.temp : pricingType)}</h1>
-            <IconButton onClick={() => props.handleClose()}>
+            <IconButton
+              onClick={() => {
+                changePricingType(-1);
+                props.handleClose();
+              }}
+            >
               <CloseIcon />
             </IconButton>
           </div>
