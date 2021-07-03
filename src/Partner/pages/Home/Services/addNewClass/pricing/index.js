@@ -9,8 +9,16 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
-import Table from "./Table";
-import Dialog from "./Dialog";
+import Dialog from "./newPricing";
+
+//Table
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -25,15 +33,21 @@ const currencies = [
     label: "Apply to selected batches only",
   },
 ];
-const currencies2 = [
-  {
-    value: "0",
-    label: "",
-  },
-  // {
-  //   value: "1",
-  //   label: "Apply to selected batches only",
-  // },
+function createData(name, calories, fat, carbs, protein, amount) {
+  return { name, calories, fat, carbs, protein, amount };
+}
+
+const rows = [
+  createData("xxxx", "dd mmm yyyy", "John Doe", "One-time Fee", "Paid", "$ xx"),
+  createData(
+    "xxxx",
+    "dd mmm yyyy",
+    "John Doe",
+    "Monthly/Weekly Fee",
+    "Paid",
+    "$ xx"
+  ),
+  createData("xxxx", "dd mmm yyyy", "John Doe", "Custom Plan", "Paid", "$ xx"),
 ];
 
 const top100Films = [
@@ -64,6 +78,8 @@ function StyledCheckbox(props) {
 }
 
 export default function Location() {
+  const classes = useStyles();
+
   const [temp, setTemp] = React.useState("");
   const [temp2, setTemp2] = React.useState("1");
   const [counter, setCounter] = React.useState(false);
@@ -214,12 +230,38 @@ export default function Location() {
             Add price plan
           </Button>
         </div>
-        <Table
-          selectPrice={(e) => {
-            renderField(e);
-            setCounter(true);
-          }}
-        />
+
+        <TableContainer
+          style={{ width: "100%", marginTop: 20 }}
+          component={Paper}
+        >
+          <Table className={classes.table} aria-label="simple table">
+            <TableHead style={{ background: "#F8F8F8" }}>
+              <TableRow>
+                <TableCell>Plan Type</TableCell>
+                <TableCell>Price Name</TableCell>
+                <TableCell>Price</TableCell>
+                <TableCell>Payment Type</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <TableRow
+                  onClick={(e) => {
+                    renderField(row.carbs);
+                    setCounter(true);
+                  }}
+                  key={row.name}
+                >
+                  <TableCell>{row.name}</TableCell>
+                  <TableCell>{row.calories}</TableCell>
+                  <TableCell>{row.fat}</TableCell>
+                  <TableCell>{row.carbs}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
         <div>
           <p
             style={{
