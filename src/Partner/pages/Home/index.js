@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import Confetti from "../../assets/img/confetti.png";
 import Sales from "../../assets/img/sales.png";
 import Calender from "../../assets/img/calender1.png";
@@ -13,16 +11,19 @@ import Button2 from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import SideBar from "../../components/common/SideBar";
 import Header from "../../components/common/HeaderMain";
-
 import { withStyles } from "@material-ui/core/styles";
+
+import {
+  Grid,
+  Paper,
+  Typography,
+  List,
+  ListItem,
+} from "@material-ui/core";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
-import Typography from "@material-ui/core/Typography";
-
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import  CloseIcon from "@material-ui/icons/Close";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import RightIcon from "@material-ui/icons/ArrowRightAlt";
 import ButtonMain from "@material-ui/core/Button";
@@ -50,8 +51,8 @@ export default function SimpleSelect() {
       <div style={{ marginLeft: 300 }}>
         <Header
           avatar={true}
-          name="Home"
-          to_text="www.business_name.claroo.co"
+          name='Home'
+          to_text='www.business_name.claroo.co'
         />
         {/* Popup Starts */}
         <HomePageDialog handleClose={() => setOpen(false)} open={open} />
@@ -65,9 +66,9 @@ export default function SimpleSelect() {
               </p>
               <Button
                 onClick={() => setOpen(true)}
-                variant="contained"
+                variant='contained'
                 width={150}
-                text="Book a free demo"
+                text='Book a free demo'
               />
             </Paper>
           </Grid>
@@ -85,11 +86,11 @@ export default function SimpleSelect() {
                     <Button
                       onClick={() => setOpen(true)}
                       width={150}
-                      variant="contained"
-                      text="Start step 1"
+                      variant='contained'
+                      text='Start step 1'
                     />
                     <Link
-                      to="/homescreen"
+                      to='/homescreen'
                       style={{
                         color: "#65B1EC",
                         textTransform: "capitalize",
@@ -133,7 +134,6 @@ export default function SimpleSelect() {
                     <h2 style={{ padding: 0, margin: 0 }}>0 INR</h2>
                   </div>
                 </Grid>
-
                 <Grid item lg={6}>
                   <div
                     style={{ background: "#fff", padding: 10, paddingTop: 5 }}
@@ -222,10 +222,10 @@ const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
+      <Typography variant='h6'>{children}</Typography>
       {onClose ? (
         <IconButton
-          aria-label="close"
+          aria-label='close'
           className={classes.closeButton}
           onClick={() => props.onClose()}
         >
@@ -247,13 +247,13 @@ function HomePageDialog(props) {
     <div>
       <Dialog
         onClose={() => props.handleClose()}
-        aria-labelledby="customized-dialog-title"
+        aria-labelledby='customized-dialog-title'
         open={props.open}
       >
         <div>
           <DialogTitle
             style={{ borderBottom: "1px solid #65B1EC" }}
-            id="customized-dialog-title"
+            id='customized-dialog-title'
             onClose={() => props.handleClose()}
           >
             <h2 style={{ margin: 0 }}> Steps to Class Setup</h2>
@@ -272,7 +272,7 @@ function ClassSetupLists() {
 
   return (
     <div className={classes.root}>
-      <List component="nav" aria-label="main mailbox folders">
+      <List component='nav' aria-label='main mailbox folders'>
         <ListItem className={classes.list} button>
           <p className={classes.list_h3}>1. Create your first class</p>
           <p className={classes.list_P}>Takes 5 minutes</p>
