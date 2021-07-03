@@ -10,8 +10,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#F8F8F8",
   },
   container: {
-    marginTop: 50,
-    width: "90%",
+    width: "98%",
   },
   dialogAction: {
     textAlign: "center",
