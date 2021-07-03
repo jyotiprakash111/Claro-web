@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import SideBar from "../../components/common/SideBar";
-import Main from "./main/tabBar";
+import Main from "./tabBar/tabBar";
 import Header from "../../components/common/HeaderMain";
+import useStyles from "./style";
 
+export default function Index() {
+  const classes = useStyles();
 
-export default class index extends Component {
-  render() {
-    return (
-      <div id="batch_schedule">
-        <SideBar />
-        <div style={{ marginLeft: 300 }}>
-         <Header  name ="Batch Schedule" avatar={true}/>
-          <Main />
-        </div>
+  return (
+    <div id="batch_schedule">
+      <SideBar />
+      <div className={classes.batchScheduleContainer}>
+        <Header name="Batch Schedule" avatar={true} />
+        <Main />
       </div>
-    );
-  }
+    </div>
+  );
 }

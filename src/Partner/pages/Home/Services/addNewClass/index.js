@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import SideBar from "../../components/common/SideBar";
-import Header from "../../components/common/HeaderMain";
+import React from "react";
+import SideBar from "../../../../components/common/SideBar";
+import Header from "../../../../components/common/HeaderMain";
+
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -8,9 +9,11 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import Tab1 from "./bookingLink";
-import Tab2 from "./bookingPages";
-import Tab3 from "./settings";
+import BasicInformation from "./basicInformation/index";
+import Location from "./location";
+import Pricing from "./pricing/index";
+import OtherOptions from "./otherOptions/index";
+import Schedule from "./batchSchedule/index";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -50,83 +53,117 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
-  appbar: {
-    background: "transparent",
-    boxShadow: "none",
-    borderBottom: "1px solid #ccc",
-  },
   link: {
     color: "rgba(50, 50, 50, 0.5)",
-    width: "200px",
+    width: "150px",
     height: "42px",
     textTransform: "none",
-    fontSize: "25px",
-    marginRight: 50,
+    fontSize: "20px",
+    marginRight: 20,
     "&:hover, &:focus": {
       // background: "#FF8021",
       // color: "#fff",
-      // borderBottom: "1px solid #FF8021",
+      borderBottom: "1px solid #FF8021",
     },
-    active: {},
   },
 }));
 
-export default function OnlineBooking() {
+export default function Index() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  const handleNext = () => {
+    setActiveStep((newValue) => newValue + 1);
   };
   return (
     <div>
       <SideBar />
       <div style={{ marginLeft: 300 }}>
-        <Header name="Online Booking" avatar={true} />
+        <Header avatar={true} name="New Class" />
         <div className={classes.root}>
-          <AppBar className={classes.appbar} position="static">
+          <AppBar
+            style={{
+              background: "#fff",
+              width: "95%",
+              marginLeft: 24,
+              marginTop: "2%",
+            }}
+            position="static"
+          >
             <Tabs
               value={value}
               onChange={handleChange}
               aria-label="simple tabs example"
               TabIndicatorProps={{
-                style: { background: "#FF8021", height: 5 },
+                style: { background: "#FF8021", height: 3 },
               }}
             >
               <Tab
-                className={classes.link}
-                label="Booking link"
+                style={{
+                  color: "#323232",
+                  textTransform: "none",
+                  fontSize: 17,
+                }}
+                label="Basic Information"
                 {...a11yProps(0)}
               />
               <Tab
-                className={[classes.link]}
-                // style={{ fontWeight: "500", color: "#323232", fontSize: "32px" }}
-                label="Booking pages"
-                {...a11yProps(0)}
+                style={{
+                  color: "#323232",
+                  textTransform: "none",
+                  fontSize: 17,
+                }}
+                label="Schedule"
+                {...a11yProps(1)}
               />
-
               <Tab
-                className={classes.link}
-                label="Settings"
+                style={{
+                  color: "#323232",
+                  textTransform: "none",
+                  fontSize: 17,
+                }}
+                label="Location"
+                {...a11yProps(2)}
+              />
+              <Tab
+                style={{
+                  color: "#323232",
+                  textTransform: "none",
+                  fontSize: 17,
+                }}
+                label="Pricing"
                 {...a11yProps(3)}
               />
-              {/* <Tab className={classes.link} label="Saved" {...a11yProps(3)} /> */}
+              <Tab
+                style={{
+                  color: "#323232",
+                  textTransform: "none",
+                  fontSize: 17,
+                }}
+                label="Other Options"
+                {...a11yProps(4)}
+              />
             </Tabs>
           </AppBar>
           <TabPanel value={value} index={0}>
-            <Tab1 />
+            <BasicInformation handleNext={handleNext} />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <Tab2 />
+            <Schedule handleNext={handleChange} />
           </TabPanel>
           <TabPanel value={value} index={2}>
-            <Tab3 />
+            <Location />
           </TabPanel>
           <TabPanel value={value} index={3}>
-            <h1>Pricing</h1>
+            <Pricing />
           </TabPanel>
           <TabPanel value={value} index={4}>
-            <h1>More options</h1>
+            <OtherOptions />
           </TabPanel>
         </div>
       </div>

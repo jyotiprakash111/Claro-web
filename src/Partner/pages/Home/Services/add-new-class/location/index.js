@@ -3,10 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
 import { TextField, MenuItem, Grid, Button, Checkbox } from "@material-ui/core";
-// import MenuItem from "@material-ui/core/MenuItem";
-// import Grid from "@material-ui/core/Grid";
-// import Button from "@material-ui/core/Button";
-// import Checkbox from "@material-ui/core/Checkbox";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
