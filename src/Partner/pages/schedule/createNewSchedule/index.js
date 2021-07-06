@@ -143,7 +143,7 @@ export default function CustomizedDialogs(props) {
   const [age, setAge] = React.useState();
   const [temp, setTemp] = React.useState(true);
   const [temp_class, setClass] = React.useState();
-  const [temp_check, setCheck] = React.useState(false);
+  const [temp_check, setCheck] = React.useState(true);
   return (
     <div id="schedules">
       <Dialog
