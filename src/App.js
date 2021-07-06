@@ -14,11 +14,11 @@ import payment from "./Partner/pages/payment";
 import settings from "./Partner/pages/setting/index";
 import batchSchedule from "./Partner/pages/batchSchedule/index";
 import home from "./Partner/pages/home/index";
-import home_services from "./Partner/pages/home/services";
-import home_classes from "./Partner/pages/home/services/classes";
+import home_services from "./Partner/pages/home/Services";
+import home_classes from "./Partner/pages/home/Services/Classes";
 import homeScreen from "./Partner/pages/homePage/index";
 import onlineBooking from "./Partner/pages/onlineBooking/index.js";
-import NewClass from "./Partner/pages/home/services/addNewClass/index";
+import NewClass from "./Partner/pages/home/Services/addNewClass/index";
 import NewSchedule from "./Partner/pages/newClassSchedule";
 
 import "./style.css";
