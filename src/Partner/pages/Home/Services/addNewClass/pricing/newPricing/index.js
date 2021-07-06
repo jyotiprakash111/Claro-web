@@ -270,7 +270,10 @@ export default function FormDialog(props) {
                 textAlign: "right",
                 marginTop: 20,
               }}
-              onClick={() => changePricingType(-1)}
+              onClick={() => {
+                changePricingType(-1);
+                props.handleClose();
+              }}
               variant="contained"
             >
               Confirm and Add
@@ -390,7 +393,10 @@ export default function FormDialog(props) {
                 textAlign: "right",
                 marginTop: 20,
               }}
-              onClick={() => changePricingType(-1)}
+              onClick={() => {
+                changePricingType(-1);
+                props.handleClose();
+              }}
               variant="contained"
             >
               Confirm and Add
@@ -548,7 +554,10 @@ export default function FormDialog(props) {
                 textAlign: "right",
                 marginTop: 20,
               }}
-              onClick={() => changePricingType(-1)}
+              onClick={() => {
+                changePricingType(-1);
+                props.handleClose();
+              }}
               variant="contained"
             >
               Confirm and Add
@@ -706,7 +715,10 @@ export default function FormDialog(props) {
                 textAlign: "right",
                 marginTop: 20,
               }}
-              onClick={() => changePricingType(-1)}
+              onClick={() => {
+                changePricingType(-1);
+                props.handleClose();
+              }}
               variant="contained"
             >
               Confirm and Add
@@ -825,7 +837,10 @@ export default function FormDialog(props) {
                 textAlign: "right",
                 marginTop: 20,
               }}
-              onClick={() => changePricingType(-1)}
+              onClick={() => {
+                changePricingType(-1);
+                props.handleClose();
+              }}
               variant="contained"
             >
               Confirm and Add
