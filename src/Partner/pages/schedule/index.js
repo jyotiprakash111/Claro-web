@@ -16,13 +16,14 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormProvider, useForm } from "react-hook-form";
 
-import Dialog from "./createNewSchedule";
+import ViewSchedule from "./viewSchedule";
+import CreateNewSchedule from "./createNewSchedule";
 import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    width: 200,
+    width: 150,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -34,6 +35,7 @@ export default function Schedule() {
 
   const [age, setAge] = React.useState("");
   const [open, setOpen] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -50,13 +52,14 @@ export default function Schedule() {
       <div style={{ marginLeft: 300 }}>
         <Header name="Schedule" avatar={true} />
         <div id="schedules">
-          <Dialog open={open} handleClose={() => setOpen(false)} />
+          <ViewSchedule open={open} handleClose={() => setOpen(false)} />
+          <CreateNewSchedule open={open2} handleClose={() => setOpen2(false)} />
           <div>
             <p>Starting from</p>
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-between",
+                justifyContent: "flex-start",
                 alignItems: "center",
                 paddingRight: 50,
               }}
@@ -70,11 +73,14 @@ export default function Schedule() {
                   />
                 </div>
               </FormProvider>
-              {/* <div style={{ display: "flex", alignItems: "center" }}>
-            <QueryBuilderIcon style={{ color: "#FF8021" }} />
-            <p style={{ marginLeft: 10 }}>Indian Standard Time(IST)</p>
-          </div> */}
-              <div>
+
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
                 <FormControl variant="outlined" className={classes.formControl}>
                   <Select
                     labelId="demo-simple-select-outlined-label"
@@ -105,6 +111,13 @@ export default function Schedule() {
                   </Select>
                 </FormControl>
               </div>
+              <Button
+                style={{ height: 40, marginLeft: "auto" }}
+                variant="outlined"
+                onClick={() => setOpen2(true)}
+              >
+                Add New
+              </Button>
             </div>
           </div>
           <div>
