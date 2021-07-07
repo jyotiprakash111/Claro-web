@@ -21,6 +21,7 @@ import onlineBooking from "./Partner/pages/onlineBooking/index.js";
 import NewClass from "./Partner/pages/home/services/addNewClass/index";
 import NewSchedule from "./Partner/pages/newClassSchedule";
 import NewUpdateSchedule from "./Partner/pages/newSchedule/index";
+import NewUpdatePricing from "./Partner/pages/newUpdatePricing";
 
 import "./style.css";
 
@@ -50,7 +51,9 @@ class App extends Component {
             <Route path="/online_booking" component={onlineBooking} />
             <Route path="/new_class" component={NewClass} />
             <Route path="/new_class_schedule" component={NewSchedule} />
+            {/* New Work */}
             <Route path="/new_schedule" component={NewUpdateSchedule} />
+            <Route path="/new_pricing" component={NewUpdatePricing} />
           </Switch>
         </div>
       </Router>
