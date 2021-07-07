@@ -1,0 +1,22 @@
+table td {
+  width: 150px;
+  color: #323232;
+}
+h1,
+p {
+  color: #323232;
+}
+table {
+  padding-left: 20px;
+}
+table th {
+  color: rgba(50, 50, 50, 0.5);
+  padding-bottom: 10px;
+}
+
+table td {
+  padding-bottom: 10px;
+}
+table td {
+  width: 150px;
+}
