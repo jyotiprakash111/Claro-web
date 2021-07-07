@@ -22,6 +22,7 @@ import NewClass from "./Partner/pages/home/services/addNewClass/index";
 import NewSchedule from "./Partner/pages/newClassSchedule";
 import NewUpdateSchedule from "./Partner/pages/newSchedule/index";
 import NewUpdatePricing from "./Partner/pages/newUpdatePricing";
+import NewScheduleStatus from "./Partner/pages/scheduleStatus/index";
 
 import "./style.css";
 
@@ -54,6 +55,7 @@ class App extends Component {
             {/* New Work */}
             <Route path="/new_schedule" component={NewUpdateSchedule} />
             <Route path="/new_pricing" component={NewUpdatePricing} />
+            <Route path="/new_schedule_status" component={NewScheduleStatus} />
           </Switch>
         </div>
       </Router>
