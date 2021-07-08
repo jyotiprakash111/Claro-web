@@ -143,7 +143,7 @@ export default function CustomizedDialogs(props) {
   const [age, setAge] = React.useState();
   const [temp, setTemp] = React.useState(true);
   const [temp_class, setClass] = React.useState();
-  const [temp_check, setCheck] = React.useState(false);
+  const [temp_check, setCheck] = React.useState(true);
   return (
     <div id="schedules">
       <Dialog
@@ -171,6 +171,7 @@ export default function CustomizedDialogs(props) {
               label="Myself"
             />
           </div>
+
           {arr.map((item) => {
             return (
               <div style={{ display: "flex", alignItems: "center" }}>
@@ -201,6 +202,38 @@ export default function CustomizedDialogs(props) {
               </div>
             );
           })}
+
+          {arr.map((item) => {
+            return (
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <FormControlLabel control={<Checkbox name="gilad" />} />
+                <TextField
+                  size="small"
+                  style={{ width: 200 }}
+                  placeholder="Name"
+                  variant="outlined"
+                  value={item.name}
+                />
+                <TextField
+                  size="small"
+                  style={{ width: 100, marginLeft: 10 }}
+                  variant="outlined"
+                  placeholder="Age"
+                  value={item.age}
+                />
+                <IconButton
+                  onClick={() =>
+                    setArr(arr.filter((item2) => item.name !== item2.name))
+                  }
+                >
+                  <RemoveIcon
+                    style={{ border: "1px solid #707070", borderRadius: "50%" }}
+                  />
+                </IconButton>
+              </div>
+            );
+          })}
+
           {temp ? (
             <div style={{ display: "flex", alignItems: "center" }}>
               <FormControlLabel
@@ -335,6 +368,104 @@ export default function CustomizedDialogs(props) {
             ) : (
               ""
             )}
+
+            <div style={{ marginTop: 10 }}>
+              <label style={{ color: "#323232", fontSize: "1rem" }}>
+                Class
+              </label>
+              <div
+                style={{
+                  marginTop: 5,
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <Autocomplete
+                  id="country-select-demo"
+                  style={{ width: 400 }}
+                  options={classes_list}
+                  classes={{
+                    option: classes.option,
+                  }}
+                  autoHighlight
+                  getOptionLabel={(option) => option.title}
+                  renderOption={(item) => (
+                    <React.Fragment>
+                      <MenuItem
+                        style={{
+                          borderLeft: `3px solid ${item.color}`,
+                        }}
+                        value={item.value}
+                      >
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            width: 400,
+                          }}
+                        >
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              width: 160,
+                            }}
+                          >
+                            <h4
+                              style={{
+                                margin: 0,
+                                padding: 0,
+                                fontSize: 14,
+                              }}
+                            >
+                              {item.title}
+                            </h4>
+                            <p style={{ margin: 0, padding: 0 }}>
+                              {item.secondary}
+                            </p>
+                          </div>
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                            }}
+                          >
+                            <h4 style={{ margin: 0, padding: 0 }}>
+                              {item.tag}
+                            </h4>
+                            <p style={{ margin: 0, padding: 0 }}>
+                              {item.crossTag}
+                            </p>
+                          </div>
+                        </div>
+                      </MenuItem>
+
+                      <Divider variant="inset" component="li" />
+                    </React.Fragment>
+                  )}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      autoComplete={false}
+                      placeholder="Select Class"
+                      variant="outlined"
+                      style={{ width: 350 }}
+                      inputProps={{
+                        ...params.inputProps,
+                        autoComplete: "new-password", // disable autocomplete and autofill
+                      }}
+                    />
+                  )}
+                />
+                {/* <IconButton
+                style={{ background: "#65B1EC", padding: 10, marginLeft: 10 }}
+              >
+                <AddIcon style={{ color: "#fff" }} />
+              </IconButton> */}
+              </div>
+            </div>
+
             <FormControl style={{ marginTop: 10 }}>
               <label style={{ color: "#323232", fontSize: "1rem" }}>
                 Class
@@ -361,57 +492,56 @@ export default function CustomizedDialogs(props) {
                       >
                         {item.category}
                       </ListSubheader>
-                      {item.temp.map((item2) => (
-                        <MenuItem
+
+                      <MenuItem
+                        style={{
+                          borderLeft: `3px solid ${item.color}`,
+                          marginLeft: 10,
+                        }}
+                        value={item.value}
+                      >
+                        <div
                           style={{
-                            borderLeft: `3px solid ${item.color}`,
-                            marginLeft: 10,
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            width: 350,
                           }}
-                          value={item2.value}
                         >
                           <div
                             style={{
                               display: "flex",
-                              justifyContent: "space-between",
-                              alignItems: "center",
-                              width: 350,
+                              flexDirection: "column",
                             }}
                           >
-                            <div
+                            <h4
                               style={{
-                                display: "flex",
-                                flexDirection: "column",
+                                margin: 0,
+                                padding: 0,
+                                fontSize: 14,
                               }}
                             >
-                              <h4
-                                style={{
-                                  margin: 0,
-                                  padding: 0,
-                                  fontSize: 14,
-                                }}
-                              >
-                                {item2.title}
-                              </h4>
-                              <p style={{ margin: 0, padding: 0 }}>
-                                {item2.secondary}
-                              </p>
-                            </div>
-                            <div
-                              style={{
-                                display: "flex",
-                                flexDirection: "column",
-                              }}
-                            >
-                              <h4 style={{ margin: 0, padding: 0 }}>
-                                {item2.tag}
-                              </h4>
-                              <p style={{ margin: 0, padding: 0 }}>
-                                {item2.crossTag}
-                              </p>
-                            </div>
+                              {item.title}
+                            </h4>
+                            <p style={{ margin: 0, padding: 0 }}>
+                              {item.secondary}
+                            </p>
                           </div>
-                        </MenuItem>
-                      ))}
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                            }}
+                          >
+                            <h4 style={{ margin: 0, padding: 0 }}>
+                              {item.tag}
+                            </h4>
+                            <p style={{ margin: 0, padding: 0 }}>
+                              {item.crossTag}
+                            </p>
+                          </div>
+                        </div>
+                      </MenuItem>
                     </div>
                   );
                 })}
@@ -548,33 +678,27 @@ const classes_list = [
   {
     category: "Facial",
     color: "#d9a7c7",
-    temp: [
-      {
-        title: "Face",
-        value: 1,
-        secondary: "Special discount,1h",
-        tag: "SGD 80",
-        crossTag: "5GD 100",
-      },
-    ],
+    title: "Face",
+    value: 1,
+    secondary: "Special discount,1h",
+    tag: "SGD 80",
+    crossTag: "5GD 100",
   },
   {
     category: "Hair",
     color: "#22c1c3",
-    temp: [
-      {
-        title: "Blow Dry",
-        secondary: "1h 30min",
-        tag: "SGD 25",
-        value: 21,
-      },
-      {
-        title: "Face",
-        secondary: "1h 30min",
-        tag: "SGD 25",
-        value: 22,
-      },
-    ],
+    title: "Blow Dry",
+    secondary: "1h 30min",
+    tag: "SGD 25",
+    value: 2,
+  },
+  {
+    category: "Hair",
+    color: "#22c1c3",
+    title: "Face",
+    secondary: "1h 30min",
+    tag: "SGD 25",
+    value: 3,
   },
 ];
 
