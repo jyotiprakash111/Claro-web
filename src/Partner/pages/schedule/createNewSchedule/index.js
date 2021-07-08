@@ -170,38 +170,17 @@ export default function CustomizedDialogs(props) {
               control={<Checkbox name="gilad" />}
               label="Myself"
             />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="gilad"
+                  value={temp_check}
+                  onChange={() => setCheck(!temp_check)}
+                />
+              }
+              label="Other Member"
+            />
           </div>
-
-          {arr.map((item) => {
-            return (
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <FormControlLabel control={<Checkbox name="gilad" />} />
-                <TextField
-                  size="small"
-                  style={{ width: 200 }}
-                  placeholder="Name"
-                  variant="outlined"
-                  value={item.name}
-                />
-                <TextField
-                  size="small"
-                  style={{ width: 100, marginLeft: 10 }}
-                  variant="outlined"
-                  placeholder="Age"
-                  value={item.age}
-                />
-                <IconButton
-                  onClick={() =>
-                    setArr(arr.filter((item2) => item.name !== item2.name))
-                  }
-                >
-                  <RemoveIcon
-                    style={{ border: "1px solid #707070", borderRadius: "50%" }}
-                  />
-                </IconButton>
-              </div>
-            );
-          })}
 
           {arr.map((item) => {
             return (
@@ -240,8 +219,8 @@ export default function CustomizedDialogs(props) {
                 control={
                   <Checkbox
                     name="gilad"
-                    value={temp_check}
-                    onChange={() => setCheck(!temp_check)}
+                    // value={temp_check}
+                    // onChange={() => setCheck(!temp_check)}
                   />
                 }
               />
@@ -294,7 +273,7 @@ export default function CustomizedDialogs(props) {
           </Button>
 
           <div style={{ marginTop: 10 }}>
-            {temp_check ? (
+            {!temp_check ? (
               <div>
                 <label style={{ color: "#323232", fontSize: "1rem" }}>
                   Customer
@@ -350,7 +329,6 @@ export default function CustomizedDialogs(props) {
                         autoComplete={false}
                         placeholder="Search customer"
                         variant="outlined"
-                        size="small"
                         style={{ width: 350 }}
                         inputProps={{
                           ...params.inputProps,
@@ -451,7 +429,6 @@ export default function CustomizedDialogs(props) {
                       autoComplete={false}
                       placeholder="Select Class"
                       variant="outlined"
-                      size="small"
                       style={{ width: 350 }}
                       inputProps={{
                         ...params.inputProps,
@@ -558,7 +535,6 @@ export default function CustomizedDialogs(props) {
                 id="outlined-select-currency"
                 select
                 label="Select batch"
-                size="small"
                 style={{ width: 350, marginTop: 10 }}
                 // value={currency}
                 // onChange={handleChange}
@@ -580,7 +556,6 @@ export default function CustomizedDialogs(props) {
                 id="outlined-select-currency"
                 select
                 label="Select payment plan"
-                size="small"
                 style={{ width: 350, marginTop: 10 }}
                 // value={currency}
                 // onChange={handleChange}
@@ -602,7 +577,6 @@ export default function CustomizedDialogs(props) {
                 id="outlined-select-currency"
                 select
                 label="Select payment method"
-                size="small"
                 style={{ width: 350, marginTop: 10 }}
                 // value={currency}
                 // onChange={handleChange}
@@ -624,8 +598,7 @@ export default function CustomizedDialogs(props) {
                 id="outlined-select-currency"
                 select
                 label="Select payment plan"
-                size="small"
-                style={{ width: 350, marginTop: 10}}
+                style={{ width: 350, marginTop: 10 }}
                 // value={currency}
                 // onChange={handleChange}
 
