@@ -350,6 +350,7 @@ export default function CustomizedDialogs(props) {
                         autoComplete={false}
                         placeholder="Search customer"
                         variant="outlined"
+                        size="small"
                         style={{ width: 350 }}
                         inputProps={{
                           ...params.inputProps,
@@ -450,6 +451,7 @@ export default function CustomizedDialogs(props) {
                       autoComplete={false}
                       placeholder="Select Class"
                       variant="outlined"
+                      size="small"
                       style={{ width: 350 }}
                       inputProps={{
                         ...params.inputProps,
@@ -466,7 +468,7 @@ export default function CustomizedDialogs(props) {
               </div>
             </div>
 
-            <FormControl style={{ marginTop: 10 }}>
+            {/* <FormControl style={{ marginTop: 10 }}>
               <label style={{ color: "#323232", fontSize: "1rem" }}>
                 Class
               </label>
@@ -546,7 +548,7 @@ export default function CustomizedDialogs(props) {
                   );
                 })}
               </TextField>
-            </FormControl>
+            </FormControl> */}
 
             <FormControl style={{ marginTop: 10 }}>
               <label style={{ color: "#323232", fontSize: "1rem" }}>
@@ -556,6 +558,7 @@ export default function CustomizedDialogs(props) {
                 id="outlined-select-currency"
                 select
                 label="Select batch"
+                size="small"
                 style={{ width: 350, marginTop: 10 }}
                 // value={currency}
                 // onChange={handleChange}
@@ -577,6 +580,7 @@ export default function CustomizedDialogs(props) {
                 id="outlined-select-currency"
                 select
                 label="Select payment plan"
+                size="small"
                 style={{ width: 350, marginTop: 10 }}
                 // value={currency}
                 // onChange={handleChange}
@@ -598,6 +602,7 @@ export default function CustomizedDialogs(props) {
                 id="outlined-select-currency"
                 select
                 label="Select payment method"
+                size="small"
                 style={{ width: 350, marginTop: 10 }}
                 // value={currency}
                 // onChange={handleChange}
@@ -619,7 +624,8 @@ export default function CustomizedDialogs(props) {
                 id="outlined-select-currency"
                 select
                 label="Select payment plan"
-                style={{ width: 350, marginTop: 10 }}
+                size="small"
+                style={{ width: 350, marginTop: 10}}
                 // value={currency}
                 // onChange={handleChange}
 
