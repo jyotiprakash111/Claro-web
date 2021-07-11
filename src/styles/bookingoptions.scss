@@ -1,0 +1,237 @@
+.bookingoptions {
+	padding: 65px;
+	min-width: 686px;
+	.MuiGrid-root {
+		margin: 10px 0px;
+	}
+
+	.bookingoptions--title {
+		font-weight: 600;
+		font-size: 32px;
+		line-height: 40px;
+		color: #323232;
+		margin-bottom: 7px;
+	}
+	.bookingoptions--title-orange-border {
+		width: 263px;
+		height: 8px;
+		background: #ff8021;
+		transform: matrix(1, 0, 0, -1, 0, 0);
+	}
+	.bookingoptions--radiobuttons {
+		font-size: 18px;
+		line-height: 21px;
+		color: #323232;
+		margin-bottom: 16px;
+		margin-top: 16px;
+		// border-bottom: 1px solid #cfcccc;
+		.bookingoptions--radio-title {
+			right: 0;
+			position: absolute;
+		}
+	}
+	.bookingoptions--btn-add {
+		width: 208px;
+		height: 59px;
+		background-color: #ff8021;
+		border-radius: 5px;
+		margin-top: 73px;
+		color: white;
+	}
+	.bookingoptions--btn-add:hover {
+		background-color: #ff8021;
+		color: white;
+	}
+	.bookingoptions--register-btn {
+		width: 208px;
+		height: 59px;
+		margin-top: 36px;
+		background: #ff8021;
+		border-radius: 5px;
+		color: white;
+		align-items: center;
+		right: 0;
+		position: absolute;
+	}
+	.bookingoptions--poweredby {
+		bottom: 0;
+		position: fixed;
+	}
+
+	.bookingoptions--form-label-div {
+		display: flex;
+		justify-content: space-between;
+		.bookingoptions--form-label {
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 23px;
+			color: #323232;
+		}
+		.bookingoptions--form-label2 {
+			margin-top: 8px;
+			color: #ff8021;
+			cursor: pointer;
+		}
+		.bookingoptions--description {
+			margin-top: 10px;
+		}
+	}
+	.MuiFormControl-root {
+		width: 100%;
+	}
+	.bookingoptions--total {
+		display: flex !important;
+		justify-content: space-between;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 30px;
+		color: #323232;
+	}
+	.hr {
+		margin: 20px 0px;
+	}
+	.MuiInput-root {
+		border: 1px solid #323232;
+		box-sizing: border-box;
+		border-radius: 5px;
+		padding: 10px;
+	}
+	.MuiButton-label {
+		text-transform: capitalize;
+	}
+	.MuiInput-underline:before {
+		transition: none !important;
+		border-bottom: none !important;
+		pointer-events: none;
+	}
+	.MuiInputBase-input {
+		font-style: normal;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 21px;
+		/* identical to box height */
+
+		color: #323232;
+
+		opacity: 0.5;
+	}
+	.MuiFormLabel-root.Mui-focused {
+		color: black;
+	}
+	.bookingoptions--add-sub-btn {
+		width: 50px;
+		height: 50px;
+	}
+	.bookingoptions--add-sub-btn:hover {
+		background-color: white;
+	}
+	.MuiFormGroup-root {
+		margin-top: 30px !important;
+	}
+	.DayPicker {
+		width: auto;
+		/* height: 431px; */
+		background: #fdfdfd;
+		box-shadow: 0px 0px 8px rgb(0 0 0 / 15%);
+		border-radius: 10px;
+	}
+	.DayPicker-Caption > div {
+		text-align: center;
+	}
+
+	.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+		background-color: #ff8021;
+	}
+
+	.DayPicker-Weekdays {
+		display: table-header-group;
+		border-top: 1px solid #bfbaba;
+		border-bottom: 1px solid #bfbaba;
+	}
+
+	.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+		position: relative;
+		background-color: #ff8021;
+		color: #f0f8ff;
+		box-sizing: border-box;
+	}
+	.DayPicker-Day {
+		display: table-cell;
+		padding: 1.5em;
+		border-radius: 50%;
+		vertical-align: middle;
+		text-align: center;
+		cursor: pointer;
+	}
+	.MuiSelect-select:focus {
+		background-color: white !important;
+	}
+}
+
+.MuiPickersModal-dialogRoot {
+	min-width: 559px;
+	/* width: 559px; */
+	/* height: 431px; */
+	background: #fdfdfd;
+	box-shadow: 0px 0px 8px rgb(0 0 0 / 15%);
+	border-radius: 10px;
+}
+
+.MuiInput-root {
+	width: 100%;
+}
+
+// .done-btn-cal {
+// 	padding: 16px 40px;
+// 	width: 149px;
+// 	height: 44px;
+// 	background-color: #ff8021;
+// 	border-radius: 5px;
+// }
+// .MuiPickersModal-dialogRoot {
+// 	min-width: 559px;
+// }
+
+// .MuiDialog-paperWidthSm {
+// 	max-width: 600px;
+// 	width: 600px;
+// }
+
+// .MuiPickersBasePicker-pickerView {
+// 	/* display: flex; */
+// 	max-width: 600px !important;
+// 	min-width: 600px;
+// 	min-height: 305px;
+// 	/* overflow-x: hidden; */
+// 	/* flex-direction: column; */
+// 	/* justify-content: center; */
+// }
+
+// .MuiPickersDatePickerRoot-toolbar {
+// 	display: none !important;
+// }
+
+// .MuiDialogActions-spacing > :not(:first-child) {
+// 	margin-left: 8px;
+// 	padding: 16px 40px;
+// 	width: 149px;
+// 	height: 44px;
+// 	background: #ff8021;
+// 	border-radius: 5px;
+// 	color: white;
+// }
+
+// .MuiDialogActions-spacing > :not(:first-child):hover {
+// 	margin-left: 8px;
+// 	padding: 16px 40px;
+// 	width: 149px;
+// 	height: 44px;
+// 	background: #ff8021;
+// 	border-radius: 5px;
+// 	color: white;
+// }
+
+.MuiButton-label {
+	text-transform: capitalize;
+}

@@ -1,0 +1,158 @@
+@import "./shared.scss";
+
+html {
+    font-size: 62.5%;
+    @media (max-width: 576px) {
+        font-size: 38.5%;
+    }
+    @media (-webkit-device-pixel-ratio: 1.25) {
+        font-size: 56.5%;
+    }
+    @media (-webkit-device-pixel-ratio: 1.5) {
+        font-size: 45.5%;
+    }
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+body {
+    font-size: 1.3rem;
+}
+
+//global classess
+.relative {
+    position: relative;
+}
+.flex {
+    display: flex;
+}
+.flex1 {
+    flex: 1;
+}
+.mt0 {
+    margin-top: 0px;
+}
+.mb0 {
+    margin-bottom: 0px;
+}
+.mr0 {
+    margin-right: 0px;
+}
+.ml0 {
+    margin-left: 0px;
+}
+.pt0 {
+    padding-top: 0px;
+}
+.pb0 {
+    padding-bottom: 0px;
+}
+.pr0 {
+    padding-right: 0px;
+}
+.pl0 {
+    padding-left: 0px;
+}
+.cursor {
+    cursor: pointer;
+}
+.is-invalid {
+    border-color: $error !important;
+    background-image: none !important;
+}
+a {
+    color: $lightblue;
+}
+.errortext {
+    color: $error;
+    a {
+        color: $error;
+        text-decoration: underline;
+    }
+}
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.custom-checkbox {
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    &::after {
+        content: " ";
+        background: $white;
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid $lightblue;
+        height: 16px;
+        width: 16px;
+    }
+    // &:disabled:after {
+    //     background: $gray-bg;
+    //     border: 1px solid $gray-border;
+    // }
+    &:checked:after {
+        content: "\2714";
+        border-radius: 0px;
+        height: 16px;
+        display: block;
+        width: 16px;
+        text-align: center;
+        font-size: 11px;
+        color: $white;
+        background: $lightblue;
+        border: none;
+    }
+}
+.form-control {
+    height: 5rem;
+    border: 1px solid $lightblue;
+    border-radius: 2.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 1rem 2.5rem;
+    &:focus {
+        outline: none;
+    }
+}
+.custom-selectbox {
+    position: relative;
+    cursor: pointer;
+    padding-right: 3rem;
+    .selected-val {
+    }
+    .arrow-down {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+    .options {
+        position: absolute;
+        background: $white;
+        list-style: none;
+        padding: 0;
+        top: 5rem;
+        left: 0;
+        box-shadow: 0px 0px 8px #ddd;
+        border-radius: 10px;
+        width: 100%;
+        li {
+            padding: 1rem;
+            cursor: pointer;
+            &:hover {
+                background: $lightblue;
+                color: $white;
+            }
+        }
+    }
+}

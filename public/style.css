@@ -1,0 +1,143 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "NeueHaasUnica", sans-serif;
+}
+
+.MuiSelect-select:focus {
+	border-radius: 0;
+	background-color: transparent !important;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="file"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+	background: rgba(255, 255, 255, 0.1);
+	border: none;
+	font-size: 15px;
+	height: auto;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	background-color: #fff;
+	color: #323232;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+	box-sizing: border-box;
+	border: none;
+	font-weight: 400;
+	padding-left: 20px;
+}
+
+/*************************Batch Schedule Start********************************/
+
+#batch_schedule .batch_schedule_title {
+	font-size: 2rem;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+}
+
+#batch_schedule_schedule {
+	margin-top: 0px;
+}
+
+#single_Event th {
+	font-weight: bold;
+	padding: 10px;
+	background: #f8f8f8;
+	color: #323232;
+}
+#single_Event td {
+	color: #323232;
+	padding: 15px;
+}
+#single_Event form {
+	box-sizing: border-box;
+	width: 100%;
+}
+#single_Event input[type="text"],
+#single_Event input[type="password"],
+#single_Event input[type="email"],
+#single_Event input[type="number"],
+#single_Event input[type="search"],
+#single_Event input[type="file"],
+#single_Event input[type="tel"],
+#single_Event input[type="url"],
+#single_Event textarea,
+#single_Event select {
+	background: rgba(255, 255, 255, 0.1);
+	border: none;
+	font-size: 15px;
+	height: auto;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	background-color: #fff;
+	color: #323232;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+	box-sizing: border-box;
+	border: none;
+	font-weight: 400;
+	padding-left: 20px;
+}
+
+#single_Event input[type="radio"],
+#single_Event input[type="checkbox"] {
+	margin: 0 4px 8px 0;
+}
+
+#single_Event select {
+	padding: 6px;
+	height: 32px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 80%;
+}
+
+#single_Event fieldset {
+	margin-bottom: 0px;
+	border: none;
+}
+
+#single_Event legend {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+
+#single_Event label {
+	display: block;
+	margin-bottom: 8px;
+	color: #323232;
+}
+
+#single_Event label.light {
+	font-weight: 300;
+	display: inline;
+}
+#single_Event .single_Event_div_1 {
+}
+.batch_schedule_schedule_more_event_dialog_div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.MuiSwitch-colorPrimary.Mui-checked {
+	color: rgb(101, 177, 236) !important;
+}
+textarea {
+	box-shadow: none;
+}
+.MuiInputBase-input {
+	border-radius: 5px;
+}
+
+/*************************Batch Schedule End********************************/

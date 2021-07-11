@@ -1,0 +1,24 @@
+#team table th {
+  color: #ccc;
+  text-transform: uppercase;
+}
+#team table td {
+  color: #323232;
+  border-right: 1px solid #efefef;
+}
+#team table td {
+  color: #323232;
+  border-bottom: none;
+}
+#team table td {
+  overflow-x: hidden !;
+}
+#team table .MuiTableContainer-root {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#team {
+  width: 100%;
+  margin-top: 10px;
+}

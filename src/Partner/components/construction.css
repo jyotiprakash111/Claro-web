@@ -1,0 +1,43 @@
+#construction main {
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  margin: 100px 20px;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+#construction main h1 {
+  font-size: 3em;
+  font-weight: 100;
+  color: #f50057;
+  margin: 0;
+}
+#construction main h2 {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+#construction main h3 {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin-top: 0;
+}
+#construction main a {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #f50057;
+  text-decoration: none;
+}
+
+#construction footer {
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+  font-weight: 300;
+}

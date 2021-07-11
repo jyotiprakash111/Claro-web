@@ -1,0 +1,90 @@
+#general_page form {
+  margin: 0px auto;
+  box-sizing: border-box;
+  padding: 10px;
+  background: transparent;
+  text-align: left;
+  border: none;
+  width: 100%;
+}
+
+#general_page input[type="text"],
+#general_page input[type="password"],
+#general_page input[type="date"],
+#general_page input[type="datetime"],
+#general_page input[type="email"],
+#general_page input[type="number"],
+#general_page input[type="search"],
+#general_page input[type="file"],
+#general_page input[type="tel"],
+#general_page input[type="time"],
+#general_page input[type="url"],
+#general_page textarea,
+#general_page select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 15px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  color: #757575;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#general_page input[type="radio"],
+#general_page input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+#general_page select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+#general_page .opening_hours input {
+  padding: 6px;
+  height: 32px !important;
+  border-radius: 2px;
+  width: 130px;
+}
+
+#general_page fieldset {
+  margin-bottom: 0px;
+  border: none;
+}
+
+#general_page legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+#general_page label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #323232;
+}
+
+#general_page label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+#btnContainer {
+  background-color: #FF8021;
+    color: #fff;
+    /* text-decoration: none; */
+    border-radius: 5px;
+    width: 20px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}

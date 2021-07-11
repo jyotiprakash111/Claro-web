@@ -1,0 +1,85 @@
+@import "./shared.scss";
+
+.settings-sidebar {
+  color: "wheat";
+  width: 300px;
+  background-color: $sidebarbg;
+}
+
+.setting-heading {
+  font-size: 4.7rem;
+  font-weight: 525;
+  line-height: 1.618em;
+  margin-bottom: 0.4rem;
+}
+
+.business-content-container {
+  margin: 20px 40px;
+}
+
+.settings-card {
+  background-color: $greybg;
+  padding: 20px;
+  border: 1px solid black;
+  margin: 20px 30px 20px 0;
+}
+
+.setting-line {
+  border: 2px solid #037aff;
+  margin-bottom: 35px;
+}
+
+.settings-content-container {
+  /* margin: 30px; */
+  margin-top: 0px;
+}
+
+.settings-sub-container {
+  width: 100%;
+}
+
+.settings-card-heading-h1 {
+  font-size: 3.5rem;
+  /* font-weight: 500; */
+  color: black;
+  margin-bottom: 1.4rem;
+  line-height: 1.618em;
+}
+
+.settings-card-heading-h2 {
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: #037aff;
+  margin-bottom: 0.6rem;
+}
+
+.settings-card-heading-h3 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #323232;
+  margin-bottom: 1.5rem;
+  line-height: 1.618em;
+}
+
+.settings-card-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+// @font-face {
+//   font-family: "Gilroy-Regular";
+//   src: url("../fonts/Gilroy-Regular.ttf");
+// }
+
+.P2_Paragraph_15px {
+  // font-family: Gilroy-Regular;
+  font-size: 15px;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.m-top-15 {
+  margin-top: 15px;
+}

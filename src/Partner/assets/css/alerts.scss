@@ -1,0 +1,22 @@
+.alert{
+    padding: 0.5rem 0.5rem;
+    &.alert-success-border {
+        border: 1px solid $green;
+        display: inline-block;
+        i{
+            color: $green;   
+            margin-right: 0.7rem;         
+        }
+    }
+    &.alert-dismissible{
+        padding-right: 3rem;
+        .btn-close{
+            padding: 0.9rem 1rem;
+            font-size: 0.7rem;
+        }
+    }
+    i{
+        font-size: 1.5rem;
+        line-height: 0.5;
+    }
+}

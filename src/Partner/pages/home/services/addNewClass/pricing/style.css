@@ -1,0 +1,69 @@
+#pricing_plan form {
+  box-sizing: border-box;
+  width: 100%;
+}
+#pricing_plan input[type="text"],
+#pricing_plan input[type="password"],
+#pricing_plan input[type="date"],
+#pricing_plan input[type="datetime"],
+#pricing_plan input[type="email"],
+#pricing_plan input[type="number"],
+#pricing_plan input[type="file"],
+#pricing_plan input[type="tel"],
+#pricing_plan input[type="time"],
+#pricing_plan input[type="url"],
+#pricing_plan textarea,
+#pricing_plan select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 15px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  color: #323232;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-weight: 400;
+  font-family: "NeueHaasUnica", sans-serif;
+}
+
+#pricing_plan input[type="radio"],
+#pricing_plan input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+#pricing_plan input[type="text"] {
+  padding: 6px;
+
+  border-radius: 2px;
+}
+
+#pricing_plan fieldset {
+  margin-bottom: 0px;
+  border: none;
+}
+
+#pricing_plan legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+#pricing_plan label {
+  display: block;
+  margin-bottom: 8px;
+  color: #323232;
+}
+
+.select_hover_list > div {
+  background: #f8f8f8;
+}
+.select_hover_list > div:hover {
+  background: #ff8021;
+  color: #fff;
+  transition: 0.2s ease-in;
+}

@@ -1,0 +1,45 @@
+.seat-book {
+	.MuiInput-underline:before {
+		border: none !important;
+	}
+	.MuiInput-underline:after {
+		border-bottom: none !important;
+		pointer-events: none;
+	}
+
+	.date-picker {
+		width: 159px;
+		height: 45px;
+		padding: 7px 10px;
+		/* top: 725px; */
+		opacity: 0.5;
+		border: 1px solid #323232;
+		border-radius: 3px;
+	}
+	.MuiButton-label {
+		text-transform: capitalize;
+		color: white !important;
+	}
+	.p-b-1 {
+		padding-bottom: 1em;
+	}
+
+	p {
+		margin-bottom: 6px;
+		font-size: 14px;
+	}
+	.seats {
+		margin: 6px 0px;
+	}
+
+	.show-more-btn {
+		width: 100%;
+		border: 1px solid #323232;
+		border-radius: 5px;
+		margin-top: 22px;
+	}
+	.choose-btn {
+		font-size: 13px;
+		padding: 4px 15px 0px 15px;
+	}
+}
