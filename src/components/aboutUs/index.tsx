@@ -24,11 +24,11 @@ export default function AboutUs() {
 	const classes = useStyles();
 
 	const images = [
-		{ url: "https://images.unsplash.com/photo-1503764654157-72d979d9af2f" },
-		{ url: "https://images.unsplash.com/photo-1498654896293-37aacf113fd9" },
-		{ url: "https://images.unsplash.com/photo-1568919618505-13f7d9eb373f" },
-		{ url: "https://images.unsplash.com/photo-1598679470734-80d6ee5f863a" },
-		{ url: "https://images.unsplash.com/photo-1598792325882-b89b6109523b" },
+		{ url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" },
+		{ url: "https://media.istockphoto.com/photos/top-view-table-full-of-food-picture-id1220017909?k=6&m=1220017909&s=170667a&w=0&h=Zy_NqTbEluSW0T667IHW7DVlpQih70V45k-rgeFt6Oo=" },
+		{ url: "https://media.istockphoto.com/photos/food-backgrounds-table-filled-with-large-variety-of-food-picture-id1155240408?k=6&m=1155240408&s=612x612&w=0&h=SEhOUzsexrBBtRrdaLWNB6Zub65Dnyjk7vVrTk1KQSU=" },
+		{ url: "https://media.istockphoto.com/photos/varied-food-carbohydrates-protein-vegetables-fruits-dairy-legumes-on-picture-id1218254547?b=1&k=6&m=1218254547&s=170667a&w=0&h=EXwwoHJ3wI0H2jDfoFhqOiIo2c4cL0y7R8Gop3iIO30=" },
+		{ url: "https://media.istockphoto.com/photos/varied-food-carbohydrates-protein-vegetables-fruits-dairy-legumes-on-picture-id1218254547?b=1&k=6&m=1218254547&s=170667a&w=0&h=EXwwoHJ3wI0H2jDfoFhqOiIo2c4cL0y7R8Gop3iIO30=" },
 	];
 
 	return (

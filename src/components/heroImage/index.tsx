@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
 		width: "100%",
 		display: "grid",
 		alignItems: "center",
-		backgroundImage: "url(https://images.unsplash.com/photo-1615217482859-6b0c8a50129d)",
+		backgroundImage: "url(https://img.freepik.com/free-photo/top-view-circular-food-frame_23-2148723455.jpg?size=626&ext=jpg)",
 		backgroundSize: "cover",
 		color: theme.palette.common.black,
 

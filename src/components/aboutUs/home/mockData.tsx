@@ -67,20 +67,20 @@ export const testimonials = [
 			"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur perspiciatis, quis neque ex consequuntur molestiae nesciunt, impedit, ea fugit aliquam corrupti. Unde, voluptatem est illo ratione eaque voluptatum",
 		name: "John Doe",
 		role: "Student at XYZ College",
-		imgUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+		imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-51Utmw56FMBsmHRdRVn8awPHOdTeu0Qsiw&usqp=CAU",
 	},
 	{
 		testimony:
 			"Unde, voluptatem est illo ratione eaque voluptatum itaque quibusdam et vel. Suscipit vel qui impedit omnis et sit. Harum, cum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur perspiciatis, quis neque ex",
 		name: "Jane Doe",
 		role: "Student at XYZ College",
-		imgUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+		imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6zes53m4a_2VLTcmTn_bHk8NO5SkuWfcQbg&usqp=CAU",
 	},
 	{
 		testimony:
 			"Pariatur perspiciatis, quis neque ex consequuntur molestiae nesciunt, impedit, ea fugit aliquam corrupti. Unde, voluptatem est illo ratione eaque voluptatum Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
 		name: "John Jane",
 		role: "Student at XYZ College",
-		imgUrl: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126",
+		imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVJh6t-5E8Ay_8LVLhNtEqXeUgehHdyeEHUQ&usqp=CAU",
 	},
 ];

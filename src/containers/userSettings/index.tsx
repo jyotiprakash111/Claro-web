@@ -297,7 +297,7 @@ export default function UserSettings(props: UserSettingsProps) {
 								<Grid item xs={12} sm={4}>
 									<Box clone borderRadius="50%">
 										<img
-											src="https://images.unsplash.com/photo-1582140141257-f4588733e374"
+											src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
 											width={"275px"}
 											height={"275px"}
 											alt="profile"

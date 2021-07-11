@@ -87,7 +87,7 @@ const ClassInfo = (props: any) => {
 				<CardActionArea component={Link} to="/courseDetails">
 					<CardMedia
 						className={classes.cardMedia}
-						image="https://images.unsplash.com/photo-1592064064956-30807b590c08"
+						image="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjR8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80"
 						title="Contemplative Reptile"
 					/>
 					<CardContent className={classes.cardContent}>

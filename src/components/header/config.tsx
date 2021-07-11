@@ -28,6 +28,10 @@ const headerConfig: headerProps = {
 			to: "/packages",
 		},
 		{
+			text: "Partner",
+			to: "/partner",
+		},
+		{
 			text: "Contact Us",
 			to: "#contact-us",
 		},
