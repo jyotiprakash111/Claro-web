@@ -23,6 +23,7 @@ import { Alert } from "@material-ui/lab";
 import { useAuth } from "@contexts/Auth";
 import Button from "@components/button";
 import GoogleIcon from "@assets/icons/google.svg";
+import axios from 'axios';
 
 const CustomTooltip = withStyles(theme => ({
 	tooltip: {
@@ -55,9 +56,13 @@ export default function SignUpPage() {
 	async function onSubmit(data: any) {
 		const { firstName, lastName, email, contactNumber, password } = data;
 		const payload: any = { firstName, lastName, email, contactNumber, password };
+		axios.post('http://13.234.241.199:8080/api/v1/auth/register/store',payload).then((res) => {
+			console.log(res.data)
+		})
 		mutate(payload, {
 			onSuccess: validateUser,
 		});
+	
 	}
 
 	return (

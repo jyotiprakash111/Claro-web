@@ -9,7 +9,7 @@ import routes from "./routes";
 import Layout from "@components/layout";
 import './index.css'
 
-
+import { Provider } from "react-redux";
 import partner from "./Partner/pages/customers/index";
 import partnerSingle from "./Partner/pages/singleCustomers/index";
 import testimonial from "./Partner/pages/testimonial/index";
@@ -36,10 +36,13 @@ import NewScheduleStatus from "./Partner/pages/scheduleStatus/index";
 import Home from "./containers/home/index";
 
 
+import store from "../src/redux/store/store";
+
 const queryClient = new QueryClient();
 
 function App() {
 	return (
+		      <Provider store={store}>
 		<React.Fragment>
 			<ThemeProvider theme={theme}>
 				<QueryClientProvider client={queryClient}>
@@ -86,7 +89,8 @@ function App() {
 					</Router>
 				</QueryClientProvider>
 			</ThemeProvider>
-		</React.Fragment>
+			</React.Fragment>
+			</Provider>
 	);
 }
 

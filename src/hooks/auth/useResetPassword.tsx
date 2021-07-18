@@ -9,4 +9,6 @@ const useResetPassword = () =>
 			.catch((error: any) => Promise.reject(error?.response?.data))
 	);
 
+	
+
 export default useResetPassword;

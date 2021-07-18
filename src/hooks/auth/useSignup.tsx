@@ -8,4 +8,5 @@ const useSignup = () =>
 			.then((res: any) => res.data)
 			.catch((error: any) => Promise.reject(error?.response?.data))
 	);
+	
 export default useSignup;

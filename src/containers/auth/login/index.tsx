@@ -20,6 +20,8 @@ export default function LoginPage() {
 	const { validateUser, googleLogin, googleLoginError } = useAuth();
 
 	async function onSubmit(data: any) {
+		console.log(data)
+		
 		mutate(data, {
 			onSuccess: validateUser,
 		});
